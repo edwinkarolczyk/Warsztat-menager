@@ -4942,21 +4942,37 @@ class SettingsPanel:
             command=lambda: run_patch(False),
         ).pack(side="left", padx=5, pady=5)
 
-        commits = patcher.get_commits()
+        try:
+            commits = patcher.get_commits()
+        except Exception as exc:
+            logger.warning("[SETTINGS][PATCH] get_commits failed: %s", exc)
+            commits = []
         print(f"[WM-DBG] available commits: {len(commits)}")
         roll_frame = ttk.Frame(frame)
         roll_frame.pack(fill="x", padx=5, pady=5)
         commit_var = tk.StringVar()
-        ttk.Combobox(
+        commit_combo = ttk.Combobox(
             roll_frame,
             textvariable=commit_var,
             values=commits,
-            state="readonly",
-        ).pack(side="left", fill="x", expand=True)
+            state="readonly" if commits else "disabled",
+        )
+        commit_combo.pack(side="left", fill="x", expand=True)
+        if not commits:
+            ttk.Label(
+                roll_frame,
+                text="Brak historii git / gałęzi Rozwiniecie w tym środowisku",
+                style="WM.Muted.TLabel",
+            ).pack(side="left", padx=(8, 0))
 
         def rollback() -> None:
             commit = commit_var.get()
             if not commit:
+                messagebox.showinfo(
+                    "Patche",
+                    "Brak dostępnych commitów do cofnięcia.",
+                    parent=frame,
+                )
                 return
             print(f"[WM-DBG] rollback to {commit}")
             patcher.rollback_to(commit)

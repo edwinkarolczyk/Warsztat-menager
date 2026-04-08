@@ -8,79 +8,9 @@ import tkinter as tk
 from tkinter import messagebox, ttk
 from typing import Any, Callable
 
-from config_manager import resolve_rel
 from dyspozycje_store import load_dyspozycje
 
-try:
-    from config_manager import get_config  # type: ignore
-except ImportError:  # pragma: no cover - fallback dla starszych wersji
-    def get_config():
-        try:
-            from config_manager import ConfigManager  # type: ignore
-
-            return ConfigManager().load()
-        except Exception:
-            return {}
-
-try:
-    from core.logika_zlecen import create_order  # type: ignore
-except Exception as _orders_import_error:  # pragma: no cover - optional feature
-    create_order = None  # type: ignore
-    print("[ORDERS][ERROR] Brak create_order:", _orders_import_error)
-
 from ui_dialogs_safe import error_box
-from utils_orders import ensure_orders_sample_if_empty, load_orders_rows_with_fallback
-
-
-def _emit_orders_updated(widget: tk.Misc) -> None:
-    try:
-        root = widget.winfo_toplevel()
-        root.event_generate("<<OrdersUpdated>>", when="tail")
-    except Exception:
-        pass
-
-
-def on_save_order(
-    master: tk.Misc, order_type: str, form_values: dict[str, Any]
-) -> None:
-    if not callable(create_order):
-        messagebox.showerror(
-            "Dyspozycje",
-            "Brak funkcji zapisu dyspozycji (create_order).",
-            parent=master,
-        )
-        return
-
-    try:
-        ok, result = create_order(order_type, form_values)
-    except Exception as exc:  # pragma: no cover - zabezpieczenie GUI
-        messagebox.showerror(
-            "Dyspozycje",
-            f"Nie udało się zapisać dyspozycji:\n{exc}",
-            parent=master,
-        )
-        return
-
-    if ok:
-        number = "(?)"
-        if isinstance(result, dict):
-            number = str(result.get("nr") or result.get("id") or "(?)")
-        messagebox.showinfo(
-            "Dyspozycje",
-            f"Dyspozycja zapisana: {number}",
-            parent=master,
-        )
-        _emit_orders_updated(master)
-        try:
-            master.destroy()
-        except Exception:
-            pass
-    else:
-        messagebox.showerror(
-            "Dyspozycje",
-            f"Nie zapisano dyspozycji:\n{result}",
-            parent=master,
-        )
 
 
 logger = logging.getLogger(__name__)
@@ -93,76 +23,6 @@ def _resolve_creator() -> Callable[..., tk.Toplevel] | None:
         return open_dyspozycje_creator
     except Exception:
         return None
-
-
-def _open_orders_panel():
-    """
-    Otwiera panel 'Dyspozycje' ZAWSZE.
-    Gdy plik pusty/niepoprawny – pokazuje pustą listę i informację,
-    bez crashy i bez file-dialogów.
-    """
-
-    try:
-        from start import CONFIG_MANAGER  # type: ignore
-
-        cfg = CONFIG_MANAGER.load() if hasattr(CONFIG_MANAGER, "load") else {}
-    except Exception:
-        cfg = {}
-
-    if not cfg:
-        try:
-            cfg = get_config()
-        except Exception:
-            logger.exception("[Zlecenia] Nie udało się uzyskać konfiguracji przez get_config().")
-            cfg = {}
-
-    rows, primary_path = load_orders_rows_with_fallback(cfg, resolve_rel)
-    had_rows = bool(rows)
-    rows = ensure_orders_sample_if_empty(rows, primary_path)
-
-    win = tk.Toplevel()
-    win.title("Dyspozycje")
-    win.geometry("960x560")
-
-    info = tk.StringVar()
-    if had_rows:
-        info.set(f"Załadowano {len(rows)} pozycji.")
-    else:
-        info.set(
-            "Brak Dyspozycji w konfiguracji – dodano przykładowe wpisy do zlecenia/zlecenia.json."
-        )
-    ttk.Label(win, textvariable=info).pack(fill="x", padx=8, pady=8)
-
-    tv = ttk.Treeview(
-        win,
-        columns=("id", "klient", "status", "data"),
-        show="headings",
-        height=20,
-    )
-    for column_id, width in (
-        ("id", 160),
-        ("klient", 360),
-        ("status", 160),
-        ("data", 200),
-    ):
-        tv.heading(column_id, text=column_id.upper())
-        tv.column(column_id, width=width, anchor="w")
-    for row in rows:
-        tv.insert(
-            "",
-            "end",
-            values=(
-                row.get("id", ""),
-                row.get("klient", ""),
-                row.get("status", ""),
-                row.get("data", ""),
-            ),
-        )
-    tv.pack(fill="both", expand=True, padx=8, pady=(0, 8))
-
-    ttk.Button(win, text="Zamknij", command=win.destroy).pack(side="right", padx=8, pady=8)
-    logger.info("[Dyspozycje] Panel otwarty; rekordów: %d; plik=%s", len(rows), primary_path)
-    return win
 
 
 def _load_orders_rows() -> list[dict]:
@@ -184,7 +44,7 @@ class _AfterGuard:
         try:
             token = self._widget.after(ms, callback)
         except Exception:  # pragma: no cover - brak w testach GUI
-            logger.exception("[ORD] after() failed")
+            logger.exception("[DYSP] after() failed")
             return None
         self._tokens.append(token)
         return token
