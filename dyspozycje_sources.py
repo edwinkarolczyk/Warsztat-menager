@@ -44,6 +44,15 @@ def _cfg() -> dict:
 
 
 def _root_path(*parts: str) -> str:
+    try:
+        from start import CONFIG_MANAGER  # type: ignore
+
+        if CONFIG_MANAGER is not None:
+            path_root = getattr(CONFIG_MANAGER, "path_root", None)
+            if callable(path_root):
+                return path_root(*parts)
+    except Exception:
+        pass
     if ConfigManager is not None:
         try:
             return ConfigManager().path_root(*parts)
@@ -53,12 +62,33 @@ def _root_path(*parts: str) -> str:
 
 
 def _data_path(*parts: str) -> str:
+    try:
+        from start import CONFIG_MANAGER  # type: ignore
+
+        if CONFIG_MANAGER is not None:
+            path_data = getattr(CONFIG_MANAGER, "path_data", None)
+            if callable(path_data):
+                return path_data(*parts)
+    except Exception:
+        pass
     if ConfigManager is not None:
         try:
             return ConfigManager().path_data(*parts)
         except Exception:
             pass
     return os.path.join("data", *parts)
+
+
+def _first_existing_path(*candidates: str | None) -> str | None:
+    for candidate in candidates:
+        if not candidate:
+            continue
+        try:
+            if os.path.exists(candidate):
+                return candidate
+        except Exception:
+            continue
+    return None
 
 
 def _resolve_rel_path(key: str, *extra: str) -> str | None:
@@ -83,12 +113,13 @@ def _resolve_rel_path(key: str, *extra: str) -> str | None:
 # NARZĘDZIA
 # =========================================================
 def load_tool_choices() -> List[Tuple[str, str]]:
-    tools_dir = (
-        _resolve_rel_path("tools.dir")
-        or _resolve_rel_path("tools_item_dir")
-        or _resolve_rel_path("tools_dir")
-        or _root_path("narzedzia")
-    )
+    tools_dir = _first_existing_path(
+        _root_path("narzedzia"),
+        _resolve_rel_path("tools.dir"),
+        _resolve_rel_path("tools_item_dir"),
+        _resolve_rel_path("tools_dir"),
+        _data_path("narzedzia"),
+    ) or _root_path("narzedzia")
     out = []
 
     try:
@@ -123,13 +154,25 @@ def load_tool_choices() -> List[Tuple[str, str]]:
 # MASZYNY
 # =========================================================
 def load_machine_choices() -> List[Tuple[str, str]]:
-    if not callable(get_machines_path):
+    cfg = _cfg()
+    machine_path = None
+
+    if callable(get_machines_path):
+        try:
+            machine_path = get_machines_path(cfg)
+        except Exception:
+            machine_path = None
+
+    path = _first_existing_path(
+        _root_path("maszyny", "maszyny.json"),
+        machine_path,
+        _resolve_rel_path("machines"),
+        _data_path("maszyny", "maszyny.json"),
+    )
+    if not path:
         return []
 
     try:
-        cfg = _cfg()
-        path = get_machines_path(cfg)
-
         with open(path, "r", encoding="utf-8") as f:
             data = json.load(f)
     except Exception:
