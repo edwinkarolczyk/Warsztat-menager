@@ -17,6 +17,15 @@ except Exception:  # pragma: no cover
 
 
 def _cfg() -> dict:
+    try:
+        from start import CONFIG_MANAGER  # type: ignore
+
+        if CONFIG_MANAGER is not None and hasattr(CONFIG_MANAGER, "load"):
+            cfg = CONFIG_MANAGER.load() or {}
+            if isinstance(cfg, dict):
+                return cfg
+    except Exception:
+        pass
     if callable(get_config):
         try:
             cfg = get_config() or {}
@@ -32,6 +41,15 @@ def _cfg() -> dict:
         except Exception:
             pass
     return {}
+
+
+def _root_path(*parts: str) -> str:
+    if ConfigManager is not None:
+        try:
+            return ConfigManager().path_root(*parts)
+        except Exception:
+            pass
+    return os.path.join(os.getcwd(), *parts)
 
 
 def _data_path(*parts: str) -> str:
@@ -53,9 +71,11 @@ def _resolve_rel_path(key: str, *extra: str) -> str | None:
         except Exception:
             pass
     if key in {"tools", "tools.dir", "tools_dir"}:
-        return _data_path("narzedzia", *extra)
+        return _root_path("narzedzia", *extra)
     if key in {"warehouse", "warehouse_stock"}:
-        return _data_path("magazyn", "magazyn.json")
+        return _root_path("magazyn", "magazyn.json")
+    if key in {"orders", "orders_dir"}:
+        return _root_path("zlecenia", *extra)
     return None
 
 
@@ -65,8 +85,9 @@ def _resolve_rel_path(key: str, *extra: str) -> str | None:
 def load_tool_choices() -> List[Tuple[str, str]]:
     tools_dir = (
         _resolve_rel_path("tools.dir")
+        or _resolve_rel_path("tools_item_dir")
         or _resolve_rel_path("tools_dir")
-        or _data_path("narzedzia")
+        or _root_path("narzedzia")
     )
     out = []
 
@@ -137,25 +158,77 @@ def load_machine_choices() -> List[Tuple[str, str]]:
 # MAGAZYN
 # =========================================================
 def load_magazyn_choices() -> List[Tuple[str, str]]:
-    path = _data_path("magazyn", "katalog.json")
+    out: List[Tuple[str, str]] = []
+    seen: set[str] = set()
 
-    try:
-        with open(path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-    except Exception:
-        return []
+    candidates = [
+        _resolve_rel_path("warehouse_stock"),
+        _resolve_rel_path("warehouse"),
+        _root_path("magazyn", "magazyn.json"),
+        _root_path("magazyn", "katalog.json"),
+        _data_path("magazyn", "katalog.json"),
+    ]
 
-    out = []
+    for path in [p for p in candidates if p]:
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        except Exception:
+            continue
 
-    if isinstance(data, dict):
-        for key, row in data.items():
-            code = str(key).strip()
-            name = ""
-            if isinstance(row, dict):
-                name = str(row.get("nazwa") or "").strip()
+        rows = []
+        if isinstance(data, dict):
+            if isinstance(data.get("items"), list):
+                rows = data.get("items") or []
+            elif isinstance(data.get("pozycje"), list):
+                rows = data.get("pozycje") or []
+            elif isinstance(data.get("magazyn"), list):
+                rows = data.get("magazyn") or []
+            else:
+                for key, row in data.items():
+                    if isinstance(row, dict):
+                        code = str(
+                            row.get("id")
+                            or row.get("kod")
+                            or row.get("nr")
+                            or key
+                        ).strip()
+                        if not code or code.lower() in seen:
+                            continue
+                        seen.add(code.lower())
+                        name = str(row.get("nazwa") or row.get("name") or "").strip()
+                        label = f"{code} - {name}" if name else code
+                        out.append((code, label))
+                if out:
+                    return out
+                continue
+        elif isinstance(data, list):
+            rows = data
 
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            code = str(
+                row.get("id")
+                or row.get("kod")
+                or row.get("nr")
+                or row.get("symbol")
+                or ""
+            ).strip()
+            if not code or code.lower() in seen:
+                continue
+            seen.add(code.lower())
+            name = str(
+                row.get("nazwa")
+                or row.get("name")
+                or row.get("opis")
+                or ""
+            ).strip()
             label = f"{code} - {name}" if name else code
             out.append((code, label))
+
+        if out:
+            return out
 
     return out
 
@@ -168,6 +241,8 @@ def load_zlecenie_wykonania_choices() -> List[Tuple[str, str]]:
     seen: set[str] = set()
 
     candidates = [
+        ("produkt", _root_path("produkty")),
+        ("polprodukt", _root_path("polprodukty")),
         ("produkt", _data_path("produkty")),
         ("polprodukt", _data_path("polprodukty")),
     ]
@@ -191,9 +266,20 @@ def load_zlecenie_wykonania_choices() -> List[Tuple[str, str]]:
             out.append((f"{prefix}:{code}", label))
 
     # katalog magazynowy jako "elementy / pozycje magazynowe"
+    katalog_candidates = [
+        _root_path("magazyn", "katalog.json"),
+        _data_path("magazyn", "katalog.json"),
+    ]
+    katalog = {}
     try:
-        with open(_data_path("magazyn", "katalog.json"), "r", encoding="utf-8") as f:
-            katalog = json.load(f)
+        for katalog_path in katalog_candidates:
+            try:
+                with open(katalog_path, "r", encoding="utf-8") as f:
+                    katalog = json.load(f)
+                if katalog:
+                    break
+            except Exception:
+                continue
     except Exception:
         katalog = {}
 
