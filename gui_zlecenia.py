@@ -241,6 +241,8 @@ class ZleceniaView(ttk.Frame):
     # endregion ---------------------------------------------------------
 
     def _bind_orders_event(self) -> None:
+        # kompatybilność wsteczna – jeśli gdzieś jeszcze leci OrdersUpdated
+        self.bind("<<OrdersUpdated>>", lambda _event: self._reload_orders(), add=True)
         try:
             root = self.winfo_toplevel()
         except Exception:
