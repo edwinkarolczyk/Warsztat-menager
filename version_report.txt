@@ -1,0 +1,305 @@
+[ADD] __version__.py (+ version 1.0) line 1
+[UPDATE] arch/start_full_1_4_3.py (# Wersja: 1.4.3 -> # version: 1.0) line 1
+[ADD] audit_settings_schema.py (+ version 1.0) line 1
+[UPDATE] audyt_mw.py (# Wersja: 0.9.0 -> # version: 1.0) line 2
+[ADD] backend/audit/wm_audit_runtime.py (+ version 1.0) line 1
+[ADD] backend/bootstrap_root.py (+ version 1.0) line 1
+[ADD] backend/updater.py (+ version 1.0) line 1
+[ADD] backup.py (+ version 1.0) line 1
+[ADD] bom.py (+ version 1.0) line 1
+[ADD] config/paths.py (+ version 1.0) line 1
+[ADD] config_manager.py (+ version 1.0) line 1
+[ADD] core/__init__.py (+ version 1.0) line 1
+[ADD] core/bootstrap.py (+ version 1.0) line 1
+[ADD] core/crash_handler.py (+ version 1.0) line 1
+[ADD] core/inventory_manager.py (+ version 1.0) line 1
+[ADD] core/jarvis_engine.py (+ version 1.0) line 1
+[ADD] core/jarvis_prompt_engine.py (+ version 1.0) line 1
+[ADD] core/logging_config.py (+ version 1.0) line 1
+[ADD] core/logika_zlecen.py (+ version 1.0) line 1
+[ADD] core/machines_loader.py (+ version 1.0) line 1
+[ADD] core/modules_manifest.py (+ version 1.0) line 1
+[ADD] core/normalizers.py (+ version 1.0) line 1
+[ADD] core/orders_storage.py (+ version 1.0) line 1
+[ADD] core/path_utils.py (+ version 1.0) line 1
+[ADD] core/paths_compat.py (+ version 1.0) line 1
+[ADD] core/permissions.py (+ version 1.0) line 1
+[ADD] core/settings_manager.py (+ version 1.0) line 1
+[ADD] core/theme.py (+ version 1.0) line 1
+[ADD] core/ui_notebook_autobind.py (+ version 1.0) line 1
+[ADD] core/window_manager.py (+ version 1.0) line 1
+[ADD] core/zlecenia_loader.py (+ version 1.0) line 1
+[UPDATE] dashboard_demo_fs.py (# Version: 1.2.1 -> # version: 1.0) line 2
+[ADD] dirty_guard.py (+ version 1.0) line 1
+[ADD] domain/__init__.py (+ version 1.0) line 1
+[ADD] domain/bom/io.py (+ version 1.0) line 1
+[ADD] domain/magazyn.py (+ version 1.0) line 1
+[ADD] domain/orders.py (+ version 1.0) line 1
+[ADD] domain/tools/__init__.py (+ version 1.0) line 1
+[ADD] domain/tools/manager.py (+ version 1.0) line 1
+[UPDATE] grafiki/__init__.py (# Wersja pliku: 1.0.0 -> # version: 1.0) line 1
+[UPDATE] grafiki/shifts_schedule.py (# Wersja pliku: 1.0.0 -> # version: 1.0) line 1
+[ADD] gui/assign_dialog.py (+ version 1.0) line 1
+[ADD] gui/settings_action_handlers.py (+ version 1.0) line 1
+[ADD] gui/widgets_user_footer.py (+ version 1.0) line 1
+[ADD] gui_changelog.py (+ version 1.0) line 1
+[ADD] gui_jarvis.py (+ version 1.0) line 1
+[ADD] gui_jarvis_panel.py (+ version 1.0) line 1
+[UPDATE] gui_logowanie.py (# Wersja pliku: 1.4.12.1 -> # version: 1.0) line 2
+[UPDATE] gui_magazyn.py (# Wersja pliku: 1.7.0 -> # version: 1.0) line 2
+[UPDATE] gui_magazyn_add.py (# Wersja pliku: 1.2.0 -> # version: 1.0) line 2
+[ADD] gui_magazyn_autobind.py (+ version 1.0) line 1
+[ADD] gui_magazyn_bom.py (+ version 1.0) line 1
+[ADD] gui_magazyn_bridge.py (+ version 1.0) line 1
+[UPDATE] gui_magazyn_edit.py (# Wersja: 1.0.1 -> # version: 1.0) line 2
+[ADD] gui_magazyn_kreator_bind.py (+ version 1.0) line 1
+[ADD] gui_magazyn_pz.py (+ version 1.0) line 1
+[UPDATE] gui_magazyn_rezerwacje.py (# Wersja: 1.0.0 -> # version: 1.0) line 4
+[ADD] gui_maszyny.py (+ version 1.0) line 1
+[ADD] gui_maszyny_view.py (+ version 1.0) line 1
+[UPDATE] gui_narzedzia.py (# Wersja pliku: 1.5.31 -> # version: 1.0) line 2
+[ADD] gui_narzedzia_qr.py (+ version 1.0) line 1
+[ADD] gui_notifications.py (+ version 1.0) line 1
+[ADD] gui_orders.py (+ version 1.0) line 1
+[UPDATE] gui_panel.py (# Wersja pliku: 1.6.17 -> # version: 1.0) line 3
+[UPDATE] gui_products.py (# Wersja pliku: 1.0.0 -> # version: 1.0) line 1
+[ADD] gui_profile.py (+ version 1.0) line 1
+[UPDATE] gui_settings.py (# Wersja pliku: 1.7.1 -> # version: 1.0) line 1
+[ADD] gui_settings_users_tab.py (+ version 1.0) line 1
+[UPDATE] gui_tool_editor.py (# Wersja pliku: 1.2.0 -> # version: 1.0) line 2
+[ADD] gui_tools.py (+ version 1.0) line 1
+[ADD] gui_tools_config.py (+ version 1.0) line 1
+[ADD] gui_tools_config_advanced.py (+ version 1.0) line 1
+[ADD] gui_uzytkownicy.py (+ version 1.0) line 1
+[ADD] gui_zlecenia.py (+ version 1.0) line 1
+[ADD] gui_zlecenia_creator.py (+ version 1.0) line 1
+[ADD] gui_zlecenia_detail.py (+ version 1.0) line 1
+[ADD] io_utils.py (+ version 1.0) line 1
+[ADD] jarvis_core.py (+ version 1.0) line 1
+[ADD] jarvis_dispatch.py (+ version 1.0) line 1
+[ADD] kreator_sprawdzenia.py (+ version 1.0) line 2
+[UPDATE] kreator_sprawdzenia_plikow.py (# Wersja: 1.0 -> # version: 1.0) line 3
+[UPDATE] layout_prosty.py (# Wersja: 1.4.4 -> # version: 1.0) line 2
+[ADD] leaves.py (+ version 1.0) line 1
+[UPDATE] logger.py (# Wersja pliku: 1.0.3 -> # version: 1.0) line 2
+[ADD] logika_bom.py (+ version 1.0) line 1
+[UPDATE] logika_magazyn.py (# Wersja pliku: 1.1.0 -> # version: 1.0) line 2
+[ADD] logika_zadan.py (+ version 1.0) line 1
+[ADD] logika_zakupy.py (+ version 1.0) line 1
+[ADD] magazyn_catalog.py (+ version 1.0) line 1
+[ADD] magazyn_io.py (+ version 1.0) line 1
+[ADD] magazyn_io_pz.py (+ version 1.0) line 1
+[UPDATE] magazyn_slowniki.py (# Wersja: 1.0.0 -> # version: 1.0) line 4
+[ADD] main.py (+ version 1.0) line 1
+[ADD] maszyny_logika.py (+ version 1.0) line 1
+[ADD] migrate_bom_to_polprodukty.py (+ version 1.0) line 1
+[ADD] migrate_profiles_config.py (+ version 1.0) line 1
+[ADD] migrations.py (+ version 1.0) line 1
+[ADD] narzedzia_history.py (+ version 1.0) line 1
+[ADD] narzedzia_ui/__init__.py (+ version 1.0) line 1
+[ADD] narzedzia_ui/detail_view.py (+ version 1.0) line 1
+[ADD] narzedzia_ui/list_panel.py (+ version 1.0) line 1
+[ADD] narzedzia_ui/state.py (+ version 1.0) line 1
+[ADD] narzedzia_ui/state.py (+ version 1.0) line 1
+[ADD] panel_jarvis.py (+ version 1.0) line 1
+[ADD] presence.py (+ version 1.0) line 1
+[ADD] presence_watcher.py (+ version 1.0) line 1
+[ADD] profile_tasks.py (+ version 1.0) line 1
+[ADD] profile_utils.py (+ version 1.0) line 1
+[ADD] profiles_store.py (+ version 1.0) line 1
+[ADD] rc1_audit_hook.py (+ version 1.0) line 1
+[ADD] rc1_audit_plus.py (+ version 1.0) line 1
+[ADD] rc1_data_bootstrap.py (+ version 1.0) line 1
+[ADD] rc1_hotfix_actions.py (+ version 1.0) line 1
+[ADD] rc1_magazyn_fix.py (+ version 1.0) line 1
+[ADD] rc1_profiles_bootstrap.py (+ version 1.0) line 1
+[ADD] rc1_theme_fix.py (+ version 1.0) line 1
+[ADD] runtime_paths.py (+ version 1.0) line 1
+[ADD] scripts/check_json_format.py (+ version 1.0) line 2
+[ADD] scripts/gen_placeholder.py (+ version 1.0) line 1
+[ADD] scripts/wm_rc1_pack.py (+ version 1.0) line 2
+[ADD] services/activity_service.py (+ version 1.0) line 1
+[ADD] services/messages_service.py (+ version 1.0) line 1
+[ADD] services/profile_service.py (+ version 1.0) line 1
+[UPDATE] start.py (# Wersja pliku: 1.5.1 -> # version: 1.0) line 2
+[ADD] test_config_manager.py (+ version 1.0) line 1
+[ADD] test_first_login_brygadzisty.py (+ version 1.0) line 1
+[ADD] test_gui_logowanie.py (+ version 1.0) line 1
+[ADD] test_gui_narzedzia_config.py (+ version 1.0) line 1
+[ADD] test_gui_narzedzia_enter.py (+ version 1.0) line 1
+[ADD] test_gui_narzedzia_files.py (+ version 1.0) line 1
+[ADD] test_gui_narzedzia_qr.py (+ version 1.0) line 1
+[ADD] test_gui_narzedzia_tasks.py (+ version 1.0) line 1
+[ADD] test_gui_profile_roles.py (+ version 1.0) line 1
+[ADD] test_gui_profile_smoke.py (+ version 1.0) line 1
+[ADD] test_jarvis_notify_gui.py (+ version 1.0) line 1
+[ADD] test_kreator_gui.py (+ version 1.0) line 1
+[UPDATE] test_kreator_wersji.py (# Wersja pliku: 0.2.0 -> # version: 1.0) line 2
+[ADD] test_logika_magazyn.py (+ version 1.0) line 1
+[ADD] test_logika_zlecenia_i_maszyny.py (+ version 1.0) line 1
+[ADD] test_narzedzia_history.py (+ version 1.0) line 1
+[ADD] test_paths_root.py (+ version 1.0) line 1
+[ADD] test_presence_watcher.py (+ version 1.0) line 1
+[ADD] test_priority_order.py (+ version 1.0) line 1
+[ADD] test_profile_utils_regression.py (+ version 1.0) line 1
+[ADD] test_shifts_schedule_weekend.py (+ version 1.0) line 1
+[ADD] test_start_user_activity.py (+ version 1.0) line 1
+[ADD] test_startup_error.py (+ version 1.0) line 1
+[ADD] test_tool_media_io.py (+ version 1.0) line 1
+[ADD] test_zlecenia_utils.py (+ version 1.0) line 1
+[ADD] tests/smoke_check.py (+ version 1.0) line 1
+[ADD] tests/smoke_settings_window.py (+ version 1.0) line 1
+[ADD] tests/test_audit_config.py (+ version 1.0) line 1
+[ADD] tests/test_backend_audit_runtime.py (+ version 1.0) line 1
+[ADD] tests/test_bom_validation.py (+ version 1.0) line 1
+[ADD] tests/test_config_helpers.py (+ version 1.0) line 1
+[ADD] tests/test_config_manager.py (+ version 1.0) line 1
+[ADD] tests/test_dirty_guard.py (+ version 1.0) line 1
+[ADD] tests/test_domain_orders.py (+ version 1.0) line 1
+[ADD] tests/test_dxf_preview.py (+ version 1.0) line 1
+[ADD] tests/test_dyspo_settings_schema.py (+ version 1.0) line 1
+[ADD] tests/test_gui_magazyn_add.py (+ version 1.0) line 1
+[ADD] tests/test_gui_magazyn_basic.py (+ version 1.0) line 1
+[ADD] tests/test_gui_magazyn_bom_ops.py (+ version 1.0) line 1
+[ADD] tests/test_gui_magazyn_pz.py (+ version 1.0) line 1
+[ADD] tests/test_gui_narzedzia_missing_data.py (+ version 1.0) line 1
+[ADD] tests/test_gui_narzedzia_numbering.py (+ version 1.0) line 1
+[ADD] tests/test_gui_narzedzia_task_order.py (+ version 1.0) line 1
+[ADD] tests/test_gui_narzedzia_tasks_mixed.py (+ version 1.0) line 1
+[ADD] tests/test_gui_panel_disabled_modules.py (+ version 1.0) line 1
+[ADD] tests/test_gui_panel_logout_timer.py (+ version 1.0) line 1
+[ADD] tests/test_gui_panel_permissions.py (+ version 1.0) line 1
+[ADD] tests/test_gui_settings_users_tab.py (+ version 1.0) line 1
+[ADD] tests/test_gui_tools_validation.py (+ version 1.0) line 1
+[ADD] tests/test_import_tools_from_excel_defaults.py (+ version 1.0) line 1
+[ADD] tests/test_inventory_bridge.py (+ version 1.0) line 1
+[ADD] tests/test_inventory_smoke.py (+ version 1.0) line 1
+[ADD] tests/test_jarvis_engine_runtime.py (+ version 1.0) line 1
+[ADD] tests/test_jarvis_ui.py (+ version 1.0) line 1
+[ADD] tests/test_lines_from_text.py (+ version 1.0) line 1
+[ADD] tests/test_logika_zadan_api.py (+ version 1.0) line 1
+[ADD] tests/test_logika_zadan_tasks.py (+ version 1.0) line 1
+[ADD] tests/test_magazyn_catalog.py (+ version 1.0) line 1
+[ADD] tests/test_magazyn_io_comment_alias.py (+ version 1.0) line 1
+[ADD] tests/test_magazyn_io_core.py (+ version 1.0) line 1
+[ADD] tests/test_magazyn_io_pz.py (+ version 1.0) line 1
+[ADD] tests/test_moduly_manifest.py (+ version 1.0) line 1
+[ADD] tests/test_patcher.py (+ version 1.0) line 1
+[ADD] tests/test_produkty_bom_io.py (+ version 1.0) line 1
+[ADD] tests/test_profile_disabled_modules_ui.py (+ version 1.0) line 1
+[ADD] tests/test_profile_utils_manifest.py (+ version 1.0) line 1
+[ADD] tests/test_profiles_settings_gui.py (+ version 1.0) line 1
+[ADD] tests/test_settings_gui.py (+ version 1.0) line 1
+[ADD] tests/test_settings_manager.py (+ version 1.0) line 1
+[ADD] tests/test_settings_root.py (+ version 1.0) line 1
+[ADD] tests/test_settings_tools_config_refresh.py (+ version 1.0) line 1
+[ADD] tests/test_settings_window.py (+ version 1.0) line 1
+[ADD] tests/test_shifts_schedule.py (+ version 1.0) line 1
+[ADD] tests/test_shifts_schedule_anchor.py (+ version 1.0) line 1
+[ADD] tests/test_shifts_schedule_default_override.py (+ version 1.0) line 1
+[ADD] tests/test_start_auto_login.py (+ version 1.0) line 1
+[ADD] tests/test_tool_data_bridge.py (+ version 1.0) line 1
+[ADD] tests/test_tool_logic.py (+ version 1.0) line 1
+[ADD] tests/test_tools_autocheck.py (+ version 1.0) line 1
+[ADD] tests/test_tools_history.py (+ version 1.0) line 1
+[ADD] tests/test_tools_templates.py (+ version 1.0) line 1
+[ADD] tests/test_tools_types_statuses.py (+ version 1.0) line 1
+[ADD] tests/test_tools_wrappers.py (+ version 1.0) line 1
+[ADD] tests/test_ui_hover.py (+ version 1.0) line 1
+[ADD] tests/test_update_logging.py (+ version 1.0) line 1
+[ADD] tests/test_updates_push_branch.py (+ version 1.0) line 1
+[ADD] tests/test_utils_json.py (+ version 1.0) line 1
+[ADD] tests/test_utils_tools_loader.py (+ version 1.0) line 1
+[ADD] tests/test_widok_hali_machines_view.py (+ version 1.0) line 1
+[ADD] tool_data_bridge.py (+ version 1.0) line 1
+[ADD] tools/__init__.py (+ version 1.0) line 1
+[ADD] tools/audit_machines_diff.py (+ version 1.0) line 2
+[ADD] tools/audit_settings_values.py (+ version 1.0) line 1
+[ADD] tools/check_machines_file.py (+ version 1.0) line 2
+[ADD] tools/find_audit_limits.py (+ version 1.0) line 2
+[ADD] tools/find_dialog_calls.py (+ version 1.0) line 2
+[ADD] tools/find_hardcoded_paths.py (+ version 1.0) line 1
+[ADD] tools/fix_settings_schema_rooms.py (+ version 1.0) line 1
+[ADD] tools/importers/build_tools_index.py (+ version 1.0) line 2
+[ADD] tools/importers/import_tools_from_excel.py (+ version 1.0) line 1
+[ADD] tools/importers/tools_from_excel.py (+ version 1.0) line 2
+[ADD] tools/inspect_machines.py (+ version 1.0) line 1
+[ADD] tools/list_branch_changes.py (+ version 1.0) line 2
+[ADD] tools/merge_machines_json.py (+ version 1.0) line 2
+[ADD] tools/patcher.py (+ version 1.0) line 1
+[UPDATE] tools/repair_json.py (# Wersja: 1.0.0 -> # version: 1.0) line 2
+[ADD] tools/roadmap_apply_updates.py (+ version 1.0) line 2
+[ADD] tools/scan_legacy_paths.py (+ version 1.0) line 1
+[ADD] tools/scan_missing_root.py (+ version 1.0) line 1
+[ADD] tools/scan_settings_duplicates.py (+ version 1.0) line 1
+[ADD] tools/seed_wm_data.py (+ version 1.0) line 1
+[UPDATE] tools/seed_wm_maszyny_przeglady.py (# Wersja: 1.0.1 (pure-Python, bez pandas) -> # version: 1.0) line 2
+[ADD] tools/update_roadmap_from_git.py (+ version 1.0) line 1
+[ADD] tools/validators/profiles_validator.py (+ version 1.0) line 2
+[ADD] tools/validators/settings_paths_validator.py (+ version 1.0) line 2
+[ADD] tools/validators/tools_schema_validator.py (+ version 1.0) line 2
+[ADD] tools/wm_sync.py (+ version 1.0) line 2
+[ADD] tools_autocheck.py (+ version 1.0) line 1
+[ADD] tools_config_loader.py (+ version 1.0) line 1
+[ADD] tools_templates.py (+ version 1.0) line 1
+[ADD] ui_dialogs_safe.py (+ version 1.0) line 1
+[ADD] ui_hover.py (+ version 1.0) line 1
+[ADD] ui_theme.py (+ version 1.0) line 1
+[ADD] ui_theme_guard.py (+ version 1.0) line 1
+[ADD] ui_utils.py (+ version 1.0) line 1
+[UPDATE] updater.py (# Wersja pliku: 1.2.3 -> # version: 1.0) line 1
+[ADD] updates_utils.py (+ version 1.0) line 1
+[UPDATE] ustawienia_magazyn.py (# Wersja: 1.2.0 -> # version: 1.0) line 2
+[UPDATE] ustawienia_produkty_bom.py (# Wersja pliku: 1.0.0 -> # version: 1.0) line 2
+[UPDATE] ustawienia_systemu.py (# Wersja pliku: 1.4.8 -> # version: 1.0) line 2
+[ADD] ustawienia_uzytkownicy.py (+ version 1.0) line 1
+[ADD] utils/__init__.py (+ version 1.0) line 1
+[ADD] utils/dirty_guard.py (+ version 1.0) line 1
+[ADD] utils/error_dialogs.py (+ version 1.0) line 1
+[ADD] utils/gui_helpers.py (+ version 1.0) line 1
+[ADD] utils/json_io.py (+ version 1.0) line 1
+[UPDATE] utils/moduly.py (# Wersja pliku: 1.0.0 (2025-09-15) -> # version: 1.0) line 2
+[ADD] utils/path_utils.py (+ version 1.0) line 1
+[ADD] utils/tool_mode_helpers.py (+ version 1.0) line 1
+[ADD] utils_json.py (+ version 1.0) line 1
+[ADD] utils_maszyny.py (+ version 1.0) line 1
+[ADD] utils_orders.py (+ version 1.0) line 1
+[ADD] utils_paths.py (+ version 1.0) line 1
+[ADD] utils_tools.py (+ version 1.0) line 1
+[ADD] widok_hali/__init__.py (+ version 1.0) line 1
+[ADD] widok_hali/a_star.py (+ version 1.0) line 1
+[ADD] widok_hali/animator.py (+ version 1.0) line 1
+[ADD] widok_hali/const.py (+ version 1.0) line 1
+[ADD] widok_hali/controller.py (+ version 1.0) line 1
+[ADD] widok_hali/machines_view.py (+ version 1.0) line 1
+[ADD] widok_hali/models.py (+ version 1.0) line 1
+[ADD] widok_hali/renderer.py (+ version 1.0) line 1
+[ADD] widok_hali/storage.py (+ version 1.0) line 1
+[ADD] wm/__init__.py (+ version 1.0) line 1
+[ADD] wm/dyspo_wizard/__init__.py (+ version 1.0) line 1
+[ADD] wm/dyspo_wizard/constants.py (+ version 1.0) line 1
+[ADD] wm/dyspo_wizard/steps_dm.py (+ version 1.0) line 1
+[ADD] wm/dyspo_wizard/steps_dn.py (+ version 1.0) line 1
+[ADD] wm/dyspo_wizard/steps_dw.py (+ version 1.0) line 1
+[ADD] wm/dyspo_wizard/steps_dz.py (+ version 1.0) line 1
+[ADD] wm/dyspo_wizard/validators.py (+ version 1.0) line 1
+[ADD] wm/dyspo_wizard/wizard.py (+ version 1.0) line 1
+[ADD] wm/gui/__init__.py (+ version 1.0) line 1
+[ADD] wm/gui/i18n.py (+ version 1.0) line 1
+[ADD] wm/gui/settings_window.py (+ version 1.0) line 1
+[ADD] wm/gui/shortcuts.py (+ version 1.0) line 1
+[ADD] wm/settings/__init__.py (+ version 1.0) line 1
+[ADD] wm/settings/migrations/2025_10_24_dyspo_alias_keys.py (+ version 1.0) line 1
+[ADD] wm/settings/tabs/__init__.py (+ version 1.0) line 1
+[ADD] wm/settings/tabs/dyspo_tab.py (+ version 1.0) line 1
+[ADD] wm/settings/util.py (+ version 1.0) line 1
+[ADD] wm_access.py (+ version 1.0) line 1
+[ADD] wm_audit_runtime.py (+ version 1.0) line 1
+[ADD] wm_log.py (+ version 1.0) line 1
+[UPDATE] wm_theme.py (# Wersja pliku: 1.0.0 -> # version: 1.0) line 1
+[ADD] wm_tools_helpers.py (+ version 1.0) line 1
+[ADD] wymagane_pliki_version_check.py (+ version 1.0) line 1
+[ADD] zadania_assign_io.py (+ version 1.0) line 1
+[UPDATE] zlecenia_logika.py (# VERSION: 1.1.5 -> # version: 1.0) line 3
+[ADD] zlecenia_utils.py (+ version 1.0) line 1
+count 304

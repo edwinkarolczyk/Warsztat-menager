@@ -1,0 +1,50 @@
+config.defaults.json:61:  "jarvis": {
+core/jarvis_engine.py:18:    from core.jarvis_prompt_engine import DEFAULT_MODEL, summarize_wm_data
+core/jarvis_engine.py:1023:    filename = f"jarvis_{timestamp:%Y%m%d_%H%M%S}.txt"
+core/jarvis_engine.py:1081:        allow_flag = _read_bool(cfg, "jarvis.allow_ai", True)
+core/jarvis_engine.py:1153:        value = cfg.get("jarvis.auto_interval_sec", 0)
+core/jarvis_engine.py:1186:        candidate = cfg.get("jarvis.model", DEFAULT_MODEL)
+core/jarvis_engine.py:1212:                "core.jarvis_engine",
+core/jarvis_engine.py:1222:                "core.jarvis_engine",
+core/jarvis_engine.py:1231:    enabled = _read_bool(cfg, "jarvis.enabled", True)
+core/jarvis_engine.py:1234:            wm_info("core.jarvis_engine", "Automatyczna analiza Jarvisa wyłączona w konfiguracji.")
+core/jarvis_engine.py:1244:    allow_ai = _read_bool(cfg, "jarvis.allow_ai", True)
+core/jarvis_engine.py:1248:                "core.jarvis_engine",
+core/jarvis_engine.py:1258:            "core.jarvis_engine",
+core/jarvis_engine.py:1265:        wm_err("core.jarvis_engine", "Błąd podczas automatycznej analizy Jarvisa.", exc=exc)
+core/jarvis_engine.py:1271:def run_jarvis_background() -> None:
+core/jarvis_engine.py:1285:def stop_jarvis() -> None:
+core/jarvis_engine.py:1303:    "run_jarvis_background",
+core/jarvis_engine.py:1304:    "stop_jarvis",
+gui_jarvis.py:4:from core.jarvis_prompt_engine import summarize_wm_data
+gui_jarvis.py:33:            command=self._run_jarvis,
+gui_jarvis.py:44:    def _run_jarvis(self):
+gui_jarvis_panel.py:16:from core.jarvis_engine import JarvisReport, get_notifications, run_analysis_report
+gui_jarvis_panel.py:47:            interval_sec = ConfigManager().get("jarvis.auto_interval_sec", 900)
+gui_jarvis_panel.py:70:            return bool(ConfigManager().get("jarvis.allow_ai", True))
+gui_jarvis_panel.py:79:            value = ConfigManager().get("jarvis.model", "gpt-3.5-turbo")
+gui_jarvis_panel.py:374:        default_name = f"jarvis-{datetime.now():%Y%m%d-%H%M%S}.txt"
+gui_jarvis_panel.py:432:            cfg.set("jarvis.model", new_model)
+gui_panel.py:33:from profile_utils import ADMIN_ROLE_NAMES, SIDEBAR_MODULES, can_access_jarvis
+gui_panel.py:265:    from gui_jarvis_panel import JarvisPanel as _JarvisPanel
+gui_panel.py:277:def panel_jarvis(root, frame, login=None, rola=None):
+gui_panel.py:776:            elif key == "jarvis":
+gui_panel.py:777:                if not can_access_jarvis(profile):
+gui_panel.py:782:                    command=lambda f=panel_jarvis, l=label: otworz_panel(f, l),
+gui_panel.py:790:                    start_panel = panel_jarvis
+profile_utils.py:156:def can_access_jarvis(user) -> bool:
+profile_utils.py:162:        roles = ConfigManager().get("jarvis.role_access", [])
+profile_utils.py:453:    ("jarvis", "Jarvis"),
+profile_utils.py:664:    "can_access_jarvis",
+start.py:757:    jarvis_stop_fn = None
+start.py:759:        from core.jarvis_engine import run_jarvis_background, stop_jarvis as _stop_jarvis
+start.py:762:        cfg_for_jarvis = ConfigManager()
+start.py:768:        jarvis_stop_fn = _stop_jarvis
+start.py:769:        if cfg_for_jarvis.get("jarvis.enabled", False) and active_login:
+start.py:770:            run_jarvis_background()
+start.py:807:                if jarvis_stop_fn:
+start.py:808:                    jarvis_stop_fn()
+start.py:863:        if jarvis_stop_fn:
+start.py:865:                jarvis_stop_fn()
+start_jarvis.bat:11:%PYTHON% jarvis_engine.py
+tests/test_jarvis_engine_runtime.py:3:from core.jarvis_engine import anonymize_for_ai, local_diagnostics, run_analysis_report

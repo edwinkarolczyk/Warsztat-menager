@@ -1,0 +1,85 @@
+{
+  "numer": "507",
+  "nazwa": "Scinanie katownik regal",
+  "typ": "Postępowe",
+  "status": "do ostrzenia",
+  "opis": "Scinanie katownik regal",
+  "pracownik": "",
+  "zadania": [
+    {
+      "tytul": "frezowanie belek",
+      "done": false,
+      "by": "",
+      "ts_done": "",
+      "assigned_to": null,
+      "source": "own"
+    },
+    {
+      "tytul": "ostrzenie stempla",
+      "done": false,
+      "by": "",
+      "ts_done": "",
+      "assigned_to": null,
+      "source": "own"
+    },
+    {
+      "tytul": "regeneracja matrycy",
+      "done": true,
+      "by": "edwin",
+      "ts_done": "2025-08-25T07:53:00",
+      "assigned_to": null,
+      "source": "own"
+    },
+    {
+      "tytul": "wymiana sprężyn",
+      "done": false,
+      "by": "",
+      "ts_done": "",
+      "assigned_to": null,
+      "source": "own"
+    },
+    {
+      "tytul": "czyszczenie",
+      "done": true,
+      "by": "edwin",
+      "ts_done": "2025-08-25T07:53:00",
+      "assigned_to": null,
+      "source": "own"
+    },
+    {
+      "tytul": "ostrzenie",
+      "done": true,
+      "by": "edwin",
+      "ts_done": "2025-08-25T07:53:00",
+      "assigned_to": null,
+      "source": "own"
+    },
+    {
+      "tytul": "wymiana rolek/prowadników",
+      "done": false,
+      "by": "",
+      "ts_done": "",
+      "assigned_to": null,
+      "source": "own"
+    },
+    {
+      "tytul": "regeneracja",
+      "done": false,
+      "by": "",
+      "ts_done": "",
+      "assigned_to": null,
+      "source": "own"
+    },
+    {
+      "tytul": "kontrola luzów",
+      "done": false,
+      "by": "",
+      "ts_done": "",
+      "assigned_to": null,
+      "source": "own"
+    }
+  ],
+  "data_dodania": "2025-08-13T13:11:00",
+  "tryb": "STARE",
+  "interwencje": []
+}

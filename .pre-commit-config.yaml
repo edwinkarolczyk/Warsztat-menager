@@ -1,0 +1,23 @@
+repos:
+  - repo: local
+    hooks:
+      - id: forbid-legacy-paths
+        name: forbid legacy path literals
+        language: system
+        entry: python -c "import pathlib,re,sys;pattern=re.compile(r'(data/|\\\\data\\\\|backup_wersji|\\\\logs\\\\|assets/|\\\\assets\\\\|profiles\\.json|zadania_narzedzia\\.json)');ok=True
+for path in sys.argv[1:]:
+    p=pathlib.Path(path)
+    if p.suffix.lower()=='.md' or 'docs' in p.parts or 'tests' in p.parts:
+        continue
+    try:
+        text=p.read_text(encoding='utf-8', errors='ignore')
+    except Exception:
+        continue
+    if pattern.search(text):
+        print(f"{path}: forbidden legacy path reference")
+        ok=False
+if not ok:
+    sys.exit(1)"
+        files: '^(?!tests/|docs/).*'
+        pass_filenames: true
+        types: [text]

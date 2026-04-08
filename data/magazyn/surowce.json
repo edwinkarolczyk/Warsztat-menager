@@ -1,0 +1,42 @@
+[
+  {
+    "kod": "SR001",
+    "nazwa": "Blacha stalowa 2mm",
+    "rodzaj": "blacha",
+    "rozmiar": "100x200",
+    "dlugosc": 200,
+    "jednostka": "mb",
+    "stan": 100,
+    "prog_alertu": 10
+  },
+  {
+    "kod": "SR002",
+    "nazwa": "Pręt aluminiowy Ø10mm",
+    "rodzaj": "pret",
+    "rozmiar": "Ø10mm",
+    "dlugosc": 600,
+    "jednostka": "mb",
+    "stan": 50,
+    "prog_alertu": 5
+  },
+  {
+    "kod": "SR003",
+    "nazwa": "Rura stalowa Ø30mm",
+    "rodzaj": "rura",
+    "rozmiar": "Ø30mm",
+    "dlugosc": 600,
+    "jednostka": "mb",
+    "stan": 80,
+    "prog_alertu": 8
+  },
+  {
+    "kod": "SR004",
+    "nazwa": "Płaskownik stalowy 40mm",
+    "rodzaj": "plaskownik",
+    "rozmiar": "40mm",
+    "dlugosc": 600,
+    "jednostka": "mb",
+    "stan": 40,
+    "prog_alertu": 4
+  }
+]

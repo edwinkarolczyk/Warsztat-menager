@@ -1,0 +1,96 @@
+audit_mw_report.json:11664:      "message": "Definicja 'resolve_rel' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu",
+audit_mw_report.json:14058:      "message": "Możliwy nieużyty import: resolve_rel",
+audit_mw_report.json:14804:        "_resolve_rel_legacy",
+audit_mw_report.json:14847:        "resolve_rel",
+audit_mw_report.json:15956:        "resolve_rel",
+audit_mw_report.json:20982:        "resolve_rel",
+audit_mw_report.md:1686:- **INFO** [STYLE] config_manager.py, /workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/utils_json.py – Definicja 'resolve_rel' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:2028:- **INFO** [STYLE] utils_json.py – Możliwy nieużyty import: resolve_rel
+audit_mw_report.md:2169:- Definicje: ConfigError, ConfigManager, __init__, __new__, _abs_path, _absolute_with_root, _anchor, _apply_root_defaults, _apply_setting_aliases, _audit_change, _coerce_default_for_field, _dedupe_strings, _derive_root_dir, _ensure_defaults_from_schema, _ensure_dirs, _ensure_magazyn_defaults, _ensure_magazyn_slowniki, _ensure_paths_defaults, _ensure_root_directories, _expand, _expanded_path, _extract_strings, _flush_debounced_save, _init_config_storage, _is_absolute_path, _is_subpath, _is_windows_abs, _iter_schema_fields, _load_json, _load_json_or_raise, _looks_like_windows_path, _machines_rel_value, _merge_all, _migrate_legacy_keys, _migrate_legacy_paths, _migrate_profiles_config, _norm, _normalized, _path_from_cfg, _path_source, _perform_save_all, _prepare_loaded_config, _prune_rollbacks, _resolve_rel_legacy, _resolve_rroot_map, _rows, _safe_makedirs, _safe_write, _save_json, _schema_index, _set_machines_rel, _try_prepare, _validate_all, _validate_value, _walk, _write_backup, apply_import, config_path, deep_merge, default_for, delete_by_key, ensure_key, expanded, export_public, flatten, from_tabs, get, get_by_key, get_config_path, get_machines_path, get_path, get_root, import_with_dry_run, is_schema_default, load, load_tool_vocab, migrate_dotted_keys, migrate_legacy_machines_files, migrate_user_files, normalize_config, path_anchor, path_backup, path_data, path_logs, path_root, refresh, resolve_rel, resolve_under_root, save, save_all, set, set_by_key, set_path, try_migrate_if_missing, update_root_paths
+audit_mw_report.md:2465:- Definicje: ImageTooltip, MachineEditDialog, MachineHallRenderer, MonthYearDialog, __init__, _add_inspection_date, _bind_drag, _bind_tree_tooltips, _build_edit_footer, _build_tree, _canvas_bounds, _clamp_to_canvas, _days_to_next_inspection, _days_to_next_inspection_safe, _detect_real_source, _drag_commit, _draw_all, _draw_background_and_grid, _ensure_tree_columns, _find_node_at, _handle_add, _handle_image, _iter_inspection_dates, _label_mode, _load_background, _load_bg_image_assets, _map_bg_to_canvas, _map_canvas_to_bg, _map_label_text, _move_group, _next_inspection_date, _next_inspection_date_safe, _node_center, _now, _ok, _on_add, _on_cancel, _on_canvas_motion, _on_del, _on_edit, _on_leave, _on_motion, _on_ok, _on_press, _on_release, _on_save, _on_tree_select, _open_machines_panel, _pair, _redraw_selection, _refresh_view, _reload_from, _render_days_label_on_canvas, _reset_background_state, _resolve_radius, _safe_clamp, _save_machines, _save_rows, _selected_id, _set_bg_geometry, _set_machine_image, _short_id, _status_color, _summary, _tree_insert_row, _trigger_changed, _value_for, commit, get_config, hide, init_maszyny_view, int_or_none, panel_maszyny, pick_machine_image, render, resolve_rel, row_entry, select, show, update_rows
+audit_mw_report.md:3754:- Definicje: _ensure_parent, ensure_dir_json, ensure_json, get_root, load_json, normalize_doc_list_or_dict, normalize_rows, normalize_tools_doc, normalize_tools_index, resolve_rel, safe_read_json, safe_write_json
+backend/audit/wm_audit_runtime.py:9:    resolve_rel,
+backend/audit/wm_audit_runtime.py:84:    legacy = resolve_rel(cfg, r"maszyny.json")
+backend/audit/wm_audit_runtime.py:278:            path = resolve_rel(cfg, key)
+backend/audit/wm_audit_runtime.py:301:        tools_dir = resolve_rel(cfg, "tools.dir")
+backend/bootstrap_root.py:11:    resolve_rel,
+backend/bootstrap_root.py:86:    ensure_dir_json(resolve_rel(cfg, "profiles"), _DEFAULT_PROFILES)
+backend/bootstrap_root.py:88:    ensure_dir_json(resolve_rel(cfg, "warehouse"), _DEFAULT_WAREHOUSE)
+backend/bootstrap_root.py:89:    ensure_dir_json(resolve_rel(cfg, "bom"), _DEFAULT_BOM)
+backend/bootstrap_root.py:90:    os.makedirs(resolve_rel(cfg, "tools_dir"), exist_ok=True)
+backend/bootstrap_root.py:91:    os.makedirs(resolve_rel(cfg, "orders_dir"), exist_ok=True)
+backend/bootstrap_root.py:92:    tools_defs_path = resolve_rel(cfg, "tools_defs")
+backend/bootstrap_root.py:103:        os.path.join(root, "magazyn", "magazyn.json"): resolve_rel(cfg, "warehouse"),
+backend/bootstrap_root.py:104:        os.path.join(root, "produkty", "bom.json"): resolve_rel(cfg, "bom"),
+backend/bootstrap_root.py:105:        os.path.join(root, "profiles.json"): resolve_rel(cfg, "profiles"),
+backend/bootstrap_root.py:124:    safe_read_json(resolve_rel(cfg, "profiles"), default=_DEFAULT_PROFILES)
+backend/bootstrap_root.py:125:    safe_read_json(resolve_rel(cfg, "tools"), default={"items": [], "narzedzia": []})
+backend/bootstrap_root.py:126:    safe_read_json(resolve_rel(cfg, "orders"), default={"zlecenia": []})
+backend/bootstrap_root.py:127:    safe_read_json(resolve_rel(cfg, "warehouse_stock"), default=_DEFAULT_WAREHOUSE)
+backend/bootstrap_root.py:128:    safe_read_json(resolve_rel(cfg, "bom"), default=_DEFAULT_BOM)
+config_manager.py:142:    path = resolve_rel(cfg, "machines")
+config_manager.py:253:def _resolve_rel_legacy(cfg: dict, what: str) -> str | None:
+config_manager.py:398:def resolve_rel(cfg: dict | None, what: str, *extra: str) -> str | None:
+config_manager.py:400:    base = _resolve_rel_legacy(cfg, what)
+config_manager.py:435:        cfg.setdefault("tools", {}).setdefault("index", resolve_rel(cfg, "tools_index"))
+config_manager.py:437:            "stock_source", resolve_rel(cfg, "warehouse_stock")
+config_manager.py:439:        cfg.setdefault("bom", {}).setdefault("file", resolve_rel(cfg, "bom"))
+config_manager.py:440:        cfg.setdefault("orders", {}).setdefault("file", resolve_rel(cfg, "orders"))
+config_manager.py:441:        cfg.setdefault("profiles", {}).setdefault("file", resolve_rel(cfg, "profiles"))
+config_manager.py:443:        tools_section.setdefault("definitions_path", resolve_rel(cfg, "tools.zadania"))
+config_manager.py:523:        legacy_path = resolve_rel(cfg, r"maszyny.json")
+config_manager.py:671:                path = resolve_rel(cfg, meta["rel"])
+core/jarvis_engine.py:386:        from config_manager import resolve_rel
+core/jarvis_engine.py:389:        resolve_rel = None  # type: ignore[assignment]
+core/jarvis_engine.py:392:    if load_tools_rows_with_fallback and resolve_rel:
+core/jarvis_engine.py:395:            rows, _ = load_tools_rows_with_fallback(cfg_dict, resolve_rel)
+core/jarvis_engine.py:456:        from config_manager import resolve_rel
+core/jarvis_engine.py:459:        resolve_rel = None  # type: ignore[assignment]
+core/jarvis_engine.py:462:    if load_machines_rows_with_fallback and resolve_rel:
+core/jarvis_engine.py:465:            rows, _ = load_machines_rows_with_fallback(cfg_dict, resolve_rel)
+core/jarvis_engine.py:814:                from config_manager import resolve_rel
+core/jarvis_engine.py:816:                resolve_rel = None  # type: ignore[assignment]
+core/jarvis_engine.py:817:            if resolve_rel:
+core/jarvis_engine.py:819:                    resolved = resolve_rel(cfg, candidate_raw)
+data/audyt.json:8:    "note": "Konsolidacja ścieżek do jednego Folder WM (root) + resolve_rel()."
+data/audyt.json:90:      "config_manager.resolve_rel obecny",
+data/audyt.json:95:    "note": "Kryteria: resolve_rel, status w Ustawienia→System, brak twardych ścieżek, zapisy pod <root>."
+docs/json_storage.md:38:2. `resolve_rel()` składa ścieżki względem `data_root` z map aliasów (`PATH_MAP` / `RESOLVE_MAP`) – np. `tools`, `tools.dir`, `tools.types`.
+gui_maszyny.py:98:    from config_manager import get_config, resolve_rel
+gui_maszyny.py:100:    def resolve_rel(cfg: dict, what: str) -> str:
+gui_maszyny.py:1037:        legacy_path = resolve_rel(cfg, r"maszyny.json")
+gui_maszyny.py:1070:    rows, primary_path = load_machines_rows_with_fallback(cfg, resolve_rel)
+gui_narzedzia.py:221:from config_manager import ConfigManager, resolve_rel
+gui_narzedzia.py:783:    rows_raw, primary = load_tools_rows_with_fallback(cfg, resolve_rel)
+gui_settings.py:26:from config_manager import ConfigManager, PATH_MAP, get_root, resolve_rel
+gui_settings.py:90:        logs_dir = resolve_rel(cfg, "root.logs")
+gui_settings.py:367:        "Maszyny": resolve_rel(cfg, "machines"),
+gui_settings.py:368:        "Tło hali": resolve_rel(cfg, "machines_bg"),
+gui_settings.py:369:        "Narzędzia.idx": resolve_rel(cfg, "tools_index"),
+gui_settings.py:370:        "Magazyn": resolve_rel(cfg, "warehouse_stock"),
+gui_settings.py:371:        "Zlecenia": resolve_rel(cfg, "orders"),
+gui_settings.py:372:        "BOM": resolve_rel(cfg, "bom"),
+gui_settings.py:881:        path = resolve_rel(cfg, key)
+gui_settings.py:1000:        abs_path = resolve_rel(cfg, key)
+gui_tools.py:10:from config_manager import get_root, resolve_rel
+gui_tools.py:35:    abs_dir = resolve_rel(cfg, "tools.dir")
+gui_zlecenia.py:10:from config_manager import resolve_rel
+gui_zlecenia.py:170:    rows, primary_path = load_orders_rows_with_fallback(cfg, resolve_rel)
+gui_zlecenia.py:224:    rows, primary_path = load_orders_rows_with_fallback(cfg, resolve_rel)
+tests/test_config_manager.py:300:    assert cm.resolve_rel(mgr.merged, "machines") == expected
+tools/roadmap_apply_updates.py:31:                "resolve_rel()."
+tools/seed_wm_data.py:9:from config_manager import ensure_root_dirs, get_config, resolve_rel
+tools/seed_wm_data.py:19:    machines_path = resolve_rel(cfg, r"maszyny\maszyny.json")
+tools/seed_wm_data.py:31:    tools_path = resolve_rel(cfg, r"narzedzia\narzedzia.json")
+tools/seed_wm_data.py:43:    orders_path = resolve_rel(cfg, r"zlecenia\zlecenia.json")
+tools/seed_wm_data.py:54:    stock_path = resolve_rel(cfg, r"magazyn\magazyn.json")
+utils_json.py:10:    from config_manager import get_root, resolve_rel
+utils_json.py:16:    def resolve_rel(cfg, key, *extra):
+utils_maszyny.py:364:def load_machines_rows_with_fallback(cfg: dict, resolve_rel):
+utils_maszyny.py:366:    primary = resolve_rel(cfg, r"maszyny\maszyny.json")
+utils_maszyny.py:374:    legacy = resolve_rel(cfg, r"maszyny.json")
+utils_orders.py:13:def load_orders_rows_with_fallback(cfg: dict, resolve_rel):
+utils_orders.py:14:    primary = resolve_rel(cfg, r"zlecenia\zlecenia.json")
+utils_orders.py:21:    legacy = resolve_rel(cfg, r"zlecenia.json")
+utils_tools.py:8:def load_tools_rows_with_fallback(cfg: Dict, resolve_rel) -> Tuple[List[Dict], str]:
+utils_tools.py:16:        legacy = resolve_rel(cfg, r"narzedzia.json")

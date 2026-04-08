@@ -1,0 +1,411 @@
+CHANGELOG.md:4:- Wprowadzono idempotentny strażnik motywu `ensure_theme_applied` oraz wykorzystano go przy otwieraniu modalnych okien profilu, co eliminuje migotanie i zapewnia aktualne style w oknach podrzędnych.【F:ui_theme_guard.py†L1-L64】【F:gui_profile.py†L34-L139】
+README_PATCH_A.txt:14:- Pliku gui_profile.py NIE używamy – pozostaje bez zmian.
+audit_mw_report.json:3842:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:3849:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:3856:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:3863:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:3870:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:3877:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:3884:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:3891:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:3898:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:3905:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:3912:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:3919:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:3926:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:3933:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:3940:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:3947:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:3954:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:3961:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:3968:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:3975:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:3982:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:3989:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:3996:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4003:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4010:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4017:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4024:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4031:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4038:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4045:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4052:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4059:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4066:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4073:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4080:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4087:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4094:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4101:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4108:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4115:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4122:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4129:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4136:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4143:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4150:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4157:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4164:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4171:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4178:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4185:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4192:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4199:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4206:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4213:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4220:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4227:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4234:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4241:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4248:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4255:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4262:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4269:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4276:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4283:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4290:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4297:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4304:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4311:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4318:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4325:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4332:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4339:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4346:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4353:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4360:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4367:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4374:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4381:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4388:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4395:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4402:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4409:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4416:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4423:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4430:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4437:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4444:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4451:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4458:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4465:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4472:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4479:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4486:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4493:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4500:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4507:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4514:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4521:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4528:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4535:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4542:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4549:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4556:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4563:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4570:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4577:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4584:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4591:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4598:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4605:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4612:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4619:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4626:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4633:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4640:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4647:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4654:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4661:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4668:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4675:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4682:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4689:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4696:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4703:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4710:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4717:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4724:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4731:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4738:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4745:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4752:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4759:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4766:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4773:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4780:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4787:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4794:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4801:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4808:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4815:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4822:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4829:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4836:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4843:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4850:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4857:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4864:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4871:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4878:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4885:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4892:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4899:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4906:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4913:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4920:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4927:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4934:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4941:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4948:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4955:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4962:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4969:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4976:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4983:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4990:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:4997:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:5004:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:8238:      "file": "/workspace/Warsztat-Menager/test_gui_profile_roles.py",
+audit_mw_report.json:8245:      "file": "/workspace/Warsztat-Menager/test_gui_profile_roles.py",
+audit_mw_report.json:8252:      "file": "/workspace/Warsztat-Menager/test_gui_profile_smoke.py",
+audit_mw_report.json:8259:      "file": "/workspace/Warsztat-Menager/test_gui_profile_smoke.py",
+audit_mw_report.json:8266:      "file": "/workspace/Warsztat-Menager/test_gui_profile_smoke.py",
+audit_mw_report.json:11479:      "file": "/workspace/Warsztat-Menager/audyt_mw.py, /workspace/Warsztat-Menager/config_manager.py, /workspace/Warsztat-Menager/core/settings_manager.py, /workspace/Warsztat-Menager/core/window_manager.py, /workspace/Warsztat-Menager/dashboard_demo_fs.py, /workspace/Warsztat-Menager/dirty_guard.py, /workspace/Warsztat-Menager/gui/settings_action_handlers.py, /workspace/Warsztat-Menager/gui_magazyn.py, /workspace/Warsztat-Menager/gui_magazyn_add.py, /workspace/Warsztat-Menager/gui_magazyn_bom.py, /workspace/Warsztat-Menager/gui_magazyn_edit.py, /workspace/Warsztat-Menager/gui_magazyn_pz.py, /workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/gui_maszyny_view.py, /workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_narzedzia_qr.py, /workspace/Warsztat-Menager/gui_products.py, /workspace/Warsztat-Menager/gui_profile.py, /workspace/Warsztat-Menager/gui_settings.py, /workspace/Warsztat-Menager/gui_tool_editor.py, /workspace/Warsztat-Menager/gui_tools_config.py, /workspace/Warsztat-Menager/gui_tools_config_advanced.py, /workspace/Warsztat-Menager/gui_zlecenia.py, /workspace/Warsztat-Menager/layout_prosty.py, /workspace/Warsztat-Menager/rc1_audit_hook.py, /workspace/Warsztat-Menager/start.py, /workspace/Warsztat-Menager/test_gui_logowanie.py, /workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/test_gui_profile_smoke.py, /workspace/Warsztat-Menager/test_presence_watcher.py, /workspace/Warsztat-Menager/test_startup_error.py, /workspace/Warsztat-Menager/test_tool_media_io.py, /workspace/Warsztat-Menager/tests/test_gui_magazyn_basic.py, /workspace/Warsztat-Menager/tests/test_gui_narzedzia_tasks_mixed.py, /workspace/Warsztat-Menager/tests/test_inventory_bridge.py, /workspace/Warsztat-Menager/tests/test_settings_tools_config_refresh.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py, /workspace/Warsztat-Menager/tests/test_widok_hali_machines_view.py, /workspace/Warsztat-Menager/tools/scan_missing_root.py, /workspace/Warsztat-Menager/ui_hover.py, /workspace/Warsztat-Menager/updater.py, /workspace/Warsztat-Menager/ustawienia_magazyn.py, /workspace/Warsztat-Menager/ustawienia_uzytkownicy.py, /workspace/Warsztat-Menager/utils/dirty_guard.py, /workspace/Warsztat-Menager/widok_hali/animator.py, /workspace/Warsztat-Menager/widok_hali/controller.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py, /workspace/Warsztat-Menager/widok_hali/renderer.py",
+audit_mw_report.json:11584:      "file": "/workspace/Warsztat-Menager/config_manager.py, /workspace/Warsztat-Menager/gui_magazyn_bom.py, /workspace/Warsztat-Menager/gui_profile.py, /workspace/Warsztat-Menager/logika_zakupy.py, /workspace/Warsztat-Menager/magazyn_catalog.py, /workspace/Warsztat-Menager/magazyn_io.py, /workspace/Warsztat-Menager/magazyn_io_pz.py, /workspace/Warsztat-Menager/services/profile_service.py",
+audit_mw_report.json:11871:      "file": "/workspace/Warsztat-Menager/gui/widgets_user_footer.py, /workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:11878:      "file": "/workspace/Warsztat-Menager/gui/widgets_user_footer.py, /workspace/Warsztat-Menager/gui_logowanie.py, /workspace/Warsztat-Menager/gui_profile.py, /workspace/Warsztat-Menager/gui_zlecenia.py",
+audit_mw_report.json:12074:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:12263:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_profile.py, /workspace/Warsztat-Menager/gui_uzytkownicy.py, /workspace/Warsztat-Menager/start.py, /workspace/Warsztat-Menager/ui_theme.py, /workspace/Warsztat-Menager/ui_theme_guard.py",
+audit_mw_report.json:12291:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:12326:      "file": "/workspace/Warsztat-Menager/gui_panel.py, /workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:12361:      "file": "/workspace/Warsztat-Menager/gui_panel.py, /workspace/Warsztat-Menager/gui_profile.py, /workspace/Warsztat-Menager/gui_uzytkownicy.py",
+audit_mw_report.json:12375:      "file": "/workspace/Warsztat-Menager/gui_profile.py, /workspace/Warsztat-Menager/services/activity_service.py",
+audit_mw_report.json:12382:      "file": "/workspace/Warsztat-Menager/gui_profile.py, /workspace/Warsztat-Menager/gui_zlecenia.py, /workspace/Warsztat-Menager/gui_zlecenia_creator.py, /workspace/Warsztat-Menager/ustawienia_produkty_bom.py",
+audit_mw_report.json:12389:      "file": "/workspace/Warsztat-Menager/gui_profile.py, /workspace/Warsztat-Menager/gui_settings.py, /workspace/Warsztat-Menager/gui_tools_config.py, /workspace/Warsztat-Menager/gui_tools_config_advanced.py, /workspace/Warsztat-Menager/gui_uzytkownicy.py, /workspace/Warsztat-Menager/tools/roadmap_apply_updates.py, /workspace/Warsztat-Menager/ustawienia_produkty_bom.py",
+audit_mw_report.json:12396:      "file": "/workspace/Warsztat-Menager/gui_profile.py, /workspace/Warsztat-Menager/ustawienia_produkty_bom.py, /workspace/Warsztat-Menager/ustawienia_uzytkownicy.py",
+audit_mw_report.json:12746:      "file": "/workspace/Warsztat-Menager/test_gui_logowanie.py, /workspace/Warsztat-Menager/test_gui_profile_smoke.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py",
+audit_mw_report.json:12823:      "file": "/workspace/Warsztat-Menager/test_gui_logowanie.py, /workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/test_gui_profile_smoke.py, /workspace/Warsztat-Menager/test_startup_error.py, /workspace/Warsztat-Menager/test_tool_media_io.py, /workspace/Warsztat-Menager/tests/test_gui_magazyn_basic.py, /workspace/Warsztat-Menager/tests/test_settings_tools_config_refresh.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py",
+audit_mw_report.json:12928:      "file": "/workspace/Warsztat-Menager/test_gui_profile_smoke.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py",
+audit_mw_report.json:12935:      "file": "/workspace/Warsztat-Menager/test_gui_profile_smoke.py, /workspace/Warsztat-Menager/tests/test_dirty_guard.py",
+audit_mw_report.json:12942:      "file": "/workspace/Warsztat-Menager/test_gui_profile_smoke.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py",
+audit_mw_report.json:16317:        "gui_profile",
+audit_mw_report.json:16396:    "/workspace/Warsztat-Menager/gui_profile.py": {
+audit_mw_report.json:16397:      "file": "/workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:16903:        "gui_profile",
+audit_mw_report.json:18382:    "/workspace/Warsztat-Menager/test_gui_profile_roles.py": {
+audit_mw_report.json:18383:      "file": "/workspace/Warsztat-Menager/test_gui_profile_roles.py",
+audit_mw_report.json:18401:    "/workspace/Warsztat-Menager/test_gui_profile_smoke.py": {
+audit_mw_report.json:18402:      "file": "/workspace/Warsztat-Menager/test_gui_profile_smoke.py",
+audit_mw_report.json:18581:        "gui_profile"
+audit_mw_report.md:569:- **WARN** [HEADER] gui_profile.py – Brak nagłówka # Plik: ...
+audit_mw_report.md:570:- **WARN** [HEADER] gui_profile.py – Brak nagłówka # Wersja: ...
+audit_mw_report.md:571:- **INFO** [GUI] gui_profile.py:2272 – Wywołanie mainloop() – upewnij się, że tylko jeden raz w całej aplikacji
+audit_mw_report.md:572:- **INFO** [GUI] gui_profile.py:412 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:573:- **INFO** [GUI] gui_profile.py:413 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:574:- **INFO** [GUI] gui_profile.py:416 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:575:- **INFO** [GUI] gui_profile.py:417 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:576:- **INFO** [GUI] gui_profile.py:419 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:577:- **INFO** [GUI] gui_profile.py:424 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:578:- **INFO** [GUI] gui_profile.py:426 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:579:- **INFO** [GUI] gui_profile.py:428 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:580:- **INFO** [GUI] gui_profile.py:435 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:581:- **INFO** [GUI] gui_profile.py:436 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:582:- **INFO** [GUI] gui_profile.py:438 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:583:- **INFO** [GUI] gui_profile.py:466 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:584:- **INFO** [GUI] gui_profile.py:470 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:585:- **INFO** [GUI] gui_profile.py:477 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:586:- **INFO** [GUI] gui_profile.py:478 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:587:- **INFO** [GUI] gui_profile.py:479 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:588:- **INFO** [GUI] gui_profile.py:480 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:589:- **INFO** [GUI] gui_profile.py:481 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:590:- **INFO** [GUI] gui_profile.py:482 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:591:- **INFO** [GUI] gui_profile.py:483 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:592:- **INFO** [GUI] gui_profile.py:486 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:593:- **INFO** [GUI] gui_profile.py:492 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:594:- **INFO** [GUI] gui_profile.py:592 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:595:- **INFO** [GUI] gui_profile.py:593 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:596:- **INFO** [GUI] gui_profile.py:596 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:597:- **INFO** [GUI] gui_profile.py:604 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:598:- **INFO** [GUI] gui_profile.py:607 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:599:- **INFO** [GUI] gui_profile.py:615 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:600:- **INFO** [GUI] gui_profile.py:642 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:601:- **INFO** [GUI] gui_profile.py:649 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:602:- **INFO** [GUI] gui_profile.py:652 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:603:- **INFO** [GUI] gui_profile.py:655 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:604:- **INFO** [GUI] gui_profile.py:661 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:605:- **INFO** [GUI] gui_profile.py:671 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:606:- **INFO** [GUI] gui_profile.py:675 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:607:- **INFO** [GUI] gui_profile.py:678 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:608:- **INFO** [GUI] gui_profile.py:686 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:609:- **INFO** [GUI] gui_profile.py:687 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:610:- **INFO** [GUI] gui_profile.py:697 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:611:- **INFO** [GUI] gui_profile.py:712 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:612:- **INFO** [GUI] gui_profile.py:713 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:613:- **INFO** [GUI] gui_profile.py:714 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:614:- **INFO** [GUI] gui_profile.py:717 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:615:- **INFO** [GUI] gui_profile.py:750 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:616:- **INFO** [GUI] gui_profile.py:751 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:617:- **INFO** [GUI] gui_profile.py:752 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:618:- **INFO** [GUI] gui_profile.py:753 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:619:- **INFO** [GUI] gui_profile.py:754 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:620:- **INFO** [GUI] gui_profile.py:792 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:621:- **INFO** [GUI] gui_profile.py:800 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:622:- **INFO** [GUI] gui_profile.py:894 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:623:- **INFO** [GUI] gui_profile.py:967 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:624:- **INFO** [GUI] gui_profile.py:972 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:625:- **INFO** [GUI] gui_profile.py:977 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:626:- **INFO** [GUI] gui_profile.py:991 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:627:- **INFO** [GUI] gui_profile.py:996 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:628:- **INFO** [GUI] gui_profile.py:1001 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:629:- **INFO** [GUI] gui_profile.py:1004 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:630:- **INFO** [GUI] gui_profile.py:1012 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:631:- **INFO** [GUI] gui_profile.py:1019 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:632:- **INFO** [GUI] gui_profile.py:1027 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:633:- **INFO** [GUI] gui_profile.py:1032 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:634:- **INFO** [GUI] gui_profile.py:1037 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:635:- **INFO** [GUI] gui_profile.py:1041 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:636:- **INFO** [GUI] gui_profile.py:1045 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:637:- **INFO** [GUI] gui_profile.py:1047 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:638:- **INFO** [GUI] gui_profile.py:1050 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:639:- **INFO** [GUI] gui_profile.py:1055 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:640:- **INFO** [GUI] gui_profile.py:1290 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:641:- **INFO** [GUI] gui_profile.py:1295 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:642:- **INFO** [GUI] gui_profile.py:1301 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:643:- **INFO** [GUI] gui_profile.py:1308 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:644:- **INFO** [GUI] gui_profile.py:1312 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:645:- **INFO** [GUI] gui_profile.py:1321 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:646:- **INFO** [GUI] gui_profile.py:1330 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:647:- **INFO** [GUI] gui_profile.py:1338 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:648:- **INFO** [GUI] gui_profile.py:1343 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:649:- **INFO** [GUI] gui_profile.py:1354 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:650:- **INFO** [GUI] gui_profile.py:1363 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:651:- **INFO** [GUI] gui_profile.py:1372 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:652:- **INFO** [GUI] gui_profile.py:1382 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:653:- **INFO** [GUI] gui_profile.py:1389 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:654:- **INFO** [GUI] gui_profile.py:1393 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:655:- **INFO** [GUI] gui_profile.py:1398 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:656:- **INFO** [GUI] gui_profile.py:1406 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:657:- **INFO** [GUI] gui_profile.py:1441 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:658:- **INFO** [GUI] gui_profile.py:1448 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:659:- **INFO** [GUI] gui_profile.py:1465 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:660:- **INFO** [GUI] gui_profile.py:1480 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:661:- **INFO** [GUI] gui_profile.py:1490 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:662:- **INFO** [GUI] gui_profile.py:1491 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:663:- **INFO** [GUI] gui_profile.py:1506 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:664:- **INFO** [GUI] gui_profile.py:1519 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:665:- **INFO** [GUI] gui_profile.py:1526 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:666:- **INFO** [GUI] gui_profile.py:1539 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:667:- **INFO** [GUI] gui_profile.py:1544 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:668:- **INFO** [GUI] gui_profile.py:1548 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:669:- **INFO** [GUI] gui_profile.py:1551 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:670:- **INFO** [GUI] gui_profile.py:1552 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:671:- **INFO** [GUI] gui_profile.py:1557 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:672:- **INFO** [GUI] gui_profile.py:1563 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:673:- **INFO** [GUI] gui_profile.py:1569 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:674:- **INFO** [GUI] gui_profile.py:1572 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:675:- **INFO** [GUI] gui_profile.py:1574 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:676:- **INFO** [GUI] gui_profile.py:1576 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:677:- **INFO** [GUI] gui_profile.py:1582 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:678:- **INFO** [GUI] gui_profile.py:1587 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:679:- **INFO** [GUI] gui_profile.py:1644 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:680:- **INFO** [GUI] gui_profile.py:1648 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:681:- **INFO** [GUI] gui_profile.py:1653 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:682:- **INFO** [GUI] gui_profile.py:1662 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:683:- **INFO** [GUI] gui_profile.py:1671 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:684:- **INFO** [GUI] gui_profile.py:1675 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:685:- **INFO** [GUI] gui_profile.py:1681 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:686:- **INFO** [GUI] gui_profile.py:1702 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:687:- **INFO** [GUI] gui_profile.py:1709 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:688:- **INFO** [GUI] gui_profile.py:1729 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:689:- **INFO** [GUI] gui_profile.py:1735 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:690:- **INFO** [GUI] gui_profile.py:1739 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:691:- **INFO** [GUI] gui_profile.py:1742 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:692:- **INFO** [GUI] gui_profile.py:1744 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:693:- **INFO** [GUI] gui_profile.py:1748 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:694:- **INFO** [GUI] gui_profile.py:1751 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:695:- **INFO** [GUI] gui_profile.py:1753 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:696:- **INFO** [GUI] gui_profile.py:1759 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:697:- **INFO** [GUI] gui_profile.py:1767 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:698:- **INFO** [GUI] gui_profile.py:1780 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:699:- **INFO** [GUI] gui_profile.py:1781 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:700:- **INFO** [GUI] gui_profile.py:1784 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:701:- **INFO** [GUI] gui_profile.py:1792 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:702:- **INFO** [GUI] gui_profile.py:1816 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:703:- **INFO** [GUI] gui_profile.py:1867 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:704:- **INFO** [GUI] gui_profile.py:1875 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:705:- **INFO** [GUI] gui_profile.py:1876 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:706:- **INFO** [GUI] gui_profile.py:1883 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:707:- **INFO** [GUI] gui_profile.py:1890 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:708:- **INFO** [GUI] gui_profile.py:1894 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:709:- **INFO** [GUI] gui_profile.py:1903 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:710:- **INFO** [GUI] gui_profile.py:1934 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:711:- **INFO** [GUI] gui_profile.py:1935 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:712:- **INFO** [GUI] gui_profile.py:1938 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:713:- **INFO** [GUI] gui_profile.py:1979 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:714:- **INFO** [GUI] gui_profile.py:1982 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:715:- **INFO** [GUI] gui_profile.py:1992 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:716:- **INFO** [GUI] gui_profile.py:1994 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:717:- **INFO** [GUI] gui_profile.py:1999 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:718:- **INFO** [GUI] gui_profile.py:2030 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:719:- **INFO** [GUI] gui_profile.py:2031 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:720:- **INFO** [GUI] gui_profile.py:2034 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:721:- **INFO** [GUI] gui_profile.py:2058 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:722:- **INFO** [GUI] gui_profile.py:2060 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:723:- **INFO** [GUI] gui_profile.py:2063 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:724:- **INFO** [GUI] gui_profile.py:2065 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:725:- **INFO** [GUI] gui_profile.py:2067 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:726:- **INFO** [GUI] gui_profile.py:2069 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:727:- **INFO** [GUI] gui_profile.py:2128 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:728:- **INFO** [GUI] gui_profile.py:2166 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:729:- **INFO** [GUI] gui_profile.py:2172 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:730:- **INFO** [GUI] gui_profile.py:2178 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:731:- **INFO** [GUI] gui_profile.py:2180 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:732:- **INFO** [GUI] gui_profile.py:2185 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:733:- **INFO** [GUI] gui_profile.py:2210 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:734:- **INFO** [GUI] gui_profile.py:2266 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:735:- **INFO** [GUI] gui_profile.py:2269 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1197:- **WARN** [HEADER] test_gui_profile_roles.py – Brak nagłówka # Plik: ...
+audit_mw_report.md:1198:- **WARN** [HEADER] test_gui_profile_roles.py – Brak nagłówka # Wersja: ...
+audit_mw_report.md:1199:- **WARN** [HEADER] test_gui_profile_smoke.py – Brak nagłówka # Plik: ...
+audit_mw_report.md:1200:- **WARN** [HEADER] test_gui_profile_smoke.py – Brak nagłówka # Wersja: ...
+audit_mw_report.md:1201:- **INFO** [GUI] test_gui_profile_smoke.py:50 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1660:- **INFO** [STYLE] audyt_mw.py, /workspace/Warsztat-Menager/config_manager.py, /workspace/Warsztat-Menager/core/settings_manager.py, /workspace/Warsztat-Menager/core/window_manager.py, /workspace/Warsztat-Menager/dashboard_demo_fs.py, /workspace/Warsztat-Menager/dirty_guard.py, /workspace/Warsztat-Menager/gui/settings_action_handlers.py, /workspace/Warsztat-Menager/gui_magazyn.py, /workspace/Warsztat-Menager/gui_magazyn_add.py, /workspace/Warsztat-Menager/gui_magazyn_bom.py, /workspace/Warsztat-Menager/gui_magazyn_edit.py, /workspace/Warsztat-Menager/gui_magazyn_pz.py, /workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/gui_maszyny_view.py, /workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_narzedzia_qr.py, /workspace/Warsztat-Menager/gui_products.py, /workspace/Warsztat-Menager/gui_profile.py, /workspace/Warsztat-Menager/gui_settings.py, /workspace/Warsztat-Menager/gui_tool_editor.py, /workspace/Warsztat-Menager/gui_tools_config.py, /workspace/Warsztat-Menager/gui_tools_config_advanced.py, /workspace/Warsztat-Menager/gui_zlecenia.py, /workspace/Warsztat-Menager/layout_prosty.py, /workspace/Warsztat-Menager/rc1_audit_hook.py, /workspace/Warsztat-Menager/start.py, /workspace/Warsztat-Menager/test_gui_logowanie.py, /workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/test_gui_profile_smoke.py, /workspace/Warsztat-Menager/test_presence_watcher.py, /workspace/Warsztat-Menager/test_startup_error.py, /workspace/Warsztat-Menager/test_tool_media_io.py, /workspace/Warsztat-Menager/tests/test_gui_magazyn_basic.py, /workspace/Warsztat-Menager/tests/test_gui_narzedzia_tasks_mixed.py, /workspace/Warsztat-Menager/tests/test_inventory_bridge.py, /workspace/Warsztat-Menager/tests/test_settings_tools_config_refresh.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py, /workspace/Warsztat-Menager/tests/test_widok_hali_machines_view.py, /workspace/Warsztat-Menager/tools/scan_missing_root.py, /workspace/Warsztat-Menager/ui_hover.py, /workspace/Warsztat-Menager/updater.py, /workspace/Warsztat-Menager/ustawienia_magazyn.py, /workspace/Warsztat-Menager/ustawienia_uzytkownicy.py, /workspace/Warsztat-Menager/utils/dirty_guard.py, /workspace/Warsztat-Menager/widok_hali/animator.py, /workspace/Warsztat-Menager/widok_hali/controller.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py, /workspace/Warsztat-Menager/widok_hali/renderer.py – Definicja '__init__' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1675:- **INFO** [STYLE] config_manager.py, /workspace/Warsztat-Menager/gui_magazyn_bom.py, /workspace/Warsztat-Menager/gui_profile.py, /workspace/Warsztat-Menager/logika_zakupy.py, /workspace/Warsztat-Menager/magazyn_catalog.py, /workspace/Warsztat-Menager/magazyn_io.py, /workspace/Warsztat-Menager/magazyn_io_pz.py, /workspace/Warsztat-Menager/services/profile_service.py – Definicja '_load_json' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1716:- **INFO** [STYLE] gui/widgets_user_footer.py, /workspace/Warsztat-Menager/gui_profile.py – Definicja '_is_task_urgent' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1717:- **INFO** [STYLE] gui/widgets_user_footer.py, /workspace/Warsztat-Menager/gui_logowanie.py, /workspace/Warsztat-Menager/gui_profile.py, /workspace/Warsztat-Menager/gui_zlecenia.py – Definicja '_on_destroy' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1745:- **INFO** [STYLE] gui_maszyny.py, /workspace/Warsztat-Menager/gui_profile.py – Definicja '_refresh_view' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1772:- **INFO** [STYLE] gui_narzedzia.py, /workspace/Warsztat-Menager/gui_profile.py, /workspace/Warsztat-Menager/gui_uzytkownicy.py, /workspace/Warsztat-Menager/start.py, /workspace/Warsztat-Menager/ui_theme.py, /workspace/Warsztat-Menager/ui_theme_guard.py – Definicja 'ensure_theme_applied' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1776:- **INFO** [STYLE] gui_narzedzia.py, /workspace/Warsztat-Menager/gui_profile.py – Definicja 'row' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1781:- **INFO** [STYLE] gui_panel.py, /workspace/Warsztat-Menager/gui_profile.py – Definicja '_submit' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1786:- **INFO** [STYLE] gui_panel.py, /workspace/Warsztat-Menager/gui_profile.py, /workspace/Warsztat-Menager/gui_uzytkownicy.py – Definicja 'uruchom_panel' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1788:- **INFO** [STYLE] gui_profile.py, /workspace/Warsztat-Menager/services/activity_service.py – Definicja '_parse_timestamp' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1789:- **INFO** [STYLE] gui_profile.py, /workspace/Warsztat-Menager/gui_zlecenia.py, /workspace/Warsztat-Menager/gui_zlecenia_creator.py, /workspace/Warsztat-Menager/ustawienia_produkty_bom.py – Definicja '_refresh' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1790:- **INFO** [STYLE] gui_profile.py, /workspace/Warsztat-Menager/gui_settings.py, /workspace/Warsztat-Menager/gui_tools_config.py, /workspace/Warsztat-Menager/gui_tools_config_advanced.py, /workspace/Warsztat-Menager/gui_uzytkownicy.py, /workspace/Warsztat-Menager/tools/roadmap_apply_updates.py, /workspace/Warsztat-Menager/ustawienia_produkty_bom.py – Definicja '_save' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1791:- **INFO** [STYLE] gui_profile.py, /workspace/Warsztat-Menager/ustawienia_produkty_bom.py, /workspace/Warsztat-Menager/ustawienia_uzytkownicy.py – Definicja 'make_tab' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1841:- **INFO** [STYLE] test_gui_logowanie.py, /workspace/Warsztat-Menager/test_gui_profile_smoke.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py – Definicja 'DummyLabel' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1852:- **INFO** [STYLE] test_gui_logowanie.py, /workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/test_gui_profile_smoke.py, /workspace/Warsztat-Menager/test_startup_error.py, /workspace/Warsztat-Menager/test_tool_media_io.py, /workspace/Warsztat-Menager/tests/test_gui_magazyn_basic.py, /workspace/Warsztat-Menager/tests/test_settings_tools_config_refresh.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py – Definicja 'pack' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1867:- **INFO** [STYLE] test_gui_profile_smoke.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py – Definicja 'DummyPhoto' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1868:- **INFO** [STYLE] test_gui_profile_smoke.py, /workspace/Warsztat-Menager/tests/test_dirty_guard.py – Definicja 'dialog' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1869:- **INFO** [STYLE] test_gui_profile_smoke.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py – Definicja 'fake_open' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:2501:- Importy: __version__, datetime, gui.widgets_user_footer, gui_changelog, gui_logowanie, gui_magazyn, gui_maszyny, gui_narzedzia, gui_profile, gui_uzytkownicy, gui_zlecenia, json, logger, os, pathlib, presence, profile_utils, re, requests, services.profile_service, start, tkinter, tomllib, traceback, ui_theme, ustawienia_systemu, utils.gui_helpers, wm_access
+audit_mw_report.md:2511:### gui_profile.py
+audit_mw_report.md:2557:- Importy: collections.abc, datetime, gui_profile, json, os, profile_utils, re, services.profile_service, tkinter, ui_theme_guard, utils.moduly, wm_access
+audit_mw_report.md:2924:### test_gui_profile_roles.py
+audit_mw_report.md:2931:### test_gui_profile_smoke.py
+audit_mw_report.md:2985:- Importy: gui_profile
+gui_panel.py:70:    from gui_profile import ProfileView
+gui_panel.py:73:        f"[ERROR][PROFILE] Nie można zaimportować ProfileView z gui_profile.py: {e}"
+gui_panel.py:140:        print("[ERROR][PROFILE] Brak klasy ProfileView – sprawdź gui_profile.py")
+gui_profile.py:22:# Plik: gui_profile.py
+gui_profile.py:1225:    loaderami danych modułu :mod:`gui_profile`.
+gui_uzytkownicy.py:95:    from gui_profile import ProfileView
+profile_users.txt:76:- `gui_profile.py` – GUI profilu użytkowników.
+test_gui_profile_roles.py:8:    mod = importlib.import_module("gui_profile")
+test_gui_profile_roles.py:18:    mod = importlib.import_module("gui_profile")
+test_gui_profile_roles.py:51:    mod = importlib.import_module("gui_profile")
+test_gui_profile_smoke.py:7:    mod = importlib.import_module('gui_profile')
+test_gui_profile_smoke.py:29:    mod = importlib.import_module('gui_profile')
+test_gui_profile_smoke.py:67:    mod = importlib.import_module('gui_profile')
+test_priority_order.py:1:import gui_profile as gp

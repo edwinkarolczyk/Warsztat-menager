@@ -1,0 +1,243 @@
+CHANGELOG.md:83:- Naprawiono błąd w `gui_zlecenia_creator.py` przy wczytywaniu `data/maszyny.json` (obsługa listy i dict).
+archiwum_projektow.txt:47:- gui_maszyny.py – 1.0.1 – zarządzanie maszynami i widok hali.
+archiwum_projektow_kod.txt:68:### 3.7 gui_maszyny.py
+archiwum_projektow_kod.txt:69:[tu wklej pełną zawartość pliku gui_maszyny.py]
+audit_mw_report.json:2148:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2155:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2162:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2169:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2176:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2183:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2190:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2197:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2204:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2211:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2218:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2225:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2232:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2239:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2246:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2253:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2260:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2267:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2274:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2281:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2288:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2295:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2302:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2309:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2316:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2323:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2330:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2337:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2344:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2351:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2358:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2365:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2372:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2379:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2386:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2393:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2400:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:2407:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py",
+audit_mw_report.json:2414:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py",
+audit_mw_report.json:2421:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py",
+audit_mw_report.json:2428:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py",
+audit_mw_report.json:2435:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py",
+audit_mw_report.json:2442:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py",
+audit_mw_report.json:2449:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py",
+audit_mw_report.json:2456:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py",
+audit_mw_report.json:2463:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py",
+audit_mw_report.json:2470:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py",
+audit_mw_report.json:2477:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py",
+audit_mw_report.json:2484:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py",
+audit_mw_report.json:2491:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py",
+audit_mw_report.json:2498:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py",
+audit_mw_report.json:2505:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py",
+audit_mw_report.json:2512:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py",
+audit_mw_report.json:2519:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py",
+audit_mw_report.json:2526:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py",
+audit_mw_report.json:11479:      "file": "/workspace/Warsztat-Menager/audyt_mw.py, /workspace/Warsztat-Menager/config_manager.py, /workspace/Warsztat-Menager/core/settings_manager.py, /workspace/Warsztat-Menager/core/window_manager.py, /workspace/Warsztat-Menager/dashboard_demo_fs.py, /workspace/Warsztat-Menager/dirty_guard.py, /workspace/Warsztat-Menager/gui/settings_action_handlers.py, /workspace/Warsztat-Menager/gui_magazyn.py, /workspace/Warsztat-Menager/gui_magazyn_add.py, /workspace/Warsztat-Menager/gui_magazyn_bom.py, /workspace/Warsztat-Menager/gui_magazyn_edit.py, /workspace/Warsztat-Menager/gui_magazyn_pz.py, /workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/gui_maszyny_view.py, /workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_narzedzia_qr.py, /workspace/Warsztat-Menager/gui_products.py, /workspace/Warsztat-Menager/gui_profile.py, /workspace/Warsztat-Menager/gui_settings.py, /workspace/Warsztat-Menager/gui_tool_editor.py, /workspace/Warsztat-Menager/gui_tools_config.py, /workspace/Warsztat-Menager/gui_tools_config_advanced.py, /workspace/Warsztat-Menager/gui_zlecenia.py, /workspace/Warsztat-Menager/layout_prosty.py, /workspace/Warsztat-Menager/rc1_audit_hook.py, /workspace/Warsztat-Menager/start.py, /workspace/Warsztat-Menager/test_gui_logowanie.py, /workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/test_gui_profile_smoke.py, /workspace/Warsztat-Menager/test_presence_watcher.py, /workspace/Warsztat-Menager/test_startup_error.py, /workspace/Warsztat-Menager/test_tool_media_io.py, /workspace/Warsztat-Menager/tests/test_gui_magazyn_basic.py, /workspace/Warsztat-Menager/tests/test_gui_narzedzia_tasks_mixed.py, /workspace/Warsztat-Menager/tests/test_inventory_bridge.py, /workspace/Warsztat-Menager/tests/test_settings_tools_config_refresh.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py, /workspace/Warsztat-Menager/tests/test_widok_hali_machines_view.py, /workspace/Warsztat-Menager/tools/scan_missing_root.py, /workspace/Warsztat-Menager/ui_hover.py, /workspace/Warsztat-Menager/updater.py, /workspace/Warsztat-Menager/ustawienia_magazyn.py, /workspace/Warsztat-Menager/ustawienia_uzytkownicy.py, /workspace/Warsztat-Menager/utils/dirty_guard.py, /workspace/Warsztat-Menager/widok_hali/animator.py, /workspace/Warsztat-Menager/widok_hali/controller.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py, /workspace/Warsztat-Menager/widok_hali/renderer.py",
+audit_mw_report.json:11661:      "file": "/workspace/Warsztat-Menager/config_manager.py, /workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/utils_json.py",
+audit_mw_report.json:11738:      "file": "/workspace/Warsztat-Menager/core/window_manager.py, /workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:11773:      "file": "/workspace/Warsztat-Menager/dashboard_demo_fs.py, /workspace/Warsztat-Menager/gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/controller.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py",
+audit_mw_report.json:11997:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/gui_zlecenia.py",
+audit_mw_report.json:12004:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/widok_hali/renderer.py",
+audit_mw_report.json:12011:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py",
+audit_mw_report.json:12018:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py",
+audit_mw_report.json:12025:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/gui_maszyny_view.py",
+audit_mw_report.json:12032:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/logika_magazyn.py, /workspace/Warsztat-Menager/presence_watcher.py",
+audit_mw_report.json:12039:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/updater.py, /workspace/Warsztat-Menager/ustawienia_produkty_bom.py, /workspace/Warsztat-Menager/ustawienia_uzytkownicy.py",
+audit_mw_report.json:12046:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/gui_zlecenia.py",
+audit_mw_report.json:12053:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/ui_hover.py",
+audit_mw_report.json:12060:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/ui_hover.py",
+audit_mw_report.json:12067:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/gui_tool_editor.py",
+audit_mw_report.json:12074:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:12081:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/maszyny_logika.py",
+audit_mw_report.json:12088:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_zlecenia.py",
+audit_mw_report.json:12095:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/gui_panel.py",
+audit_mw_report.json:12102:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py",
+audit_mw_report.json:12109:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py",
+audit_mw_report.json:12116:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py",
+audit_mw_report.json:12123:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py",
+audit_mw_report.json:12130:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/controller.py",
+audit_mw_report.json:12137:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/renderer.py",
+audit_mw_report.json:12144:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/renderer.py",
+audit_mw_report.json:12151:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/renderer.py",
+audit_mw_report.json:12158:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py",
+audit_mw_report.json:12165:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py",
+audit_mw_report.json:12172:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py",
+audit_mw_report.json:12179:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py",
+audit_mw_report.json:12186:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py",
+audit_mw_report.json:12802:      "file": "/workspace/Warsztat-Menager/test_gui_logowanie.py, /workspace/Warsztat-Menager/test_logika_zlecenia_i_maszyny.py",
+audit_mw_report.json:13362:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:15873:    "/workspace/Warsztat-Menager/gui_maszyny.py": {
+audit_mw_report.json:15874:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py",
+audit_mw_report.json:15968:        "gui_maszyny_view",
+audit_mw_report.json:15978:    "/workspace/Warsztat-Menager/gui_maszyny_view.py": {
+audit_mw_report.json:15979:      "file": "/workspace/Warsztat-Menager/gui_maszyny_view.py",
+audit_mw_report.json:16315:        "gui_maszyny",
+audit_mw_report.md:327:- **WARN** [HEADER] gui_maszyny.py – Brak nagłówka # Plik: ...
+audit_mw_report.md:328:- **WARN** [HEADER] gui_maszyny.py – Brak nagłówka # Wersja: ...
+audit_mw_report.md:329:- **INFO** [GUI] gui_maszyny.py:1296 – Wywołanie mainloop() – upewnij się, że tylko jeden raz w całej aplikacji
+audit_mw_report.md:330:- **INFO** [GUI] gui_maszyny.py:221 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:331:- **INFO** [GUI] gui_maszyny.py:229 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:332:- **INFO** [GUI] gui_maszyny.py:231 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:333:- **INFO** [GUI] gui_maszyny.py:233 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:334:- **INFO** [GUI] gui_maszyny.py:240 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:335:- **INFO** [GUI] gui_maszyny.py:260 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:336:- **INFO** [GUI] gui_maszyny.py:262 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:337:- **INFO** [GUI] gui_maszyny.py:264 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:338:- **INFO** [GUI] gui_maszyny.py:266 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:339:- **INFO** [GUI] gui_maszyny.py:274 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:340:- **INFO** [GUI] gui_maszyny.py:277 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:341:- **INFO** [GUI] gui_maszyny.py:278 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:342:- **INFO** [GUI] gui_maszyny.py:279 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:343:- **INFO** [GUI] gui_maszyny.py:330 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:344:- **INFO** [GUI] gui_maszyny.py:367 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:345:- **INFO** [GUI] gui_maszyny.py:372 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:346:- **INFO** [GUI] gui_maszyny.py:373 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:347:- **INFO** [GUI] gui_maszyny.py:519 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:348:- **INFO** [GUI] gui_maszyny.py:617 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:349:- **INFO** [GUI] gui_maszyny.py:743 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:350:- **INFO** [GUI] gui_maszyny.py:983 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:351:- **INFO** [GUI] gui_maszyny.py:1002 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:352:- **INFO** [GUI] gui_maszyny.py:1008 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:353:- **INFO** [GUI] gui_maszyny.py:1010 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:354:- **INFO** [GUI] gui_maszyny.py:1014 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:355:- **INFO** [GUI] gui_maszyny.py:1110 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:356:- **INFO** [GUI] gui_maszyny.py:1113 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:357:- **INFO** [GUI] gui_maszyny.py:1117 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:358:- **INFO** [GUI] gui_maszyny.py:1126 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:359:- **INFO** [GUI] gui_maszyny.py:1132 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:360:- **INFO** [GUI] gui_maszyny.py:1146 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:361:- **INFO** [GUI] gui_maszyny.py:1147 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:362:- **INFO** [GUI] gui_maszyny.py:1152 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:363:- **INFO** [GUI] gui_maszyny.py:1294 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:364:- **WARN** [HEADER] gui_maszyny_view.py – Brak nagłówka # Plik: ...
+audit_mw_report.md:365:- **WARN** [HEADER] gui_maszyny_view.py – Brak nagłówka # Wersja: ...
+audit_mw_report.md:366:- **INFO** [GUI] gui_maszyny_view.py:46 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:367:- **INFO** [GUI] gui_maszyny_view.py:48 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:368:- **INFO** [GUI] gui_maszyny_view.py:95 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:369:- **INFO** [GUI] gui_maszyny_view.py:163 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:370:- **INFO** [GUI] gui_maszyny_view.py:179 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:371:- **INFO** [GUI] gui_maszyny_view.py:336 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:372:- **INFO** [GUI] gui_maszyny_view.py:345 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:373:- **INFO** [GUI] gui_maszyny_view.py:359 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:374:- **INFO** [GUI] gui_maszyny_view.py:365 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:375:- **INFO** [GUI] gui_maszyny_view.py:370 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:376:- **INFO** [GUI] gui_maszyny_view.py:372 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:377:- **INFO** [GUI] gui_maszyny_view.py:378 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:378:- **INFO** [GUI] gui_maszyny_view.py:384 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:379:- **INFO** [GUI] gui_maszyny_view.py:390 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:380:- **INFO** [GUI] gui_maszyny_view.py:328 – Użycie .after(...) – sprawdź, czy nie gubi referencji i czy czyszczone przy zamykaniu
+audit_mw_report.md:381:- **INFO** [GUI] gui_maszyny_view.py:330 – Użycie .after(...) – sprawdź, czy nie gubi referencji i czy czyszczone przy zamykaniu
+audit_mw_report.md:1660:- **INFO** [STYLE] audyt_mw.py, /workspace/Warsztat-Menager/config_manager.py, /workspace/Warsztat-Menager/core/settings_manager.py, /workspace/Warsztat-Menager/core/window_manager.py, /workspace/Warsztat-Menager/dashboard_demo_fs.py, /workspace/Warsztat-Menager/dirty_guard.py, /workspace/Warsztat-Menager/gui/settings_action_handlers.py, /workspace/Warsztat-Menager/gui_magazyn.py, /workspace/Warsztat-Menager/gui_magazyn_add.py, /workspace/Warsztat-Menager/gui_magazyn_bom.py, /workspace/Warsztat-Menager/gui_magazyn_edit.py, /workspace/Warsztat-Menager/gui_magazyn_pz.py, /workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/gui_maszyny_view.py, /workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_narzedzia_qr.py, /workspace/Warsztat-Menager/gui_products.py, /workspace/Warsztat-Menager/gui_profile.py, /workspace/Warsztat-Menager/gui_settings.py, /workspace/Warsztat-Menager/gui_tool_editor.py, /workspace/Warsztat-Menager/gui_tools_config.py, /workspace/Warsztat-Menager/gui_tools_config_advanced.py, /workspace/Warsztat-Menager/gui_zlecenia.py, /workspace/Warsztat-Menager/layout_prosty.py, /workspace/Warsztat-Menager/rc1_audit_hook.py, /workspace/Warsztat-Menager/start.py, /workspace/Warsztat-Menager/test_gui_logowanie.py, /workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/test_gui_profile_smoke.py, /workspace/Warsztat-Menager/test_presence_watcher.py, /workspace/Warsztat-Menager/test_startup_error.py, /workspace/Warsztat-Menager/test_tool_media_io.py, /workspace/Warsztat-Menager/tests/test_gui_magazyn_basic.py, /workspace/Warsztat-Menager/tests/test_gui_narzedzia_tasks_mixed.py, /workspace/Warsztat-Menager/tests/test_inventory_bridge.py, /workspace/Warsztat-Menager/tests/test_settings_tools_config_refresh.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py, /workspace/Warsztat-Menager/tests/test_widok_hali_machines_view.py, /workspace/Warsztat-Menager/tools/scan_missing_root.py, /workspace/Warsztat-Menager/ui_hover.py, /workspace/Warsztat-Menager/updater.py, /workspace/Warsztat-Menager/ustawienia_magazyn.py, /workspace/Warsztat-Menager/ustawienia_uzytkownicy.py, /workspace/Warsztat-Menager/utils/dirty_guard.py, /workspace/Warsztat-Menager/widok_hali/animator.py, /workspace/Warsztat-Menager/widok_hali/controller.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py, /workspace/Warsztat-Menager/widok_hali/renderer.py – Definicja '__init__' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1686:- **INFO** [STYLE] config_manager.py, /workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/utils_json.py – Definicja 'resolve_rel' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1697:- **INFO** [STYLE] core/window_manager.py, /workspace/Warsztat-Menager/gui_maszyny.py – Definicja 'show' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1702:- **INFO** [STYLE] dashboard_demo_fs.py, /workspace/Warsztat-Menager/gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/controller.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py – Definicja 'redraw' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1734:- **INFO** [STYLE] gui_maszyny.py, /workspace/Warsztat-Menager/gui_zlecenia.py – Definicja '_build_tree' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1735:- **INFO** [STYLE] gui_maszyny.py, /workspace/Warsztat-Menager/widok_hali/renderer.py – Definicja '_draw_all' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1736:- **INFO** [STYLE] gui_maszyny.py, /workspace/Warsztat-Menager/gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py – Definicja '_load_background' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1737:- **INFO** [STYLE] gui_maszyny.py, /workspace/Warsztat-Menager/gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py – Definicja '_map_bg_to_canvas' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1738:- **INFO** [STYLE] gui_maszyny.py, /workspace/Warsztat-Menager/gui_maszyny_view.py – Definicja '_map_canvas_to_bg' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1739:- **INFO** [STYLE] gui_maszyny.py, /workspace/Warsztat-Menager/logika_magazyn.py, /workspace/Warsztat-Menager/presence_watcher.py – Definicja '_now' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1740:- **INFO** [STYLE] gui_maszyny.py, /workspace/Warsztat-Menager/updater.py, /workspace/Warsztat-Menager/ustawienia_produkty_bom.py, /workspace/Warsztat-Menager/ustawienia_uzytkownicy.py – Definicja '_ok' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1741:- **INFO** [STYLE] gui_maszyny.py, /workspace/Warsztat-Menager/gui_zlecenia.py – Definicja '_on_add' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1742:- **INFO** [STYLE] gui_maszyny.py, /workspace/Warsztat-Menager/ui_hover.py – Definicja '_on_leave' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1743:- **INFO** [STYLE] gui_maszyny.py, /workspace/Warsztat-Menager/ui_hover.py – Definicja '_on_motion' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1744:- **INFO** [STYLE] gui_maszyny.py, /workspace/Warsztat-Menager/gui_tool_editor.py – Definicja '_on_save' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1745:- **INFO** [STYLE] gui_maszyny.py, /workspace/Warsztat-Menager/gui_profile.py – Definicja '_refresh_view' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1746:- **INFO** [STYLE] gui_maszyny.py, /workspace/Warsztat-Menager/maszyny_logika.py – Definicja '_save_machines' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1747:- **INFO** [STYLE] gui_maszyny.py, /workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_zlecenia.py – Definicja 'get_config' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1748:- **INFO** [STYLE] gui_maszyny.py, /workspace/Warsztat-Menager/gui_panel.py – Definicja 'panel_maszyny' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1749:- **INFO** [STYLE] gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py – Definicja 'MachinesView' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1750:- **INFO** [STYLE] gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py – Definicja '_build_footer' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1751:- **INFO** [STYLE] gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py – Definicja '_draw_grid' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1752:- **INFO** [STYLE] gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py – Definicja '_draw_machine_point' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1753:- **INFO** [STYLE] gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/controller.py – Definicja '_machine_at' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1754:- **INFO** [STYLE] gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/renderer.py – Definicja '_on_click' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1755:- **INFO** [STYLE] gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/renderer.py – Definicja '_on_drag' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1756:- **INFO** [STYLE] gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/renderer.py – Definicja '_on_drop' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1757:- **INFO** [STYLE] gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py – Definicja 'set_grid_visible' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1758:- **INFO** [STYLE] gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py – Definicja 'set_records' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1759:- **INFO** [STYLE] gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py – Definicja 'set_scale_mode' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1760:- **INFO** [STYLE] gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py – Definicja 'toggle_grid' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1761:- **INFO** [STYLE] gui_maszyny_view.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py – Definicja 'widget' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1849:- **INFO** [STYLE] test_gui_logowanie.py, /workspace/Warsztat-Menager/test_logika_zlecenia_i_maszyny.py – Definicja 'fake_get' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1929:- **INFO** [STYLE] gui_maszyny.py – Możliwy nieużyty import: annotations
+audit_mw_report.md:2460:### gui_maszyny.py
+audit_mw_report.md:2464:- Importy: PIL, __future__, config_manager, core.settings_manager, datetime, gui_maszyny_view, logging, os, tkinter, typing, ui_theme, utils_json, utils_maszyny
+audit_mw_report.md:2467:### gui_maszyny_view.py
+audit_mw_report.md:2501:- Importy: __version__, datetime, gui.widgets_user_footer, gui_changelog, gui_logowanie, gui_magazyn, gui_maszyny, gui_narzedzia, gui_profile, gui_uzytkownicy, gui_zlecenia, json, logger, os, pathlib, presence, profile_utils, re, requests, services.profile_service, start, tkinter, tomllib, traceback, ui_theme, ustawienia_systemu, utils.gui_helpers, wm_access
+audit_mw_report.md:2964:- Importy: bom, config_manager, gui_zlecenia, json, maszyny_logika, pathlib, pytest, shutil, tkinter, zlecenia_logika
+data/moduly_manifest.json:56:      "pliki": ["gui_maszyny.py", "data/maszyny/**"],
+docs/PLAN_WDROZENIA_STATUS.md:25:- ✅ Pozycje X/Y są zawężane do obszaru płótna dzięki funkcjom `_safe_clamp` oraz `_clamp_to_canvas`. 【F:gui_maszyny.py†L20-L36】【F:gui_maszyny.py†L656-L719】
+docs/PLAN_WDROZENIA_STATUS.md:29:- ✅ Kolor statusu maszyny zmienia się 30 dni przed terminem przeglądu, a etykieta pokazuje liczbę pozostałych dni. 【F:gui_maszyny.py†L150-L198】
+gui_maszyny.py:11:from gui_maszyny_view import MachinesView
+gui_panel.py:248:    from gui_maszyny import panel_maszyny
+kreator_sprawdzenia.py:49:    "gui_maszyny.py": {"min": "1.0.1"},
+kreator_sprawdzenia.py:236:        "gui_maszyny.py": {"min": "1.0.1"},
+logi_wersji.json:177:      "gui_maszyny.py": "1.0.0",
+logi_wersji.json:192:      "gui_maszyny.py": "1.0.0",
+logi_wersji.json:207:      "gui_maszyny.py": "1.0.0",
+logi_wersji.json:222:      "gui_maszyny.py": "1.0.1",
+logi_wersji.json:237:      "gui_maszyny.py": "1.0.1",
+logi_wersji.json:252:      "gui_maszyny.py": "1.0.1",
+logi_wersji.json:267:      "gui_maszyny.py": "1.0.1",
+logi_wersji.json:282:      "gui_maszyny.py": "1.0.1",
+logi_wersji.json:297:      "gui_maszyny.py": "1.0.1",
+logi_wersji.json:312:      "gui_maszyny.py": "1.0.1",
+logi_wersji.json:327:      "gui_maszyny.py": "1.0.1",
+logi_wersji.json:342:      "gui_maszyny.py": "1.0.1",
+logi_wersji.json:357:      "gui_maszyny.py": "1.0.1",
+logi_wersji.json:369:      "✅ gui_maszyny.py – wersja OK (1.0.1)",
+logi_wersji.json:385:      "gui_maszyny.py": "1.0.1",
+logi_wersji.json:397:      "✅ gui_maszyny.py – wersja OK (1.0.1)",
+logi_wersji.json:413:      "gui_maszyny.py": "1.0.1",
+logi_wersji.json:425:      "✅ gui_maszyny.py – wersja OK (1.0.1)",
+logi_wersji.json:441:      "gui_maszyny.py": "1.0.1",
+logi_wersji.json:453:      "✅ gui_maszyny.py – wersja OK (1.0.1)",
+logi_wersji.json:469:      "gui_maszyny.py": "1.0.1",
+logi_wersji.json:481:      "✅ gui_maszyny.py – wersja OK (1.0.1)",
+logi_wersji.json:497:      "gui_maszyny.py": "1.0.1",
+logi_wersji.json:509:      "✅ gui_maszyny.py – wersja OK (1.0.1)",
+logi_wersji.json:525:      "gui_maszyny.py": "1.0.1",
+logi_wersji.json:537:      "✅ gui_maszyny.py – wersja OK (1.0.1)",
+logi_wersji.json:553:      "gui_maszyny.py": "1.0.1",
+logi_wersji.json:565:      "✅ gui_maszyny.py – wersja OK (1.0.1)",
+logi_wersji.json:581:      "gui_maszyny.py": "1.0.1",
+logi_wersji.json:593:      "✅ gui_maszyny.py – wersja OK (1.0.1)",
+logi_wersji.json:609:      "gui_maszyny.py": "1.0.1",
+logi_wersji.json:621:      "✅ gui_maszyny.py – wersja OK (1.0.1)",
+logi_wersji.json:637:      "gui_maszyny.py": "1.0.1",
+logi_wersji.json:649:      "✅ gui_maszyny.py – wersja OK (1.0.1)",
+logi_wersji.json:665:      "gui_maszyny.py": "1.0.1",
+logi_wersji.json:677:      "✅ gui_maszyny.py – wersja OK (1.0.1)",
+logi_wersji.json:693:      "gui_maszyny.py": "1.0.1",
+logi_wersji.json:705:      "✅ gui_maszyny.py – wersja OK (1.0.1)",
+logi_wersji.json:721:      "gui_maszyny.py": "1.0.1",
+logi_wersji.json:733:      "✅ gui_maszyny.py – wersja OK (1.0.1)",
+logi_wersji.json:749:      "gui_maszyny.py": "1.0.1",
+logi_wersji.json:761:      "✅ gui_maszyny.py – wersja OK (1.0.1)",
+wymagane_pliki.json:6:  "gui_maszyny.py": "1.0.1",

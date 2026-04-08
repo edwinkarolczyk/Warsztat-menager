@@ -1,0 +1,37 @@
+name: R07 Smoke
+
+on:
+  push:
+    branches: [ Rozwiniecie ]
+  pull_request:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install pillow pytest
+      - name: Run smoke tests (settings)
+        run: |
+          pytest -q tests/test_settings_manager.py
+  static-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Sprawdź nagłówki wersji
+        run: python wymagane_pliki_version_check.py
+      - name: Bootstrap ścieżek danych (dry-run)
+        run: python -m core.bootstrap --config config.defaults.json
+      - name: Weryfikacja przycisków GUI
+        run: python 'narzędzia/check_buttons_refs.py' --root . --report reports/buttons_report.md
+      - name: Podgląd raportu przycisków
+        run: cat reports/buttons_report.md

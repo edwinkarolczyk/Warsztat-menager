@@ -1,0 +1,210 @@
+CHANGELOG.md:82:- Naprawiono obsługę ConfigManager w `zlecenia_utils.py` (użycie instancji zamiast metody klasy).
+audit_mw_report.json:14030:      "message": "Możliwy nieużyty import: ConfigManager",
+audit_mw_report.json:14762:        "ConfigManager",
+audit_mw_report.md:2024:- **INFO** [STYLE] utils/moduly.py – Możliwy nieużyty import: ConfigManager
+audit_mw_report.md:2169:- Definicje: ConfigError, ConfigManager, __init__, __new__, _abs_path, _absolute_with_root, _anchor, _apply_root_defaults, _apply_setting_aliases, _audit_change, _coerce_default_for_field, _dedupe_strings, _derive_root_dir, _ensure_defaults_from_schema, _ensure_dirs, _ensure_magazyn_defaults, _ensure_magazyn_slowniki, _ensure_paths_defaults, _ensure_root_directories, _expand, _expanded_path, _extract_strings, _flush_debounced_save, _init_config_storage, _is_absolute_path, _is_subpath, _is_windows_abs, _iter_schema_fields, _load_json, _load_json_or_raise, _looks_like_windows_path, _machines_rel_value, _merge_all, _migrate_legacy_keys, _migrate_legacy_paths, _migrate_profiles_config, _norm, _normalized, _path_from_cfg, _path_source, _perform_save_all, _prepare_loaded_config, _prune_rollbacks, _resolve_rel_legacy, _resolve_rroot_map, _rows, _safe_makedirs, _safe_write, _save_json, _schema_index, _set_machines_rel, _try_prepare, _validate_all, _validate_value, _walk, _write_backup, apply_import, config_path, deep_merge, default_for, delete_by_key, ensure_key, expanded, export_public, flatten, from_tabs, get, get_by_key, get_config_path, get_machines_path, get_path, get_root, import_with_dry_run, is_schema_default, load, load_tool_vocab, migrate_dotted_keys, migrate_legacy_machines_files, migrate_user_files, normalize_config, path_anchor, path_backup, path_data, path_logs, path_root, refresh, resolve_rel, resolve_under_root, save, save_all, set, set_by_key, set_path, try_migrate_if_missing, update_root_paths
+audyt_mw.py:21:from config_manager import ConfigManager
+audyt_mw.py:183:            cfg = ConfigManager()
+backend/audit/wm_audit_runtime.py:8:    ConfigManager,
+backend/audit/wm_audit_runtime.py:176:            manager = ConfigManager()
+backend/bootstrap_root.py:9:    ConfigManager,
+backend/bootstrap_root.py:134:    cm = ConfigManager(config_path)
+backup.py:10:from config_manager import ConfigManager
+backup.py:34:    cfg = ConfigManager()
+config_manager.py:879:class ConfigManager:
+config_manager.py:882:    Regular instantiation (``ConfigManager()``) returns the cached instance
+config_manager.py:884:    Use ``ConfigManager.refresh()`` to force a reload.
+config_manager.py:887:    _instance: "ConfigManager | None" = None
+config_manager.py:1227:        logger.info("ConfigManager initialized")
+config_manager.py:1235:    ) -> "ConfigManager":
+config_manager.py:1825:            raise RuntimeError("No persist/write available in ConfigManager")
+config_manager.py:1967:    """Shortcut for ``ConfigManager().get``."""
+config_manager.py:1969:    mgr = ConfigManager()
+config_manager.py:1976:    mgr = ConfigManager()
+core/jarvis_engine.py:27:    from config_manager import ConfigManager
+core/jarvis_engine.py:29:    ConfigManager = None  # type: ignore[assignment]
+core/jarvis_engine.py:150:def _config_manager() -> ConfigManager | None:
+core/jarvis_engine.py:151:    if ConfigManager is None:
+core/jarvis_engine.py:154:        return ConfigManager()
+core/jarvis_engine.py:159:def _data_root(cfg: ConfigManager | None) -> Path:
+core/jarvis_engine.py:322:def _config_as_dict(cfg: ConfigManager | None) -> dict:
+core/jarvis_engine.py:383:def _tools_summary(cfg: ConfigManager | None, root: Path) -> dict[str, Any]:
+core/jarvis_engine.py:453:def _machines_summary(cfg: ConfigManager | None, root: Path) -> dict[str, Any]:
+core/jarvis_engine.py:724:    cfg: ConfigManager | None,
+core/jarvis_engine.py:796:    cfg: ConfigManager | None,
+core/jarvis_engine.py:981:    cfg: ConfigManager | None,
+core/jarvis_engine.py:1149:def _read_interval(cfg: ConfigManager | None) -> int:
+core/jarvis_engine.py:1165:def _read_bool(cfg: ConfigManager | None, key: str, default: bool) -> bool:
+core/jarvis_engine.py:1181:def _read_model(cfg: ConfigManager | None) -> str:
+core/jarvis_engine.py:1209:    if ConfigManager is None:
+core/jarvis_engine.py:1213:                "ConfigManager niedostępny – automatyczna analiza wyłączona.",
+grafiki/shifts_schedule.py:15:from config_manager import ConfigManager
+grafiki/shifts_schedule.py:30:        cfg = ConfigManager()
+grafiki/shifts_schedule.py:57:    cfg = ConfigManager()
+grafiki/shifts_schedule.py:83:        cfg = ConfigManager()
+grafiki/shifts_schedule.py:98:        cfg = ConfigManager()
+grafiki/shifts_schedule.py:113:    cfg = ConfigManager()
+grafiki/shifts_schedule.py:152:            cfg = ConfigManager()
+grafiki/shifts_schedule.py:173:                cfg = ConfigManager()
+grafiki/shifts_schedule.py:414:    cfg = ConfigManager()
+grafiki/shifts_schedule.py:442:    cfg = ConfigManager()
+gui/widgets_user_footer.py:18:    from config_manager import ConfigManager
+gui/widgets_user_footer.py:20:    ConfigManager = None  # type: ignore
+gui/widgets_user_footer.py:28:        if ConfigManager is not None:
+gui/widgets_user_footer.py:29:            cfg = ConfigManager()
+gui_jarvis_panel.py:45:            from config_manager import ConfigManager
+gui_jarvis_panel.py:47:            interval_sec = ConfigManager().get("jarvis.auto_interval_sec", 900)
+gui_jarvis_panel.py:68:            from config_manager import ConfigManager
+gui_jarvis_panel.py:70:            return bool(ConfigManager().get("jarvis.allow_ai", True))
+gui_jarvis_panel.py:77:            from config_manager import ConfigManager
+gui_jarvis_panel.py:79:            value = ConfigManager().get("jarvis.model", "gpt-3.5-turbo")
+gui_jarvis_panel.py:429:            from config_manager import ConfigManager
+gui_jarvis_panel.py:431:            cfg = ConfigManager()
+gui_logowanie.py:25:from config_manager import ConfigManager
+gui_logowanie.py:70:        cfg = ConfigManager()
+gui_logowanie.py:126:    cfg = ConfigManager()
+gui_magazyn_bom.py:18:from config_manager import ConfigManager
+gui_magazyn_bom.py:388:        self.pp_ops = ConfigManager().get("czynnosci_technologiczne", [])
+gui_magazyn_bom.py:609:    for op in ConfigManager().get("czynnosci_technologiczne", []):
+gui_maszyny.py:107:            from config_manager import ConfigManager  # type: ignore
+gui_maszyny.py:108:            return ConfigManager().load()
+gui_narzedzia.py:221:from config_manager import ConfigManager, resolve_rel
+gui_narzedzia.py:228:            return ConfigManager().load()
+gui_narzedzia.py:929:        cfg_mgr = ConfigManager()
+gui_narzedzia.py:997:        cfg_mgr = ConfigManager()
+gui_narzedzia.py:1912:        cfg_mgr = ConfigManager()
+gui_narzedzia.py:1947:        cfg_mgr = ConfigManager()
+gui_narzedzia.py:1982:            cfg_mgr = ConfigManager()
+gui_narzedzia.py:1997:            cfg_mgr = ConfigManager()
+gui_narzedzia.py:2048:        cfg_mgr = ConfigManager()
+gui_narzedzia.py:2639:        cfg_mgr = ConfigManager()
+gui_narzedzia.py:3499:            cfg_mgr = ConfigManager()
+gui_narzedzia.py:3720:                cfg_mgr = ConfigManager()
+gui_narzedzia.py:3932:            cfg_mgr = ConfigManager()
+gui_profile.py:89:from config_manager import ConfigManager
+gui_profile.py:312:        cfg = ConfigManager()
+gui_profile.py:377:        logger.warning("[PROFILE] Brak ConfigManager – pomijam wybór pliku profilu")
+gui_profile.py:400:        logger.warning("[PROFILE] Brak ConfigManager – pomijam wybór folderu profilu")
+gui_profile.py:887:    cfg = ConfigManager()
+gui_profile.py:1433:        cfg = ConfigManager()
+gui_profile.py:2219:        cfg = ConfigManager()
+gui_settings.py:26:from config_manager import ConfigManager, PATH_MAP, get_root, resolve_rel
+gui_settings.py:46:        return str(p_tools_defs(ConfigManager()))
+gui_settings.py:235:    parent, cm: ConfigManager | None, *, owner: "SettingsPanel" | None = None, on_root_change=None
+gui_settings.py:240:            cm = ConfigManager()
+gui_settings.py:290:                manager = ConfigManager()
+gui_settings.py:382:    def _current_cfg_manager() -> ConfigManager | None:
+gui_settings.py:754:from config_manager import ConfigManager, set_path
+gui_settings.py:769:        cfg = ConfigManager()
+gui_settings.py:896:            manager = ConfigManager()
+gui_settings.py:969:            manager = ConfigManager()
+gui_settings.py:1519:def save_all(options: Dict[str, tk.Variable], cfg: ConfigManager | None = None) -> None:
+gui_settings.py:1520:    """Persist all options from mapping using ConfigManager."""
+gui_settings.py:1522:    cfg = cfg or ConfigManager()
+gui_settings.py:1532:    """Dynamic panel generated from :class:`ConfigManager` schema."""
+gui_settings.py:1556:            self.cfg = ConfigManager.refresh(
+gui_settings.py:1560:            self.cfg = ConfigManager()
+gui_settings.py:3960:        self.cfg = ConfigManager.refresh(
+gui_settings.py:3991:            cfg_mgr = ConfigManager()
+gui_tool_editor.py:22:from config_manager import ConfigManager
+gui_tool_editor.py:328:        prompt_on = ConfigManager().get(
+gui_tool_editor.py:453:        if ConfigManager().get("tools.auto_check_on_last_status", True) is not True:
+gui_zlecenia.py:17:            from config_manager import ConfigManager  # type: ignore
+gui_zlecenia.py:19:            return ConfigManager().load()
+logika_magazyn.py:22:from config_manager import ConfigManager
+logika_magazyn.py:84:_CFG = ConfigManager()
+logika_zadan.py:12:from config_manager import ConfigManager
+logika_zadan.py:22:        cfg = ConfigManager()
+logika_zadan.py:97:    cfg = ConfigManager()
+logika_zadan.py:103:    settings: ConfigManager | Dict[str, Any] | None = None,
+logika_zadan.py:113:    settings: ConfigManager | Dict[str, Any] | None = None,
+logika_zadan.py:115:    cfg = settings or ConfigManager()
+logika_zadan.py:168:    config: ConfigManager | Dict[str, Any] | None = None,
+logika_zadan.py:173:        cfg = ConfigManager().merged
+logika_zadan.py:174:    elif isinstance(cfg, ConfigManager):
+profile_utils.py:17:from config_manager import ConfigManager, PATH_MAP
+profile_utils.py:21:    from config_manager import ConfigManager
+profile_utils.py:28:def profiles_path(cfg: "ConfigManager") -> str:
+profile_utils.py:32:def ensure_profiles_file(cfg: "ConfigManager") -> str:
+profile_utils.py:56:def load_profiles(cfg: "ConfigManager") -> dict:
+profile_utils.py:66:def reset_admin_profile_if_needed(cfg: "ConfigManager", data: dict) -> dict:
+profile_utils.py:159:    from config_manager import ConfigManager
+profile_utils.py:162:        roles = ConfigManager().get("jarvis.role_access", [])
+profile_utils.py:339:def _configured_users_path(cfg: ConfigManager) -> Path | None:
+profile_utils.py:363:        cfg = ConfigManager()
+rc1_profiles_bootstrap.py:14:from config_manager import ConfigManager
+rc1_profiles_bootstrap.py:97:        manager = ConfigManager()
+services/profile_service.py:26:from config_manager import ConfigManager
+services/profile_service.py:205:def _config_manager_or_none() -> ConfigManager | None:
+services/profile_service.py:207:        return ConfigManager()
+start.py:31:from config_manager import ConfigManager
+start.py:50:CONFIG_MANAGER: ConfigManager | None = None
+start.py:63:def _update_paths_from_manager(manager: ConfigManager) -> None:
+start.py:76:def _ensure_config_manager() -> ConfigManager | None:
+start.py:82:    manager: ConfigManager | None = None
+start.py:84:        manager = ConfigManager()
+start.py:99:            manager = ConfigManager()
+start.py:188:        print(f"  [DIAG] Nie udało się pobrać ścieżek ConfigManager: {exc}")
+start.py:356:        cfg = ConfigManager()
+start.py:358:        _error(f"ConfigManager init failed: {e}")
+start.py:523:        cfg = ConfigManager()
+start.py:562:        cfg = ConfigManager()
+start.py:744:    # Wstępna inicjalizacja konfiguracji, jeśli masz ConfigManager, zostawiamy symbolicznie:
+start.py:746:        _info("ConfigManager: OK")
+start.py:755:        _error("ConfigManager: problem (pomijam)")
+start.py:762:        cfg_for_jarvis = ConfigManager()
+start.py:848:            cm = ConfigManager()
+test_gui_logowanie.py:7:from config_manager import ConfigManager
+test_gui_logowanie.py:154:    cfg = ConfigManager()
+test_gui_logowanie.py:183:    cfg = ConfigManager()
+test_gui_logowanie.py:212:    original_get = ConfigManager.get
+test_gui_logowanie.py:219:    monkeypatch.setattr(ConfigManager, "get", fake_get)
+test_gui_profile_roles.py:4:from config_manager import ConfigManager
+test_gui_profile_roles.py:20:    cfg = ConfigManager()
+test_logika_zlecenia_i_maszyny.py:9:from config_manager import ConfigManager
+test_logika_zlecenia_i_maszyny.py:131:    monkeypatch.setattr(ConfigManager, "get", fake_get, raising=False)
+test_startup_error.py:107:    monkeypatch.setattr(start, "ConfigManager", DummyCfg)
+tests/test_config_manager.py:77:        return cm.ConfigManager.refresh(), paths
+tests/test_config_manager.py:187:    reloaded = cm.ConfigManager.refresh()
+tests/test_config_manager.py:211:    reloaded = cm.ConfigManager.refresh(
+tests/test_config_manager.py:324:    reloaded = cm.ConfigManager.refresh()
+tests/test_config_manager.py:345:    mgr = cm.ConfigManager.refresh(
+tests/test_config_manager.py:351:        cm.ConfigManager.refresh()
+tests/test_config_manager.py:394:    reloaded = cm.ConfigManager.refresh()
+tests/test_gui_magazyn_bom_ops.py:43:    monkeypatch.setattr(gmb, "ConfigManager", lambda: DummyCfg())
+tests/test_profiles_settings_gui.py:19:    cm.ConfigManager.refresh()
+tests/test_profiles_settings_gui.py:63:    cm.ConfigManager.refresh()
+tests/test_profiles_settings_gui.py:64:    cfg = cm.ConfigManager()
+tests/test_settings_gui.py:28:    cm.ConfigManager.refresh()
+tests/test_settings_gui.py:148:    cm.ConfigManager.refresh()
+tests/test_settings_tools_config_refresh.py:7:from config_manager import ConfigManager
+tests/test_settings_tools_config_refresh.py:50:    expected_path = ConfigManager().path_data("zadania_narzedzia.json")
+tests/test_settings_window.py:119:    cm.ConfigManager.refresh()
+tests/test_shifts_schedule.py:65:    monkeypatch.setattr(shifts_schedule, "ConfigManager", lambda: mgr)
+tests/test_shifts_schedule_anchor.py:17:    monkeypatch.setattr(ss, "ConfigManager", lambda: mgr)
+tests/test_shifts_schedule_default_override.py:22:    monkeypatch.setattr(shifts_schedule, "ConfigManager", lambda: mgr)
+tests/test_start_auto_login.py:13:    monkeypatch.setattr(start, "ConfigManager", lambda: DummyCfg())
+tests/test_start_auto_login.py:45:    monkeypatch.setattr(start, "ConfigManager", lambda: DummyCfg())
+tests/test_tools_types_statuses.py:4:from config_manager import ConfigManager
+tests/test_tools_types_statuses.py:8:    cfg = ConfigManager()
+tests/test_updates_push_branch.py:64:    reloaded = cm.ConfigManager.refresh()
+tools_config_loader.py:36:        from config_manager import ConfigManager
+tools_config_loader.py:38:        cfg_mgr = ConfigManager()
+updater.py:24:from config_manager import ConfigManager
+updater.py:503:        cfg = ConfigManager()
+ustawienia_systemu.py:21:from config_manager import ConfigManager
+ustawienia_systemu.py:172:    ConfigManager.refresh(config_path=config_path, schema_path=schema_path)
+utils/moduly.py:14:    from config_manager import ConfigManager
+utils/moduly.py:38:def manifest_path(cfg: "ConfigManager") -> str:
+utils/moduly.py:42:def zaladuj_manifest(cfg: "ConfigManager" | None = None) -> Dict[str, Any]:
+utils/moduly.py:48:        from config_manager import ConfigManager as _ConfigManager
+utils/moduly.py:50:        cfg = _ConfigManager()
+wm_access.py:5:from config_manager import ConfigManager
+wm_access.py:14:        cfg = ConfigManager()
+wm_tools_helpers.py:12:from config_manager import ConfigManager
+wm_tools_helpers.py:17:        cfg = ConfigManager()
+wm_tools_helpers.py:30:        cfg = ConfigManager()
+zlecenia_utils.py:20:    from config_manager import ConfigManager  # type: ignore
+zlecenia_utils.py:21:except Exception:  # pragma: no cover - ConfigManager opcjonalny w testach
+zlecenia_utils.py:22:    ConfigManager = None  # type: ignore
+zlecenia_utils.py:25:    _CONFIG = ConfigManager() if ConfigManager else None  # type: ignore[misc]

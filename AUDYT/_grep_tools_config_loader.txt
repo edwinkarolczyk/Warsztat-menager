@@ -1,0 +1,25 @@
+audit_mw_report.json:9820:      "file": "/workspace/Warsztat-Menager/tools_config_loader.py",
+audit_mw_report.json:9827:      "file": "/workspace/Warsztat-Menager/tools_config_loader.py",
+audit_mw_report.json:9834:      "file": "/workspace/Warsztat-Menager/tools_config_loader.py",
+audit_mw_report.json:12683:      "file": "/workspace/Warsztat-Menager/rc1_audit_plus.py, /workspace/Warsztat-Menager/tools_config_loader.py",
+audit_mw_report.json:13922:      "file": "/workspace/Warsztat-Menager/tools_config_loader.py",
+audit_mw_report.json:16205:        "tools_config_loader",
+audit_mw_report.json:16706:        "tools_config_loader",
+audit_mw_report.json:16799:        "tools_config_loader",
+audit_mw_report.json:16856:        "tools_config_loader"
+audit_mw_report.json:20428:    "/workspace/Warsztat-Menager/tools_config_loader.py": {
+audit_mw_report.json:20429:      "file": "/workspace/Warsztat-Menager/tools_config_loader.py",
+audit_mw_report.md:1423:- **WARN** [HEADER] tools_config_loader.py – Brak nagłówka # Plik: ...
+audit_mw_report.md:1424:- **WARN** [HEADER] tools_config_loader.py – Brak nagłówka # Wersja: ...
+audit_mw_report.md:1425:- **INFO** [GUI] tools_config_loader.py:64 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1832:- **INFO** [STYLE] rc1_audit_plus.py, /workspace/Warsztat-Menager/tools_config_loader.py – Definicja '_read_text' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:2009:- **INFO** [STYLE] tools_config_loader.py – Możliwy nieużyty import: annotations
+audit_mw_report.md:2479:- Importy: PIL, __future__, config.paths, config_manager, contextlib, datetime, ezdxf, ezdxf.addons.drawing, importlib, importlib.util, json, logger, logging, logika_magazyn, logika_zadan, matplotlib.pyplot, os, pathlib, profile_utils, services.profile_service, shutil, start, subprocess, sys, tkinter, tools_config_loader, typing, ui_hover, ui_theme, utils, utils.gui_helpers, utils.path_utils, utils_json, utils_paths, utils_tools, wm_tools_helpers, zadania_assign_io
+audit_mw_report.md:2522:- Importy: PIL, __future__, config.paths, config_manager, copy, core.logging_config, datetime, glob, gui.settings_action_handlers, gui_products, gui_tools_config, io, json, logger, logging, logika_zadan, os, pathlib, profile_utils, re, services, start, subprocess, sys, threading, tkinter, tools, tools_config_loader, typing, ui_theme, ui_utils, ustawienia_magazyn, ustawienia_produkty_bom, utils_json, wm_audit_runtime, wm_log, zlecenia_utils
+audit_mw_report.md:2543:- Importy: __future__, gui_tools_config_advanced, json, logika_zadan, tkinter, tools_config_loader, ui_theme
+audit_mw_report.md:2550:- Importy: __future__, glob, json, logika_zadan, os, re, time, tkinter, tools_config_loader
+audit_mw_report.md:3599:### tools_config_loader.py
+gui_narzedzia.py:245:from tools_config_loader import (
+gui_settings.py:28:from tools_config_loader import load_config as load_tools_config
+gui_tools_config.py:49:    from tools_config_loader import load_config as load_tools_config
+gui_tools_config_advanced.py:14:from tools_config_loader import load_config as load_tools_config

@@ -1,0 +1,9 @@
+{
+  "jarvis": {
+    "banner": {
+      "offline_bg": "#ffc107",
+      "offline_fg": "#212529",
+      "online_bg": "#f7f9fc"
+    }
+  }
+}

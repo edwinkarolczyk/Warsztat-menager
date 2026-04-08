@@ -1,0 +1,12 @@
+config.defaults.json:64:    "model": "gpt-3.5-turbo",
+core/jarvis_engine.py:21:    DEFAULT_MODEL = "gpt-3.5-turbo"
+core/jarvis_prompt_engine.py:21:DEFAULT_MODEL = "gpt-3.5-turbo"
+core/jarvis_prompt_engine.py:24:    "gpt-3.5-turbo": (0.0005 / 1000, 0.0015 / 1000),
+core/jarvis_prompt_engine.py:25:    "gpt-3.5-turbo-0125": (0.0005 / 1000, 0.0015 / 1000),
+core/jarvis_prompt_engine.py:26:    "gpt-4": (0.03 / 1000, 0.06 / 1000),
+core/jarvis_prompt_engine.py:27:    "gpt-4-turbo": (0.01 / 1000, 0.03 / 1000),
+core/jarvis_prompt_engine.py:228:        if model.lower().startswith("gpt-4"):
+gui_jarvis_panel.py:63:        return ["gpt-3.5-turbo", "gpt-4-turbo"]
+gui_jarvis_panel.py:79:            value = ConfigManager().get("jarvis.model", "gpt-3.5-turbo")
+gui_jarvis_panel.py:81:            value = "gpt-3.5-turbo"
+gui_jarvis_panel.py:85:            text = "gpt-3.5-turbo"

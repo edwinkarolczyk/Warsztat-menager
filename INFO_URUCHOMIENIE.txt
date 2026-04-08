@@ -1,0 +1,25 @@
+====================================
+Instrukcja szybkiego startu Warsztat-Menager
+====================================
+
+1. Uruchamianie programu
+   - Dwukrotnie kliknij plik WarsztatMenager.exe w katalogu instalacyjnym.
+   - Przy pierwszym uruchomieniu program utworzy plik config.json oraz podstawowe katalogi robocze.
+
+2. Gdzie trafiają dane
+   - Dane zapisywane są w katalogu danych wskazanym w instalatorze.
+   - W podkatalogach znajdziesz:
+       logs   – bieżące logi działania programu,
+       backup – automatyczne kopie zapasowe,
+       jarvis – pliki powiadomień Jarvisa.
+
+3. Zmiana lokalizacji konfiguracji (opcjonalnie)
+   - Domyślnie program korzysta z config.json w katalogu danych.
+   - Aby wymusić inny plik konfiguracyjny ustaw zmienną środowiskową WM_CONFIG_FILE
+     na pełną ścieżkę do wybranego pliku config.json.
+
+4. Co można ustawić w programie
+   - W menu Ustawienia możesz m.in. zarządzać użytkownikami, statusami, narzędziami,
+     harmonogramami i powiadomieniami.
+
+Powodzenia w pracy z Warsztat-Menager!

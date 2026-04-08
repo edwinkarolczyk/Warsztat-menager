@@ -1,0 +1,12 @@
+# Minimalne zależności (rozszerzymy w razie potrzeb)
+pillow
+tk
+pandas
+openpyxl
+reportlab
+odfpy
+pypandoc
+python-escpos
+
+openai
+python-dotenv

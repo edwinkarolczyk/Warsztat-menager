@@ -1,0 +1,237 @@
+# version: 1.0
+"""Wspólny kreator Dyspozycji z dynamicznymi listami obiektów."""
+
+from __future__ import annotations
+
+import tkinter as tk
+from tkinter import messagebox, ttk
+from typing import Any
+
+from dyspozycje_sources import (
+    load_magazyn_choices,
+    load_machine_choices,
+    load_tool_choices,
+    load_zlecenie_wykonania_choices,
+)
+from dyspozycje_store import add_dyspozycja, make_dyspozycja
+
+try:
+    from profiles_store import load_profiles_users, resolve_profiles_path
+except Exception:  # pragma: no cover
+    load_profiles_users = None  # type: ignore
+    resolve_profiles_path = None  # type: ignore
+
+
+def _load_user_logins() -> list[str]:
+    out: list[str] = []
+    seen: set[str] = set()
+    if callable(load_profiles_users) and callable(resolve_profiles_path):
+        try:
+            rows = load_profiles_users(path=resolve_profiles_path(None))
+        except Exception:
+            rows = []
+        for row in rows or []:
+            if not isinstance(row, dict):
+                continue
+            login = str(row.get("login") or "").strip()
+            if not login:
+                continue
+            key = login.lower()
+            if key in seen:
+                continue
+            seen.add(key)
+            out.append(login)
+    out.sort(key=str.lower)
+    return out
+
+
+def _options_for_type(typ: str) -> tuple[str, str, list[tuple[str, str]]]:
+    key = str(typ or "").strip().lower()
+    if key == "narzedzie":
+        return ("narzedzia", "Narzędzie:", load_tool_choices())
+    if key == "maszyna":
+        return ("maszyny", "Maszyna:", load_machine_choices())
+    if key == "magazyn":
+        return ("magazyn", "Pozycja magazynowa:", load_magazyn_choices())
+    if key == "zlecenie_wykonania":
+        return ("zlecenia", "Zlecenie wykonania:", load_zlecenie_wykonania_choices())
+    return ("", "Obiekt:", [])
+
+
+def open_dyspozycje_creator(
+    master: tk.Widget | None = None,
+    *,
+    autor: str = "",
+    context: dict[str, Any] | None = None,
+) -> tk.Toplevel:
+    ctx = dict(context or {})
+    root = master.winfo_toplevel() if master else None
+    win = tk.Toplevel(root)
+    win.title("Kreator – Dodaj Dyspozycję")
+    win.geometry("700x500")
+    win.resizable(False, False)
+
+    frame = ttk.Frame(win, padding=12)
+    frame.pack(fill="both", expand=True)
+    frame.columnconfigure(1, weight=1)
+
+    ttk.Label(
+        frame,
+        text="Nowa Dyspozycja",
+        style="WM.H1.TLabel",
+    ).grid(row=0, column=0, columnspan=2, sticky="w", pady=(0, 12))
+
+    ttk.Label(frame, text="Typ Dyspozycji:").grid(row=1, column=0, sticky="w", pady=4)
+    var_type = tk.StringVar(value=str(ctx.get("typ_dyspozycji") or "narzedzie"))
+    cb_type = ttk.Combobox(
+        frame,
+        textvariable=var_type,
+        values=["narzedzie", "maszyna", "magazyn", "zlecenie_wykonania"],
+        state="readonly",
+        width=24,
+    )
+    cb_type.grid(row=1, column=1, sticky="w", pady=4)
+
+    ttk.Label(frame, text="Tytuł:").grid(row=2, column=0, sticky="w", pady=4)
+    var_title = tk.StringVar(value=str(ctx.get("tytul") or ""))
+    ent_title = ttk.Entry(frame, textvariable=var_title)
+    ent_title.grid(row=2, column=1, sticky="ew", pady=4)
+
+    var_object_label = tk.StringVar(value="Obiekt:")
+    lbl_object = ttk.Label(frame, textvariable=var_object_label)
+    lbl_object.grid(row=3, column=0, sticky="w", pady=4)
+
+    var_object_display = tk.StringVar()
+    cb_object = ttk.Combobox(
+        frame,
+        textvariable=var_object_display,
+        values=[],
+        state="readonly",
+        width=48,
+    )
+    cb_object.grid(row=3, column=1, sticky="ew", pady=4)
+
+    ttk.Label(frame, text="Opis:").grid(row=4, column=0, sticky="nw", pady=4)
+    txt_desc = tk.Text(frame, height=6, width=54)
+    txt_desc.grid(row=4, column=1, sticky="ew", pady=4)
+    if ctx.get("opis"):
+        txt_desc.insert("1.0", str(ctx.get("opis")))
+
+    ttk.Label(frame, text="Priorytet:").grid(row=5, column=0, sticky="w", pady=4)
+    var_priority = tk.StringVar(value=str(ctx.get("priorytet") or "normalny"))
+    cb_priority = ttk.Combobox(
+        frame,
+        textvariable=var_priority,
+        values=["niski", "normalny", "wysoki", "krytyczny"],
+        state="readonly",
+        width=24,
+    )
+    cb_priority.grid(row=5, column=1, sticky="w", pady=4)
+
+    ttk.Label(frame, text="Termin (YYYY-MM-DD):").grid(row=6, column=0, sticky="w", pady=4)
+    var_deadline = tk.StringVar(value=str(ctx.get("termin") or ""))
+    ent_deadline = ttk.Entry(frame, textvariable=var_deadline, width=24)
+    ent_deadline.grid(row=6, column=1, sticky="w", pady=4)
+
+    var_all = tk.BooleanVar(value=bool(ctx.get("dla_wszystkich", False)))
+    chk_all = ttk.Checkbutton(frame, text="Dyspozycja dla wszystkich", variable=var_all)
+    chk_all.grid(row=7, column=1, sticky="w", pady=(8, 4))
+
+    ttk.Label(frame, text="Przypisane do:").grid(row=8, column=0, sticky="w", pady=4)
+    var_assigned = tk.StringVar(value=str(ctx.get("przypisane_do") or ""))
+    cb_assigned = ttk.Combobox(
+        frame,
+        textvariable=var_assigned,
+        values=_load_user_logins(),
+        state="normal",
+        width=24,
+    )
+    cb_assigned.grid(row=8, column=1, sticky="w", pady=4)
+
+    options_map: dict[str, str] = {}
+    source_module = {"value": ""}
+
+    def _toggle_assigned(*_args) -> None:
+        if var_all.get():
+            try:
+                cb_assigned.configure(state="disabled")
+            except Exception:
+                pass
+        else:
+            try:
+                cb_assigned.configure(state="normal")
+            except Exception:
+                pass
+
+    def _refresh_object_choices(*_args) -> None:
+        nonlocal options_map
+        source_key, label_text, options = _options_for_type(var_type.get())
+        source_module["value"] = source_key
+        var_object_label.set(label_text)
+        options_map = {label: object_id for object_id, label in options}
+        labels = [label for _object_id, label in options]
+        cb_object.configure(values=labels)
+
+        ctx_object_id = str(ctx.get("obiekt_id") or "").strip()
+        picked = ""
+        if ctx_object_id:
+            for object_id, label in options:
+                if str(object_id) == ctx_object_id:
+                    picked = label
+                    break
+        if not picked and labels:
+            picked = labels[0]
+        var_object_display.set(picked)
+
+    _toggle_assigned()
+    var_all.trace_add("write", _toggle_assigned)
+    cb_type.bind("<<ComboboxSelected>>", _refresh_object_choices)
+    _refresh_object_choices()
+
+    btns = ttk.Frame(win, padding=(12, 0, 12, 12))
+    btns.pack(fill="x")
+
+    def _save() -> None:
+        title = var_title.get().strip()
+        if not title:
+            messagebox.showwarning("Dyspozycje", "Tytuł jest wymagany.", parent=win)
+            return
+
+        selected_label = var_object_display.get().strip()
+        object_id = options_map.get(selected_label, "").strip()
+        if not object_id:
+            messagebox.showwarning(
+                "Dyspozycje",
+                "Wybierz obiekt z listy.",
+                parent=win,
+            )
+            return
+
+        item = make_dyspozycja(
+            typ_dyspozycji=var_type.get().strip(),
+            tytul=title,
+            opis=txt_desc.get("1.0", "end").strip(),
+            autor=str(autor or "").strip(),
+            przypisane_do="" if var_all.get() else var_assigned.get().strip(),
+            dla_wszystkich=bool(var_all.get()),
+            termin=var_deadline.get().strip(),
+            priorytet=var_priority.get().strip(),
+            modul_zrodlowy=source_module["value"],
+            obiekt_id=object_id,
+            meta={"object_label": selected_label},
+        )
+        add_dyspozycja(item)
+        try:
+            win.winfo_toplevel().event_generate("<<OrdersUpdated>>", when="tail")
+        except Exception:
+            pass
+        messagebox.showinfo("Dyspozycje", "Dyspozycja została zapisana.", parent=win)
+        win.destroy()
+
+    ttk.Button(btns, text="Anuluj", command=win.destroy).pack(side="right", padx=(8, 0))
+    ttk.Button(btns, text="Zapisz", command=_save).pack(side="right")
+
+    ent_title.focus_set()
+    win.transient(root)
+    win.grab_set()
+    return win

@@ -1,0 +1,4 @@
+core/jarvis_engine.py:1271:def run_jarvis_background() -> None:
+core/jarvis_engine.py:1303:    "run_jarvis_background",
+start.py:759:        from core.jarvis_engine import run_jarvis_background, stop_jarvis as _stop_jarvis
+start.py:770:            run_jarvis_background()

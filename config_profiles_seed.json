@@ -1,0 +1,46 @@
+{
+  "profiles": {
+    "tab_enabled": true,
+    "show_name_in_header": true,
+    "fields_visible": [
+      "login",
+      "nazwa",
+      "rola",
+      "zmiana"
+    ],
+    "editable_fields": [
+      "imie",
+      "nazwisko",
+      "staz",
+      "telefon",
+      "email"
+    ],
+    "avatar": {
+      "enabled": false,
+      "directory": ""
+    },
+    "pin": {
+      "change_allowed": false
+    },
+    "task_default_deadline_days": 7
+  },
+  "profiles.tab_enabled": true,
+  "profiles.show_name_in_header": true,
+  "profiles.avatar.enabled": false,
+  "profiles.avatar.directory": "",
+  "profiles.fields_visible": [
+    "login",
+    "nazwa",
+    "rola",
+    "zmiana"
+  ],
+  "profiles.editable_fields": [
+    "imie",
+    "nazwisko",
+    "staz",
+    "telefon",
+    "email"
+  ],
+  "profiles.pin.change_allowed": false,
+  "profiles.task_default_deadline_days": 7
+}

@@ -1,0 +1,189 @@
+[
+  {
+    "login": "brygadzista",
+    "rola": "brygadzista",
+    "zmiana_plan": "I",
+    "tryb_zmian": "111",
+    "status": "",
+    "stanowisko": "",
+    "pin": "brygadzista",
+    "imie": "Edwin",
+    "nazwisko": "Kowalski",
+    "staz": 5,
+    "umiejetnosci": {
+      "spawanie": 4,
+      "tokarka": 3
+    },
+    "kursy": [
+      "BHP",
+      "Spawanie MIG"
+    ],
+    "ostrzezenia": [
+      "Brak kasku 2024-05-12"
+    ],
+    "nagrody": [
+      "Pracownik miesiąca 2024-06"
+    ],
+    "historia_maszyn": [
+      "TOK-1",
+      "FREZ-3"
+    ],
+    "awarie": [
+      "TOK-1 2024-02-11"
+    ],
+    "sugestie": [
+      "Zakup nowych rękawic"
+    ],
+    "preferencje": {
+      "motyw": "dark",
+      "widok_startowy": "panel"
+    },
+    "zadania": [],
+    "opis": "",
+    "ostatnia_wizyta": "2025-11-04T12:55:47.473520Z",
+    "disabled_modules": [],
+    "haslo": "brygadzista",
+    "active": true
+  },
+  {
+    "login": "dawid",
+    "rola": "uzytkownik",
+    "zmiana_plan": "I",
+    "tryb_zmian": "111",
+    "status": "",
+    "stanowisko": "",
+    "pin": "2",
+    "imie": "",
+    "nazwisko": "",
+    "staz": 0,
+    "umiejetnosci": {},
+    "kursy": [],
+    "ostrzezenia": [],
+    "nagrody": [],
+    "historia_maszyn": [],
+    "awarie": [],
+    "sugestie": [],
+    "preferencje": {
+      "motyw": "dark",
+      "widok_startowy": "panel"
+    },
+    "zadania": [],
+    "opis": "",
+    "ostatnia_wizyta": "1970-01-01T00:00:00Z",
+    "disabled_modules": [],
+    "haslo": "",
+    "active": true
+  },
+  {
+    "login": "marek",
+    "rola": "uzytkownik",
+    "zmiana_plan": "I",
+    "tryb_zmian": "111",
+    "status": "",
+    "stanowisko": "",
+    "pin": "3",
+    "imie": "",
+    "nazwisko": "",
+    "staz": 0,
+    "umiejetnosci": {},
+    "kursy": [],
+    "ostrzezenia": [],
+    "nagrody": [],
+    "historia_maszyn": [],
+    "awarie": [],
+    "sugestie": [],
+    "preferencje": {
+      "motyw": "dark",
+      "widok_startowy": "panel"
+    },
+    "zadania": [],
+    "opis": "",
+    "ostatnia_wizyta": "1970-01-01T00:00:00Z",
+    "disabled_modules": [],
+    "haslo": "",
+    "active": true
+  },
+  {
+    "login": "sebastian",
+    "rola": "uzytkownik",
+    "zmiana_plan": "I",
+    "tryb_zmian": "111",
+    "status": "",
+    "stanowisko": "",
+    "pin": "",
+    "imie": "",
+    "nazwisko": "",
+    "staz": 0,
+    "umiejetnosci": {},
+    "kursy": [],
+    "ostrzezenia": [],
+    "nagrody": [],
+    "historia_maszyn": [],
+    "awarie": [],
+    "sugestie": [],
+    "preferencje": {
+      "motyw": "dark",
+      "widok_startowy": "panel"
+    },
+    "zadania": [],
+    "opis": "",
+    "ostatnia_wizyta": "1970-01-01T00:00:00Z",
+    "disabled_modules": [],
+    "haslo": "",
+    "active": true
+  },
+  {
+    "login": "jacek",
+    "rola": "uzytkownik",
+    "zmiana_plan": "I",
+    "tryb_zmian": "111",
+    "status": "",
+    "stanowisko": "",
+    "pin": "",
+    "imie": "",
+    "nazwisko": "",
+    "staz": 0,
+    "umiejetnosci": {},
+    "kursy": [],
+    "ostrzezenia": [],
+    "nagrody": [],
+    "historia_maszyn": [],
+    "awarie": [],
+    "sugestie": [],
+    "preferencje": {
+      "motyw": "dark",
+      "widok_startowy": "panel"
+    },
+    "zadania": [],
+    "opis": "",
+    "ostatnia_wizyta": "1970-01-01T00:00:00Z",
+    "disabled_modules": [],
+    "haslo": "",
+    "active": true
+  },
+  {
+    "login": "admin",
+    "ostatnia_wizyta": "2025-11-05T07:20:19.866123Z",
+    "rola": "operator",
+    "pin": "",
+    "active": true,
+    "imie": "",
+    "nazwisko": "",
+    "staz": 0,
+    "umiejetnosci": {},
+    "kursy": [],
+    "ostrzezenia": [],
+    "nagrody": [],
+    "historia_maszyn": [],
+    "awarie": [],
+    "sugestie": [],
+    "opis": "",
+    "preferencje": {
+      "motyw": "dark",
+      "widok_startowy": "panel"
+    },
+    "zadania": [],
+    "disabled_modules": [],
+    "haslo": ""
+  }
+]

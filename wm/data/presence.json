@@ -1,0 +1,50 @@
+[
+  {
+    "login": "brygadzista",
+    "rola": "brygadzista",
+    "zmiana_plan": "I",
+    "status": "",
+    "imie": "Edwin",
+    "nazwisko": "Kowalski"
+  },
+  {
+    "login": "dawid",
+    "rola": "uzytkownik",
+    "zmiana_plan": "I",
+    "status": "",
+    "imie": "",
+    "nazwisko": ""
+  },
+  {
+    "login": "marek",
+    "rola": "uzytkownik",
+    "zmiana_plan": "I",
+    "status": "",
+    "imie": "",
+    "nazwisko": ""
+  },
+  {
+    "login": "sebastian",
+    "rola": "uzytkownik",
+    "zmiana_plan": "I",
+    "status": "",
+    "imie": "",
+    "nazwisko": ""
+  },
+  {
+    "login": "jacek",
+    "rola": "uzytkownik",
+    "zmiana_plan": "I",
+    "status": "",
+    "imie": "",
+    "nazwisko": ""
+  },
+  {
+    "login": "admin",
+    "rola": "operator",
+    "zmiana_plan": "",
+    "status": "",
+    "imie": "",
+    "nazwisko": ""
+  }
+]

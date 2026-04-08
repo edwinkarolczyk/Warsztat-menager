@@ -1,0 +1,42 @@
+{
+  "NN": {
+    "Projekt": [
+      "Tworzenie projektu",
+      "Tworzenie rysunku",
+      "Weryfikacja BOM"
+    ],
+    "Wykonanie": [
+      "Cięcie elementów",
+      "Frezowanie elementów",
+      "Cięcie EDM (drutówka) elementów",
+      "Gwintowanie"
+    ],
+    "Składanie": [
+      "Dopasowanie kołków ustalających",
+      "Skręcanie narzędzia"
+    ],
+    "Próba": [
+      "Próba na prasie",
+      "Wnioski z próby"
+    ],
+    "Oddanie narzędzia": [
+      "Wydanie narzędzia do produkcji"
+    ]
+  },
+  "SN": {
+    "Sprawne": [
+      "Smarowanie",
+      "Kontrola wizualna"
+    ],
+    "W ostrzeniu": [
+      "Ostrzenie stempli",
+      "Ostrzenie matrycy"
+    ],
+    "W naprawie": [
+      "Wymiana stempli",
+      "Wymiana kołków ustalających",
+      "Wymiana matrycy"
+    ],
+    "Wycofane": []
+  }
+}

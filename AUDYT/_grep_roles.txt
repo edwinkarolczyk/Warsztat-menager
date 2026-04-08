@@ -1,0 +1,194 @@
+README_DEMO_MANY_TASKS.txt:15:   - Jako brygadzista → Ustawienia → Alerty → zobaczysz sumy (Otwarte/Pilne/Zrobione) wg użytkowników.
+README_PATCH.txt:14:    "rola": "brygadzista",
+archiwum_projektow.txt:29:- Logowanie z rolami (brygadzista i użytkownik).
+audit_mw_report.json:16283:        "_is_admin_role",
+audit_mw_report.json:16435:        "_is_brygadzista",
+audit_mw_report.json:16837:        "_require_brygadzista_auth",
+audit_mw_report.json:17609:        "_default_admin_payload",
+audit_mw_report.json:17627:        "reset_admin_profile_if_needed",
+audit_mw_report.json:17697:        "_check_profiles_no_default_admin",
+audit_mw_report.json:17822:        "_has_default_admin",
+audit_mw_report.json:18025:        "ensure_brygadzista_account",
+audit_mw_report.json:18026:        "find_first_brygadzista",
+audit_mw_report.json:18878:        "test_secret_admin_pin_masked",
+audit_mw_report.json:19161:        "test_admin_has_profile_button_when_menu_hidden",
+audit_mw_report.json:19162:        "test_brygadzista_side_panel_has_settings_button",
+audit_mw_report.json:19475:        "test_save_admin_pin",
+audit_mw_report.md:2502:- Definicje: _active_login, _build_sidebar, _center_container, _clear_markers, _close_changelog, _format_modules, _get_app_version, _has_unseen_changelog, _is_admin_role, _load_last_visit, _load_mag_alerts, _logout, _logout_tick, _maybe_mark_button, _on_logout_destroy, _open_feedback, _open_profile, _open_profile_entry, _reset_logout_timer, _save_last_visit, _submit, _toggle_changelog, _warn, log_akcja, otworz_panel, panel_magazyn, panel_maszyny, panel_narzedzia, panel_uzytkownicy, panel_zlecenia, uruchom_panel, wyczysc_content
+audit_mw_report.md:2516:- Definicje: ProfileView, UnidentifiedImageError, __init__, _activate_tab, _apply_theme_sync, _assigned_to_login, _avatar_placeholder, _build_about, _build_basic_tab, _build_columns, _build_cover_header, _build_description_tab, _build_header, _build_placeholder_tab, _build_preferences_tab, _build_pw_tab, _build_shortcuts, _build_simple_list_tab, _build_skills_tab, _build_stats_tab, _build_table, _build_tabs, _build_tasks_tab, _build_timeline, _convert_order_to_task, _convert_tool_task, _format_message_event, _format_task_event, _format_timestamp, _init_styles, _initials, _is_brygadzista, _is_overdue, _is_task_done, _is_task_overdue, _is_task_urgent, _load_assign_orders, _load_assign_tools, _load_avatar, _load_json, _load_selected_pin, _load_status_overrides, _load_users_list, _login_list, _make_avatar, _map_status_generic, _message_refs, _on_destroy, _on_least_tasks, _on_mark_read, _on_open_schedule, _on_open_settings, _on_pick_profile_dir, _on_pick_profile_json, _on_send_pw, _on_sim_event, _open_edit_profile, _open_manage_pins, _open_pw_modal, _order_visible_for, _parse_date, _parse_deadline, _parse_timestamp, _poll, _prepare_modal_owner, _read_tasks, _refresh, _refresh_modal_owner, _refresh_pw_tab, _refresh_view, _reload_profile_data, _render_tab, _save, _save_assign_order, _save_assign_tool, _save_pin, _save_status_override, _show_task_details, _stars, _submit, _task_deadline_text, _task_label_text, _task_refs, _task_status_value, _timeline_item, _tool_visible_for, _user_editable_fields, _valid_login, ensure_theme_applied, filtered, make_tab, on_dbl, reload_table, resetuj, row, tag_for, uruchom_panel, zapisz
+audit_mw_report.md:2551:- Definicje: ToolsConfigDialog, __init__, _add_status, _add_task, _add_type, _del_status, _del_task, _del_type, _ensure_shared_types_integrity, _get_shared_types, _get_statuses_for_current, _load_or_init, _make_backup, _make_unique_id, _move_status, _move_task, _on_collection_change, _on_search, _on_status_edit, _on_status_select, _on_task_edit, _on_type_edit, _on_type_select, _refresh_statuses, _refresh_tasks, _refresh_types, _require_brygadzista_auth, _save, _save_now, _select_status_by_index, _select_type_by_index, _selected_status_index, _selected_type_index, _selected_type_true_index, _wm
+audit_mw_report.md:2754:- Definicje: _anchor_date_from_ym, _ask_root_directory_gui, _compute_sidebar_modules, _configured_users_path, _data_container, _default_admin_payload, _default_users_file, _ensure_default_users_file, _ensure_users_file_path, _load_manifest_modules, _norm, _prepare_root_structure, _prompt_for_users_root, ensure_profiles_file, ensure_user_fields, find_user_by_pin, get_tasks_for, get_user, list_user_ids, load_profiles, profiles_path, read_users, refresh_users_file, reset_admin_profile_if_needed, save_user, staz_days_for_login, staz_years_floor_for_login, write_users
+audit_mw_report.md:2768:- Definicje: _check_action_callable, _check_config_path_exists, _check_json_file_is_list, _check_json_file_readable, _check_json_min_length, _check_json_unique_field, _check_log_no_pattern, _check_profiles_no_default_admin, _data_root, _dget, _exists, _latest_file, _load_cfg, _logs_dir, _norm, _path_writable, _read_json, _read_text, _resolve_config_path, _tail, run
+audit_mw_report.md:2796:- Definicje: _ask_yesno, _ensure_dir_for, _ensure_profiles_file, _has_default_admin, _load_config, _norm, _paths_base, _profiles_path, _read_profiles, _save_config, _warn, _write_profiles, ensure_profiles_and_warn
+audit_mw_report.md:2859:- Definicje: _assign_orders_path, _assign_tools_path, _config_manager_or_none, _load_json, _load_tasks_raw, _overrides_dir, _presence_path, _save_json, _status_override_path, _use_users_file, authenticate, count_presence, ensure_brygadzista_account, find_first_brygadzista, get_all_users, get_tasks_for, get_user, is_logged_in, load_assign_orders, load_assign_tools, load_status_overrides, save_assign_order, save_assign_tool, save_status_override, save_user, sync_presence, tasks_data_status, workload_for, write_users
+audit_mw_report.md:3084:- Definicje: _make_manager, make_manager, test_audit_and_prune_rollbacks, test_auto_heal_defaults, test_backup_cloud_persistence, test_config_manager_migrates_tool_vocab, test_deprecated_fields_ignored, test_load_and_merge_overrides, test_load_tool_vocab_merges_sources, test_machines_relative_path_alias, test_migrate_legacy_machines_files, test_path_helpers_expand_relative_entries, test_profiles_migration_creates_new_structure, test_refresh_with_custom_paths, test_root_path_persisted_after_save, test_secret_admin_pin_masked, test_set_and_save_all_persistence, test_ui_theme_defaults_and_aliases, test_validate_dict_value_type
+audit_mw_report.md:3182:- Definicje: _extract_button_texts, root, test_admin_has_profile_button_when_menu_hidden, test_brygadzista_side_panel_has_settings_button, test_panel_has_no_menubar
+audit_mw_report.md:3294:- Definicje: _make_root, _setup_dummy_login, cfg_env, fake_askyesno, fake_button, fake_label, test_change_and_close_warn, test_enable_pinless_login_from_settings, test_save_admin_pin, test_save_creates_backup, test_switch_tabs
+audit_settings_schema_report.txt:2:Missing keys in config: auth.required, auth.session_timeout_min, secrets.admin_pin, hall.grid_size_px, hall.drag_snap_px, hall.triple_confirm_delete, tools.collections_enabled, tools.default_collection, tools.auto_check_on_status_global, tools.collections_paths, magazyn_rezerwacje, magazyn_precision_mb, produkty_dir, produkty_auto_sync, polprodukty_dir, polprodukty_auto_sync, surowce_file, progi_alertow_surowce, progi_alertow_pct, czynnosci_technologiczne, updates.auto, updates.remote, updates.branch, updates.push_branch, backup.folder, backup.cloud.url, backup.cloud.username, backup.cloud.password, backup.cloud.folder, profiles.tab_enabled, profiles.show_name_in_header, profiles.avatar_dir, profiles.allow_pin_change, profiles.task_default_deadline_days, profiles.fields_visible, profiles.fields_editable_by_user
+backend/bootstrap_root.py:22:            "login": "brygadzista",
+backend/bootstrap_root.py:23:            "role": "brygadzista",
+config.defaults.json:33:    "pinless_brygadzista": false,
+config.defaults.json:66:    "role_access": [
+config.defaults.json:67:      "brygadzista",
+config.defaults.json:68:      "admin"
+config.defaults.json:159:    "admin_pin": ""
+config_old.json:126:      "zmiana_klasy": "brygadzista",
+config_old.json:127:      "zmiana_statusu": "serwis_brygadzista"
+core/inventory_manager.py:11:# Pełne uprawnienia RW mają: admin, magazynier, brygadzista
+core/inventory_manager.py:12:ALLOWED_RW_ROLES = {"admin", "administrator", "magazynier", "brygadzista"}
+core/inventory_manager.py:102:            "Brak uprawnień do zapisu magazynu (wymagany: administrator/admin/magazynier/brygadzista)."
+core/inventory_manager.py:130:            "Brak uprawnień do modyfikacji magazynu (wymagany: admin/magazynier/brygadzista)."
+core/ui_notebook_autobind.py:15:        return "brygadzista"
+core/window_manager.py:34:            get_user_role=lambda: "brygadzista",
+core/zlecenia_loader.py:72:            return open_creator(master, autor=user_role or "brygadzista")
+core/zlecenia_loader.py:95:        return open_creator(master, autor=user_role or "brygadzista")
+data/profiles.json:5:    "rola": "brygadzista",
+data/user/edwin.json:3:  "rola": "brygadzista",
+data/uzytkownicy.json:4:    "rola": "brygadzista",
+docs/INVENTORY_FORMAT.md:18:Uprawnienia: zapisu dokonują role **admin/magazynier**. Rola **brygadzista** nie ma dostępu do zapisu.
+docs/PLAN_WDROZENIA_STATUS.md:48:- ⛔ W tabeli zleceń nie ma dodatkowych kolumn „czas realizacji” ani „brygadzista”. 【F:gui_zlecenia.py†L230-L279】
+gui_logowanie.py:33:    ensure_brygadzista_account,
+gui_logowanie.py:34:    find_first_brygadzista,
+gui_logowanie.py:61:            "rola": "brygadzista",
+gui_logowanie.py:230:    if cfg.get("auth.pinless_brygadzista", False):
+gui_logowanie.py:406:        user = find_first_brygadzista()
+gui_logowanie.py:410:                if role == "brygadzista":
+gui_logowanie.py:413:                        "rola": profile.get("rola", "brygadzista"),
+gui_logowanie.py:420:            rola = user.get("rola", "brygadzista")
+gui_logowanie.py:479:                    ensure_brygadzista_account()
+gui_magazyn.py:67:    "view": "brygadzista",
+gui_magazyn.py:71:    "reserve": "brygadzista",
+gui_magazyn.py:72:    "unreserve": "brygadzista",
+gui_magazyn.py:73:    "to_orders": "brygadzista",
+gui_magazyn.py:157:    order = ["", "brygadzista", "magazynier"]
+gui_magazyn.py:163:    required = ROLE_PERMS.get(action, "brygadzista")
+gui_magazyn.py:208:    return "brygadzista"
+gui_magazyn_kreator_bind.py:66:    role = "brygadzista"
+gui_magazyn_kreator_bind.py:84:            return direct(master, autor=role or "brygadzista")
+gui_magazyn_kreator_bind.py:123:        role = "brygadzista"
+gui_magazyn_kreator_bind.py:156:                return direct(master, autor=role or "brygadzista")
+gui_narzedzia.py:1748:    allowed_roles = profile_utils.ADMIN_ROLE_NAMES | {"brygadzista"}
+gui_narzedzia.py:2294:    """Sprawdza uprawnienie narzedzia.uprawnienia.zmiana_klasy: 'brygadzista' | 'brygadzista_serwisant'."""
+gui_narzedzia.py:2296:    setg = (((cfg.get("narzedzia") or {}).get("uprawnienia") or {}).get("zmiana_klasy") or "brygadzista").strip().lower()
+gui_narzedzia.py:2297:    if setg == "brygadzista_serwisant":
+gui_narzedzia.py:2298:        allowed = {"brygadzista", "serwisant"}
+gui_narzedzia.py:2300:        allowed = {"brygadzista"}
+gui_narzedzia.py:2301:    # zawsze przepuść „admin” jeśli używacie takiej roli
+gui_narzedzia.py:4839:                    error_dialogs.show_error_dialog("Uprawnienia", "Tę operację może wykonać tylko brygadzista.")
+gui_panel.py:555:    def _is_admin_role(r):
+gui_panel.py:556:        admin_like = ADMIN_ROLE_NAMES | {"kierownik", "brygadzista", "lider"}
+gui_panel.py:557:        return str(r).lower() in admin_like
+gui_panel.py:660:    admin_roles = ADMIN_ROLE_NAMES | {"kierownik", "brygadzista", "lider"}
+gui_panel.py:661:    is_admin = str(rola).strip().lower() in admin_roles
+gui_panel.py:716:            if key in {"uzytkownicy", "ustawienia"} and not is_admin:
+gui_profile.py:11:* brygadzista widzi wszystkie zlecenia/narzędzia.
+gui_profile.py:560:    if role=="brygadzista": return True
+gui_profile.py:575:    if role == "brygadzista":
+gui_profile.py:679:    if str(role or "").lower() == "brygadzista":
+gui_profile.py:746:    if role=="brygadzista" and (is_order or is_tool):
+gui_profile.py:768:        if role=="brygadzista":
+gui_profile.py:1233:        rola: str = "brygadzista",
+gui_profile.py:2182:        if self._is_brygadzista():
+gui_profile.py:2242:    def _is_brygadzista(self) -> bool:
+gui_profile.py:2246:        return role == "brygadzista"
+gui_profile.py:2348:        if not self._is_brygadzista():
+gui_tools_config_advanced.py:30:def _require_brygadzista_auth(master: tk.Misc) -> bool:
+gui_tools_config_advanced.py:400:        if not _require_brygadzista_auth(self):
+gui_uzytkownicy.py:205:    elevated_roles = ADMIN_ROLE_NAMES | {"brygadzista"}
+gui_uzytkownicy.py:228:            "Tę operację może wykonać tylko administrator lub brygadzista.",
+logi_gui.txt:169:[2025-08-08 16:22:07] Zalogowano: edwin (brygadzista)
+logi_gui.txt:175:[2025-08-08 16:25:34] Zalogowano: edwin (brygadzista)
+presence.json:4:    "role": "brygadzista",
+profile_users.txt:4:- Zarządzanie informacjami o użytkownikach (pracownicy, serwisanci, brygadziści, admin).
+profile_utils.py:66:def reset_admin_profile_if_needed(cfg: "ConfigManager", data: dict) -> dict:
+profile_utils.py:67:    """Ensure there is at least one admin profile in ``data``."""
+profile_utils.py:90:    print(f"[WM-DBG][PROFILE] Zresetowano konto admin → {path}")
+profile_utils.py:145:PRIMARY_ADMIN_ROLE = "administrator"
+profile_utils.py:146:DEFAULT_ADMIN_LOGIN = "admin"
+profile_utils.py:150:DEFAULT_BRYGADZISTA_LOGIN = "brygadzista"
+profile_utils.py:151:DEFAULT_BRYGADZISTA_PASSWORD = "brygadzista"
+profile_utils.py:162:        roles = ConfigManager().get("jarvis.role_access", [])
+profile_utils.py:191:def _default_admin_payload() -> list[dict]:
+profile_utils.py:334:        write_json(str(path), _default_admin_payload())
+rc1_audit_plus.py:189:def _check_profiles_no_default_admin(cfg: dict, label: str, required=True):
+rc1_audit_plus.py:194:        def_admin = False
+rc1_audit_plus.py:199:                if login == "admin" and (haslo == "nimda" or haslo.strip() == ""):
+rc1_audit_plus.py:200:                    def_admin = True; break
+rc1_audit_plus.py:201:        ok = not def_admin
+rc1_audit_plus.py:202:        return ok or (not required), f"[{ 'OK' if ok else 'FAIL'}] {label}: {'zmienione' if ok else 'wykryto admin/nimda'}"
+rc1_audit_plus.py:310:    # --- PROFILES: bezpieczeństwo admina ---
+rc1_audit_plus.py:311:    plus_checks.append(lambda: _check_profiles_no_default_admin(cfg, "Profiles: brak 'admin' z hasłem domyślnym", True))
+rc1_profiles_bootstrap.py:2:# RC1: bootstrap użytkowników + przypominajka o zmianie domyślnego hasła admina
+rc1_profiles_bootstrap.py:6:# - Jeśli plik nie istnieje → pyta, czy utworzyć minimalny plik z kontem "admin"/"nimda".
+rc1_profiles_bootstrap.py:7:# - Na każdym starcie sprawdza, czy wciąż istnieje konto "admin" z hasłem "nimda"/pustym → przypomina, aż zmienisz.
+rc1_profiles_bootstrap.py:20:    "login": "admin",
+rc1_profiles_bootstrap.py:22:    "rola": "administrator",
+rc1_profiles_bootstrap.py:124:def _has_default_admin(records: list[dict]) -> bool:
+rc1_profiles_bootstrap.py:128:        if login == "admin" and (haslo == "nimda" or str(haslo).strip() == ""):
+rc1_profiles_bootstrap.py:136:                       f"Nie znaleziono pliku profili:\n{path}\n\nUtworzyć minimalny plik z kontem 'admin' / 'nimda'?"):
+rc1_profiles_bootstrap.py:142:            print(f"[RC1][profiles] utworzono {path} z kontem 'admin'/'nimda'")
+rc1_profiles_bootstrap.py:161:    if _has_default_admin(recs):
+rc1_profiles_bootstrap.py:163:            "Bezpieczeństwo: zmień hasło admina",
+rc1_profiles_bootstrap.py:164:            "Wykryto konto 'admin' z domyślnym lub pustym hasłem.\n\n"
+services/profile_service.py:324:def find_first_brygadzista(file_path: Optional[str] = None) -> Optional[Dict]:
+services/profile_service.py:325:    """Return first user with role 'brygadzista' or ``None``."""
+services/profile_service.py:327:        if str(user.get("rola", "")).strip().lower() == "brygadzista":
+services/profile_service.py:332:def ensure_brygadzista_account(
+services/profile_service.py:337:    """Ensure at least one brygadzista account exists and return it."""
+services/profile_service.py:350:        if target is None and user_role == "brygadzista":
+services/profile_service.py:358:                "rola": "brygadzista",
+services/profile_service.py:368:        target["rola"] = "brygadzista"
+services/profile_service.py:594:    "find_first_brygadzista",
+services/profile_service.py:595:    "ensure_brygadzista_account",
+settings_schema.json:97:          "brygadzista": {
+start.py:121:        reset_admin_profile_if_needed(manager, profiles_data)
+start.py:163:from profile_utils import load_profiles, reset_admin_profile_if_needed
+start.py:801:            import rc1_profiles_bootstrap  # RC1: profiles.json + przypominajka o haśle admina
+test_first_login_brygadzisty.py:18:    gui_panel.uruchom_panel(root, "demo", "brygadzista")
+test_gui_logowanie.py:215:        if key == "auth.pinless_brygadzista":
+test_gui_logowanie.py:229:    users = [{"login": "user", "pin": "1234", "rola": "admin"}]
+test_gui_logowanie.py:249:    assert logged == {"login": "user", "rola": "admin"}
+test_gui_logowanie.py:314:    users = [{"login": "user", "pin": "1234", "rola": "admin"}]
+test_gui_profile_roles.py:11:    roles = ["brygadzista", "BRYGADZISTA", "Brygadzista", "BrYgAdZiStA"]
+test_gui_profile_roles.py:44:    roles = ["brygadzista", "BRYGADZISTA", "Brygadzista", "BrYgAdZiStA"]
+test_kreator_wersji.py:30:        "find_first_brygadzista()",
+test_logika_zlecenia_i_maszyny.py:128:            return ["admin"]
+tests/smoke_settings_window.py:41:        setattr(root, "_wm_rola", "admin")
+tests/test_config_manager.py:309:def test_secret_admin_pin_masked(make_manager):
+tests/test_config_manager.py:312:        "options": [{"key": "secrets.admin_pin", "type": "string"}],
+tests/test_config_manager.py:314:    defaults = {"secrets": {"admin_pin": ""}}
+tests/test_config_manager.py:317:    mgr.set("secrets.admin_pin", "1234", who="tester")
+tests/test_config_manager.py:322:    assert data["secrets"]["admin_pin"] == "1234"
+tests/test_config_manager.py:325:    assert reloaded.get("secrets.admin_pin") == "1234"
+tests/test_config_manager.py:330:    rec = next(r for r in records if r["key"] == "secrets.admin_pin")
+tests/test_gui_panel_permissions.py:25:def test_brygadzista_side_panel_has_settings_button(root, monkeypatch):
+tests/test_gui_panel_permissions.py:27:    gui_panel.uruchom_panel(root, "demo", "brygadzista")
+tests/test_gui_panel_permissions.py:33:def test_admin_has_profile_button_when_menu_hidden(root, monkeypatch):
+tests/test_gui_panel_permissions.py:35:    gui_panel.uruchom_panel(root, "demo", "admin")
+tests/test_inventory_bridge.py:43:    save_inventory(cfg, data, user_role="brygadzista")
+tests/test_inventory_smoke.py:22:    assert can_access_inventory("brygadzista") is True
+tests/test_inventory_smoke.py:24:    save_path = save_inventory(cfg, good, user_role="brygadzista")
+tests/test_inventory_smoke.py:32:        user_role="brygadzista",
+tests/test_profile_disabled_modules_ui.py:44:    users = [_sample_user("anna"), _sample_user("piotr", rola="admin")]
+tests/test_profile_disabled_modules_ui.py:52:        ["piotr", "admin", "2024-01-01", "aktywny"],
+tests/test_profile_disabled_modules_ui.py:86:    updated = _sample_user("anna", rola="admin", status="zablokowany")
+tests/test_profile_disabled_modules_ui.py:91:    assert first_row == ["anna", "admin", "2024-01-01", "zablokowany"]
+tests/test_settings_gui.py:126:def test_save_admin_pin(cfg_env):
+tests/test_settings_gui.py:129:    panel.vars["secrets.admin_pin"].set("4321")
+tests/test_settings_gui.py:133:    assert data["secrets"]["admin_pin"] == "4321"
+tests/test_settings_gui.py:140:    panel.vars["auth.pinless_brygadzista"].set(True)
+tests/test_settings_gui.py:146:    assert stored["auth"]["pinless_brygadzista"] is True
+tests/test_settings_gui.py:162:        {"login": "admin", "rola": "administrator", "active": True},
+tests/test_settings_gui.py:163:        {"login": "brygadzista", "rola": "brygadzista", "active": True},
+tests/test_settings_gui.py:175:    panel.vars["auth.auto_login_profile"].set("admin")
+tests/test_settings_gui.py:183:    assert stored["auth"]["auto_login_profile"] == "admin"
+tests/test_start_auto_login.py:17:        lambda login: {"login": login, "rola": "administrator", "active": True},
+tests/test_start_auto_login.py:32:    assert called["args"][2] == "administrator"
+ustawienia_magazyn.py:11:# - Uprawnienia (brygadzista, magazynier)
+ustawienia_magazyn.py:271:        self.var_perm_bryg_edit = tk.BooleanVar(value=self.config_manager.get("magazyn.perms.brygadzista.edit", True))
+ustawienia_magazyn.py:272:        self.var_perm_bryg_pz = tk.BooleanVar(value=self.config_manager.get("magazyn.perms.brygadzista.pz", False))
+ustawienia_magazyn.py:314:        self.config_manager.set("magazyn.perms.brygadzista.edit", bool(self.var_perm_bryg_edit.get()))
+ustawienia_magazyn.py:315:        self.config_manager.set("magazyn.perms.brygadzista.pz", bool(self.var_perm_bryg_pz.get()))
+ustawienia_uzytkownicy.py:184:    ROLES = [PRIMARY_ADMIN_ROLE, "admin", "operator", "serwisant", "brygadzista"]
+utils/error_dialogs.py:8:_DEFAULT_SUGGESTION = "Spróbuj ponownie lub skontaktuj się z administratorem."
+uzytkownicy_presence.json:4:    "rola": "brygadzista",

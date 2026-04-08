@@ -1,0 +1,39 @@
+# version: 1.0
+import json
+from pathlib import Path
+
+from config_manager import ConfigManager
+
+
+def test_zadania_narzedzia_limits_and_structure():
+    cfg = ConfigManager()
+    path = Path(cfg.path_data("zadania_narzedzia.json"))
+    if not path.exists():
+        path = Path("data/zadania_narzedzia.json")
+    with path.open(encoding="utf-8") as f:
+        data = json.load(f)
+    collections = data.get("collections")
+    assert isinstance(collections, dict)
+
+    for cid in ("NN", "SN"):
+        assert cid in collections, f"Brak kolekcji {cid}"
+        types = collections[cid].get("types") or []
+        assert types, f"Kolekcja {cid} nie zawiera typów"
+        assert any(t.get("statuses") for t in types), f"Kolekcja {cid} bez statusów"
+        assert any(
+            st.get("tasks")
+            for t in types
+            for st in t.get("statuses") or []
+        ), f"Kolekcja {cid} bez zadań"
+
+    for coll in collections.values():
+        types = coll.get("types") or []
+        assert len(types) <= 8, "Limit typów przekroczony"
+        for typ in types:
+            assert {"id", "name", "statuses"} <= typ.keys()
+            statuses = typ.get("statuses") or []
+            assert len(statuses) <= 8, f"Za dużo statusów dla typu {typ.get('id')}"
+            for st in statuses:
+                assert {"id", "name", "tasks"} <= st.keys()
+                tasks = st.get("tasks") or []
+                assert isinstance(tasks, list)

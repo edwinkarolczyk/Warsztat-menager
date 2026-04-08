@@ -1,0 +1,45 @@
+{
+  "numer": "001",
+  "nazwa": "Nazwa testowa",
+  "typ": "Wykrawające",
+  "status": "sprawne",
+  "opis": "",
+  "pracownik": "edwin",
+  "zadania": [
+    {
+      "tytul": "ostrzenie stempla",
+      "done": false,
+      "by": "",
+      "ts_done": "",
+      "assigned_to": null,
+      "source": "own"
+    },
+    {
+      "tytul": "regeneracja matrycy",
+      "done": false,
+      "by": "",
+      "ts_done": "",
+      "assigned_to": null,
+      "source": "own"
+    },
+    {
+      "tytul": "wymiana sprężyn",
+      "done": false,
+      "by": "",
+      "ts_done": "",
+      "assigned_to": null,
+      "source": "own"
+    },
+    {
+      "tytul": "czyszczenie",
+      "done": false,
+      "by": "",
+      "ts_done": "",
+      "assigned_to": null,
+      "source": "own"
+    }
+  ],
+  "data_dodania": "2025-08-12T12:12:00",
+  "tryb": "STARE",
+  "interwencje": []
+}

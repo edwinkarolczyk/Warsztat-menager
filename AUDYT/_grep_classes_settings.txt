@@ -1,0 +1,6 @@
+core/settings_manager.py:205:class Settings:
+gui_settings.py:1531:class SettingsPanel:
+gui_settings.py:3980:class SettingsWindow(SettingsPanel):
+ustawienia_magazyn.py:85:class MagazynSettingsFrame(ttk.Frame):
+ustawienia_uzytkownicy.py:40:class SettingsProfilesTab(ttk.Frame):
+wm/gui/settings_window.py:12:class SettingsWindow(tk.Toplevel):

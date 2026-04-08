@@ -1,0 +1,79 @@
+From 0000000000000000000000000000000000000003 Mon Sep 17 00:00:00 2001
+From: Edwin <edwin@example.com>
+Date: Thu, 5 Nov 2025 08:10:00 +0100
+Subject: [PATCH 3/3] Use core.users helpers in settings users tab
+
+---
+ gui_ustawienia_users.py | 56 +++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 56 insertions(+)
+
+diff --git a/gui_ustawienia_users.py b/gui_ustawienia_users.py
+index 0000003..0000004 100644
+--- a/gui_ustawienia_users.py
++++ b/gui_ustawienia_users.py
+@@ -1,3 +1,59 @@
++"""
++Warsztat Menager – integracja zakładki Użytkownicy z core.users.
++
++Ten patch dodaje importy i dwie funkcje pomocnicze:
++ - _reload_users_table()  – wczytuje użytkowników z load_all_users()
++ - _save_users_from_table() – zapisuje przez save_all_users()
++
++NIE usuwa żadnego istniejącego kodu – po zastosowaniu patcha
++możesz ręcznie podmienić stare miejsca ładowania/zapisu na te funkcje.
++"""
++
++from core.users import load_all_users, save_all_users
++
++# ... istniejący kod modułu ustawień ...
++
++
++class UsersSettingsTab:  # dopasuj do swojej klasy/struktury
++    def _reload_users_table(self):
++        """Wczytuje użytkowników z core.users.load_all_users()."""
++        users = load_all_users()
++
++        tree = getattr(self, "users_tree", None)
++        if tree is None:
++            return
++
++        # wyczyszczenie tabeli
++        tree.delete(*tree.get_children())
++
++        for u in users:
++            login = u.get("login", "")
++            name = u.get("name", "")
++            role = u.get("role", "")
++            enabled = u.get("enabled", True)
++
++            tree.insert("", "end", values=(
++                login,
++                name,
++                role,
++                "TAK" if enabled else "NIE",
++            ))
++
++    def _save_users_from_table(self):
++        """Zbiera dane z TreeView i zapisuje przez core.users.save_all_users()."""
++        tree = getattr(self, "users_tree", None)
++        if tree is None:
++            return
++
++        users = []
++        for item_id in tree.get_children():
++            values = tree.item(item_id, "values")
++            if len(values) < 4:
++                continue
++            login, name, role, enabled_str = values[:4]
++            users.append({
++                "login": login,
++                "name": name,
++                "role": role,
++                "enabled": (str(enabled_str).upper() in ("1", "TAK", "TRUE")),
++            })
++
++        save_all_users(users)
++
++# ⏹ KONIEC KODU
+-- 
+2.47.0

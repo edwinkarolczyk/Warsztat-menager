@@ -1,0 +1,73 @@
+README.md:42:- `run_scan_missing_root.bat` – uruchamia skrypt `tools/scan_missing_root.py`, który raportuje pliki korzystające z repozytoryjnych ścieżek `data/` zamiast `<root>` (raport: `missing_root_report.txt`).
+config.json:16:    "logs_dir": "<root>\\logs",
+config.json:17:    "backup_dir": "<root>\\backup",
+config.json:18:    "layout_dir": "<root>\\data\\layout",
+config.json:19:    "tools_dir": "<root>\\data\\narzedzia",
+config.json:20:    "products_dir": "<root>\\data\\produkty",
+config.json:21:    "warehouse_dir": "<root>\\data\\magazyn",
+config.json:22:    "orders_dir": "<root>\\data\\zlecenia",
+config.json:23:    "data_root": "<root>\\data"
+config/paths.py:98:    if "<root>" in raw:
+config/paths.py:99:        raw = raw.replace("<root>", _DEFAULT_ANCHOR)
+config/paths.py:113:    candidate = value.replace("<root>", anchor_root)
+config_manager.py:201:    if "<root>" in candidate:
+config_manager.py:202:        candidate = candidate.replace("<root>", base)
+config_manager.py:221:            if "<root>" in data_candidate:
+config_manager.py:222:                data_candidate = data_candidate.replace("<root>", placeholder_base)
+config_manager.py:228:            if isinstance(anchor_value, str) and "<root>" in anchor_value:
+config_manager.py:229:                anchor_value = anchor_value.replace("<root>", r"C:\\wm")
+config_manager.py:419:    """Uzupełnia konfigurację o ścieżki relatywne względem <root>."""
+config_manager.py:453:    """Deep copy + aplikacja migracji ścieżek względem <root>."""
+config_manager.py:472:    """Migrate user-maintained files to ``<root>/data`` if missing there."""
+core/orders_storage.py:24:    2. ``<root>/data/zlecenia/zlecenia.json``
+data/audyt.json:16:    "note": "Przycisk tworzący minimalne pliki/katalogi pod <root>."
+data/audyt.json:21:    "title": "Source of Truth <root>/maszyny.json (R-03)",
+data/audyt.json:24:    "note": "<root>/maszyny.json ustawione; jeszcze bez finalnego scalenia danych z layout/."
+data/audyt.json:53:    "title": "Zapisy narzędzi pod <root>/narzedzia",
+data/audyt.json:86:    "title": "R-07 – Globalny <root> + relatywne ścieżki (Maszyny/Narzędzia/Magazyn/Zlecenia/BOM)",
+data/audyt.json:91:      "Ustawienia→System pokazują status plików względem <root>",
+data/audyt.json:93:      "Wszystkie zapisy trafiają pod <root>"
+data/audyt.json:95:    "note": "Kryteria: resolve_rel, status w Ustawienia→System, brak twardych ścieżek, zapisy pod <root>."
+gui_narzedzia.py:777:                    "[TOOLS] Migrowano pliki narzędzi: %d → <root>\\narzedzia", moved
+gui_settings.py:215:# R-07: System → Folder <root> + status ścieżek
+gui_settings.py:253:    box = ttk.Labelframe(parent, text="Folder WM (<root>) i status plików")
+gui_settings.py:260:    def _pick_dir(key: str = "<root>") -> None:
+gui_settings.py:262:            "Wybierz katalog <root>"
+gui_settings.py:263:            if key in {"<root>", "root"}
+gui_settings.py:270:        cfg_key = "paths.data_root" if key in {"<root>", "root", "paths.<root>"} else key
+gui_settings.py:357:            "  <root>/maszyny.json\n"
+gui_settings.py:358:            "  <root>/narzedzia/typy_narzedzi.json\n"
+gui_settings.py:359:            "  <root>/narzedzia/001.json\n"
+gui_settings.py:360:            "  <root>/zlecenia/zlecenia.json\n"
+gui_settings.py:361:            "  <root>/logs/"
+gui_settings.py:960:    Tworzy brakujące zasoby pod wybranym <root> wg PATH_MAP:
+gui_settings.py:1799:        """Apply runtime updates after changing the <root> directory."""
+gui_settings.py:1828:        print(f"[WM-DBG][SETTINGS] Ustawiono nowe <root>: {new_root}")
+gui_tools.py:33:    """Zwraca absolutną ścieżkę do katalogu ``<root>/narzedzia``."""
+gui_tools.py:43:    """Zapisz definicję narzędzia ``nr`` pod ``<root>/narzedzia``."""
+profile_utils.py:229:            title="Wskaż Folder WM (<root>)",
+profile_utils.py:303:        "[PROFILE] Brak Folderu WM (<root>).\n"
+rc1_data_bootstrap.py:444:        print("[RC1][bootstrap] Pominięto bootstrap plików – brak Folderu WM (<root>).")
+run_scan_missing_root.bat:17:echo [SCAN] Szukam uzyc repo-relative (bez <root>)...
+runtime_paths.py:13:    Zwraca katalog danych aplikacji (<root>).
+runtime_paths.py:79:     - lub jeśli używasz katalogu danych (<root>), łączy z app_root
+settings_schema.json:355:                  "text": "Logi: <root>/logs. Kopie zapasowe: <root>/backup. Foldery są wyznaczane automatycznie względem Folderu WM."
+settings_schema.json:380:                  "text": "Katalog layoutu = <root>/layout."
+settings_schema.json:416:                  "text": "Layout hali = <root>/layout/maszyny.json (pochodna Folderu WM)."
+settings_schema.json:427:                  "text": "Katalog magazynu = <root>/magazyn. Plik stanów: <root>/magazyn/magazyn.json. Plik rezerwacji: <root>/magazyn/rezerwacje.json."
+settings_schema.json:438:                  "text": "Katalog produktów = <root>/produkty. Plik BOM: <root>/produkty/bom.json."
+settings_schema.json:449:                  "text": "Katalog narzędzi = <root>/narzedzia. Typy: <root>/narzedzia/typy_narzedzi.json. Statusy: <root>/narzedzia/statusy_narzedzi.json. Szablony zadań: <root>/narzedzia/szablony_zadan.json."
+settings_schema.json:460:                  "text": "Katalog zleceń = <root>/zlecenia. Plik zleceń: <root>/zlecenia/zlecenia.json."
+settings_schema.json:818:              "text": "Plik maszyn = <root>/maszyny/maszyny.json. Folder WM (root) ustawisz w zakładce System."
+start.py:171:    """Emit podstawowe informacje diagnostyczne o ścieżkach <root>."""
+tools/roadmap_apply_updates.py:58:            "note": "Przycisk tworzący minimalne pliki/katalogi pod <root>.",
+tools/roadmap_apply_updates.py:71:            "note": "Zapisy 001.json/002.json… pod <root>/narzedzia.",
+tools/roadmap_apply_updates.py:122:                "<root>/maszyny.json ustawione; jeszcze bez finalnego scalenia danych "
+tools/roadmap_apply_updates.py:189:        "title": "Zapisy narzędzi pod <root>/narzedzia",
+tools/roadmap_apply_updates.py:223:        "title": "Source of Truth <root>/maszyny.json (R-03)",
+tools/scan_missing_root.py:1:"""Scan repository for path usages that ignore the <root> data directory."""
+tools/scan_missing_root.py:68:    if "<root>" in normalized.lower():
+tools/scan_missing_root.py:277:            f"=== MISSING <root> SCAN === {datetime.now():%Y-%m-%d %H:%M:%S}\n"
+tools/scan_missing_root.py:280:        handle.write("Focus: references to repo-relative 'data/' paths (expected <root>)\n\n")
+tools/seed_wm_data.py:76:    print("[SEED] Gotowe – utworzono przykładowe dane w <root>.")
+utils_paths.py:26:    Falls back to the application-wide ``<root>`` directory and ultimately to

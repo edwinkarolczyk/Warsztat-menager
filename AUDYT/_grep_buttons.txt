@@ -1,0 +1,221 @@
+gui_tools_config_advanced.py:147:        ttk.Button(type_btns, text="Dodaj typ", command=self._add_type).pack(side="left")
+gui_tools_config_advanced.py:148:        ttk.Button(type_btns, text="Usuń typ", command=self._del_type).pack(
+gui_tools_config_advanced.py:163:        ttk.Button(
+gui_tools_config_advanced.py:169:        ttk.Button(
+gui_tools_config_advanced.py:177:        ttk.Button(status_btns, text="Dodaj status", command=self._add_status).pack(
+gui_tools_config_advanced.py:180:        ttk.Button(status_btns, text="Usuń status", command=self._del_status).pack(
+gui_tools_config_advanced.py:194:        ttk.Button(
+gui_tools_config_advanced.py:200:        ttk.Button(
+gui_tools_config_advanced.py:208:        ttk.Button(task_btns, text="Dodaj zadanie", command=self._add_task).pack(
+gui_tools_config_advanced.py:211:        ttk.Button(task_btns, text="Usuń zadanie", command=self._del_task).pack(
+gui_tools_config_advanced.py:217:        ttk.Button(bottom, text="Zapisz", command=self._save).pack(side="left")
+gui_tools_config_advanced.py:218:        ttk.Button(bottom, text="Anuluj", command=self.destroy).pack(
+gui_magazyn_rezerwacje.py:107:    ttk.Button(frm, text="OK", command=do_save).grid(row=4, column=0, pady=8)
+gui_magazyn_rezerwacje.py:108:    ttk.Button(frm, text="Anuluj", command=win.destroy).grid(row=4, column=1, pady=8)
+gui_magazyn_rezerwacje.py:162:    ttk.Button(frm, text="OK", command=do_save).grid(row=3, column=0, pady=8)
+gui_magazyn_rezerwacje.py:163:    ttk.Button(frm, text="Anuluj", command=win.destroy).grid(row=3, column=1, pady=8)
+gui_orders.py:58:    ttk.Button(footer, text="Zamknij", command=win.destroy, style="WM.Side.TButton").pack(side="right")
+widok_hali/machines_view.py:305:            btn = self.ttk.Button(footer, text=text, command=command)
+gui_maszyny_view.py:361:        ttk.Button(
+gui_maszyny_view.py:366:        ttk.Button(
+gui_maszyny_view.py:374:            ttk.Button(
+gui_maszyny_view.py:380:            ttk.Button(
+gui_maszyny_view.py:386:            ttk.Button(
+gui_zlecenia.py:68:                local_ttk.Button(
+gui_zlecenia.py:214:    ttk.Button(win, text="Zamknij", command=win.destroy).pack(side="right", padx=8, pady=8)
+gui_zlecenia.py:278:        btn_add = ttk.Button(toolbar, text="Dodaj zlecenie (Kreator)")
+gui_zlecenia.py:292:            ttk.Button(
+gui_magazyn_pz.py:137:        ttk.Button(btns, text="Zapisz", command=self.on_save).pack(
+gui_magazyn_pz.py:140:        ttk.Button(btns, text="Anuluj", command=self.win.destroy).pack(side="right")
+gui_zlecenia_detail.py:93:    ttk.Button(frame, text="Zapisz status", command=_change_status).pack(anchor="w", pady=(8, 0))
+dashboard_demo_fs.py:213:        ttk.Button(side, text="Przełącz tryb edycji hal", style="WM.Side.TButton", command=self.toggle_edit_mode).pack(fill="x", padx=14, pady=6)
+gui_magazyn.py:79:        btn_orders = ttk.Button(
+gui_magazyn.py:118:    btn_orders_prefill = ttk.Button(
+gui_magazyn.py:125:    btn_creator = ttk.Button(toolbar, text="Kreator zleceń")
+gui_magazyn.py:130:    ttk.Button(
+gui_magazyn.py:136:    ttk.Button(
+gui_magazyn.py:142:    ttk.Button(
+gui_magazyn.py:148:    ttk.Button(
+gui_magazyn_edit.py:93:        ttk.Button(btns, text="Zapisz", command=self.on_save).pack(
+gui_magazyn_edit.py:96:        ttk.Button(btns, text="Anuluj", command=self.win.destroy).pack(side="right")
+gui_magazyn_bom.py:283:        ttk.Button(bar, text="Dodaj / Zapisz", command=self._save_surowiec).pack(side="right", padx=4)
+gui_magazyn_bom.py:284:        ttk.Button(bar, text="Usuń", command=self._delete_surowiec).pack(side="right", padx=4)
+gui_magazyn_bom.py:353:        ttk.Button(bar, text="Dodaj / Zapisz", command=self._save_polprodukt).pack(
+gui_magazyn_bom.py:356:        ttk.Button(bar, text="Usuń", command=self._delete_polprodukt).pack(
+gui_magazyn_bom.py:477:        ttk.Button(bar, text="Dodaj / Zapisz", command=self._save_produkt).pack(side="right", padx=4)
+gui_magazyn_bom.py:478:        ttk.Button(bar, text="Usuń", command=self._delete_produkt).pack(side="right", padx=4)
+gui_magazyn_bom.py:612:    ttk.Button(win, text="Zapisz", command=lambda: _save_ops(win.lb)).pack()
+gui_panel.py:455:    ttk.Button(
+gui_panel.py:458:    btn_changelog = ttk.Button(
+gui_panel.py:468:    ttk.Button(
+gui_panel.py:527:    btn_reset = ttk.Button(
+gui_panel.py:626:        ttk.Button(win, text="Wyślij", command=_submit).pack(pady=(0, 10))
+gui_panel.py:721:                btn = ttk.Button(
+gui_panel.py:735:                btn = ttk.Button(
+gui_panel.py:749:                btn = ttk.Button(
+gui_panel.py:763:                btn = ttk.Button(
+gui_panel.py:779:                btn = ttk.Button(
+gui_panel.py:793:                btn = ttk.Button(
+gui_panel.py:801:                btn = ttk.Button(
+gui_panel.py:815:                btn = ttk.Button(
+gui_panel.py:829:                btn = ttk.Button(
+gui_logowanie.py:228:    ttk.Button(box, text="Zaloguj", command=logowanie, style="WM.Side.TButton").pack(pady=16)
+gui_logowanie.py:231:        ttk.Button(
+gui_logowanie.py:367:    ttk.Button(bottom, text="Zamknij program", command=zamknij, style="WM.Side.TButton").pack()
+ustawienia_produkty_bom.py:110:    btn_new = ttk.Button(btns, text="Nowy", style="WM.Side.TButton")
+ustawienia_produkty_bom.py:112:    btn_del = ttk.Button(btns, text="Usuń", style="WM.Side.TButton")
+ustawienia_produkty_bom.py:114:    btn_save = ttk.Button(btns, text="Zapisz", style="WM.Side.TButton")
+ustawienia_produkty_bom.py:145:    ttk.Button(
+ustawienia_produkty_bom.py:151:    ttk.Button(
+ustawienia_produkty_bom.py:385:        btn_ok = ttk.Button(f, text="Dodaj", command=_ok, style="WM.Side.TButton")
+gui_jarvis_panel.py:172:        ttk.Button(question_frame, text="Wyślij", command=self._send_question).grid(
+gui_jarvis_panel.py:186:        ttk.Button(left_controls, text="Analizuj teraz", command=self._on_analyze).pack(
+gui_jarvis_panel.py:189:        ttk.Button(left_controls, text="Zapisz raport", command=self._on_save).pack(
+gui_jarvis_panel.py:192:        ttk.Button(left_controls, text="Historia", command=self._show_history).pack(
+gui_jarvis_panel.py:195:        ttk.Button(left_controls, text="Otwórz ostatni raport", command=self._open_last_report).pack(
+gui_jarvis.py:30:        analyze_btn = ttk.Button(
+gui_jarvis.py:37:        export_btn = ttk.Button(
+gui_tools_config.py:67:            ttk.Button(buttons, text="Zapisz", command=self._save).pack(side=tk.LEFT)
+gui_tools_config.py:68:            ttk.Button(buttons, text="Anuluj", command=self.destroy).pack(side=tk.LEFT)
+gui_profile.py:75:                local_ttk.Button(
+gui_profile.py:778:    ttk.Button(win, text="Zapisz", command=_save).pack(pady=(8,10))
+gui_profile.py:795:    btn = ttk.Button(bar,text="Odśwież"); btn.pack(side="left", padx=8)
+gui_profile.py:965:        ttk.Button(parent, text="Zapisz", command=_save).grid(
+gui_profile.py:1000:        ttk.Button(
+gui_profile.py:1079:        ttk.Button(btn_row, text="Zapisz", command=zapisz).pack(side="right", padx=4)
+gui_profile.py:1080:        ttk.Button(btn_row, text="Domyślne", command=resetuj).pack(side="right", padx=4)
+gui_profile.py:1380:        self.btn_send_pw = ttk.Button(
+gui_profile.py:1388:        ttk.Button(
+gui_profile.py:1396:            ttk.Button(
+gui_profile.py:1940:        ttk.Button(
+gui_profile.py:1946:        ttk.Button(
+gui_profile.py:2192:            btn = ttk.Button(
+gui_profile.py:2342:        ttk.Button(btns, text="Anuluj", command=win.destroy).pack(
+gui_profile.py:2345:        ttk.Button(btns, text="Zapisz", command=_save).pack(side="right")
+gui_profile.py:2438:        ttk.Button(btns, text="Anuluj", command=win.destroy).pack(
+gui_profile.py:2441:        ttk.Button(btns, text="Zapisz", command=_save_pin).pack(side="right")
+gui_profile.py:2535:        ttk.Button(win, text="Wyślij", command=_submit, takefocus=False).pack(
+gui_profile.py:2611:        ttk.Button(
+gui_zlecenia_creator.py:68:    btn_back = ttk.Button(footer, text="Wstecz", command=lambda: _go_back())
+gui_zlecenia_creator.py:70:    btn_next = ttk.Button(footer, text="Dalej", command=lambda: _go_next())
+gui_zlecenia_creator.py:72:    btn_cancel = ttk.Button(footer, text="Anuluj", command=window.destroy)
+gui_zlecenia_creator.py:299:        ttk.Button(container, text="Utwórz", command=_finish).pack(pady=20)
+gui/assign_dialog.py:72:    ttk.Button(btns, text="OK", command=_ok, width=10).grid(row=0, column=0, padx=4)
+gui/assign_dialog.py:73:    ttk.Button(btns, text="Anuluj", command=_cancel, width=10).grid(row=0, column=1, padx=4)
+gui_uzytkownicy.py:345:    ttk.Button(buttons, text="Zapisz", command=_save).pack(side="right")
+gui_uzytkownicy.py:346:    ttk.Button(buttons, text="Anuluj", command=win.destroy).pack(
+gui_uzytkownicy.py:357:    button = ttk.Button(
+gui_uzytkownicy.py:645:    ttk.Button(btns, text="Zapisz", command=_save).pack(side="right", padx=(6, 0))
+gui_uzytkownicy.py:646:    ttk.Button(btns, text="Otwórz profil", command=_open_profile).pack(
+gui_uzytkownicy.py:649:    ttk.Button(
+gui_uzytkownicy.py:820:        ttk.Button(actions, text="Otwórz profil", command=_open_profile_from_editor).pack(
+gui_uzytkownicy.py:823:        ttk.Button(actions, text="Zapisz", command=_save_from_editor).pack(
+gui_uzytkownicy.py:838:    ttk.Button(
+gui_uzytkownicy.py:843:    ttk.Button(
+wm/settings/tabs/dyspo_tab.py:167:        button = ttk.Button(self, text=t("settings.dyspo.save"), command=self._save)
+wm/dyspo_wizard/wizard.py:31:        self._validate_btn = ttk.Button(
+wm/dyspo_wizard/wizard.py:38:        ttk.Button(
+wm/dyspo_wizard/wizard.py:73:            ttk.Button(
+gui_products.py:72:        ttk.Button(prod_btns, text="Dodaj", command=self.add_product).pack(
+gui_products.py:75:        ttk.Button(prod_btns, text="Edytuj", command=self.edit_product).pack(
+gui_products.py:78:        ttk.Button(prod_btns, text="Usuń", command=self.delete_product).pack(
+gui_products.py:81:        ttk.Button(prod_btns, text="Odśwież", command=self.refresh_all).pack(
+gui_products.py:84:        ttk.Button(
+gui_products.py:89:        ttk.Button(
+gui_products.py:106:        ttk.Button(pol_btns, text="Dodaj", command=self.add_polprodukt).pack(
+gui_products.py:109:        ttk.Button(pol_btns, text="Edytuj", command=self.edit_polprodukt).pack(
+gui_products.py:112:        ttk.Button(pol_btns, text="Usuń", command=self.delete_polprodukt).pack(
+gui_products.py:115:        ttk.Button(pol_btns, text="Odśwież", command=self.refresh_all).pack(
+gui_products.py:138:        ttk.Button(mat_btns, text="Dodaj", command=self.add_surowiec).pack(
+gui_products.py:141:        ttk.Button(mat_btns, text="Edytuj", command=self.edit_surowiec).pack(
+gui_products.py:144:        ttk.Button(mat_btns, text="Usuń", command=self.delete_surowiec).pack(
+gui_products.py:147:        ttk.Button(mat_btns, text="Odśwież", command=self.refresh_all).pack(
+gui_products.py:404:        ttk.Button(btns, text="Dodaj pozycję", command=add_czyn).pack(side="left")
+gui_products.py:405:        ttk.Button(btns, text="Usuń pozycję", command=del_czyn).pack(
+gui_products.py:445:        ttk.Button(win, text="Zapisz", command=save).grid(
+gui_products.py:569:        ttk.Button(btns, text="Dodaj pozycję", command=add_czyn).pack(side="left")
+gui_products.py:570:        ttk.Button(btns, text="Usuń pozycję", command=del_czyn).pack(
+gui_products.py:617:        ttk.Button(win, text="Zapisz", command=save).grid(
+gui_products.py:752:        ttk.Button(win, text="Zapisz", command=save).grid(
+gui_maszyny.py:53:                local_ttk.Button(
+gui_maszyny.py:325:        ttk.Button(btns, text="Anuluj", command=self._on_cancel).pack(side="right")
+gui_maszyny.py:326:        ttk.Button(btns, text="OK", command=self._on_ok).pack(side="right", padx=(0, 8))
+gui_maszyny.py:410:    ttk.Button(
+gui_maszyny.py:415:    ttk.Button(
+gui_maszyny.py:1059:    btn_add, btn_edit, btn_del, btn_save = (ttk.Button(tb, text=t) for t in ("Dodaj", "Edytuj", "Usuń", "Zapisz"))
+gui_maszyny.py:1194:            ttk.Button(btns, text="Anuluj", command=self.destroy).pack(side="right", padx=6)
+gui_maszyny.py:1195:            ttk.Button(
+gui_maszyny.py:1319:        ttk.Button(
+ustawienia_magazyn.py:122:        ttk.Button(bar, text="Zapisz", command=self.save_all).pack(side="right")
+ustawienia_magazyn.py:123:        ttk.Button(bar, text="Przywróć domyślne", command=self.reset_defaults).pack(side="right", padx=8)
+ustawienia_magazyn.py:165:        ttk.Button(typ_btns, text="Dodaj", command=self._typy_add).pack(fill="x")
+ustawienia_magazyn.py:166:        ttk.Button(typ_btns, text="Usuń", command=self._typy_del).pack(fill="x", pady=(6, 0))
+ustawienia_magazyn.py:179:        ttk.Button(jm_btns, text="Dodaj", command=self._jm_add).pack(fill="x")
+ustawienia_magazyn.py:180:        ttk.Button(jm_btns, text="Usuń", command=self._jm_del).pack(fill="x", pady=(6, 0))
+gui_magazyn_add.py:166:        ttk.Button(btns, text="Zapisz", command=self.on_save, style="WM.Side.TButton").pack(
+gui_magazyn_add.py:169:        ttk.Button(btns, text="Anuluj", command=self.on_cancel, style="WM.Side.TButton").pack(
+updater.py:321:        self.git_button = ttk.Button(
+updater.py:327:        self.push_button = ttk.Button(
+updater.py:333:        ttk.Button(btns, text="Wgraj paczkę .zip (lokalnie)", command=self._on_zip_update)\
+updater.py:335:        ttk.Button(btns, text="Cofnij aktualizację (restore)", command=self._on_restore)\
+updater.py:352:        ttk.Button(tb, text="Odśwież listę", command=self._refresh_versions).pack(side="left")
+updater.py:353:        ttk.Button(tb, text="Kopiuj listę", command=self._copy_versions).pack(side="left", padx=(8,0))
+updater.py:624:        ttk.Button(frm_btn, text="Przywróć", command=_ok).pack(side="right", padx=(4,0))
+updater.py:625:        ttk.Button(frm_btn, text="Anuluj", command=dlg.destroy).pack(side="right")
+gui_narzedzia.py:84:                            local_ttk.Button(
+gui_narzedzia.py:92:                local_ttk.Button(
+gui_narzedzia.py:886:    ttk.Button(win, text="Zamknij", command=win.destroy).pack(side="right", padx=8, pady=8)
+gui_narzedzia.py:3174:        ttk.Button(
+gui_narzedzia.py:3208:    btn_add = ttk.Button(header, text="Dodaj", style="WM.Side.TButton")
+gui_narzedzia.py:3211:    btn_odswiez = ttk.Button(
+gui_narzedzia.py:3229:    btn_asgn = ttk.Button(header, text="Przypisz", command=_asgn_assign, style="WM.Side.TButton")
+gui_narzedzia.py:3593:        ttk.Button(btns, text="Anuluj", command=dlg.destroy, style="WM.Side.TButton").pack(side="right", padx=(0,8))
+gui_narzedzia.py:3594:        ttk.Button(btns, text="Dalej", command=_next, style="WM.Side.TButton").pack(side="right")
+gui_narzedzia.py:3677:        btn_toggle = ttk.Button(hist_frame, text="Schowaj", style="WM.Side.TButton")
+gui_narzedzia.py:3803:        btn_status_reload = ttk.Button(
+gui_narzedzia.py:3926:        btn_img = ttk.Button(img_frame, text="Wybierz...", style="WM.Side.TButton")
+gui_narzedzia.py:3928:        preview_btn = ttk.Button(img_frame, text="Podgląd", style="WM.Side.TButton")
+gui_narzedzia.py:3952:        clear_btn = ttk.Button(img_frame, text="Wyczyść", style="WM.Side.TButton")
+gui_narzedzia.py:3956:        btn_dxf = ttk.Button(dxf_frame, text="Wybierz...", style="WM.Side.TButton")
+gui_narzedzia.py:4465:        ttk.Button(
+gui_narzedzia.py:4485:        ttk.Button(tools_bar, text="Dodaj własne", style="WM.Side.TButton",
+gui_narzedzia.py:4680:        ttk.Button(tools_bar, text="Usuń zaznaczone", style="WM.Side.TButton",
+gui_narzedzia.py:4682:        ttk.Button(tools_bar, text="Oznacz/Cofnij ✔", style="WM.Side.TButton",
+gui_narzedzia.py:4760:        ttk.Button(
+gui_narzedzia.py:4985:        ttk.Button(btns, text="Zapisz", command=save, style="WM.Side.TButton").pack(side="right")
+gui_narzedzia.py:4986:        ttk.Button(btns, text="Anuluj", command=dlg.destroy, style="WM.Side.TButton").pack(side="right", padx=(0,8))
+ustawienia_uzytkownicy.py:69:        ttk.Button(toolbar, text="Dodaj profil", command=self._add_profile).pack(
+ustawienia_uzytkownicy.py:72:        ttk.Button(toolbar, text="Edytuj", command=self._edit_selected).pack(
+ustawienia_uzytkownicy.py:75:        ttk.Button(toolbar, text="Zapisz", command=self._save_now).pack(side="right")
+ustawienia_uzytkownicy.py:247:        ttk.Button(buttons, text="OK", command=self._ok).pack(side="left", padx=4)
+ustawienia_uzytkownicy.py:248:        ttk.Button(buttons, text="Anuluj", command=self.destroy).pack(
+gui_tool_editor.py:100:        ttk.Button(btns, text="Zapisz", command=self._on_save).pack(
+gui_tool_editor.py:103:        ttk.Button(btns, text="Anuluj", command=self.destroy).pack(
+gui_settings.py:332:    ttk.Button(row_top, text="Wybierz…", command=_pick_dir).pack(side="left", padx=6)
+gui_settings.py:337:    ttk.Button(
+gui_settings.py:547:    ttk.Button(frm, text="Przeglądaj…", command=_browse_bg).grid(row=row, column=2, sticky="e")
+gui_settings.py:563:    ttk.Button(frm, text="Zapisz tło i walidację", command=_validate_and_save).grid(
+gui_settings.py:614:    ttk.Button(frm, text="Zapisz", command=_save).grid(row=0, column=2, rowspan=2, sticky="e", padx=6)
+gui_settings.py:858:    ttk.Button(
+gui_settings.py:1287:        ttk.Button(sub, text="Przeglądaj", command=browse).pack(
+gui_settings.py:1335:        ttk.Button(sub, text="Kolor", command=pick_color).pack(
+gui_settings.py:1755:        ttk.Button(left_btns, text="Anuluj", command=self._close_window).pack(
+gui_settings.py:1759:        ttk.Button(left_btns, text="Odśwież", command=self.refresh_panel).pack(
+gui_settings.py:1900:        btn = ttk.Button(
+gui_settings.py:2395:                ttk.Button(
+gui_settings.py:2442:            ttk.Button(
+gui_settings.py:3110:        self.btn_open_tools_def_editor = ttk.Button(
+gui_settings.py:3458:        ttk.Button(
+gui_settings.py:3463:        ttk.Button(
+gui_settings.py:3489:        ttk.Button(
+gui_settings.py:3567:            b_add = ttk.Button(btns, text="Dodaj", command=add_item)
+gui_settings.py:3568:            b_del = ttk.Button(btns, text="Usuń", command=del_item)
+gui_settings.py:3569:            b_up = ttk.Button(btns, text="Góra", command=move_up)
+gui_settings.py:3570:            b_down = ttk.Button(btns, text="Dół", command=move_down)
+gui_settings.py:3590:        btn_save = ttk.Button(parent, text="Zapisz", command=save_all_dicts)
+gui_settings.py:3641:        ttk.Button(tab, text="Otwórz folder", command=_open_patch_dir).grid(
+gui_settings.py:3650:        run_btn = ttk.Button(btns, text="Skanuj (Dry-run)")
+gui_settings.py:3651:        apply_btn = ttk.Button(btns, text="Zastosuj (Apply)")
+gui_settings.py:3831:        ttk.Button(ctrl, text="Odśwież kopie", command=_refresh_backups).pack(
+gui_settings.py:3834:        ttk.Button(
+gui_settings.py:4065:        btn = ttk.Button(frame, text="Uruchom audyt", command=self._run_audit_now)

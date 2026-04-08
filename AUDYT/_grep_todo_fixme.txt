@@ -1,0 +1,62 @@
+ROADMAP.md:16:  - **Drobne TODO/FIXME** – kosmetyka czytelności i spójności.
+audit_mw_report.json:14365:      "kind": "TODO",
+audit_mw_report.json:14366:      "message": "Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania",
+audit_mw_report.json:14372:      "kind": "TODO",
+audit_mw_report.json:14373:      "message": "Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania",
+audit_mw_report.json:14379:      "kind": "TODO",
+audit_mw_report.json:14380:      "message": "Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania",
+audit_mw_report.json:14386:      "kind": "TODO",
+audit_mw_report.json:14387:      "message": "Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania",
+audit_mw_report.json:14393:      "kind": "TODO",
+audit_mw_report.json:14394:      "message": "Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania",
+audit_mw_report.json:14400:      "kind": "TODO",
+audit_mw_report.json:14401:      "message": "Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania",
+audit_mw_report.json:14407:      "kind": "TODO",
+audit_mw_report.json:14408:      "message": "Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania",
+audit_mw_report.json:14414:      "kind": "TODO",
+audit_mw_report.json:14415:      "message": "Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania",
+audit_mw_report.json:14421:      "kind": "TODO",
+audit_mw_report.json:14422:      "message": "Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania",
+audit_mw_report.json:14428:      "kind": "TODO",
+audit_mw_report.json:14429:      "message": "Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania",
+audit_mw_report.json:14435:      "kind": "TODO",
+audit_mw_report.json:14436:      "message": "Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania",
+audit_mw_report.json:14442:      "kind": "TODO",
+audit_mw_report.json:14443:      "message": "Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania",
+audit_mw_report.json:14449:      "kind": "TODO",
+audit_mw_report.json:14450:      "message": "Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania",
+audit_mw_report.json:14456:      "kind": "TODO",
+audit_mw_report.json:14457:      "message": "Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania",
+audit_mw_report.json:14463:      "kind": "TODO",
+audit_mw_report.json:14464:      "message": "Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania",
+audit_mw_report.md:2072:- **INFO** [TODO] audyt_mw.py:176 – Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania
+audit_mw_report.md:2073:- **INFO** [TODO] audyt_mw.py:176 – Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania
+audit_mw_report.md:2074:- **INFO** [TODO] audyt_mw.py:177 – Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania
+audit_mw_report.md:2075:- **INFO** [TODO] audyt_mw.py:177 – Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania
+audit_mw_report.md:2076:- **INFO** [TODO] audyt_mw.py:177 – Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania
+audit_mw_report.md:2077:- **INFO** [TODO] audyt_mw.py:179 – Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania
+audit_mw_report.md:2078:- **INFO** [TODO] audyt_mw.py:179 – Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania
+audit_mw_report.md:2079:- **INFO** [TODO] audyt_mw.py:179 – Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania
+audit_mw_report.md:2080:- **INFO** [TODO] audyt_mw.py:179 – Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania
+audit_mw_report.md:2081:- **INFO** [TODO] backend/audit/wm_audit_runtime.py:374 – Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania
+audit_mw_report.md:2082:- **INFO** [TODO] backend/audit/wm_audit_runtime.py:376 – Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania
+audit_mw_report.md:2083:- **INFO** [TODO] tools/roadmap_apply_updates.py:134 – Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania
+audit_mw_report.md:2084:- **INFO** [TODO] tools/roadmap_apply_updates.py:149 – Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania
+audit_mw_report.md:2085:- **INFO** [TODO] tools/roadmap_apply_updates.py:232 – Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania
+audit_mw_report.md:2086:- **INFO** [TODO] tools/roadmap_apply_updates.py:240 – Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania
+audyt_mw.py:176:            # TODO/FIXME
+audyt_mw.py:177:            for m in re.finditer(r"\b(TODO|FIXME|HACK)\b", text):
+audyt_mw.py:179:                self._issue(path, 'INFO', 'TODO', 'Znacznik TODO/FIXME/HACK – rozważ zaplanowanie zadania', line)
+backend/audit/wm_audit_runtime.py:374:                    # format jednej linii: [OK|TODO] Grupa :: ID – Opis  (notatka)
+backend/audit/wm_audit_runtime.py:376:                        status = "OK" if ok else "TODO"
+core/logika_zlecen.py:74:    """Return next sequential order number in format ``PREFIX-YYYYMM-XXX``."""
+data/audyt.json:30:    "status": "TODO",
+data/audyt.json:38:    "status": "TODO",
+data/audyt.json:87:    "status": "TODO",
+docs/code_review_checklist_c_answers.md:3:## TODO – szybka mapa kolejnych PR
+magazyn_io.py:215:    The identifier format is ``PZ/YYYY/XXXX`` where the counter ``XXXX`` is
+tools/.env.example:1:GITHUB_TOKEN=github_pat_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+tools/roadmap_apply_updates.py:134:            "status": "TODO",
+tools/roadmap_apply_updates.py:149:            "status": "TODO",
+tools/roadmap_apply_updates.py:232:        "status": "TODO",
+tools/roadmap_apply_updates.py:240:        "status": "TODO",

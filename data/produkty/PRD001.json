@@ -1,0 +1,34 @@
+{
+  "kod": "PRD001",
+  "nazwa": "Stojak spawany",
+  "version": "1.0",
+  "bom_revision": 1,
+  "effective_from": "2025-01-01",
+  "effective_to": null,
+  "is_default": true,
+  "polprodukty": [
+    {
+      "kod": "PP001",
+      "ilosc_na_szt": 2.0,
+      "czynnosci": [
+        "ciecie"
+      ],
+      "surowiec": {
+        "typ": "SR001",
+        "dlugosc": 0.2
+      }
+    },
+    {
+      "kod": "PP002",
+      "ilosc_na_szt": 1.0,
+      "czynnosci": [
+        "ciecie",
+        "gięcie"
+      ],
+      "surowiec": {
+        "typ": "SR002",
+        "dlugosc": 0.5
+      }
+    }
+  ]
+}

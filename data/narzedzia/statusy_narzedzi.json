@@ -1,0 +1,16 @@
+{
+  "NN": [
+    "Projekt",
+    "Wykonanie",
+    "Składanie",
+    "Próba",
+    "Oddanie narzędzia"
+  ],
+  "SN": [
+    "Sprawne",
+    "W ostrzeniu",
+    "W naprawie",
+    "Wycofane"
+  ],
+  "_globals_done": []
+}

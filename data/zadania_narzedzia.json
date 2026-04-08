@@ -1,0 +1,85 @@
+{
+  "collections": {
+    "NN": {
+      "types": [
+        {
+          "id": "NN1",
+          "name": "Narzędzie NN",
+          "statuses": [
+            {
+              "id": "NOWE",
+              "name": "Nowe",
+              "tasks": [
+                "Kontrola wizualna",
+                "Test działania"
+              ]
+            },
+            {
+              "id": "SERWIS",
+              "name": "W serwisie",
+              "tasks": [
+                "Regulacja",
+                "Kalibracja"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "SN": {
+      "types": [
+        {
+          "id": "SN1",
+          "name": "Narzędzie SN",
+          "statuses": [
+            {
+              "id": "READY",
+              "name": "Gotowe",
+              "tasks": [
+                "Sprawdź baterię"
+              ]
+            },
+            {
+              "id": "BROKEN",
+              "name": "Uszkodzone",
+              "tasks": [
+                "Zgłoś awarię",
+                "Zamów części"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "typy": {
+    "Narzędzie NN": {
+      "statusy": {
+        "Nowe": [
+          "Weryfikacja",
+          "Konserwacja"
+        ],
+        "W serwisie": [
+          "Opis usterki",
+          "Zlecić ostrzenie"
+        ]
+      }
+    },
+    "Narzędzie SN": {
+      "statusy": {
+        "Uszkodzone": [
+          "Diagnoza",
+          "Przygotować części"
+        ]
+      }
+    },
+    "Postępowe": {
+      "statusy": {
+        "do ostrzenia": [
+          "Oddać do ostrzenia",
+          "Zaktualizować kartę ostrzenia"
+        ]
+      }
+    }
+  }
+}

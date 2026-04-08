@@ -1,0 +1,267 @@
+CHANGELOG.md:16:- Nowy kreator zleceń obsługuje typy ZW/ZN/ZM/ZZ z dedykowanymi polami, listami produktów, narzędzi i maszyn oraz możliwością oznaczenia nowych materiałów zakupowych.【F:gui_zlecenia_creator.py†L1-L220】
+CHANGELOG.md:19:- Widok zleceń udostępnia przycisk „Dodaj zlecenie (Kreator)” oraz automatycznie odświeża listę zapisanych plików zleceń z obsługą błędów GUI.【F:gui_zlecenia.py†L207-L315】
+CHANGELOG.md:64:- W `gui_magazyn.py` podłączono wyłącznie nowy kreator zleceń (`open_order_creator`).
+CHANGELOG.md:83:- Naprawiono błąd w `gui_zlecenia_creator.py` przy wczytywaniu `data/maszyny.json` (obsługa listy i dict).
+README_PATCH_Bpp.txt:11:  * Przycisk „Otwórz Zlecenia” (obsługa różnych nazw funkcji w gui_zlecenia),
+arch/start_debug_zlecenia.bat:3:python gui_zlecenia_debug.py
+audit_mw_report.json:6740:      "file": "/workspace/Warsztat-Menager/gui_zlecenia.py",
+audit_mw_report.json:6747:      "file": "/workspace/Warsztat-Menager/gui_zlecenia.py",
+audit_mw_report.json:6754:      "file": "/workspace/Warsztat-Menager/gui_zlecenia.py",
+audit_mw_report.json:6761:      "file": "/workspace/Warsztat-Menager/gui_zlecenia.py",
+audit_mw_report.json:6768:      "file": "/workspace/Warsztat-Menager/gui_zlecenia.py",
+audit_mw_report.json:6775:      "file": "/workspace/Warsztat-Menager/gui_zlecenia.py",
+audit_mw_report.json:6782:      "file": "/workspace/Warsztat-Menager/gui_zlecenia.py",
+audit_mw_report.json:6789:      "file": "/workspace/Warsztat-Menager/gui_zlecenia.py",
+audit_mw_report.json:6796:      "file": "/workspace/Warsztat-Menager/gui_zlecenia.py",
+audit_mw_report.json:6803:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6810:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6817:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6824:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6831:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6838:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6845:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6852:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6859:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6866:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6873:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6880:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6887:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6894:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6901:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6908:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6915:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6922:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6929:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6936:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6943:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6950:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6957:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6964:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6971:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6978:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6985:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6992:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:6999:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:7006:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:7013:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:7020:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:7027:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:7034:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:7041:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:7048:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:7055:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:7062:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:7069:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:7076:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_detail.py",
+audit_mw_report.json:7083:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_detail.py",
+audit_mw_report.json:7090:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_detail.py",
+audit_mw_report.json:7097:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_detail.py",
+audit_mw_report.json:7104:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_detail.py",
+audit_mw_report.json:7111:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_detail.py",
+audit_mw_report.json:7118:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_detail.py",
+audit_mw_report.json:7125:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_detail.py",
+audit_mw_report.json:7132:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_detail.py",
+audit_mw_report.json:7139:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_detail.py",
+audit_mw_report.json:7146:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_detail.py",
+audit_mw_report.json:7153:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_detail.py",
+audit_mw_report.json:7160:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_detail.py",
+audit_mw_report.json:7167:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_detail.py",
+audit_mw_report.json:7174:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_detail.py",
+audit_mw_report.json:7181:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_detail.py",
+audit_mw_report.json:7188:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_detail.py",
+audit_mw_report.json:7195:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_detail.py",
+audit_mw_report.json:7202:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_detail.py",
+audit_mw_report.json:7209:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_detail.py",
+audit_mw_report.json:7216:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_detail.py",
+audit_mw_report.json:7223:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_detail.py",
+audit_mw_report.json:7230:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_detail.py",
+audit_mw_report.json:7237:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_detail.py",
+audit_mw_report.json:11472:      "file": "gui_zlecenia.py :: gui_zlecenia_creator.py :: gui_zlecenia.py",
+audit_mw_report.json:11479:      "file": "/workspace/Warsztat-Menager/audyt_mw.py, /workspace/Warsztat-Menager/config_manager.py, /workspace/Warsztat-Menager/core/settings_manager.py, /workspace/Warsztat-Menager/core/window_manager.py, /workspace/Warsztat-Menager/dashboard_demo_fs.py, /workspace/Warsztat-Menager/dirty_guard.py, /workspace/Warsztat-Menager/gui/settings_action_handlers.py, /workspace/Warsztat-Menager/gui_magazyn.py, /workspace/Warsztat-Menager/gui_magazyn_add.py, /workspace/Warsztat-Menager/gui_magazyn_bom.py, /workspace/Warsztat-Menager/gui_magazyn_edit.py, /workspace/Warsztat-Menager/gui_magazyn_pz.py, /workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/gui_maszyny_view.py, /workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_narzedzia_qr.py, /workspace/Warsztat-Menager/gui_products.py, /workspace/Warsztat-Menager/gui_profile.py, /workspace/Warsztat-Menager/gui_settings.py, /workspace/Warsztat-Menager/gui_tool_editor.py, /workspace/Warsztat-Menager/gui_tools_config.py, /workspace/Warsztat-Menager/gui_tools_config_advanced.py, /workspace/Warsztat-Menager/gui_zlecenia.py, /workspace/Warsztat-Menager/layout_prosty.py, /workspace/Warsztat-Menager/rc1_audit_hook.py, /workspace/Warsztat-Menager/start.py, /workspace/Warsztat-Menager/test_gui_logowanie.py, /workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/test_gui_profile_smoke.py, /workspace/Warsztat-Menager/test_presence_watcher.py, /workspace/Warsztat-Menager/test_startup_error.py, /workspace/Warsztat-Menager/test_tool_media_io.py, /workspace/Warsztat-Menager/tests/test_gui_magazyn_basic.py, /workspace/Warsztat-Menager/tests/test_gui_narzedzia_tasks_mixed.py, /workspace/Warsztat-Menager/tests/test_inventory_bridge.py, /workspace/Warsztat-Menager/tests/test_settings_tools_config_refresh.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py, /workspace/Warsztat-Menager/tests/test_widok_hali_machines_view.py, /workspace/Warsztat-Menager/tools/scan_missing_root.py, /workspace/Warsztat-Menager/ui_hover.py, /workspace/Warsztat-Menager/updater.py, /workspace/Warsztat-Menager/ustawienia_magazyn.py, /workspace/Warsztat-Menager/ustawienia_uzytkownicy.py, /workspace/Warsztat-Menager/utils/dirty_guard.py, /workspace/Warsztat-Menager/widok_hali/animator.py, /workspace/Warsztat-Menager/widok_hali/controller.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py, /workspace/Warsztat-Menager/widok_hali/renderer.py",
+audit_mw_report.json:11577:      "file": "/workspace/Warsztat-Menager/config_manager.py, /workspace/Warsztat-Menager/gui_products.py, /workspace/Warsztat-Menager/logika_magazyn.py, /workspace/Warsztat-Menager/magazyn_catalog.py, /workspace/Warsztat-Menager/magazyn_io.py, /workspace/Warsztat-Menager/magazyn_io_pz.py, /workspace/Warsztat-Menager/updater.py, /workspace/Warsztat-Menager/ustawienia_produkty_bom.py, /workspace/Warsztat-Menager/utils/json_io.py, /workspace/Warsztat-Menager/wm_access.py, /workspace/Warsztat-Menager/zlecenia_logika.py",
+audit_mw_report.json:11878:      "file": "/workspace/Warsztat-Menager/gui/widgets_user_footer.py, /workspace/Warsztat-Menager/gui_logowanie.py, /workspace/Warsztat-Menager/gui_profile.py, /workspace/Warsztat-Menager/gui_zlecenia.py",
+audit_mw_report.json:11906:      "file": "/workspace/Warsztat-Menager/gui_magazyn.py, /workspace/Warsztat-Menager/gui_zlecenia.py",
+audit_mw_report.json:11997:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/gui_zlecenia.py",
+audit_mw_report.json:12046:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/gui_zlecenia.py",
+audit_mw_report.json:12088:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_zlecenia.py",
+audit_mw_report.json:12312:      "file": "/workspace/Warsztat-Menager/gui_orders.py, /workspace/Warsztat-Menager/gui_tool_editor.py, /workspace/Warsztat-Menager/gui_zlecenia_creator.py, /workspace/Warsztat-Menager/gui_zlecenia_detail.py, /workspace/Warsztat-Menager/start.py, /workspace/Warsztat-Menager/ui_theme.py, /workspace/Warsztat-Menager/ustawienia_systemu.py, /workspace/Warsztat-Menager/wm_theme.py",
+audit_mw_report.json:12354:      "file": "/workspace/Warsztat-Menager/gui_panel.py, /workspace/Warsztat-Menager/gui_zlecenia.py",
+audit_mw_report.json:12382:      "file": "/workspace/Warsztat-Menager/gui_profile.py, /workspace/Warsztat-Menager/gui_zlecenia.py, /workspace/Warsztat-Menager/gui_zlecenia_creator.py, /workspace/Warsztat-Menager/ustawienia_produkty_bom.py",
+audit_mw_report.json:12410:      "file": "/workspace/Warsztat-Menager/gui_settings.py, /workspace/Warsztat-Menager/gui_uzytkownicy.py, /workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:12501:      "file": "/workspace/Warsztat-Menager/gui_zlecenia.py, /workspace/Warsztat-Menager/widok_hali/animator.py",
+audit_mw_report.json:12802:      "file": "/workspace/Warsztat-Menager/test_gui_logowanie.py, /workspace/Warsztat-Menager/test_logika_zlecenia_i_maszyny.py",
+audit_mw_report.json:13481:      "file": "/workspace/Warsztat-Menager/gui_zlecenia.py",
+audit_mw_report.json:13488:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:13495:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_detail.py",
+audit_mw_report.json:16319:        "gui_zlecenia",
+audit_mw_report.json:16915:    "/workspace/Warsztat-Menager/gui_zlecenia.py": {
+audit_mw_report.json:16916:      "file": "/workspace/Warsztat-Menager/gui_zlecenia.py",
+audit_mw_report.json:16954:        "gui_zlecenia_creator",
+audit_mw_report.json:16955:        "gui_zlecenia_detail",
+audit_mw_report.json:16964:    "/workspace/Warsztat-Menager/gui_zlecenia_creator.py": {
+audit_mw_report.json:16965:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_creator.py",
+audit_mw_report.json:16987:        "gui_zlecenia",
+audit_mw_report.json:16997:    "/workspace/Warsztat-Menager/gui_zlecenia_detail.py": {
+audit_mw_report.json:16998:      "file": "/workspace/Warsztat-Menager/gui_zlecenia_detail.py",
+audit_mw_report.json:18522:        "gui_zlecenia",
+audit_mw_report.md:983:- **WARN** [HEADER] gui_zlecenia.py – Brak nagłówka # Plik: ...
+audit_mw_report.md:984:- **WARN** [HEADER] gui_zlecenia.py – Brak nagłówka # Wersja: ...
+audit_mw_report.md:985:- **INFO** [GUI] gui_zlecenia.py:138 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:986:- **INFO** [GUI] gui_zlecenia.py:165 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:987:- **INFO** [GUI] gui_zlecenia.py:167 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:988:- **INFO** [GUI] gui_zlecenia.py:229 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:989:- **INFO** [GUI] gui_zlecenia.py:236 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:990:- **INFO** [GUI] gui_zlecenia.py:244 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:991:- **INFO** [GUI] gui_zlecenia.py:423 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:992:- **WARN** [HEADER] gui_zlecenia_creator.py – Brak nagłówka # Plik: ...
+audit_mw_report.md:993:- **WARN** [HEADER] gui_zlecenia_creator.py – Brak nagłówka # Wersja: ...
+audit_mw_report.md:994:- **INFO** [GUI] gui_zlecenia_creator.py:40 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:995:- **INFO** [GUI] gui_zlecenia_creator.py:43 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:996:- **INFO** [GUI] gui_zlecenia_creator.py:46 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:997:- **INFO** [GUI] gui_zlecenia_creator.py:48 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:998:- **INFO** [GUI] gui_zlecenia_creator.py:50 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:999:- **INFO** [GUI] gui_zlecenia_creator.py:62 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1000:- **INFO** [GUI] gui_zlecenia_creator.py:83 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1001:- **INFO** [GUI] gui_zlecenia_creator.py:95 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1002:- **INFO** [GUI] gui_zlecenia_creator.py:97 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1003:- **INFO** [GUI] gui_zlecenia_creator.py:108 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1004:- **INFO** [GUI] gui_zlecenia_creator.py:111 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1005:- **INFO** [GUI] gui_zlecenia_creator.py:113 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1006:- **INFO** [GUI] gui_zlecenia_creator.py:121 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1007:- **INFO** [GUI] gui_zlecenia_creator.py:134 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1008:- **INFO** [GUI] gui_zlecenia_creator.py:136 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1009:- **INFO** [GUI] gui_zlecenia_creator.py:139 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1010:- **INFO** [GUI] gui_zlecenia_creator.py:141 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1011:- **INFO** [GUI] gui_zlecenia_creator.py:149 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1012:- **INFO** [GUI] gui_zlecenia_creator.py:172 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1013:- **INFO** [GUI] gui_zlecenia_creator.py:179 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1014:- **INFO** [GUI] gui_zlecenia_creator.py:182 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1015:- **INFO** [GUI] gui_zlecenia_creator.py:184 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1016:- **INFO** [GUI] gui_zlecenia_creator.py:187 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1017:- **INFO** [GUI] gui_zlecenia_creator.py:195 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1018:- **INFO** [GUI] gui_zlecenia_creator.py:206 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1019:- **INFO** [GUI] gui_zlecenia_creator.py:211 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1020:- **INFO** [GUI] gui_zlecenia_creator.py:230 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1021:- **INFO** [GUI] gui_zlecenia_creator.py:233 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1022:- **INFO** [GUI] gui_zlecenia_creator.py:235 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1023:- **INFO** [GUI] gui_zlecenia_creator.py:238 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1024:- **INFO** [GUI] gui_zlecenia_creator.py:241 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1025:- **INFO** [GUI] gui_zlecenia_creator.py:244 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1026:- **INFO** [GUI] gui_zlecenia_creator.py:246 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1027:- **INFO** [GUI] gui_zlecenia_creator.py:249 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1028:- **INFO** [GUI] gui_zlecenia_creator.py:251 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1029:- **INFO** [GUI] gui_zlecenia_creator.py:254 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1030:- **INFO** [GUI] gui_zlecenia_creator.py:256 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1031:- **WARN** [HEADER] gui_zlecenia_detail.py – Brak nagłówka # Plik: ...
+audit_mw_report.md:1032:- **WARN** [HEADER] gui_zlecenia_detail.py – Brak nagłówka # Wersja: ...
+audit_mw_report.md:1033:- **INFO** [GUI] gui_zlecenia_detail.py:25 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1034:- **INFO** [GUI] gui_zlecenia_detail.py:31 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1035:- **INFO** [GUI] gui_zlecenia_detail.py:32 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1036:- **INFO** [GUI] gui_zlecenia_detail.py:37 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1037:- **INFO** [GUI] gui_zlecenia_detail.py:40 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1038:- **INFO** [GUI] gui_zlecenia_detail.py:42 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1039:- **INFO** [GUI] gui_zlecenia_detail.py:44 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1040:- **INFO** [GUI] gui_zlecenia_detail.py:45 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1041:- **INFO** [GUI] gui_zlecenia_detail.py:47 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1042:- **INFO** [GUI] gui_zlecenia_detail.py:48 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1043:- **INFO** [GUI] gui_zlecenia_detail.py:49 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1044:- **INFO** [GUI] gui_zlecenia_detail.py:51 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1045:- **INFO** [GUI] gui_zlecenia_detail.py:52 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1046:- **INFO** [GUI] gui_zlecenia_detail.py:54 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1047:- **INFO** [GUI] gui_zlecenia_detail.py:56 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1048:- **INFO** [GUI] gui_zlecenia_detail.py:58 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1049:- **INFO** [GUI] gui_zlecenia_detail.py:60 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1050:- **INFO** [GUI] gui_zlecenia_detail.py:63 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1051:- **INFO** [GUI] gui_zlecenia_detail.py:73 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1052:- **INFO** [GUI] gui_zlecenia_detail.py:75 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1053:- **INFO** [GUI] gui_zlecenia_detail.py:80 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1054:- **INFO** [GUI] gui_zlecenia_detail.py:93 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1659:- **WARN** [IMPORT] gui_zlecenia.py :: gui_zlecenia_creator.py :: gui_zlecenia.py – Cykliczne importy (rozważ refaktor)
+audit_mw_report.md:1660:- **INFO** [STYLE] audyt_mw.py, /workspace/Warsztat-Menager/config_manager.py, /workspace/Warsztat-Menager/core/settings_manager.py, /workspace/Warsztat-Menager/core/window_manager.py, /workspace/Warsztat-Menager/dashboard_demo_fs.py, /workspace/Warsztat-Menager/dirty_guard.py, /workspace/Warsztat-Menager/gui/settings_action_handlers.py, /workspace/Warsztat-Menager/gui_magazyn.py, /workspace/Warsztat-Menager/gui_magazyn_add.py, /workspace/Warsztat-Menager/gui_magazyn_bom.py, /workspace/Warsztat-Menager/gui_magazyn_edit.py, /workspace/Warsztat-Menager/gui_magazyn_pz.py, /workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/gui_maszyny_view.py, /workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_narzedzia_qr.py, /workspace/Warsztat-Menager/gui_products.py, /workspace/Warsztat-Menager/gui_profile.py, /workspace/Warsztat-Menager/gui_settings.py, /workspace/Warsztat-Menager/gui_tool_editor.py, /workspace/Warsztat-Menager/gui_tools_config.py, /workspace/Warsztat-Menager/gui_tools_config_advanced.py, /workspace/Warsztat-Menager/gui_zlecenia.py, /workspace/Warsztat-Menager/layout_prosty.py, /workspace/Warsztat-Menager/rc1_audit_hook.py, /workspace/Warsztat-Menager/start.py, /workspace/Warsztat-Menager/test_gui_logowanie.py, /workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/test_gui_profile_smoke.py, /workspace/Warsztat-Menager/test_presence_watcher.py, /workspace/Warsztat-Menager/test_startup_error.py, /workspace/Warsztat-Menager/test_tool_media_io.py, /workspace/Warsztat-Menager/tests/test_gui_magazyn_basic.py, /workspace/Warsztat-Menager/tests/test_gui_narzedzia_tasks_mixed.py, /workspace/Warsztat-Menager/tests/test_inventory_bridge.py, /workspace/Warsztat-Menager/tests/test_settings_tools_config_refresh.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py, /workspace/Warsztat-Menager/tests/test_widok_hali_machines_view.py, /workspace/Warsztat-Menager/tools/scan_missing_root.py, /workspace/Warsztat-Menager/ui_hover.py, /workspace/Warsztat-Menager/updater.py, /workspace/Warsztat-Menager/ustawienia_magazyn.py, /workspace/Warsztat-Menager/ustawienia_uzytkownicy.py, /workspace/Warsztat-Menager/utils/dirty_guard.py, /workspace/Warsztat-Menager/widok_hali/animator.py, /workspace/Warsztat-Menager/widok_hali/controller.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py, /workspace/Warsztat-Menager/widok_hali/renderer.py – Definicja '__init__' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1674:- **INFO** [STYLE] config_manager.py, /workspace/Warsztat-Menager/gui_products.py, /workspace/Warsztat-Menager/logika_magazyn.py, /workspace/Warsztat-Menager/magazyn_catalog.py, /workspace/Warsztat-Menager/magazyn_io.py, /workspace/Warsztat-Menager/magazyn_io_pz.py, /workspace/Warsztat-Menager/updater.py, /workspace/Warsztat-Menager/ustawienia_produkty_bom.py, /workspace/Warsztat-Menager/utils/json_io.py, /workspace/Warsztat-Menager/wm_access.py, /workspace/Warsztat-Menager/zlecenia_logika.py – Definicja '_ensure_dirs' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1717:- **INFO** [STYLE] gui/widgets_user_footer.py, /workspace/Warsztat-Menager/gui_logowanie.py, /workspace/Warsztat-Menager/gui_profile.py, /workspace/Warsztat-Menager/gui_zlecenia.py – Definicja '_on_destroy' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1721:- **INFO** [STYLE] gui_magazyn.py, /workspace/Warsztat-Menager/gui_zlecenia.py – Definicja '_on_double_click' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1734:- **INFO** [STYLE] gui_maszyny.py, /workspace/Warsztat-Menager/gui_zlecenia.py – Definicja '_build_tree' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1741:- **INFO** [STYLE] gui_maszyny.py, /workspace/Warsztat-Menager/gui_zlecenia.py – Definicja '_on_add' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1747:- **INFO** [STYLE] gui_maszyny.py, /workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_zlecenia.py – Definicja 'get_config' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1779:- **INFO** [STYLE] gui_orders.py, /workspace/Warsztat-Menager/gui_tool_editor.py, /workspace/Warsztat-Menager/gui_zlecenia_creator.py, /workspace/Warsztat-Menager/gui_zlecenia_detail.py, /workspace/Warsztat-Menager/start.py, /workspace/Warsztat-Menager/ui_theme.py, /workspace/Warsztat-Menager/ustawienia_systemu.py, /workspace/Warsztat-Menager/wm_theme.py – Definicja 'apply_theme' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1785:- **INFO** [STYLE] gui_panel.py, /workspace/Warsztat-Menager/gui_zlecenia.py – Definicja 'panel_zlecenia' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1789:- **INFO** [STYLE] gui_profile.py, /workspace/Warsztat-Menager/gui_zlecenia.py, /workspace/Warsztat-Menager/gui_zlecenia_creator.py, /workspace/Warsztat-Menager/ustawienia_produkty_bom.py – Definicja '_refresh' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1793:- **INFO** [STYLE] gui_settings.py, /workspace/Warsztat-Menager/gui_uzytkownicy.py, /workspace/Warsztat-Menager/gui_zlecenia_creator.py – Definicja '_on_select' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1806:- **INFO** [STYLE] gui_zlecenia.py, /workspace/Warsztat-Menager/widok_hali/animator.py – Definicja 'cancel_all' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1849:- **INFO** [STYLE] test_gui_logowanie.py, /workspace/Warsztat-Menager/test_logika_zlecenia_i_maszyny.py – Definicja 'fake_get' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1946:- **INFO** [STYLE] gui_zlecenia.py – Możliwy nieużyty import: annotations
+audit_mw_report.md:1947:- **INFO** [STYLE] gui_zlecenia_creator.py – Możliwy nieużyty import: annotations
+audit_mw_report.md:1948:- **INFO** [STYLE] gui_zlecenia_detail.py – Możliwy nieużyty import: annotations
+audit_mw_report.md:2501:- Importy: __version__, datetime, gui.widgets_user_footer, gui_changelog, gui_logowanie, gui_magazyn, gui_maszyny, gui_narzedzia, gui_profile, gui_uzytkownicy, gui_zlecenia, json, logger, os, pathlib, presence, profile_utils, re, requests, services.profile_service, start, tkinter, tomllib, traceback, ui_theme, ustawienia_systemu, utils.gui_helpers, wm_access
+audit_mw_report.md:2522:- Importy: PIL, __future__, config.paths, config_manager, copy, core.logging_config, datetime, glob, gui.settings_action_handlers, gui_products, gui_tools_config, io, json, logger, logging, logika_zadan, os, pathlib, profile_utils, re, services, start, subprocess, sys, threading, tkinter, tools, tools_config_loader, typing, ui_theme, ui_utils, ustawienia_magazyn, ustawienia_produkty_bom, utils_json, wm_audit_runtime, wm_log, zlecenia_utils
+audit_mw_report.md:2560:### gui_zlecenia.py
+audit_mw_report.md:2564:- Importy: __future__, config_manager, core.logika_zlecen, core.orders_storage, core.settings_manager, domain.orders, gui_zlecenia_creator, gui_zlecenia_detail, logging, start, tkinter, typing, ui_dialogs_safe, utils_orders
+audit_mw_report.md:2567:### gui_zlecenia_creator.py
+audit_mw_report.md:2571:- Importy: __future__, config_manager, datetime, gui_zlecenia, json, os, tkinter, typing, ui_theme, utils.path_utils, zlecenia_utils
+audit_mw_report.md:2574:### gui_zlecenia_detail.py
+audit_mw_report.md:2964:- Importy: bom, config_manager, gui_zlecenia, json, maszyny_logika, pathlib, pytest, shutil, tkinter, zlecenia_logika
+core/zlecenia_loader.py:21:    mod = (settings.get("orders.wizard_import") or "gui_zlecenia").strip()
+core/zlecenia_loader.py:30:        ("gui_zlecenia_creator", "open_order_creator"),
+core/zlecenia_loader.py:31:        ("gui_zlecenia", "open_order_creator"),
+data/moduly_manifest.json:49:      "pliki": ["gui_orders.py", "gui_zlecenia.py", "zlecenia_*.py", "data/zlecenia/**"],
+docs/PLAN_WDROZENIA_STATUS.md:48:- ⛔ W tabeli zleceń nie ma dodatkowych kolumn „czas realizacji” ani „brygadzista”. 【F:gui_zlecenia.py†L230-L279】
+docs/PLAN_WDROZENIA_STATUS.md:49:- ⛔ Nie zaobserwowano automatycznego zamykania zlecenia po wykonaniu. 【F:gui_zlecenia.py†L230-L315】
+gui_magazyn_kreator_bind.py:62:      1) Priorytet: DIRECT (gui_zlecenia_creator.open_order_creator(master, autor))
+gui_panel.py:63:    import gui_zlecenia  # noqa: F401
+gui_panel.py:65:    _warn(f"Panel zleceń (fallback) – błąd importu gui_zlecenia: {e!s}")
+gui_panel.py:66:    gui_zlecenia = None  # type: ignore
+gui_panel.py:197:    # oryginalna funkcja z gui_zlecenia: panel_zlecenia(parent, root=None, app=None, notebook=None)
+gui_panel.py:198:    from gui_zlecenia import panel_zlecenia as _panel_zl_src
+gui_panel.py:228:        ttk.Label(frame, text="Panel zleceń (fallback) – błąd importu gui_zlecenia").pack(pady=20)
+gui_zlecenia.py:135:    from gui_zlecenia_detail import open_order_detail  # type: ignore
+gui_zlecenia.py:142:        from gui_zlecenia_creator import open_order_creator  # type: ignore
+gui_zlecenia_creator.py:38:from gui_zlecenia import on_save_order
+kreator_sprawdzenia.py:50:    "gui_zlecenia.py": {"min": "1.0.1"},
+kreator_sprawdzenia.py:237:        "gui_zlecenia.py": {"min": "1.1.2"},
+logi_wersji.json:178:      "gui_zlecenia.py": "1.0.0",
+logi_wersji.json:193:      "gui_zlecenia.py": "1.0.0",
+logi_wersji.json:208:      "gui_zlecenia.py": "1.0.0",
+logi_wersji.json:223:      "gui_zlecenia.py": "1.0.1",
+logi_wersji.json:238:      "gui_zlecenia.py": "1.0.1",
+logi_wersji.json:253:      "gui_zlecenia.py": "1.0.1",
+logi_wersji.json:268:      "gui_zlecenia.py": "1.0.1",
+logi_wersji.json:283:      "gui_zlecenia.py": "1.0.1",
+logi_wersji.json:298:      "gui_zlecenia.py": "1.0.1",
+logi_wersji.json:313:      "gui_zlecenia.py": "1.0.1",
+logi_wersji.json:328:      "gui_zlecenia.py": "1.0.1",
+logi_wersji.json:343:      "gui_zlecenia.py": "1.0.1",
+logi_wersji.json:358:      "gui_zlecenia.py": "1.0.1",
+logi_wersji.json:370:      "✅ gui_zlecenia.py – wersja OK (1.0.1)",
+logi_wersji.json:386:      "gui_zlecenia.py": "1.0.1",
+logi_wersji.json:398:      "✅ gui_zlecenia.py – wersja OK (1.0.1)",
+logi_wersji.json:414:      "gui_zlecenia.py": "1.0.1",
+logi_wersji.json:426:      "✅ gui_zlecenia.py – wersja OK (1.0.1)",
+logi_wersji.json:442:      "gui_zlecenia.py": "1.0.1",
+logi_wersji.json:454:      "✅ gui_zlecenia.py – wersja OK (1.0.1)",
+logi_wersji.json:470:      "gui_zlecenia.py": "1.0.1",
+logi_wersji.json:482:      "✅ gui_zlecenia.py – wersja OK (1.0.1)",
+logi_wersji.json:498:      "gui_zlecenia.py": "1.0.1",
+logi_wersji.json:510:      "✅ gui_zlecenia.py – wersja OK (1.0.1)",
+logi_wersji.json:526:      "gui_zlecenia.py": "1.0.1",
+logi_wersji.json:538:      "✅ gui_zlecenia.py – wersja OK (1.0.1)",
+logi_wersji.json:554:      "gui_zlecenia.py": "1.0.1",
+logi_wersji.json:566:      "✅ gui_zlecenia.py – wersja OK (1.0.1)",
+logi_wersji.json:582:      "gui_zlecenia.py": "1.0.1",
+logi_wersji.json:594:      "✅ gui_zlecenia.py – wersja OK (1.0.1)",
+logi_wersji.json:610:      "gui_zlecenia.py": "1.0.1",
+logi_wersji.json:622:      "✅ gui_zlecenia.py – wersja OK (1.0.1)",
+logi_wersji.json:638:      "gui_zlecenia.py": "1.0.1",
+logi_wersji.json:650:      "✅ gui_zlecenia.py – wersja OK (1.0.1)",
+logi_wersji.json:666:      "gui_zlecenia.py": "1.0.8",
+logi_wersji.json:678:      "⚠️ gui_zlecenia.py – wersja NIEZGODNA (znaleziona 1.0.8, oczekiwana 1.0.1)",
+logi_wersji.json:694:      "gui_zlecenia.py": "brak",
+logi_wersji.json:706:      "⚠️ gui_zlecenia.py – brak nagłówka wersji",
+logi_wersji.json:722:      "gui_zlecenia.py": "brak",
+logi_wersji.json:734:      "⚠️ gui_zlecenia.py – brak nagłówka wersji",
+logi_wersji.json:750:      "gui_zlecenia.py": "brak",
+logi_wersji.json:762:      "⚠️ gui_zlecenia.py – brak nagłówka wersji",
+settings_schema.json:1022:                  "default": "gui_zlecenia"
+test_logika_zlecenia_i_maszyny.py:10:import gui_zlecenia
+test_logika_zlecenia_i_maszyny.py:132:    frame = gui_zlecenia.panel_zlecenia(root, root)
+wymagane_pliki.json:7:  "gui_zlecenia.py": "1.0.1",

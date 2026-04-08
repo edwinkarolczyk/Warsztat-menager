@@ -1,0 +1,167 @@
+core/jarvis_engine.py:1069:    question: str | None = None,
+core/jarvis_engine.py:1090:        question=question,
+core/jarvis_engine.py:1128:    question: str | None = None,
+core/jarvis_engine.py:1132:    report = run_analysis_report(model=model, allow_ai=allow_ai, question=question)
+core/jarvis_prompt_engine.py:178:def _build_prompt(data: Mapping[str, Any], question: str | None = None) -> str:
+core/jarvis_prompt_engine.py:186:    if question:
+core/jarvis_prompt_engine.py:187:        stripped = question.strip()
+core/jarvis_prompt_engine.py:200:    question: str | None = None,
+core/jarvis_prompt_engine.py:205:    question_text = question.strip() if isinstance(question, str) else ""
+core/jarvis_prompt_engine.py:218:        "question": question_text or None,
+core/jarvis_prompt_engine.py:235:                prompt = _build_prompt(payload, question=question_text or None)
+core/jarvis_prompt_engine.py:277:                if question_text:
+core/jarvis_prompt_engine.py:279:                        f"(Offline) Brak możliwości odpowiedzi na pytanie \"{question_text}\".\n"
+core/jarvis_prompt_engine.py:290:    if question_text:
+core/jarvis_prompt_engine.py:292:            f"(Offline) Brak możliwości odpowiedzi na pytanie \"{question_text}\".\n"
+gui/assign_dialog.py:44:    ent = ttk.Entry(frm, textvariable=q, width=40)
+gui_jarvis_panel.py:30:        self.question_var = tk.StringVar()
+gui_jarvis_panel.py:164:        question_frame = ttk.Frame(self)
+gui_jarvis_panel.py:165:        question_frame.grid(row=5, column=0, padx=12, pady=(0, 8), sticky="ew")
+gui_jarvis_panel.py:166:        question_frame.columnconfigure(0, weight=1)
+gui_jarvis_panel.py:168:        self.question_entry = ttk.Entry(question_frame, textvariable=self.question_var)
+gui_jarvis_panel.py:169:        self.question_entry.grid(row=0, column=0, sticky="ew")
+gui_jarvis_panel.py:170:        self.question_entry.bind("<Return>", self._on_question_return)
+gui_jarvis_panel.py:172:        ttk.Button(question_frame, text="Wyślij", command=self._send_question).grid(
+gui_jarvis_panel.py:284:    def _display_report(self, report: JarvisReport, *, question: str | None, timestamp: datetime) -> None:
+gui_jarvis_panel.py:289:        if question:
+gui_jarvis_panel.py:290:            formatted = f"Pytanie: {question}\n\nOdpowiedź:\n{content or '(brak danych)'}"
+gui_jarvis_panel.py:324:    def _execute_analysis(self, *, question: str | None = None) -> None:
+gui_jarvis_panel.py:329:            report = run_analysis_report(model=model, allow_ai=allow_flag, question=question)
+gui_jarvis_panel.py:342:        self.history.append((timestamp, report, question))
+gui_jarvis_panel.py:346:        self._display_report(report, question=question, timestamp=timestamp)
+gui_jarvis_panel.py:353:    def _send_question(self) -> None:
+gui_jarvis_panel.py:354:        question = self.question_var.get().strip()
+gui_jarvis_panel.py:355:        if not question:
+gui_jarvis_panel.py:356:            self.question_entry.focus_set()
+gui_jarvis_panel.py:359:        self._execute_analysis(question=question)
+gui_jarvis_panel.py:360:        self.question_var.set("")
+gui_jarvis_panel.py:361:        self.question_entry.focus_set()
+gui_jarvis_panel.py:364:    def _on_question_return(self, _event: Optional[tk.Event] = None) -> None:
+gui_jarvis_panel.py:365:        self._send_question()
+gui_jarvis_panel.py:398:        for ts, report, question in reversed(self.history[-10:]):
+gui_jarvis_panel.py:400:            if question:
+gui_jarvis_panel.py:401:                header += f" | pytanie: {question}"
+gui_logowanie.py:211:            "Transparent.TEntry",
+gui_logowanie.py:220:    entry_login = ttk.Entry(box, width=22, style="Transparent.TEntry")
+gui_logowanie.py:226:    entry_pin = ttk.Entry(box, show="*", width=22, style="Transparent.TEntry")
+gui_magazyn.py:110:    owner.ent_q = ttk.Entry(
+gui_magazyn_add.py:108:        ttk.Entry(frm, textvariable=self.vars["id"]).grid(row=0, column=1, sticky="ew", pady=2)
+gui_magazyn_add.py:122:        e_nazwa = ttk.Entry(frm, textvariable=self.vars["nazwa"])
+gui_magazyn_add.py:153:        ttk.Entry(frm, textvariable=self.vars["stan"]).grid(row=4, column=1, sticky="ew", pady=2)
+gui_magazyn_add.py:157:        ttk.Entry(frm, textvariable=self.vars["min_poziom"]).grid(row=5, column=1, sticky="ew", pady=2)
+gui_magazyn_bom.py:309:            ttk.Entry(form, textvariable=self.s_vars[key]).grid(row=i//2, column=(i%2)*2+1, sticky="ew", padx=4, pady=2)
+gui_magazyn_bom.py:397:                tk.Entry(form, textvariable=self.pp_vars[key]).grid(
+gui_magazyn_bom.py:497:        ttk.Entry(form, textvariable=self.pr_vars["symbol"]).grid(row=0, column=1, sticky="ew", padx=4, pady=2)
+gui_magazyn_bom.py:499:        ttk.Entry(form, textvariable=self.pr_vars["nazwa"]).grid(row=1, column=1, sticky="ew", padx=4, pady=2)
+gui_magazyn_bom.py:504:        ttk.Entry(form, textvariable=self.pr_vars["bom"]).grid(row=2, column=1, sticky="ew", padx=4, pady=2)
+gui_magazyn_edit.py:71:        ttk.Entry(frm, textvariable=self.var_roz, width=42).grid(
+gui_magazyn_edit.py:86:        ttk.Entry(frm, textvariable=self.var_zad, width=42).grid(
+gui_magazyn_pz.py:123:        ttk.Entry(frm, textvariable=self.var_qty, width=18).grid(
+gui_magazyn_pz.py:131:        ttk.Entry(frm, textvariable=self.var_cmt, width=40).grid(
+gui_magazyn_rezerwacje.py:68:    ttk.Entry(frm, textvariable=var_qty).grid(row=1, column=1, sticky="ew")
+gui_magazyn_rezerwacje.py:81:    ttk.Entry(frm, textvariable=var_comment).grid(row=3, column=1, sticky="ew")
+gui_magazyn_rezerwacje.py:129:    ttk.Entry(frm, textvariable=var_qty).grid(row=1, column=1, sticky="ew")
+gui_magazyn_rezerwacje.py:133:    ttk.Entry(frm, textvariable=var_comment).grid(row=2, column=1, sticky="ew")
+gui_maszyny.py:1163:                ent = ttk.Entry(frm, width=36)
+gui_narzedzia.py:2350:        Combobox = getattr(ttk, "Combobox", getattr(ttk, "Entry", lambda *a, **k: None))
+gui_narzedzia.py:3184:    ttk.Entry(header, textvariable=search_var, width=36, style="WM.Search.TEntry").pack(side="right", padx=(8, 0))
+gui_narzedzia.py:3220:    Combobox = getattr(ttk, "Combobox", getattr(ttk, "Entry", lambda *a, **k: None))
+gui_narzedzia.py:3747:        row("Numer (3 cyfry)", ttk.Entry(frm, textvariable=var_nr, style="WM.Search.TEntry"))
+gui_narzedzia.py:3764:        row("Nazwa", ttk.Entry(frm, textvariable=var_nm, style="WM.Search.TEntry"))
+gui_narzedzia.py:3891:        row("Opis", ttk.Entry(frm, textvariable=var_op, style="WM.Search.TEntry"))
+gui_narzedzia.py:3905:                ttk.Entry(frm, textvariable=var_pr, style="WM.Search.TEntry"),
+gui_narzedzia.py:4473:        ttk.Entry(tools_bar, textvariable=new_var, width=28, style="WM.Search.TEntry").pack(side="left", padx=(12,6))
+gui_narzedzia_qr.py:116:        self.entry = ttk.Entry(self)
+gui_products.py:357:        sym_entry = ttk.Entry(win, textvariable=sym_var)
+gui_products.py:362:        ttk.Entry(win, textvariable=name_var).grid(
+gui_products.py:389:        add_entry = ttk.Entry(win)
+gui_products.py:512:        ttk.Entry(win, textvariable=id_var).grid(
+gui_products.py:518:        ttk.Entry(win, textvariable=name_var).grid(
+gui_products.py:554:        add_entry = ttk.Entry(win)
+gui_products.py:667:        ttk.Entry(win, textvariable=id_var).grid(
+gui_products.py:682:        ttk.Entry(win, textvariable=roz_var).grid(
+gui_products.py:688:        ttk.Entry(win, textvariable=dl_var).grid(
+gui_products.py:703:        ttk.Entry(win, textvariable=stan_var).grid(
+gui_profile.py:794:    ent = ttk.Entry(bar,textvariable=q,width=28); ent.pack(side="left")
+gui_profile.py:910:        entry = ttk.Entry(parent, textvariable=var)
+gui_profile.py:925:        pin_entry = ttk.Entry(parent, textvariable=pin_var, show="*")
+gui_profile.py:1052:            w = ttk.Entry(row)
+gui_profile.py:2289:            entry = ttk.Entry(form, textvariable=var)
+gui_profile.py:2301:            ttk.Entry(form, textvariable=pin_var, show="*").grid(
+gui_profile.py:2405:        pin_entry = ttk.Entry(form, textvariable=pin_var, show="*")
+gui_profile.py:2466:        to_entry = ttk.Entry(win)
+gui_profile.py:2471:        subj_entry = ttk.Entry(win)
+gui_profile.py:2587:        ttk.Entry(frame, textvariable=date_var, width=16).grid(
+gui_settings.py:257:    entry = ttk.Entry(row_top, textvariable=var_path, width=60)
+gui_settings.py:546:    ttk.Entry(frm, textvariable=bg_var, width=60).grid(row=row, column=1, sticky="we", padx=6)
+gui_settings.py:561:    ttk.Entry(frm, textvariable=ext_var, width=30).grid(row=row, column=1, sticky="w")
+gui_settings.py:1265:        entry = ttk.Entry(sub, textvariable=var)
+gui_settings.py:1327:        entry = ttk.Entry(sub, textvariable=var, width=10)
+gui_settings.py:1341:        widget = ttk.Entry(frame, textvariable=var, show="*")
+gui_settings.py:1344:        widget = ttk.Entry(frame, textvariable=var)
+gui_settings.py:2251:            entry = ttk.Entry(frame, textvariable=var)
+gui_settings.py:2996:        self.entry_tools_collections_enabled = ttk.Entry(
+gui_settings.py:3065:        self.entry_tools_global_statuses = ttk.Entry(
+gui_settings.py:3527:            entry = ttk.Entry(frame)
+gui_settings.py:3624:        entry = ttk.Entry(tab, textvariable=patches_var, width=60)
+gui_tools_config_advanced.py:131:        search_entry = ttk.Entry(top, textvariable=self._search_var, width=24)
+gui_uzytkownicy.py:511:    ttk.Entry(right, textvariable=login_var, width=26).grid(
+gui_uzytkownicy.py:516:    ttk.Entry(right, textvariable=rola_var, width=20).grid(
+gui_uzytkownicy.py:523:    ttk.Entry(right, textvariable=dn_var, width=26).grid(
+gui_uzytkownicy.py:530:    ttk.Entry(right, textvariable=ym_var, width=20).grid(
+gui_uzytkownicy.py:537:    ttk.Entry(right, textvariable=av_var, width=26).grid(
+gui_uzytkownicy.py:542:    ttk.Entry(right, textvariable=cv_var, width=20).grid(
+gui_uzytkownicy.py:749:                ttk.Entry(win, textvariable=var, width=32).grid(
+gui_zlecenia_creator.py:135:            entry_qty = ttk.Entry(container)
+gui_zlecenia_creator.py:183:            entry_comment = ttk.Entry(container, width=60)
+gui_zlecenia_creator.py:226:            entry_desc = ttk.Entry(container, width=60)
+gui_zlecenia_creator.py:277:            entry_new = ttk.Entry(container, width=40)
+gui_zlecenia_creator.py:282:            entry_qty = ttk.Entry(container, width=10)
+gui_zlecenia_creator.py:288:            entry_supplier = ttk.Entry(container, width=30)
+gui_zlecenia_creator.py:293:            entry_due = ttk.Entry(container, width=15)
+layout_prosty.py:18:        entry = tk.Entry(self, textvariable=self.search_var, font=("Arial", 14))
+main.py:40:    """Entry point delegating to the legacy start module."""
+patches/RA-2025-09-09-501_gui_settings_add_method_tab.wmpatch:9:      "text": "\n    def _add_patch_manager_tab(self, base_dir):\n        \"\"\"Zakadka 'Patche' - skanowanie/zastosowanie patchy i przywracanie kopii.\"\"\"\n        import tkinter as tk\n        from tkinter import ttk, messagebox, scrolledtext\n        import os, sys, subprocess, shutil\n\n        tab = ttk.Frame(self.nb)\n        self.nb.add(tab, text=\"Patche\")\n\n        ttk.Label(tab, text=\"Folder patchy (*.wmpatch):\").grid(row=0, column=0, sticky=\"w\", padx=8, pady=(8,2))\n        patches_var = tk.StringVar(value=os.path.join(base_dir, \"patches\"))\n        entry = ttk.Entry(tab, textvariable=patches_var, width=60)\n        entry.grid(row=0, column=1, sticky=\"ew\", padx=8, pady=(8,2))\n        ttk.Button(tab, text=\"Otwórz folder\", command=(lambda p=patches_var: (os.startfile(p.get()) if os.name==\"nt\" else subprocess.Popen([\"xdg-open\", p.get()])))).grid(row=0, column=2, padx=8, pady=(8,2))\n\n        out = scrolledtext.ScrolledText(tab, height=18, width=100, state=\"disabled\")\n        out.grid(row=1, column=0, columnspan=3, sticky=\"nsew\", padx=8, pady=8)\n\n        btns = ttk.Frame(tab); btns.grid(row=2, column=0, columnspan=3, sticky=\"w\", padx=8, pady=(0,8))\n        run_btn   = ttk.Button(btns, text=\"Skanuj (Dry-run)\")\n        apply_btn = ttk.Button(btns, text=\"Zastosuj (Apply)\")\n        run_btn.pack(side=\"left\", padx=(0,8))\n        apply_btn.pack(side=\"left\")\n\n        tab.columnconfigure(1, weight=1)\n        tab.rowconfigure(1,  weight=1)\n        tab.rowconfigure(5,  weight=1)\n\n        def _append(text: str):\n            out.configure(state=\"normal\"); out.insert(\"end\", text + \"\\n\"); out.see(\"end\"); out.configure(state=\"disabled\")\n\n        def _run_patcher(do_apply: bool):\n            patch_dir = patches_var.get().strip()\n            if not os.path.isdir(patch_dir):\n                _append(f\"[WM-DBG] [PATCH] brak katalogu: {patch_dir}\")\n                messagebox.showwarning(\"Brak katalogu\", f\"Nie znaleziono: {patch_dir}\", parent=tab); return\n            _append(f\"[WM-DBG] [PATCH] base={base_dir}\")\n            _append(f\"[WM-DBG] [PATCH] patches={patch_dir}\")\n            _append(f\"[WM-DBG] [PATCH] mode={'APPLY' if do_apply else 'DRY-RUN'}\")\n            try:\n                try:\n                    from wm_patcher import apply_patches as _apply\n                except Exception:\n                    _apply = None\n                if _apply is not None:\n                    results = _apply(base_dir=base_dir, patches_dir=patch_dir, dry_run=(not do_apply), verbose=True)\n                    changed = [r for r in results if r.get('changed')]\n                    for r in results:\n                        _append(f\"- {r.get('file')}: {'CHANGED' if r.get('changed') else 'OK'}\")\n                        for d in r.get('details', []): _append(f\"    • {d}\")\n                    messagebox.showinfo(\"Patche\", f\"Zastosowano {len(results)} plików, zmian: {len(changed)}\", parent=tab)\n                else:\n                    exe = sys.executable\n                    cmd = [exe, os.path.join(base_dir, \"wm_patcher.py\"), \"--base\", base_dir, \"--patches\", patch_dir]\n                    if do_apply: cmd.append(\"--apply\")\n                    _append(\"[WM-DBG] uruchamiam: \" + \" \".join(cmd))\n                    proc = subprocess.run(cmd, capture_output=True, text=True, cwd=base_dir)\n                    if proc.stdout:\n                        for line in proc.stdout.splitlines(): _append(line)\n                    if proc.stderr: _append(\"[STDERR] \" + proc.stderr.strip())\n                    messagebox.showinfo(\"Patche\", f\"Zakoczono (rc={proc.returncode}). Szczegóy powyej.\", parent=tab)\n            except Exception as e:\n                _append(f\"[WM-DBG] [ERROR] {e}\"); messagebox.showerror(\"Bd patchera\", str(e), parent=tab)\n\n        run_btn.configure(command=lambda: _run_patcher(False))\n        apply_btn.configure(command=lambda: _run_patcher(True))\n\n        ttk.Separator(tab).grid(row=3, column=0, columnspan=3, sticky=\"ew\", padx=8, pady=4)\n        ttk.Label(tab, text=\"Kopie patchy (backup/patches):\").grid(row=4, column=0, sticky=\"w\", padx=8)\n\n        backups = ttk.Treeview(tab, columns=(\"files\",), show=\"tree\")\n        backups.grid(row=5, column=0, columnspan=3, sticky=\"nsew\", padx=8, pady=(2,8))\n\n        def _refresh_backups():\n            root_dir = os.path.join(base_dir, \"backup\", \"patches\")\n            for i in backups.get_children(): backups.delete(i)\n            if not os.path.isdir(root_dir): _append(f\"[WM-DBG] brak folderu kopii: {root_dir}\"); return\n            for name in sorted(os.listdir(root_dir)):\n                d = os.path.join(root_dir, name)\n                if not os.path.isdir(d): continue\n                files = [f for f in os.listdir(d) if os.path.isfile(os.path.join(d,f))]\n                node = backups.insert(\"\", \"end\", iid=name, text=name, values=(len(files),))\n                for f in sorted(files): backups.insert(node, \"end\", text=f)\n\n        def _restore_selected():\n            sel = backups.selection()\n            if not sel:\n                messagebox.showinfo(\"Przywracanie\", \"Wybierz katalog kopii (timestamp).\", parent=tab); return\n            ts = sel[0]\n            root_dir = os.path.join(base_dir, \"backup\", \"patches\", ts)\n            if not os.path.isdir(root_dir): messagebox.showerror(\"Bd\", f\"Brak katalogu: {root_dir}\", parent=tab); return\n            if not messagebox.askyesno(\"Potwierd\", f\"Przywróci kopi: {ts}?\", parent=tab): return\n            restored = 0; skipped = 0\n            for f in os.listdir(root_dir):\n                src = os.path.join(root_dir, f)\n                if not os.path.isfile(src): continue\n                dst = os.path.join(base_dir, f)\n                if not os.path.exists(dst):\n                    hit = None\n                    for dirpath, dirnames, filenames in os.walk(base_dir):\n                        if f in filenames:\n                            cand = os.path.join(dirpath, f)\n                            if hit is None: hit = cand\n                            else: hit = None; break\n                    if hit: dst = hit\n                try:\n                    shutil.copy2(src, dst)\n                    restored += 1; _append(f\"[WM-DBG] [RESTORE] {f} -> {dst}\")\n                except Exception as e:\n                    skipped += 1; _append(f\"[WM-DBG] [RESTORE] SKIP {f}: {e}\")\n            messagebox.showinfo(\"Przywracanie\", f\"Przywrócono: {restored}, pominito: {skipped}\", parent=tab)\n\n        ctrl = ttk.Frame(tab); ctrl.grid(row=6, column=0, columnspan=3, sticky=\"w\", padx=8, pady=(0,8))\n        ttk.Button(ctrl, text=\"Odwie kopie\", command=_refresh_backups).pack(side=\"left\", padx=(0,8))\n        ttk.Button(ctrl, text=\"Przywró zaznaczon kopi\", command=_restore_selected).pack(side=\"left\")\n\n        _refresh_backups()\n        _append(\"[WM-DBG] [SETTINGS] zakadka Patche: OK\")\n"
+test_gui_logowanie.py:82:        Entry=DummyWidget,
+test_gui_narzedzia_config.py:109:        Entry=DummyWidget,
+test_gui_narzedzia_enter.py:115:        Frame = Label = Entry = Treeview = Scrollbar = Combobox = (
+test_gui_narzedzia_files.py:99:        Entry=DummyWidget,
+test_kreator_gui.py:34:    pin_input = tk.Entry(root, textvariable=pin_var)
+test_kreator_wersji.py:26:        "entry_pin = ttk.Entry",
+test_tool_media_io.py:105:        Entry=DummyWidget,
+tests/test_produkty_bom_io.py:51:    entries = _find_widgets(frm, ttk.Entry)
+tests/test_produkty_bom_io.py:137:    entries = _find_widgets(frm, ttk.Entry)
+tests/test_settings_gui.py:58:        Entry=DummyWidget,
+tools/list_branch_changes.py:86:    """Entry point for the CLI."""
+tools/roadmap_apply_updates.py:247:Entry = Dict[str, Any]
+tools/roadmap_apply_updates.py:250:def _load() -> List[Entry]:
+tools/roadmap_apply_updates.py:268:def _save(data: Iterable[Entry]) -> None:
+tools/roadmap_apply_updates.py:274:def _match(item: Entry, match_data: Dict[str, Any]) -> bool:
+tools/roadmap_apply_updates.py:289:def _apply_updates(data: List[Entry]) -> int:
+tools/roadmap_apply_updates.py:309:def _ensure_meta(data: List[Entry]) -> None:
+ui_theme.py:229:    for cls in ("TEntry", "TSpinbox"):
+ui_theme.py:440:        "WM.Search.TEntry",
+ui_theme.py:565:        root.option_add("*Entry.background", palette["entry_bg"])
+ui_theme.py:566:        root.option_add("*Entry.foreground", palette["entry_fg"])
+ui_theme.py:567:        root.option_add("*Entry.insertBackground", palette["fg"])
+ui_theme.py:568:        root.option_add("*Entry.selectBackground", palette["selection"])
+ui_theme.py:569:        root.option_add("*Entry.selectForeground", palette["fg"])
+ustawienia_magazyn.py:164:        ttk.Entry(typ_btns, textvariable=self.var_new_typ, width=18).pack(pady=(0, 6))
+ustawienia_magazyn.py:178:        ttk.Entry(jm_btns, textvariable=self.var_new_jm, width=18).pack(pady=(0, 6))
+ustawienia_magazyn.py:231:        ttk.Entry(root, textvariable=self.var_pz_prefix, width=10).grid(row=1, column=1, sticky="w", **pad)
+ustawienia_magazyn.py:234:        ttk.Entry(root, textvariable=self.var_pz_width, width=6).grid(row=2, column=1, sticky="w", **pad)
+ustawienia_magazyn.py:239:        ttk.Entry(root, textvariable=self.var_pz_seq_path, width=40).grid(row=4, column=1, sticky="w", **pad)
+ustawienia_magazyn.py:261:        ttk.Entry(root, textvariable=self.var_alert_pct, width=6).grid(row=0, column=1, sticky="w", **pad)
+ustawienia_produkty_bom.py:121:    var_kod = tk.StringVar();  ttk.Entry(right, textvariable=var_kod, width=24).grid(row=0, column=1, sticky="w", padx=6, pady=4)
+ustawienia_produkty_bom.py:123:    var_nazwa = tk.StringVar(); ttk.Entry(right, textvariable=var_nazwa).grid(row=0, column=3, sticky="ew", padx=6, pady=4)
+ustawienia_produkty_bom.py:126:    var_ver = tk.StringVar(); ttk.Entry(right, textvariable=var_ver, width=12).grid(row=1, column=1, sticky="w", padx=6, pady=4)
+ustawienia_produkty_bom.py:132:    var_eff_from = tk.StringVar(); ttk.Entry(right, textvariable=var_eff_from, width=12).grid(row=2, column=1, sticky="w", padx=6, pady=4)
+ustawienia_produkty_bom.py:134:    var_eff_to = tk.StringVar(); ttk.Entry(right, textvariable=var_eff_to, width=12).grid(row=2, column=3, sticky="w", padx=6, pady=4)
+ustawienia_produkty_bom.py:327:        ttk.Entry(f, textvariable=var_il, width=10).grid(row=1, column=1, sticky="w", padx=4, pady=4)
+ustawienia_produkty_bom.py:330:        ent_cz = ttk.Entry(f, textvariable=var_cz)
+ustawienia_produkty_bom.py:340:        ttk.Entry(f, textvariable=var_sr_dl).grid(row=4, column=1, sticky="ew", padx=4, pady=4)
+ustawienia_uzytkownicy.py:219:        ttk.Entry(frame, textvariable=self.v_login).grid(row=0, column=1, sticky="ew")
+ustawienia_uzytkownicy.py:234:        ttk.Entry(frame, textvariable=self.v_date).grid(row=2, column=1, sticky="ew")
+wm/dyspo_wizard/wizard.py:1:"""Entry point for the Dyspozycje wizard."""
+wm/settings/tabs/dyspo_tab.py:84:            entry = ttk.Entry(frame, textvariable=pattern_var)
+wm_theme.py:29:    style.configure("TEntry", fieldbackground=bg, foreground=fg)

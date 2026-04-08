@@ -1,0 +1,271 @@
+CHANGELOG.md:18:- Magazyn otwiera kreator zleceń z kontekstem zaznaczonej pozycji, wykorzystuje fallbacki importu i zapisuje braki do oczekujących zamówień.【F:gui_magazyn.py†L1-L189】【F:gui_magazyn.py†L340-L428】【F:gui_magazyn_kreator_bind.py†L55-L108】【F:logika_zakupy.py†L1-L182】
+CHANGELOG.md:51:  wymaga** `powiazania`. Ma bezpieczne fallbacki i walidacje typów.
+CHANGES_PROFILES_UPDATE.txt:5:- gui_uzytkownicy.py 1.1.3 — dodany Notebook z kartą „👤 Profil” (styl WM.*); fallback do starego widoku.
+README_PATCH.txt:7:PATCH: H2c + theme fallback + user files
+README_PATCH.txt:9:- Theme: jeśli ui_theme.apply_theme nie działa, panel profil wymusi 'clam' (fallback).
+README_PATCH_Bplus.txt:7:  * AVATAR z avatars/<login>.png (fallback: inicjały na Canvasie),
+README_PATCH_Bpp.txt:7:  * AVATAR (avatars/<login>.png) z fallbackiem inicjałów,
+audit_mw_report.json:14580:        "_fallback_from_paths",
+audit_mw_report.json:16580:        "_fallback_topmost",
+audit_mw_report.json:18198:        "test_load_last_update_info_fallback",
+audit_mw_report.json:18199:        "test_load_last_update_info_git_show_fallback",
+audit_mw_report.json:18416:        "test_avatar_fallback_without_pillow",
+audit_mw_report.json:18967:        "test_load_jednostki_invalid_json_fallback",
+audit_mw_report.json:18968:        "test_load_jednostki_missing_fallback",
+audit_mw_report.json:19031:        "test_require_reauth_fallbacks"
+audit_mw_report.json:19431:        "test_manifest_fallback_adds_core_modules"
+audit_mw_report.json:21022:        "load_machines_rows_with_fallback",
+audit_mw_report.json:21052:        "load_orders_rows_with_fallback"
+audit_mw_report.json:21068:        "_fallback_root",
+audit_mw_report.json:21089:        "load_tools_rows_with_fallback",
+audit_mw_report.md:2127:- Definicje: _audit_config_sections, _check_machines_sources, _exists, _fallback_from_paths, _flatten_extended_audit_rows, _format_detail, _load_extended_audit_data, _normalized, add, resolved, run, run_audit, wm_warn
+audit_mw_report.md:2523:- Definicje: CSVListVar, FloatDictVar, FloatListVar, NestedListVar, ScrollableFrame, SettingsPanel, SettingsWindow, StrDictVar, StrListVar, __init__, _add_field, _add_group, _add_machines_bg_group, _add_machines_map_group, _add_magazyn_tab, _add_patch_section, _add_readonly_info, _append_audit_out, _append_tests_out, _apply_orders_config, _apply_root_change, _apply_user_modules, _as_dict, _autosave_tick, _bind_copy_shortcut, _bind_defaults_shortcut, _bind_tooltip, _browse_bg, _build_orders_tab, _build_products_tab, _build_root_section, _build_root_status, _build_slowniki_tab, _build_tools_tab, _build_ui, _cleanup, _close_window, _coerce_default_for_var, _coerce_value_for_type, _create_button_field, _create_widget, _current_cfg_manager, _default_tools_definitions_path, _exists, _extract_tasks, _fallback_topmost, _get_schema, _get_tools_config_path, _handle_root_change, _hide, _init_audit_tab, _init_magazyn_tab, _init_root_resources, _install_pytest, _is_deprecated, _is_legacy_system_field, _iter_fields, _load_magazyn_dicts, _load_settings_state, _load_user_modules, _mag_dict_path, _make_system_tab, _mark_dirty, _mk_status, _normalize_field_definition, _on_button_field_clicked, _on_canvas_configure, _on_defaults_kbd, _on_inner_configure, _on_mousewheel, _on_select, _on_tab_change, _on_tools_config_saved, _on_toplevel_destroy, _on_var_write, _open_tools_config, _open_tools_definitions_editor, _pick, _pick_dir, _populate_audit_tree, _populate_tab, _refresh_paths_preview, _refresh_tools_def_preview, _register_option_var, _reload_tools_section, _reorder_tabs, _reset_legacy_file_overrides, _resolve_autosave_delay, _root_status_rows, _run_all_tests, _run_audit_now, _safe_pick_json, _safe_save_json, _save, _save_magazyn_dicts, _save_user_modules, _scroll, _show, _split, _start_autosave_loop, _status, _sync_display, _ts_value, _validate_and_save, _wm_copy_audit_report, _wm_copy_to_clipboard, _wm_read_latest_audit_from_disk, _wm_read_textwidget, _worker, add_item, audit, browse, del_item, ensure_type_entry, format_dict, format_list, format_nested, get, make_editor, move_down, move_up, on_close, on_setting_changed, pick_color, rebuild_status, refresh_panel, restore_defaults, rollback, run_patch, save, save_all, save_all_dicts, set, update_dict, update_fdict, update_list, update_nested, update_var, wm_bind_settings_getter, wm_dbg, wm_err, wm_info
+audit_mw_report.md:2887:- Definicje: DummyElements, DummyLabel, DummyRoot, DummyWidget, __getitem__, __init__, after, after_cancel, attributes, bind, config, create_rectangle, delete, destroy, dummy_gui, failing_cb, fake_button, fake_cb, fake_check_output, fake_error, fake_get, fake_label, fake_run, keys, pack, place, test_label_color_current, test_label_color_outdated, test_load_last_update_info_fallback, test_load_last_update_info_git_show_fallback, test_load_last_update_info_json, test_load_last_update_info_missing_or_malformed, test_logowanie_callback_error, test_logowanie_case_insensitive, test_logowanie_invalid_pair, test_logowanie_success, test_pinless_button_present, title, winfo_children, winfo_exists, winfo_screenheight, winfo_screenwidth
+audit_mw_report.md:2936:- Definicje: DummyLabel, DummyPhoto, Img, __init__, dialog, fake_open, pack, test_avatar_fallback_without_pillow, test_default_avatar_used, test_dialog_invoked_on_unsaved_navigation, test_public_api
+audit_mw_report.md:3112:- Definicje: test_load_jednostki_invalid_json_fallback, test_load_jednostki_missing_fallback, test_load_jednostki_valid
+audit_mw_report.md:3133:- Definicje: _make_dialog, test_parse_qty_allows_fraction_when_disabled, test_parse_qty_enforces_int_for_szt_by_default, test_parse_qty_mb_precision_from_config, test_require_reauth_fallbacks
+audit_mw_report.md:3280:- Definicje: test_manifest_fallback_adds_core_modules
+audit_mw_report.md:3761:- Definicje: _coerce_rows, _explain_rows, _fix_if_dir, _ids_preview, _index_by_id, _load_json_file, _merge_unique, _normalize_machine_id, _pick_source, _save_json_file, _timestamp, apply_machine_updates, delete_machine, ensure_machines_sample_if_empty, index_by_id, load_json_file, load_machines, load_machines_from_path, load_machines_rows_with_fallback, merge_rows_union_by_id, merge_unique, now_iso, save_machines, save_machines_rows, sort_machines, upsert_machine
+audit_mw_report.md:3768:- Definicje: _fix_if_dir, ensure_orders_sample_if_empty, load_orders_rows_with_fallback
+audit_mw_report.md:3775:- Definicje: _fallback_root, rel_to_root, root_dir, tools_dir, tools_file
+audit_mw_report.md:3782:- Definicje: ensure_tools_sample_if_empty, load_tools_rows_with_fallback, migrate_tools_scattered_to_root, save_tool_item, save_tools_rows
+backend/audit/wm_audit_runtime.py:238:        def _fallback_from_paths(key: str, default_rel: str = "") -> str:
+backend/audit/wm_audit_runtime.py:251:        data_override = _fallback_from_paths("data_root")
+backend/audit/wm_audit_runtime.py:257:        logs_candidate = _fallback_from_paths("logs_dir", "logs")
+backend/audit/wm_audit_runtime.py:258:        backups_candidate = _fallback_from_paths("backup_dir", "backup")
+backend/audit/wm_audit_runtime.py:303:            tools_dir = _fallback_from_paths("tools_dir", "narzedzia")
+backend/audit/wm_audit_runtime.py:426:    wm_info("audit.run_audit", "fallback", summary=summary)
+config/paths.py:59:#   - get_path(key, default)-> odczyt ścieżki z ustawień + fallback do domyślnej
+config/paths.py:198:    """Zwraca ścieżkę z ustawień. Jeśli brak – oddaje sensowny fallback z _default_paths()."""
+config/paths.py:202:    fallback = _default_paths().get(key, default)
+config/paths.py:203:    if isinstance(fallback, str):
+config/paths.py:204:        return _expand_path(fallback)
+config/paths.py:205:    if fallback is not None:
+config/paths.py:206:        return str(fallback)
+config_manager.py:1032:        fallback_anchor = _norm(str(config_dir))
+config_manager.py:1037:        anchor_norm = fallback_anchor
+config_manager.py:1039:            anchor_norm = _absolute_with_root(raw_anchor.strip(), fallback_anchor)
+config_manager.py:1041:            data_candidate = _absolute_with_root(raw_data_root.strip(), fallback_anchor)
+config_manager.py:1065:        for key, fallback in defaults.items():
+config_manager.py:1066:            candidate = paths_cfg.get(key) or fallback
+config_manager.py:1141:        def default_for(dotted: str, fallback: Any) -> Any:
+config_manager.py:1143:                return get_by_key(self.defaults, dotted, fallback)
+config_manager.py:1145:                return fallback
+config_manager.py:1607:    def _path_from_cfg(self, dotted: str, fallback: str) -> str:
+config_manager.py:1614:        return os.path.normpath(fallback)
+config_manager.py:1659:    def _expanded_path(self, dotted: str, fallback: str) -> str:
+config_manager.py:1666:        candidate = value or fallback
+core/bootstrap.py:48:    """Ensure ``key`` points to an existing path or fallback to ``default_path``."""
+core/bootstrap.py:218:    fallback_root = (
+core/bootstrap.py:223:    directories.add(Path(str(fallback_root)).expanduser())
+core/jarvis_engine.py:385:        from utils_tools import load_tools_rows_with_fallback
+core/jarvis_engine.py:388:        load_tools_rows_with_fallback = None  # type: ignore[assignment]
+core/jarvis_engine.py:392:    if load_tools_rows_with_fallback and resolve_rel:
+core/jarvis_engine.py:395:            rows, _ = load_tools_rows_with_fallback(cfg_dict, resolve_rel)
+core/jarvis_engine.py:455:        from utils_maszyny import load_machines_rows_with_fallback
+core/jarvis_engine.py:458:        load_machines_rows_with_fallback = None  # type: ignore[assignment]
+core/jarvis_engine.py:462:    if load_machines_rows_with_fallback and resolve_rel:
+core/jarvis_engine.py:465:            rows, _ = load_machines_rows_with_fallback(cfg_dict, resolve_rel)
+core/jarvis_engine.py:1107:    fallback_model = metadata.get("fallback_model") if metadata.get("used_ai") else None
+core/jarvis_engine.py:1108:    if fallback_model:
+core/jarvis_engine.py:1109:        fallback_reason = metadata.get("fallback_reason")
+core/jarvis_engine.py:1110:        detail = str(fallback_reason) if fallback_reason else None
+core/jarvis_engine.py:1111:        _add_alert(diagnostics, "info", f"Użyto modelu zapasowego: {fallback_model}", detail)
+core/jarvis_engine.py:1144:        notify("fallback", "Przełączono na tryb offline (brak dostępu do OpenAI)", level=3)
+core/jarvis_prompt_engine.py:153:        fallback_candidates = [
+core/jarvis_prompt_engine.py:163:        for value, label in zip(fallback_candidates, labels):
+core/jarvis_prompt_engine.py:215:        "fallback_model": None,
+core/jarvis_prompt_engine.py:216:        "fallback_reason": None,
+core/jarvis_prompt_engine.py:227:        fallback_reason: str | None = None
+core/jarvis_prompt_engine.py:229:            fallback_model = DEFAULT_MODEL
+core/jarvis_prompt_engine.py:230:            if fallback_model.lower() not in {m.lower() for m in attempt_models}:
+core/jarvis_prompt_engine.py:231:                attempt_models.append(fallback_model)
+core/jarvis_prompt_engine.py:259:                    meta["fallback_model"] = current_model
+core/jarvis_prompt_engine.py:260:                    meta["fallback_reason"] = fallback_reason
+core/jarvis_prompt_engine.py:264:                fallback_reason = reason
+core/jarvis_prompt_engine.py:268:                        "[JARVIS][AI] fallback requested="
+core/jarvis_prompt_engine.py:274:                    f"[JARVIS][AI] offline-fallback used (reason: {reason})"
+core/jarvis_prompt_engine.py:288:    _append_wm_log(f"[JARVIS][AI] offline-fallback used (reason: {reason})")
+core/machines_loader.py:45:    * ``x`` and ``y`` are converted to integers with ``0`` as fallback.
+core/permissions.py:23:    """Return modules visible for ``user_doc`` using ``settings`` as fallback."""
+core/settings_manager.py:16:    """Convert value to bool with fallback."""
+core/settings_manager.py:30:    """Convert value to int with fallback."""
+core/settings_manager.py:38:    """Convert value to str with fallback."""
+core/theme.py:31:            fallback = "default"
+core/theme.py:33:                apply_theme(fallback)
+core/theme.py:34:                _ACTIVE_THEME = fallback
+core/theme.py:36:            except Exception as fallback_exc:  # pragma: no cover - diagnostyka awaryjna
+core/theme.py:37:                print(f"[WM-DBG][THEME] Fallback '{fallback}' także nie działa: {fallback_exc}")
+domain/orders.py:141:    for key, fallback in defaults.items():
+domain/orders.py:143:            result[key] = int(data.get(key, fallback))
+domain/orders.py:145:            result[key] = fallback
+grafiki/shifts_schedule.py:232:            _log_user_count("fallback", raw)
+gui/widgets_user_footer.py:19:except Exception:  # pragma: no cover - import fallback for tests
+gui_jarvis_panel.py:303:        fallback = report.metadata.get("fallback_model")
+gui_jarvis_panel.py:317:        if fallback:
+gui_jarvis_panel.py:318:            parts.append(f"Fallback: {fallback}")
+gui_logowanie.py:154:    fallback = True
+gui_logowanie.py:167:            fallback = False
+gui_logowanie.py:171:    if fallback:
+gui_magazyn.py:257:    except Exception as e:  # pragma: no cover - log + fallback handled below
+gui_magazyn.py:263:    """Czyta magazyn; preferuje ``magazyn_io`` z fallbackiem na plik."""
+gui_magazyn.py:294:    """Mapowanie rekordu na 6 kolumn z miękkimi fallbackami."""
+gui_magazyn.py:375:    except Exception as exc:  # pragma: no cover - GUI fallback
+gui_magazyn.py:392:    except Exception as exc:  # pragma: no cover - GUI fallback
+gui_magazyn.py:399:        except Exception as exc:  # pragma: no cover - GUI fallback
+gui_magazyn.py:697:    - fallback: parent (jeśli jest widgetem)
+gui_magazyn_add.py:6:#   * Jednostka -> data/magazyn/slowniki.json["jednostki"] lub fallback ["szt", "mb"]
+gui_magazyn_add.py:36:    """Czyta jednostki z pliku słowników; fallback do FALLBACK_JM."""
+gui_magazyn_bridge.py:19:    except Exception:  # pragma: no cover - defensive fallback
+gui_magazyn_edit.py:3:# - FIX: bezpieczny zapis (_safe_save) – fallback do logika_magazyn.save_magazyn,
+gui_magazyn_edit.py:22:    fallback do LM.load_magazyn().
+gui_magazyn_kreator_bind.py:9:except Exception:  # pragma: no cover - fallback dla środowisk testowych
+gui_magazyn_pz.py:53:    except Exception:  # pragma: no cover - fallback
+gui_magazyn_pz.py:191:        except Exception:  # pragma: no cover - fallback
+gui_maszyny.py:96:# ---- bezpieczny import config_manager / fallback (jak w Twojej bazie) ----
+gui_maszyny.py:116:    load_machines_rows_with_fallback,
+gui_maszyny.py:483:                fallback_id = str(values[0])
+gui_maszyny.py:488:                        if str(m.get("id") or m.get("nr_ewid") or "") == fallback_id
+gui_maszyny.py:553:        self._bg_fallback: Optional[tk.PhotoImage] = None
+gui_maszyny.py:617:        self._bg_fallback = None
+gui_maszyny.py:648:            self._bg_fallback = None
+gui_maszyny.py:653:            self._bg_fallback = None
+gui_maszyny.py:656:        self._bg_fallback = tk_img
+gui_maszyny.py:678:        elif self._bg_fallback is not None:
+gui_maszyny.py:679:            self.canvas.create_image(ax, ay, image=self._bg_fallback, anchor="nw")
+gui_maszyny.py:1034:def _detect_real_source(rows_from_fallback: List[Dict], primary_path: str, cfg: dict) -> str:
+gui_maszyny.py:1036:    if rows_from_fallback and not primary_rows:
+gui_maszyny.py:1070:    rows, primary_path = load_machines_rows_with_fallback(cfg, resolve_rel)
+gui_maszyny.py:1126:            fallback_keys=("machines",),
+gui_narzedzia.py:48:except Exception:  # pragma: no cover - fallback
+gui_narzedzia.py:107:except Exception:  # pragma: no cover - fallback przy brakującym helperze
+gui_narzedzia.py:225:except ImportError:  # pragma: no cover - fallback dla starszych wersji
+gui_narzedzia.py:239:    load_tools_rows_with_fallback,
+gui_narzedzia.py:482:def _clean_status(value: Any, fallback: str) -> str:
+gui_narzedzia.py:487:    return fallback
+gui_narzedzia.py:783:    rows_raw, primary = load_tools_rows_with_fallback(cfg, resolve_rel)
+gui_narzedzia.py:910:    """Return an absolute filesystem path for *path* with *default* fallback."""
+gui_narzedzia.py:993:    # 2) profiles.json (prefer ścieżkę z konfiguracji, następnie fallbacki)
+gui_narzedzia.py:1016:        fallback_profiles = str(Path("profiles.json").resolve())
+gui_narzedzia.py:1017:        profile_candidates.append(fallback_profiles)
+gui_narzedzia.py:1055:    # 3) uzytkownicy.json (prefer ścieżkę z konfiguracji + fallbacki)
+gui_narzedzia.py:1072:        fallback_users = str(Path("uzytkownicy.json").resolve())
+gui_narzedzia.py:1073:        users_candidates.append(fallback_users)
+gui_narzedzia.py:1109:    # 4) Legacy fallback – ensure previous behaviour still works
+gui_narzedzia.py:1924:        # fallback: stary config + plik zewnętrzny
+gui_narzedzia.py:2062:    fallback = getattr(LZ, "TOOL_TASKS_PATH", None)
+gui_narzedzia.py:2063:    chosen = candidate or fallback
+gui_narzedzia.py:2310:    Czyta z config['narzedzia']['typy'][typ][phase], z fallbackiem na płaskie listy.
+gui_narzedzia.py:2654:    # 2) fallback: stare klucze/tryby + plik konfiguracyjny
+gui_narzedzia.py:3612:                fallback = infer_mode_from_id(
+gui_narzedzia.py:3619:                normalized = "NOWE" if fallback == "NN" else "STARE"
+gui_narzedzia.py:3718:            fallback = "SN" if tool_mode == "STARE" else "NN"
+gui_narzedzia.py:3725:                            fallback = candidate
+gui_narzedzia.py:3731:                                fallback = candidate
+gui_narzedzia.py:3734:                    fallback = cfg_mgr.get("tools.default_collection", fallback) or fallback
+gui_narzedzia.py:3737:            result = str(fallback or ("SN" if tool_mode == "STARE" else "NN")).strip()
+gui_narzedzia.py:3812:        status_fallback = list(statusy)
+gui_narzedzia.py:3830:                cb_status.config(values=status_fallback)
+gui_narzedzia.py:3831:                if status_fallback:
+gui_narzedzia.py:3832:                    var_st.set(status_fallback[0])
+gui_narzedzia.py:3841:                cb_status.config(values=status_fallback)
+gui_narzedzia.py:3848:                if status_fallback:
+gui_narzedzia.py:3849:                    fallback_lower = {s.lower() for s in status_fallback if s}
+gui_narzedzia.py:3850:                    if current.lower() not in fallback_lower:
+gui_narzedzia.py:3851:                        var_st.set(status_fallback[0])
+gui_panel.py:58:except Exception as e:  # pragma: no cover - fallback logging
+gui_panel.py:59:    _warn(f"Panel narzędzi (fallback) – błąd importu gui_narzedzia: {e!s}")
+gui_panel.py:64:except Exception as e:  # pragma: no cover - fallback logging
+gui_panel.py:65:    _warn(f"Panel zleceń (fallback) – błąd importu gui_zlecenia: {e!s}")
+gui_panel.py:71:except Exception as e:  # pragma: no cover - import fallback
+gui_panel.py:214:            # fallback dla starszych wersji przyjmujących samo parent
+gui_panel.py:228:        ttk.Label(frame, text="Panel zleceń (fallback) – błąd importu gui_zlecenia").pack(pady=20)
+gui_profile.py:48:except Exception:  # pragma: no cover - fallback
+gui_settings.py:635:except ImportError:  # pragma: no cover - fallback for environments without wm_log
+gui_settings.py:749:    from gui_tools_config import ToolsConfigDialog  # preferuje advanced, fallback prosty
+gui_settings.py:2078:            except Exception as fallback_exc:
+gui_settings.py:2081:                    "var fallback set failed",
+gui_settings.py:2082:                    fallback_exc,
+gui_settings.py:2578:            fallback_tasks = self.cfg.get("czynnosci_technologiczne", [])
+gui_settings.py:2579:            tasks = fallback_tasks if isinstance(fallback_tasks, list) else []
+gui_settings.py:3288:        """Otwiera alias ``gui_tools_config`` (advanced lub fallback JSON)."""
+gui_settings.py:3361:        def _fallback_topmost(win: tk.Misc) -> None:
+gui_settings.py:3376:                _fallback_topmost(dlg)
+gui_settings.py:3378:            _fallback_topmost(dlg)
+gui_settings.py:4056:        # fallback – keep audit as last tab
+gui_tool_editor.py:437:    def _ordered_statuses_for_type(self, typ: str, fallback: list[str]) -> list[str]:
+gui_tool_editor.py:444:        return list(fallback or [])
+gui_tools_config.py:1:"""Alias do edytora zaawansowanego Narzędzi (fallback na prosty edytor JSON)."""
+gui_tools_config.py:43:    print("[WM-DBG] gui_tools_config: fallback na prosty edytor JSON")
+gui_uzytkownicy.py:23:except Exception:  # pragma: no cover - fallback, gdy moduł nie istnieje
+gui_uzytkownicy.py:35:except Exception:  # pragma: no cover - fallback na brak manifestu
+gui_uzytkownicy.py:41:except Exception:  # pragma: no cover - fallback gdy serwis nie jest dostępny
+gui_uzytkownicy.py:216:                fallback_role = me.get("rola")
+gui_uzytkownicy.py:217:                if (fallback_role or "").lower() in elevated_roles:
+gui_zlecenia.py:14:except ImportError:  # pragma: no cover - fallback dla starszych wersji
+gui_zlecenia.py:32:from utils_orders import ensure_orders_sample_if_empty, load_orders_rows_with_fallback
+gui_zlecenia.py:41:except Exception:  # pragma: no cover - fallback
+gui_zlecenia.py:136:except Exception:  # pragma: no cover - fallback gdy moduł nie istnieje
+gui_zlecenia.py:170:    rows, primary_path = load_orders_rows_with_fallback(cfg, resolve_rel)
+gui_zlecenia.py:224:    rows, primary_path = load_orders_rows_with_fallback(cfg, resolve_rel)
+gui_zlecenia.py:451:                fallback = load_domain_orders()
+gui_zlecenia.py:462:            rows = [order for order in fallback if isinstance(order, dict)]
+gui_zlecenia_creator.py:14:except Exception:  # pragma: no cover - fallback gdy helper niedostępny
+gui_zlecenia_creator.py:43:except Exception:  # pragma: no cover - fallback gdy motyw nie jest dostępny
+gui_zlecenia_detail.py:13:except Exception:  # pragma: no cover - fallback gdy motyw nie istnieje
+maszyny_logika.py:16:    """Locate the canonical machines JSON file with graceful fallbacks."""
+maszyny_logika.py:27:    fallback = Path(cfg_path("data/maszyny/maszyny.json"))
+maszyny_logika.py:29:        "[WM-DBG][MASZYNY] fallback SoT=%s (repo default)", fallback.as_posix()
+maszyny_logika.py:31:    return fallback
+presence.py:23:except ImportError:  # pragma: no cover - fallback when tkinter is unavailable
+presence.py:72:                    logger.exception("rename fallback failed for %s: %s", path, e)
+profile_utils.py:352:    fallback_candidates = [
+profile_utils.py:356:    for candidate in fallback_candidates:
+profile_utils.py:445:except Exception:  # pragma: no cover - fallback na brak manifestu
+rc1_audit_hook.py:21:    except Exception:  # pragma: no cover - defensive fallback
+rc1_audit_plus.py:59:def _read_text(path: str, fallback=""):
+rc1_audit_plus.py:64:        return fallback
+rc1_audit_plus.py:153:        # fallback: dispatch.execute exists (nie sprawdzamy realnego clicka)
+rc1_data_bootstrap.py:21:# Podpowiedzi katalogów (tylko z paths.* — żadnych repo fallbacków)
+rc1_hotfix_actions.py:108:    z celem >= 100 łącznych checków. Jeśli modułu nie ma, fallback do audit.run().
+rc1_hotfix_actions.py:129:    # fallback: klasyczny audyt
+rc1_profiles_bootstrap.py:74:    # Zbiera bazy ścieżek z configu, fallback do struktury repo.
+rc1_profiles_bootstrap.py:80:    users_dir = users_dir or os.path.join(ROOT, "data")  # fallback: w repo trzymamy profiles.json w katalogu danych
+runtime_paths.py:30:    # jeśli spakowane przez PyInstaller, szukamy w program data albo fallback do default_anchor
+runtime_paths.py:70:    # fallback: utwórz i zwróć domyślny anchor
+runtime_paths.py:97:    fallback = Path(__file__).parent / rel_path
+runtime_paths.py:98:    return str(fallback)
+services/profile_service.py:5: - stabilny odczyt aktywnego użytkownika z fallbackami
+services/profile_service.py:37:    """Prefer configured root (WM_APP_ROOT/WM_DATA_ROOT) or fallback to CWD."""
+test_gui_logowanie.py:107:def test_load_last_update_info_fallback(tmp_path, monkeypatch):
+test_gui_logowanie.py:136:def test_load_last_update_info_git_show_fallback(tmp_path, monkeypatch):
+test_gui_profile_smoke.py:66:def test_avatar_fallback_without_pillow(monkeypatch):
+tests/test_gui_magazyn_add.py:16:def test_load_jednostki_missing_fallback(tmp_path, monkeypatch):
+tests/test_gui_magazyn_add.py:21:def test_load_jednostki_invalid_json_fallback(tmp_path, monkeypatch):
+tests/test_gui_magazyn_pz.py:32:def test_require_reauth_fallbacks():
+tests/test_profile_utils_manifest.py:6:def test_manifest_fallback_adds_core_modules(monkeypatch, caplog):
+tools/wm_sync.py:30:except Exception:  # pragma: no cover - fallback when dotenv missing
+ui_hover.py:51:            except TypeError:  # fallback for simplified widgets (tests)
+ui_theme.py:112:    """Czyta config.json i zwraca nazwę motywu; fallback = 'default'."""
+updater.py:355:        # Treeview (fallback stylu jeśli nie masz własnego WM.Treeview)
+updater.py:380:        - fallback Treeview jeśli nie istnieje styl WM.Treeview,
+updater.py:400:        # Treeview fallback (jeśli brak dedykowanego stylu WM.Treeview)
+utils_json.py:11:except Exception:  # fallback na bardzo stare wersje
+utils_json.py:95:    data: Any, key: str, *, fallback_keys: Iterable[str] | None = None
+utils_json.py:103:        if fallback_keys:
+utils_json.py:104:            for extra in fallback_keys:
+utils_json.py:146:    except Exception as exc:  # pragma: no cover - defensive fallback
+utils_maszyny.py:180:                "fallback na PRIMARY."
+utils_maszyny.py:364:def load_machines_rows_with_fallback(cfg: dict, resolve_rel):
+utils_maszyny.py:373:    # legacy fallback
+utils_orders.py:13:def load_orders_rows_with_fallback(cfg: dict, resolve_rel):
+utils_paths.py:9:def _fallback_root(cfg: Dict) -> str:
+utils_paths.py:33:    return os.path.normpath(_fallback_root(cfg))
+utils_tools.py:8:def load_tools_rows_with_fallback(cfg: Dict, resolve_rel) -> Tuple[List[Dict], str]:
+utils_tools.py:9:    """Load tools data from the primary JSON file with legacy fallback."""
+widok_hali/machines_view.py:10:except Exception:  # pragma: no cover - fallback gdy PIL brak
+widok_hali/storage.py:16:except Exception:  # pragma: no cover - fallback kiedy brak konfiguracji
+widok_hali/storage.py:25:except Exception:  # pragma: no cover - defensywny fallback
+widok_hali/storage.py:40:except Exception:  # pragma: no cover - fallback for logger
+wm/gui/shortcuts.py:12:except Exception:  # pragma: no cover - fallback bez kreatora
+zlecenia_utils.py:19:try:  # pragma: no cover - fallback dla środowisk testowych

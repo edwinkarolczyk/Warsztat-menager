@@ -1,0 +1,6 @@
+core/jarvis_engine.py:46:def notify(category: str, message: str, level: int = 2) -> None:
+core/jarvis_engine.py:66:            _plyer_notification.notify(
+core/jarvis_engine.py:1008:            notify("diagnostyka", alert.message, level=4)
+core/jarvis_engine.py:1136:            notify("alert", alert.message, level=4)
+core/jarvis_engine.py:1138:        notify("status", "Analiza zakończona pomyślnie – brak problemów", level=1)
+core/jarvis_engine.py:1144:        notify("fallback", "Przełączono na tryb offline (brak dostępu do OpenAI)", level=3)

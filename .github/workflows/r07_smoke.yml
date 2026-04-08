@@ -1,0 +1,24 @@
+# kod dla codexa
+# .github/workflows/r07_smoke.yml
+name: R07 Smoke
+
+on:
+  push:
+    branches: [ Rozwiniecie ]
+  pull_request:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install pillow pytest
+      - name: Run smoke tests
+        run: |
+          pytest -q tests/test_settings_manager.py

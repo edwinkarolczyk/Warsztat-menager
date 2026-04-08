@@ -1,0 +1,9 @@
+core/jarvis_engine.py:18:    from core.jarvis_prompt_engine import DEFAULT_MODEL, summarize_wm_data
+core/jarvis_engine.py:20:    summarize_wm_data = None  # type: ignore[assignment]
+core/jarvis_engine.py:1071:    if summarize_wm_data is None:
+core/jarvis_engine.py:1086:    metadata_raw = summarize_wm_data(
+core/jarvis_engine.py:1219:    if summarize_wm_data is None:
+core/jarvis_prompt_engine.py:196:def summarize_wm_data(
+core/jarvis_prompt_engine.py:305:    print(summarize_wm_data(fake_data, allow_ai=False))
+gui_jarvis.py:4:from core.jarvis_prompt_engine import summarize_wm_data
+gui_jarvis.py:48:            wynik = summarize_wm_data(data)

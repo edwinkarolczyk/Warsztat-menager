@@ -1,0 +1,10 @@
+{
+  "modules": {
+    "narzedzia": true,
+    "maszyny": false,
+    "magazyn": false,
+    "zlecenia": false,
+    "profile": false,
+    "ustawienia": true
+  }
+}

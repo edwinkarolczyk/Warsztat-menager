@@ -1,0 +1,38 @@
+README_DEMO_MANY_TASKS.txt:4:- zadania_narzedzia.json — 28 zadań (losowo przypisane do: edwin, dawid, marek, ola, jan)
+backend/audit/wm_audit_runtime.py:232:        tools_path = os.path.join(data_dir, "zadania_narzedzia.json")
+config/paths.py:325:    return _D(cfg) / "zadania_narzedzia.json"
+config_manager.py:43:    "tools_defs": ("data", "zadania_narzedzia.json"),
+config_manager.py:63:    "tools.zadania": "data/zadania_narzedzia.json",
+config_manager.py:78:    "tools_defs": ("data", "zadania_narzedzia.json"),
+config_manager.py:87:    "tools.zadania": ("data", "zadania_narzedzia.json"),
+config_manager.py:489:                    os.path.join(repo_data_dir, "zadania_narzedzia.json"),
+config_manager.py:490:                    os.path.join(data_dir, "zadania_narzedzia.json"),
+core/jarvis_engine.py:832:            root / "zadania_narzedzia.json",
+docs/code_review_checklist_c_answers.md:7:- [x] D) Narzędzia: konsolidacja słowników do `data/zadania_narzedzia.json` i audyt spójności
+gui_narzedzia.py:924:    """Return the default path to ``zadania_narzedzia.json`` using settings."""
+gui_narzedzia.py:932:        default = str(Path("zadania_narzedzia.json").resolve())
+gui_narzedzia.py:2334:# ===== Szablony z pliku zadania_narzedzia.json =====
+gui_settings.py:43:    """Return the preferred path for ``zadania_narzedzia.json``."""
+gui_settings.py:48:        return str(Path("zadania_narzedzia.json").resolve())
+gui_tool_editor.py:197:        """Czyta ``data/zadania_narzedzia.json`` i buduje mapę definicji."""
+gui_tool_editor.py:269:                "[WM-DBG][TOOLS-EDITOR] Brak zdefiniowanych typów w data/zadania_narzedzia.json"
+gui_tools_config.py:52:        """Minimalne okno do edycji pliku ``zadania_narzedzia.json``."""
+logi_gui.txt:2264:[2025-09-09 13:20:53] Nie udało się wczytać data/zadania_narzedzia.json: 'str' object has no attribute 'get'
+logi_gui.txt:2283:[2025-09-09 18:56:48] [WM-DBG][TASKS] Nie udało się wczytać data/zadania_narzedzia.json: 'str' object has no attribute 'get'
+logi_gui.txt:2302:[2025-09-10 05:08:04] [WM-DBG][TASKS] Nie udało się wczytać data/zadania_narzedzia.json: 'str' object has no attribute 'get'
+logi_gui.txt:2323:[2025-09-10 05:09:17] [WM-DBG][TASKS] Nie udało się wczytać data/zadania_narzedzia.json: 'str' object has no attribute 'get'
+logi_gui.txt:2342:[2025-09-10 07:47:50] [WM-DBG][TASKS] Nie udało się wczytać data/zadania_narzedzia.json: 'str' object has no attribute 'get'
+logika_zadan.py:19:    """Return preferred path to ``zadania_narzedzia.json``."""
+logika_zadan.py:27:        return str(Path("zadania_narzedzia.json").resolve())
+tests/test_jarvis_engine_runtime.py:41:    (data_root / "zadania_narzedzia.json").write_text("{}", encoding="utf-8")
+tests/test_logika_zadan_api.py:9:    path = tmp_path / "zadania_narzedzia.json"
+tests/test_logika_zadan_api.py:37:    path = tmp_path / "zadania_narzedzia.json"
+tests/test_logika_zadan_tasks.py:14:    path = tmp_path / "zadania_narzedzia.json"
+tests/test_settings_tools_config_refresh.py:50:    expected_path = ConfigManager().path_data("zadania_narzedzia.json")
+tests/test_settings_tools_config_refresh.py:130:    path = tmp_path / "zadania_narzedzia.json"
+tests/test_tools_types_statuses.py:9:    path = Path(cfg.path_data("zadania_narzedzia.json"))
+tests/test_tools_types_statuses.py:11:        path = Path("data/zadania_narzedzia.json")
+tests/test_tools_wrappers.py:9:    path = tmp_path / "zadania_narzedzia.json"
+tests/test_tools_wrappers.py:32:    path = tmp_path / "zadania_narzedzia.json"
+tools_config_loader.py:49:        _add(str(Path("zadania_narzedzia.json").resolve()))
+wm_tools_helpers.py:35:        return Path(__file__).resolve().parent / "data" / "zadania_narzedzia.json"

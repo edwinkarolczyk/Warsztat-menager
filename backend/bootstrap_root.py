@@ -1,0 +1,140 @@
+# version: 1.0
+"""Bootstrap routines ensuring WM root data exists and legacy files migrate."""
+
+from __future__ import annotations
+
+import logging
+import os
+
+from config_manager import (
+    ConfigManager,
+    get_machines_path,
+    resolve_rel,
+    try_migrate_if_missing,
+)
+from utils_json import ensure_dir_json, safe_read_json
+
+# Domyślne struktury dla automatycznie tworzonych plików JSON.  Wartości
+# tekstowe zawierają wyraźne placeholdery "test …" aby użytkownik widział,
+# jakie pola należy wypełnić własnymi danymi.
+_DEFAULT_PROFILES = {
+    "users": [
+        {
+            "login": "brygadzista",
+            "role": "brygadzista",
+            "pass_hash": "",
+            "nazwa": "test nazwa",
+            "opis": "test opis",
+        }
+    ]
+}
+
+_DEFAULT_MACHINES = {
+    "maszyny": [
+        {
+            "id": "M-TEST",
+            "nr_ewid": "TEST-000",
+            "nr_hali": "test hala",
+            "nazwa": "test nazwa",
+            "typ": "test typ",
+            "status": "test status",
+            "opis": "test opis",
+            "hala": "test hala",
+            "x": 0,
+            "y": 0,
+            "zadania": [
+                {
+                    "data": "1970-01-01",
+                    "typ_zadania": "test zadanie",
+                    "uwagi": "test uwagi",
+                    "opis": "test opis",
+                }
+            ],
+        }
+    ]
+}
+
+_DEFAULT_WAREHOUSE = {
+    "pozycje": [
+        {
+            "kod": "TEST-001",
+            "nazwa": "test nazwa",
+            "opis": "test opis",
+            "ilosc": 0,
+            "jm": "szt",
+            "stan": 0,
+            "prog_alert": 0,
+        }
+    ]
+}
+
+_DEFAULT_BOM = {
+    "pozycje": [
+        {
+            "symbol": "TEST-001",
+            "nazwa": "test nazwa",
+            "opis": "test opis",
+        }
+    ]
+}
+
+log = logging.getLogger(__name__)
+
+
+def _ensure_all(cfg: dict) -> None:
+    """Create minimal directory / file structure for root storage."""
+
+    ensure_dir_json(resolve_rel(cfg, "profiles"), _DEFAULT_PROFILES)
+    ensure_dir_json(get_machines_path(cfg), _DEFAULT_MACHINES)
+    ensure_dir_json(resolve_rel(cfg, "warehouse"), _DEFAULT_WAREHOUSE)
+    ensure_dir_json(resolve_rel(cfg, "bom"), _DEFAULT_BOM)
+    os.makedirs(resolve_rel(cfg, "tools_dir"), exist_ok=True)
+    os.makedirs(resolve_rel(cfg, "orders_dir"), exist_ok=True)
+    tools_defs_path = resolve_rel(cfg, "tools_defs")
+    if tools_defs_path:
+        os.makedirs(os.path.dirname(tools_defs_path), exist_ok=True)
+
+
+def _migrate_legacy(cfg: dict) -> None:
+    """Attempt one-way migrations from legacy locations if destination missing."""
+
+    root = (cfg.get("paths") or {}).get("data_root") or ""
+    legacy = {
+        os.path.join(root, "layout", "maszyny.json"): get_machines_path(cfg),
+        os.path.join(root, "magazyn", "magazyn.json"): resolve_rel(cfg, "warehouse"),
+        os.path.join(root, "produkty", "bom.json"): resolve_rel(cfg, "bom"),
+        os.path.join(root, "profiles.json"): resolve_rel(cfg, "profiles"),
+    }
+
+    moved: list[tuple[str, str]] = []
+    for src, dst in legacy.items():
+        try:
+            if try_migrate_if_missing(src, dst):
+                moved.append((src, dst))
+        except Exception as exc:  # pragma: no cover - log only
+            log.warning("Migracja %s -> %s nieudana: %s", src, dst, exc)
+
+    for src, dst in moved:
+        log.info("[MIGRACJA] %s -> %s", src, dst)
+
+
+def ensure_root_min_files(cfg: dict) -> None:
+    """Ensure minimal JSON files exist under configured root."""
+
+    safe_read_json(get_machines_path(cfg), default=_DEFAULT_MACHINES)
+    safe_read_json(resolve_rel(cfg, "profiles"), default=_DEFAULT_PROFILES)
+    safe_read_json(resolve_rel(cfg, "tools"), default={"items": [], "narzedzia": []})
+    safe_read_json(resolve_rel(cfg, "orders"), default={"zlecenia": []})
+    safe_read_json(resolve_rel(cfg, "warehouse_stock"), default=_DEFAULT_WAREHOUSE)
+    safe_read_json(resolve_rel(cfg, "bom"), default=_DEFAULT_BOM)
+
+
+def ensure_root_ready(config_path: str = "config.json") -> bool:
+    """Run ensure + migration steps for root data directory."""
+
+    cm = ConfigManager(config_path)
+    cfg = cm.load()
+    _ensure_all(cfg)
+    _migrate_legacy(cfg)
+    return True
+

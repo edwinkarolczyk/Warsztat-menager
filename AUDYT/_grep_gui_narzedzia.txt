@@ -1,0 +1,543 @@
+CHANGELOG.md:11:- Widok narzędzi scala zadania użytkownika z definicjami statusów, wyróżnia brak przypisania, zachowuje zaznaczenie poprzedniego narzędzia i dba o spójne style w tabeli.【F:gui_narzedzia.py†L624-L760】
+CHANGELOG.md:13:- Zaznaczenie zadania jako ukończone ostrzega o pominięciu wcześniejszych kroków i dopisuje komentarz do historii, co wspiera kontrolę kolejności prac.【F:gui_narzedzia.py†L1390-L1470】
+archiwum_projektow.txt:46:- gui_narzedzia.py – 1.0.0 / 1.0.2 – zarządzanie narzędziami.
+archiwum_projektow_kod.txt:65:### 3.6 gui_narzedzia.py
+archiwum_projektow_kod.txt:66:[tu wklej pełną zawartość pliku gui_narzedzia.py]
+audit_mw_report.json:2533:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2540:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2547:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2554:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2561:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2568:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2575:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2582:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2589:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2596:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2603:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2610:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2617:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2624:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2631:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2638:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2645:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2652:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2659:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2666:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2673:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2680:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2687:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2694:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2701:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2708:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2715:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2722:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2729:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2736:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2743:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2750:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2757:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2764:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2771:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2778:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2785:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2792:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2799:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2806:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2813:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2820:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2827:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2834:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2841:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2848:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2855:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2862:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2869:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2876:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2883:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2890:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2897:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2904:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2911:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2918:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2925:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2932:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2939:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2946:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2953:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2960:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2967:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2974:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:2981:      "file": "/workspace/Warsztat-Menager/gui_narzedzia_qr.py",
+audit_mw_report.json:2988:      "file": "/workspace/Warsztat-Menager/gui_narzedzia_qr.py",
+audit_mw_report.json:2995:      "file": "/workspace/Warsztat-Menager/gui_narzedzia_qr.py",
+audit_mw_report.json:3002:      "file": "/workspace/Warsztat-Menager/gui_narzedzia_qr.py",
+audit_mw_report.json:3009:      "file": "/workspace/Warsztat-Menager/gui_narzedzia_qr.py",
+audit_mw_report.json:8119:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_config.py",
+audit_mw_report.json:8126:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_config.py",
+audit_mw_report.json:8133:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_config.py",
+audit_mw_report.json:8140:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_config.py",
+audit_mw_report.json:8147:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_enter.py",
+audit_mw_report.json:8154:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_enter.py",
+audit_mw_report.json:8161:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_enter.py",
+audit_mw_report.json:8168:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_enter.py",
+audit_mw_report.json:8175:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_files.py",
+audit_mw_report.json:8182:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_files.py",
+audit_mw_report.json:8189:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_files.py",
+audit_mw_report.json:8196:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_files.py",
+audit_mw_report.json:8203:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_qr.py",
+audit_mw_report.json:8210:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_qr.py",
+audit_mw_report.json:8217:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py",
+audit_mw_report.json:8224:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py",
+audit_mw_report.json:8231:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py",
+audit_mw_report.json:8784:      "file": "/workspace/Warsztat-Menager/tests/test_gui_narzedzia_missing_data.py",
+audit_mw_report.json:8791:      "file": "/workspace/Warsztat-Menager/tests/test_gui_narzedzia_missing_data.py",
+audit_mw_report.json:8798:      "file": "/workspace/Warsztat-Menager/tests/test_gui_narzedzia_numbering.py",
+audit_mw_report.json:8805:      "file": "/workspace/Warsztat-Menager/tests/test_gui_narzedzia_numbering.py",
+audit_mw_report.json:8812:      "file": "/workspace/Warsztat-Menager/tests/test_gui_narzedzia_task_order.py",
+audit_mw_report.json:8819:      "file": "/workspace/Warsztat-Menager/tests/test_gui_narzedzia_task_order.py",
+audit_mw_report.json:8826:      "file": "/workspace/Warsztat-Menager/tests/test_gui_narzedzia_tasks_mixed.py",
+audit_mw_report.json:8833:      "file": "/workspace/Warsztat-Menager/tests/test_gui_narzedzia_tasks_mixed.py",
+audit_mw_report.json:11451:      "file": "gui_logowanie.py :: gui_panel.py :: gui_narzedzia.py :: start.py :: gui_logowanie.py",
+audit_mw_report.json:11458:      "file": "gui_panel.py :: gui_narzedzia.py :: start.py :: gui_panel.py",
+audit_mw_report.json:11479:      "file": "/workspace/Warsztat-Menager/audyt_mw.py, /workspace/Warsztat-Menager/config_manager.py, /workspace/Warsztat-Menager/core/settings_manager.py, /workspace/Warsztat-Menager/core/window_manager.py, /workspace/Warsztat-Menager/dashboard_demo_fs.py, /workspace/Warsztat-Menager/dirty_guard.py, /workspace/Warsztat-Menager/gui/settings_action_handlers.py, /workspace/Warsztat-Menager/gui_magazyn.py, /workspace/Warsztat-Menager/gui_magazyn_add.py, /workspace/Warsztat-Menager/gui_magazyn_bom.py, /workspace/Warsztat-Menager/gui_magazyn_edit.py, /workspace/Warsztat-Menager/gui_magazyn_pz.py, /workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/gui_maszyny_view.py, /workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_narzedzia_qr.py, /workspace/Warsztat-Menager/gui_products.py, /workspace/Warsztat-Menager/gui_profile.py, /workspace/Warsztat-Menager/gui_settings.py, /workspace/Warsztat-Menager/gui_tool_editor.py, /workspace/Warsztat-Menager/gui_tools_config.py, /workspace/Warsztat-Menager/gui_tools_config_advanced.py, /workspace/Warsztat-Menager/gui_zlecenia.py, /workspace/Warsztat-Menager/layout_prosty.py, /workspace/Warsztat-Menager/rc1_audit_hook.py, /workspace/Warsztat-Menager/start.py, /workspace/Warsztat-Menager/test_gui_logowanie.py, /workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/test_gui_profile_smoke.py, /workspace/Warsztat-Menager/test_presence_watcher.py, /workspace/Warsztat-Menager/test_startup_error.py, /workspace/Warsztat-Menager/test_tool_media_io.py, /workspace/Warsztat-Menager/tests/test_gui_magazyn_basic.py, /workspace/Warsztat-Menager/tests/test_gui_narzedzia_tasks_mixed.py, /workspace/Warsztat-Menager/tests/test_inventory_bridge.py, /workspace/Warsztat-Menager/tests/test_settings_tools_config_refresh.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py, /workspace/Warsztat-Menager/tests/test_widok_hali_machines_view.py, /workspace/Warsztat-Menager/tools/scan_missing_root.py, /workspace/Warsztat-Menager/ui_hover.py, /workspace/Warsztat-Menager/updater.py, /workspace/Warsztat-Menager/ustawienia_magazyn.py, /workspace/Warsztat-Menager/ustawienia_uzytkownicy.py, /workspace/Warsztat-Menager/utils/dirty_guard.py, /workspace/Warsztat-Menager/widok_hali/animator.py, /workspace/Warsztat-Menager/widok_hali/controller.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py, /workspace/Warsztat-Menager/widok_hali/renderer.py",
+audit_mw_report.json:11507:      "file": "/workspace/Warsztat-Menager/backend/audit/wm_audit_runtime.py, /workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/tools/validators/settings_paths_validator.py",
+audit_mw_report.json:11605:      "file": "/workspace/Warsztat-Menager/config_manager.py, /workspace/Warsztat-Menager/core/settings_manager.py, /workspace/Warsztat-Menager/gui_settings.py, /workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/test_startup_error.py, /workspace/Warsztat-Menager/test_tool_media_io.py, /workspace/Warsztat-Menager/tests/test_gui_magazyn_bom_ops.py, /workspace/Warsztat-Menager/tests/test_gui_panel_logout_timer.py, /workspace/Warsztat-Menager/tests/test_settings_tools_config_refresh.py",
+audit_mw_report.json:11668:      "file": "/workspace/Warsztat-Menager/config_manager.py, /workspace/Warsztat-Menager/core/settings_manager.py, /workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_products.py, /workspace/Warsztat-Menager/gui_settings.py, /workspace/Warsztat-Menager/magazyn_io.py, /workspace/Warsztat-Menager/magazyn_slowniki.py",
+audit_mw_report.json:11682:      "file": "/workspace/Warsztat-Menager/config_manager.py, /workspace/Warsztat-Menager/core/settings_manager.py, /workspace/Warsztat-Menager/gui_settings.py, /workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py",
+audit_mw_report.json:11794:      "file": "/workspace/Warsztat-Menager/dirty_guard.py, /workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/rc1_hotfix_actions.py, /workspace/Warsztat-Menager/widok_hali/storage.py",
+audit_mw_report.json:11843:      "file": "/workspace/Warsztat-Menager/gui/settings_action_handlers.py, /workspace/Warsztat-Menager/test_gui_logowanie.py, /workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/test_tool_media_io.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py",
+audit_mw_report.json:12088:      "file": "/workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_zlecenia.py",
+audit_mw_report.json:12193:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_tools_config_advanced.py",
+audit_mw_report.json:12200:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/start.py",
+audit_mw_report.json:12207:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_narzedzia_qr.py, /workspace/Warsztat-Menager/rc1_data_bootstrap.py, /workspace/Warsztat-Menager/rc1_profiles_bootstrap.py",
+audit_mw_report.json:12214:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_tool_editor.py",
+audit_mw_report.json:12221:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_narzedzia_qr.py",
+audit_mw_report.json:12228:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_tools_config_advanced.py",
+audit_mw_report.json:12235:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_narzedzia_qr.py",
+audit_mw_report.json:12242:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/rc1_data_bootstrap.py, /workspace/Warsztat-Menager/rc1_profiles_bootstrap.py",
+audit_mw_report.json:12249:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_narzedzia_qr.py",
+audit_mw_report.json:12256:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/wm_tools_helpers.py",
+audit_mw_report.json:12263:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_profile.py, /workspace/Warsztat-Menager/gui_uzytkownicy.py, /workspace/Warsztat-Menager/start.py, /workspace/Warsztat-Menager/ui_theme.py, /workspace/Warsztat-Menager/ui_theme_guard.py",
+audit_mw_report.json:12270:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/utils_json.py",
+audit_mw_report.json:12277:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/utils_json.py",
+audit_mw_report.json:12284:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_panel.py",
+audit_mw_report.json:12291:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_profile.py",
+audit_mw_report.json:12298:      "file": "/workspace/Warsztat-Menager/gui_narzedzia_qr.py, /workspace/Warsztat-Menager/rc1_hotfix_actions.py, /workspace/Warsztat-Menager/start.py",
+audit_mw_report.json:12305:      "file": "/workspace/Warsztat-Menager/gui_narzedzia_qr.py, /workspace/Warsztat-Menager/rc1_hotfix_actions.py, /workspace/Warsztat-Menager/start.py",
+audit_mw_report.json:12424:      "file": "/workspace/Warsztat-Menager/gui_tool_editor.py, /workspace/Warsztat-Menager/test_gui_logowanie.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_startup_error.py, /workspace/Warsztat-Menager/tests/test_settings_tools_config_refresh.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py",
+audit_mw_report.json:12739:      "file": "/workspace/Warsztat-Menager/test_first_login_brygadzisty.py, /workspace/Warsztat-Menager/test_start_user_activity.py, /workspace/Warsztat-Menager/tests/test_gui_magazyn_bom_ops.py, /workspace/Warsztat-Menager/tests/test_gui_narzedzia_missing_data.py, /workspace/Warsztat-Menager/tests/test_gui_panel_disabled_modules.py, /workspace/Warsztat-Menager/tests/test_gui_panel_logout_timer.py, /workspace/Warsztat-Menager/tests/test_gui_panel_permissions.py",
+audit_mw_report.json:12760:      "file": "/workspace/Warsztat-Menager/test_gui_logowanie.py, /workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/test_tool_media_io.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py",
+audit_mw_report.json:12781:      "file": "/workspace/Warsztat-Menager/test_gui_logowanie.py, /workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/test_startup_error.py, /workspace/Warsztat-Menager/test_tool_media_io.py",
+audit_mw_report.json:12788:      "file": "/workspace/Warsztat-Menager/test_gui_logowanie.py, /workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/test_tool_media_io.py, /workspace/Warsztat-Menager/tests/test_gui_narzedzia_tasks_mixed.py, /workspace/Warsztat-Menager/tests/test_inventory_bridge.py",
+audit_mw_report.json:12823:      "file": "/workspace/Warsztat-Menager/test_gui_logowanie.py, /workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/test_gui_profile_smoke.py, /workspace/Warsztat-Menager/test_startup_error.py, /workspace/Warsztat-Menager/test_tool_media_io.py, /workspace/Warsztat-Menager/tests/test_gui_magazyn_basic.py, /workspace/Warsztat-Menager/tests/test_settings_tools_config_refresh.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py",
+audit_mw_report.json:12830:      "file": "/workspace/Warsztat-Menager/test_gui_logowanie.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_startup_error.py, /workspace/Warsztat-Menager/tests/test_settings_tools_config_refresh.py",
+audit_mw_report.json:12837:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/test_tool_media_io.py",
+audit_mw_report.json:12844:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_tool_media_io.py",
+audit_mw_report.json:12851:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_tool_media_io.py, /workspace/Warsztat-Menager/tests/test_inventory_bridge.py",
+audit_mw_report.json:12858:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_tool_media_io.py",
+audit_mw_report.json:12865:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_tool_media_io.py",
+audit_mw_report.json:12872:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/test_startup_error.py, /workspace/Warsztat-Menager/test_tool_media_io.py, /workspace/Warsztat-Menager/tests/test_gui_narzedzia_tasks_mixed.py, /workspace/Warsztat-Menager/tests/test_inventory_bridge.py, /workspace/Warsztat-Menager/tests/test_settings_tools_config_refresh.py",
+audit_mw_report.json:12879:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_tool_media_io.py",
+audit_mw_report.json:12886:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_tool_media_io.py",
+audit_mw_report.json:12893:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/tests/test_settings_tools_config_refresh.py",
+audit_mw_report.json:12900:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/tests/test_settings_tools_config_refresh.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py",
+audit_mw_report.json:12907:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py",
+audit_mw_report.json:12914:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py",
+audit_mw_report.json:12921:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/tests/test_gui_narzedzia_tasks_mixed.py",
+audit_mw_report.json:13369:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:13376:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:13383:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:13390:      "file": "/workspace/Warsztat-Menager/gui_narzedzia_qr.py",
+audit_mw_report.json:13719:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_files.py",
+audit_mw_report.json:16017:    "/workspace/Warsztat-Menager/gui_narzedzia.py": {
+audit_mw_report.json:16018:      "file": "/workspace/Warsztat-Menager/gui_narzedzia.py",
+audit_mw_report.json:16021:      "declared_name": "gui_narzedzia.py",
+audit_mw_report.json:16219:    "/workspace/Warsztat-Menager/gui_narzedzia_qr.py": {
+audit_mw_report.json:16220:      "file": "/workspace/Warsztat-Menager/gui_narzedzia_qr.py",
+audit_mw_report.json:16316:        "gui_narzedzia",
+audit_mw_report.json:18223:    "/workspace/Warsztat-Menager/test_gui_narzedzia_config.py": {
+audit_mw_report.json:18224:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_config.py",
+audit_mw_report.json:18253:        "gui_narzedzia",
+audit_mw_report.json:18258:    "/workspace/Warsztat-Menager/test_gui_narzedzia_enter.py": {
+audit_mw_report.json:18259:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_enter.py",
+audit_mw_report.json:18300:        "gui_narzedzia",
+audit_mw_report.json:18304:    "/workspace/Warsztat-Menager/test_gui_narzedzia_files.py": {
+audit_mw_report.json:18305:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_files.py",
+audit_mw_report.json:18334:        "gui_narzedzia",
+audit_mw_report.json:18340:    "/workspace/Warsztat-Menager/test_gui_narzedzia_qr.py": {
+audit_mw_report.json:18341:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_qr.py",
+audit_mw_report.json:18351:        "gui_narzedzia_qr",
+audit_mw_report.json:18356:    "/workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py": {
+audit_mw_report.json:18357:      "file": "/workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py",
+audit_mw_report.json:18378:        "gui_narzedzia",
+audit_mw_report.json:18699:        "gui_narzedzia",
+audit_mw_report.json:18954:        "gui_narzedzia",
+audit_mw_report.json:19038:    "/workspace/Warsztat-Menager/tests/test_gui_narzedzia_missing_data.py": {
+audit_mw_report.json:19039:      "file": "/workspace/Warsztat-Menager/tests/test_gui_narzedzia_missing_data.py",
+audit_mw_report.json:19054:        "gui_narzedzia",
+audit_mw_report.json:19059:    "/workspace/Warsztat-Menager/tests/test_gui_narzedzia_numbering.py": {
+audit_mw_report.json:19060:      "file": "/workspace/Warsztat-Menager/tests/test_gui_narzedzia_numbering.py",
+audit_mw_report.json:19072:        "gui_narzedzia"
+audit_mw_report.json:19075:    "/workspace/Warsztat-Menager/tests/test_gui_narzedzia_task_order.py": {
+audit_mw_report.json:19076:      "file": "/workspace/Warsztat-Menager/tests/test_gui_narzedzia_task_order.py",
+audit_mw_report.json:19088:        "gui_narzedzia"
+audit_mw_report.json:19091:    "/workspace/Warsztat-Menager/tests/test_gui_narzedzia_tasks_mixed.py": {
+audit_mw_report.json:19092:      "file": "/workspace/Warsztat-Menager/tests/test_gui_narzedzia_tasks_mixed.py",
+audit_mw_report.json:19106:        "gui_narzedzia",
+audit_mw_report.md:382:- **WARN** [HEADER] gui_narzedzia.py – Brak nagłówka # Wersja: ...
+audit_mw_report.md:383:- **INFO** [GUI] gui_narzedzia.py:447 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:384:- **INFO** [GUI] gui_narzedzia.py:459 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:385:- **INFO** [GUI] gui_narzedzia.py:461 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:386:- **INFO** [GUI] gui_narzedzia.py:1639 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:387:- **INFO** [GUI] gui_narzedzia.py:1640 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:388:- **INFO** [GUI] gui_narzedzia.py:1641 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:389:- **INFO** [GUI] gui_narzedzia.py:1642 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:390:- **INFO** [GUI] gui_narzedzia.py:2007 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:391:- **INFO** [GUI] gui_narzedzia.py:2437 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:392:- **INFO** [GUI] gui_narzedzia.py:2438 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:393:- **INFO** [GUI] gui_narzedzia.py:2441 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:394:- **INFO** [GUI] gui_narzedzia.py:2466 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:395:- **INFO** [GUI] gui_narzedzia.py:2474 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:396:- **INFO** [GUI] gui_narzedzia.py:2485 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:397:- **INFO** [GUI] gui_narzedzia.py:2487 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:398:- **INFO** [GUI] gui_narzedzia.py:2493 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:399:- **INFO** [GUI] gui_narzedzia.py:2502 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:400:- **INFO** [GUI] gui_narzedzia.py:2512 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:401:- **INFO** [GUI] gui_narzedzia.py:2522 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:402:- **INFO** [GUI] gui_narzedzia.py:2533 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:403:- **INFO** [GUI] gui_narzedzia.py:2765 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:404:- **INFO** [GUI] gui_narzedzia.py:2766 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:405:- **INFO** [GUI] gui_narzedzia.py:2768 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:406:- **INFO** [GUI] gui_narzedzia.py:2769 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:407:- **INFO** [GUI] gui_narzedzia.py:2771 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:408:- **INFO** [GUI] gui_narzedzia.py:2777 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:409:- **INFO** [GUI] gui_narzedzia.py:2778 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:410:- **INFO** [GUI] gui_narzedzia.py:2835 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:411:- **INFO** [GUI] gui_narzedzia.py:2842 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:412:- **INFO** [GUI] gui_narzedzia.py:2843 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:413:- **INFO** [GUI] gui_narzedzia.py:2846 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:414:- **INFO** [GUI] gui_narzedzia.py:2852 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:415:- **INFO** [GUI] gui_narzedzia.py:2866 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:416:- **INFO** [GUI] gui_narzedzia.py:2911 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:417:- **INFO** [GUI] gui_narzedzia.py:2912 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:418:- **INFO** [GUI] gui_narzedzia.py:2944 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:419:- **INFO** [GUI] gui_narzedzia.py:2954 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:420:- **INFO** [GUI] gui_narzedzia.py:2961 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:421:- **INFO** [GUI] gui_narzedzia.py:3079 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:422:- **INFO** [GUI] gui_narzedzia.py:3081 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:423:- **INFO** [GUI] gui_narzedzia.py:3093 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:424:- **INFO** [GUI] gui_narzedzia.py:3095 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:425:- **INFO** [GUI] gui_narzedzia.py:3099 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:426:- **INFO** [GUI] gui_narzedzia.py:3105 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:427:- **INFO** [GUI] gui_narzedzia.py:3241 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:428:- **INFO** [GUI] gui_narzedzia.py:3242 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:429:- **INFO** [GUI] gui_narzedzia.py:3254 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:430:- **INFO** [GUI] gui_narzedzia.py:3266 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:431:- **INFO** [GUI] gui_narzedzia.py:3270 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:432:- **INFO** [GUI] gui_narzedzia.py:3271 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:433:- **INFO** [GUI] gui_narzedzia.py:3284 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:434:- **INFO** [GUI] gui_narzedzia.py:3286 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:435:- **INFO** [GUI] gui_narzedzia.py:3457 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:436:- **INFO** [GUI] gui_narzedzia.py:3467 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:437:- **INFO** [GUI] gui_narzedzia.py:3565 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:438:- **INFO** [GUI] gui_narzedzia.py:3568 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:439:- **INFO** [GUI] gui_narzedzia.py:3581 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:440:- **INFO** [GUI] gui_narzedzia.py:3756 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:441:- **INFO** [GUI] gui_narzedzia.py:3758 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:442:- **INFO** [GUI] gui_narzedzia.py:3840 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:443:- **INFO** [GUI] gui_narzedzia.py:3843 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:444:- **INFO** [GUI] gui_narzedzia.py:3964 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:445:- **INFO** [GUI] gui_narzedzia.py:3965 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:446:- **WARN** [HEADER] gui_narzedzia_qr.py – Brak nagłówka # Plik: ...
+audit_mw_report.md:447:- **WARN** [HEADER] gui_narzedzia_qr.py – Brak nagłówka # Wersja: ...
+audit_mw_report.md:448:- **INFO** [GUI] gui_narzedzia_qr.py:129 – Wywołanie mainloop() – upewnij się, że tylko jeden raz w całej aplikacji
+audit_mw_report.md:449:- **INFO** [GUI] gui_narzedzia_qr.py:112 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:450:- **INFO** [GUI] gui_narzedzia_qr.py:117 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1180:- **WARN** [HEADER] test_gui_narzedzia_config.py – Brak nagłówka # Plik: ...
+audit_mw_report.md:1181:- **WARN** [HEADER] test_gui_narzedzia_config.py – Brak nagłówka # Wersja: ...
+audit_mw_report.md:1182:- **INFO** [GUI] test_gui_narzedzia_config.py:73 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1183:- **INFO** [GUI] test_gui_narzedzia_config.py:76 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1184:- **WARN** [HEADER] test_gui_narzedzia_enter.py – Brak nagłówka # Plik: ...
+audit_mw_report.md:1185:- **WARN** [HEADER] test_gui_narzedzia_enter.py – Brak nagłówka # Wersja: ...
+audit_mw_report.md:1186:- **INFO** [GUI] test_gui_narzedzia_enter.py:27 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1187:- **INFO** [GUI] test_gui_narzedzia_enter.py:30 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1188:- **WARN** [HEADER] test_gui_narzedzia_files.py – Brak nagłówka # Plik: ...
+audit_mw_report.md:1189:- **WARN** [HEADER] test_gui_narzedzia_files.py – Brak nagłówka # Wersja: ...
+audit_mw_report.md:1190:- **INFO** [GUI] test_gui_narzedzia_files.py:49 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1191:- **INFO** [GUI] test_gui_narzedzia_files.py:84 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1192:- **WARN** [HEADER] test_gui_narzedzia_qr.py – Brak nagłówka # Plik: ...
+audit_mw_report.md:1193:- **WARN** [HEADER] test_gui_narzedzia_qr.py – Brak nagłówka # Wersja: ...
+audit_mw_report.md:1194:- **WARN** [HEADER] test_gui_narzedzia_tasks.py – Brak nagłówka # Plik: ...
+audit_mw_report.md:1195:- **WARN** [HEADER] test_gui_narzedzia_tasks.py – Brak nagłówka # Wersja: ...
+audit_mw_report.md:1196:- **INFO** [GUI] test_gui_narzedzia_tasks.py:44 – Mieszanie pack/grid/place w tym samym kontenerze może powodować błędy layoutu
+audit_mw_report.md:1275:- **WARN** [HEADER] tests/test_gui_narzedzia_missing_data.py – Brak nagłówka # Plik: ...
+audit_mw_report.md:1276:- **WARN** [HEADER] tests/test_gui_narzedzia_missing_data.py – Brak nagłówka # Wersja: ...
+audit_mw_report.md:1277:- **WARN** [HEADER] tests/test_gui_narzedzia_numbering.py – Brak nagłówka # Plik: ...
+audit_mw_report.md:1278:- **WARN** [HEADER] tests/test_gui_narzedzia_numbering.py – Brak nagłówka # Wersja: ...
+audit_mw_report.md:1279:- **WARN** [HEADER] tests/test_gui_narzedzia_task_order.py – Brak nagłówka # Plik: ...
+audit_mw_report.md:1280:- **WARN** [HEADER] tests/test_gui_narzedzia_task_order.py – Brak nagłówka # Wersja: ...
+audit_mw_report.md:1281:- **WARN** [HEADER] tests/test_gui_narzedzia_tasks_mixed.py – Brak nagłówka # Plik: ...
+audit_mw_report.md:1282:- **WARN** [HEADER] tests/test_gui_narzedzia_tasks_mixed.py – Brak nagłówka # Wersja: ...
+audit_mw_report.md:1656:- **WARN** [IMPORT] gui_logowanie.py :: gui_panel.py :: gui_narzedzia.py :: start.py :: gui_logowanie.py – Cykliczne importy (rozważ refaktor)
+audit_mw_report.md:1657:- **WARN** [IMPORT] gui_panel.py :: gui_narzedzia.py :: start.py :: gui_panel.py – Cykliczne importy (rozważ refaktor)
+audit_mw_report.md:1660:- **INFO** [STYLE] audyt_mw.py, /workspace/Warsztat-Menager/config_manager.py, /workspace/Warsztat-Menager/core/settings_manager.py, /workspace/Warsztat-Menager/core/window_manager.py, /workspace/Warsztat-Menager/dashboard_demo_fs.py, /workspace/Warsztat-Menager/dirty_guard.py, /workspace/Warsztat-Menager/gui/settings_action_handlers.py, /workspace/Warsztat-Menager/gui_magazyn.py, /workspace/Warsztat-Menager/gui_magazyn_add.py, /workspace/Warsztat-Menager/gui_magazyn_bom.py, /workspace/Warsztat-Menager/gui_magazyn_edit.py, /workspace/Warsztat-Menager/gui_magazyn_pz.py, /workspace/Warsztat-Menager/gui_maszyny.py, /workspace/Warsztat-Menager/gui_maszyny_view.py, /workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_narzedzia_qr.py, /workspace/Warsztat-Menager/gui_products.py, /workspace/Warsztat-Menager/gui_profile.py, /workspace/Warsztat-Menager/gui_settings.py, /workspace/Warsztat-Menager/gui_tool_editor.py, /workspace/Warsztat-Menager/gui_tools_config.py, /workspace/Warsztat-Menager/gui_tools_config_advanced.py, /workspace/Warsztat-Menager/gui_zlecenia.py, /workspace/Warsztat-Menager/layout_prosty.py, /workspace/Warsztat-Menager/rc1_audit_hook.py, /workspace/Warsztat-Menager/start.py, /workspace/Warsztat-Menager/test_gui_logowanie.py, /workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/test_gui_profile_smoke.py, /workspace/Warsztat-Menager/test_presence_watcher.py, /workspace/Warsztat-Menager/test_startup_error.py, /workspace/Warsztat-Menager/test_tool_media_io.py, /workspace/Warsztat-Menager/tests/test_gui_magazyn_basic.py, /workspace/Warsztat-Menager/tests/test_gui_narzedzia_tasks_mixed.py, /workspace/Warsztat-Menager/tests/test_inventory_bridge.py, /workspace/Warsztat-Menager/tests/test_settings_tools_config_refresh.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py, /workspace/Warsztat-Menager/tests/test_widok_hali_machines_view.py, /workspace/Warsztat-Menager/tools/scan_missing_root.py, /workspace/Warsztat-Menager/ui_hover.py, /workspace/Warsztat-Menager/updater.py, /workspace/Warsztat-Menager/ustawienia_magazyn.py, /workspace/Warsztat-Menager/ustawienia_uzytkownicy.py, /workspace/Warsztat-Menager/utils/dirty_guard.py, /workspace/Warsztat-Menager/widok_hali/animator.py, /workspace/Warsztat-Menager/widok_hali/controller.py, /workspace/Warsztat-Menager/widok_hali/machines_view.py, /workspace/Warsztat-Menager/widok_hali/renderer.py – Definicja '__init__' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1664:- **INFO** [STYLE] backend/audit/wm_audit_runtime.py, /workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/tools/validators/settings_paths_validator.py – Definicja 'add' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1678:- **INFO** [STYLE] config_manager.py, /workspace/Warsztat-Menager/core/settings_manager.py, /workspace/Warsztat-Menager/gui_settings.py, /workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/test_startup_error.py, /workspace/Warsztat-Menager/test_tool_media_io.py, /workspace/Warsztat-Menager/tests/test_gui_magazyn_bom_ops.py, /workspace/Warsztat-Menager/tests/test_gui_panel_logout_timer.py, /workspace/Warsztat-Menager/tests/test_settings_tools_config_refresh.py – Definicja 'get' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1687:- **INFO** [STYLE] config_manager.py, /workspace/Warsztat-Menager/core/settings_manager.py, /workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_products.py, /workspace/Warsztat-Menager/gui_settings.py, /workspace/Warsztat-Menager/magazyn_io.py, /workspace/Warsztat-Menager/magazyn_slowniki.py – Definicja 'save' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1689:- **INFO** [STYLE] config_manager.py, /workspace/Warsztat-Menager/core/settings_manager.py, /workspace/Warsztat-Menager/gui_settings.py, /workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py – Definicja 'set' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1705:- **INFO** [STYLE] dirty_guard.py, /workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/rc1_hotfix_actions.py, /workspace/Warsztat-Menager/widok_hali/storage.py – Definicja '_log' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1712:- **INFO** [STYLE] gui/settings_action_handlers.py, /workspace/Warsztat-Menager/test_gui_logowanie.py, /workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/test_tool_media_io.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py – Definicja 'bind' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1747:- **INFO** [STYLE] gui_maszyny.py, /workspace/Warsztat-Menager/gui_narzedzia.py, /workspace/Warsztat-Menager/gui_zlecenia.py – Definicja 'get_config' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1762:- **INFO** [STYLE] gui_narzedzia.py, /workspace/Warsztat-Menager/gui_tools_config_advanced.py – Definicja '_add_task' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1763:- **INFO** [STYLE] gui_narzedzia.py, /workspace/Warsztat-Menager/start.py – Definicja '_dbg' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1764:- **INFO** [STYLE] gui_narzedzia.py, /workspace/Warsztat-Menager/gui_narzedzia_qr.py, /workspace/Warsztat-Menager/rc1_data_bootstrap.py, /workspace/Warsztat-Menager/rc1_profiles_bootstrap.py – Definicja '_load_config' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1765:- **INFO** [STYLE] gui_narzedzia.py, /workspace/Warsztat-Menager/gui_tool_editor.py – Definicja '_on_status_selected' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1766:- **INFO** [STYLE] gui_narzedzia.py, /workspace/Warsztat-Menager/gui_narzedzia_qr.py – Definicja '_read_tool' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1767:- **INFO** [STYLE] gui_narzedzia.py, /workspace/Warsztat-Menager/gui_tools_config_advanced.py – Definicja '_refresh_tasks' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1768:- **INFO** [STYLE] gui_narzedzia.py, /workspace/Warsztat-Menager/gui_narzedzia_qr.py – Definicja '_resolve_tools_dir' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1769:- **INFO** [STYLE] gui_narzedzia.py, /workspace/Warsztat-Menager/rc1_data_bootstrap.py, /workspace/Warsztat-Menager/rc1_profiles_bootstrap.py – Definicja '_save_config' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1770:- **INFO** [STYLE] gui_narzedzia.py, /workspace/Warsztat-Menager/gui_narzedzia_qr.py – Definicja '_save_tool' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1771:- **INFO** [STYLE] gui_narzedzia.py, /workspace/Warsztat-Menager/wm_tools_helpers.py – Definicja 'ensure_task_shape' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1772:- **INFO** [STYLE] gui_narzedzia.py, /workspace/Warsztat-Menager/gui_profile.py, /workspace/Warsztat-Menager/gui_uzytkownicy.py, /workspace/Warsztat-Menager/start.py, /workspace/Warsztat-Menager/ui_theme.py, /workspace/Warsztat-Menager/ui_theme_guard.py – Definicja 'ensure_theme_applied' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1773:- **INFO** [STYLE] gui_narzedzia.py, /workspace/Warsztat-Menager/utils_json.py – Definicja 'normalize_tools_doc' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1774:- **INFO** [STYLE] gui_narzedzia.py, /workspace/Warsztat-Menager/utils_json.py – Definicja 'normalize_tools_index' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1775:- **INFO** [STYLE] gui_narzedzia.py, /workspace/Warsztat-Menager/gui_panel.py – Definicja 'panel_narzedzia' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1776:- **INFO** [STYLE] gui_narzedzia.py, /workspace/Warsztat-Menager/gui_profile.py – Definicja 'row' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1777:- **INFO** [STYLE] gui_narzedzia_qr.py, /workspace/Warsztat-Menager/rc1_hotfix_actions.py, /workspace/Warsztat-Menager/start.py – Definicja '_error' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1778:- **INFO** [STYLE] gui_narzedzia_qr.py, /workspace/Warsztat-Menager/rc1_hotfix_actions.py, /workspace/Warsztat-Menager/start.py – Definicja '_info' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1795:- **INFO** [STYLE] gui_tool_editor.py, /workspace/Warsztat-Menager/test_gui_logowanie.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_startup_error.py, /workspace/Warsztat-Menager/tests/test_settings_tools_config_refresh.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py – Definicja 'destroy' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1840:- **INFO** [STYLE] test_first_login_brygadzisty.py, /workspace/Warsztat-Menager/test_start_user_activity.py, /workspace/Warsztat-Menager/tests/test_gui_magazyn_bom_ops.py, /workspace/Warsztat-Menager/tests/test_gui_narzedzia_missing_data.py, /workspace/Warsztat-Menager/tests/test_gui_panel_disabled_modules.py, /workspace/Warsztat-Menager/tests/test_gui_panel_logout_timer.py, /workspace/Warsztat-Menager/tests/test_gui_panel_permissions.py – Definicja 'root' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1843:- **INFO** [STYLE] test_gui_logowanie.py, /workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/test_tool_media_io.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py – Definicja 'DummyWidget' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1846:- **INFO** [STYLE] test_gui_logowanie.py, /workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/test_startup_error.py, /workspace/Warsztat-Menager/test_tool_media_io.py – Definicja 'config' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1847:- **INFO** [STYLE] test_gui_logowanie.py, /workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/test_tool_media_io.py, /workspace/Warsztat-Menager/tests/test_gui_narzedzia_tasks_mixed.py, /workspace/Warsztat-Menager/tests/test_inventory_bridge.py – Definicja 'delete' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1852:- **INFO** [STYLE] test_gui_logowanie.py, /workspace/Warsztat-Menager/test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/test_gui_profile_smoke.py, /workspace/Warsztat-Menager/test_startup_error.py, /workspace/Warsztat-Menager/test_tool_media_io.py, /workspace/Warsztat-Menager/tests/test_gui_magazyn_basic.py, /workspace/Warsztat-Menager/tests/test_settings_tools_config_refresh.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py – Definicja 'pack' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1853:- **INFO** [STYLE] test_gui_logowanie.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_startup_error.py, /workspace/Warsztat-Menager/tests/test_settings_tools_config_refresh.py – Definicja 'title' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1854:- **INFO** [STYLE] test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/test_tool_media_io.py – Definicja 'DummyVar' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1855:- **INFO** [STYLE] test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_tool_media_io.py – Definicja 'column' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1856:- **INFO** [STYLE] test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_tool_media_io.py, /workspace/Warsztat-Menager/tests/test_inventory_bridge.py – Definicja 'get_children' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1857:- **INFO** [STYLE] test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_tool_media_io.py – Definicja 'grid' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1858:- **INFO** [STYLE] test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_tool_media_io.py – Definicja 'heading' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1859:- **INFO** [STYLE] test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/test_startup_error.py, /workspace/Warsztat-Menager/test_tool_media_io.py, /workspace/Warsztat-Menager/tests/test_gui_narzedzia_tasks_mixed.py, /workspace/Warsztat-Menager/tests/test_inventory_bridge.py, /workspace/Warsztat-Menager/tests/test_settings_tools_config_refresh.py – Definicja 'insert' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1860:- **INFO** [STYLE] test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_tool_media_io.py – Definicja 'tag_configure' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1861:- **INFO** [STYLE] test_gui_narzedzia_config.py, /workspace/Warsztat-Menager/test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/test_tool_media_io.py – Definicja 'trace_add' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1862:- **INFO** [STYLE] test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/tests/test_settings_tools_config_refresh.py – Definicja 'DummyButton' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1863:- **INFO** [STYLE] test_gui_narzedzia_enter.py, /workspace/Warsztat-Menager/tests/test_settings_tools_config_refresh.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py – Definicja 'DummyToplevel' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1864:- **INFO** [STYLE] test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py – Definicja 'DummyTree' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1865:- **INFO** [STYLE] test_gui_narzedzia_files.py, /workspace/Warsztat-Menager/tests/test_ui_hover.py – Definicja 'identify_row' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1866:- **INFO** [STYLE] test_gui_narzedzia_tasks.py, /workspace/Warsztat-Menager/tests/test_gui_narzedzia_tasks_mixed.py – Definicja 'DummyListbox' występuje w wielu plikach – rozważ prefiks albo wydzielenie wspólnego modułu
+audit_mw_report.md:1930:- **INFO** [STYLE] gui_narzedzia.py – Możliwy nieużyty import: annotations
+audit_mw_report.md:1931:- **INFO** [STYLE] gui_narzedzia.py – Możliwy nieużyty import: subprocess
+audit_mw_report.md:1932:- **INFO** [STYLE] gui_narzedzia.py – Możliwy nieużyty import: sys
+audit_mw_report.md:1933:- **INFO** [STYLE] gui_narzedzia_qr.py – Możliwy nieużyty import: annotations
+audit_mw_report.md:1980:- **INFO** [STYLE] test_gui_narzedzia_files.py – Możliwy nieużyty import: os
+audit_mw_report.md:2474:### gui_narzedzia.py
+audit_mw_report.md:2477:- Deklarowana nazwa: gui_narzedzia.py
+audit_mw_report.md:2482:### gui_narzedzia_qr.py
+audit_mw_report.md:2501:- Importy: __version__, datetime, gui.widgets_user_footer, gui_changelog, gui_logowanie, gui_magazyn, gui_maszyny, gui_narzedzia, gui_profile, gui_uzytkownicy, gui_zlecenia, json, logger, os, pathlib, presence, profile_utils, re, requests, services.profile_service, start, tkinter, tomllib, traceback, ui_theme, ustawienia_systemu, utils.gui_helpers, wm_access
+audit_mw_report.md:2889:### test_gui_narzedzia_config.py
+audit_mw_report.md:2893:- Importy: gui_narzedzia, json, types
+audit_mw_report.md:2896:### test_gui_narzedzia_enter.py
+audit_mw_report.md:2900:- Importy: gui_narzedzia, types
+audit_mw_report.md:2903:### test_gui_narzedzia_files.py
+audit_mw_report.md:2907:- Importy: gui_narzedzia, json, os, types
+audit_mw_report.md:2910:### test_gui_narzedzia_qr.py
+audit_mw_report.md:2914:- Importy: gui_narzedzia_qr, json, narzedzia_history
+audit_mw_report.md:2917:### test_gui_narzedzia_tasks.py
+audit_mw_report.md:2921:- Importy: gui_narzedzia, types
+audit_mw_report.md:3020:- Importy: gui_narzedzia, types
+audit_mw_report.md:3104:- Importy: PIL, ezdxf, gui_narzedzia, os, pytest
+audit_mw_report.md:3135:### tests/test_gui_narzedzia_missing_data.py
+audit_mw_report.md:3139:- Importy: gui_narzedzia, pytest, tkinter
+audit_mw_report.md:3142:### tests/test_gui_narzedzia_numbering.py
+audit_mw_report.md:3146:- Importy: gui_narzedzia
+audit_mw_report.md:3149:### tests/test_gui_narzedzia_task_order.py
+audit_mw_report.md:3153:- Importy: gui_narzedzia
+audit_mw_report.md:3156:### tests/test_gui_narzedzia_tasks_mixed.py
+audit_mw_report.md:3160:- Importy: gui_narzedzia, types
+data/moduly_manifest.json:35:      "pliki": ["gui_narzedzia.py", "tools_*.py", "data/narzedzia/**"],
+docs/PLAN_WDROZENIA_STATUS.md:7:- ✅ Naprawiono filtrowanie zadań narzędzia po typie i statusie poprzez zestaw powiązanych comboboxów (kolekcja → typ → status), które ładują właściwe definicje zadań. 【F:gui_narzedzia.py†L1520-L1680】
+docs/PLAN_WDROZENIA_STATUS.md:9:- ✅ Zmiany statusu po oddaniu narzędzia (NN → ST → SN) są obsłużone – przełączenie na status „Odbiór zakończony” proponuje konwersję, a status końcowy automatycznie domyka zadania i loguje zdarzenie. 【F:gui_narzedzia.py†L3081-L3205】
+docs/PLAN_WDROZENIA_STATUS.md:13:- ✅ Zadania narzędzi można przypisywać do konkretnego loginu oraz szybko przypisać sobie zadanie z menu kontekstowego. 【F:gui_narzedzia.py†L3489-L3568】
+docs/PLAN_WDROZENIA_STATUS.md:14:- ✅ Dostępny jest filtr „Moje” zawężający listę narzędzi do przypisanych operatorowi egzemplarzy i zadań. 【F:gui_narzedzia.py†L612-L640】【F:gui_narzedzia.py†L2476-L2516】
+docs/PLAN_WDROZENIA_STATUS.md:18:- ✅ Tabela narzędzi ma poszerzone kolumny wraz z tooltipami prezentującymi pliki graficzne/dxf. 【F:gui_narzedzia.py†L2385-L2532】
+docs/PLAN_WDROZENIA_STATUS.md:19:- ✅ Kolorowe tagi odzwierciedlają status postępu (zielony/żółty/czerwony). 【F:gui_narzedzia.py†L2389-L2398】
+docs/PLAN_WDROZENIA_STATUS.md:76:- ✅ Moduły mają wpisy wersji w nagłówkach (np. `gui_narzedzia.py 1.5.31`). 【F:gui_narzedzia.py†L1-L9】
+gui_narzedzia.py:1:# Plik: gui_narzedzia.py
+gui_panel.py:57:    import gui_narzedzia  # noqa: F401
+gui_panel.py:59:    _warn(f"Panel narzędzi (fallback) – błąd importu gui_narzedzia: {e!s}")
+gui_panel.py:60:    gui_narzedzia = None  # type: ignore
+gui_panel.py:232:    from gui_narzedzia import panel_narzedzia as _panel_narzedzia_real
+gui_panel.py:243:            text="Błąd importu gui_narzedzia.py:" + _PANEL_NARZ_ERR,
+kreator_sprawdzenia.py:25:    "gui_narzedzia.py": {"min": "1.5.9"}
+kreator_sprawdzenia.py:48:    "gui_narzedzia.py": {"min": "1.5.9"},
+kreator_sprawdzenia.py:235:        "gui_narzedzia.py": {"min": "1.5.9"},
+logi_wersji.json:176:      "gui_narzedzia.py": "1.0.0",
+logi_wersji.json:191:      "gui_narzedzia.py": "1.0.0",
+logi_wersji.json:206:      "gui_narzedzia.py": "1.0.2",
+logi_wersji.json:221:      "gui_narzedzia.py": "1.0.2",
+logi_wersji.json:236:      "gui_narzedzia.py": "1.0.2",
+logi_wersji.json:251:      "gui_narzedzia.py": "1.0.2",
+logi_wersji.json:266:      "gui_narzedzia.py": "1.0.2",
+logi_wersji.json:281:      "gui_narzedzia.py": "1.0.2",
+logi_wersji.json:296:      "gui_narzedzia.py": "1.0.2",
+logi_wersji.json:311:      "gui_narzedzia.py": "1.5.0",
+logi_wersji.json:326:      "gui_narzedzia.py": "1.5.1",
+logi_wersji.json:341:      "gui_narzedzia.py": "1.5.3",
+logi_wersji.json:356:      "gui_narzedzia.py": "1.5.3",
+logi_wersji.json:368:      "✅ gui_narzedzia.py – wersja OK (1.5.3)",
+logi_wersji.json:384:      "gui_narzedzia.py": "1.5.3",
+logi_wersji.json:396:      "✅ gui_narzedzia.py – wersja OK (1.5.3)",
+logi_wersji.json:412:      "gui_narzedzia.py": "1.5.3",
+logi_wersji.json:424:      "✅ gui_narzedzia.py – wersja OK (1.5.3)",
+logi_wersji.json:440:      "gui_narzedzia.py": "1.5.3",
+logi_wersji.json:452:      "✅ gui_narzedzia.py – wersja OK (1.5.3)",
+logi_wersji.json:468:      "gui_narzedzia.py": "1.5.3",
+logi_wersji.json:480:      "✅ gui_narzedzia.py – wersja OK (1.5.3)",
+logi_wersji.json:496:      "gui_narzedzia.py": "1.5.3",
+logi_wersji.json:508:      "✅ gui_narzedzia.py – wersja OK (1.5.3)",
+logi_wersji.json:524:      "gui_narzedzia.py": "1.5.3",
+logi_wersji.json:536:      "✅ gui_narzedzia.py – wersja OK (1.5.3)",
+logi_wersji.json:552:      "gui_narzedzia.py": "1.5.8",
+logi_wersji.json:564:      "⚠️ gui_narzedzia.py – wersja NIEZGODNA (znaleziona 1.5.8, oczekiwana 1.5.3)",
+logi_wersji.json:580:      "gui_narzedzia.py": "1.5.9",
+logi_wersji.json:592:      "✅ gui_narzedzia.py – wersja OK (1.5.9)",
+logi_wersji.json:608:      "gui_narzedzia.py": "1.5.27",
+logi_wersji.json:620:      "⚠️ gui_narzedzia.py – wersja NIEZGODNA (znaleziona 1.5.27, oczekiwana 1.5.9)",
+logi_wersji.json:636:      "gui_narzedzia.py": "1.5.28",
+logi_wersji.json:648:      "⚠️ gui_narzedzia.py – wersja NIEZGODNA (znaleziona 1.5.28, oczekiwana 1.5.9)",
+logi_wersji.json:664:      "gui_narzedzia.py": "1.5.28",
+logi_wersji.json:676:      "⚠️ gui_narzedzia.py – wersja NIEZGODNA (znaleziona 1.5.28, oczekiwana 1.5.9)",
+logi_wersji.json:692:      "gui_narzedzia.py": "1.5.29",
+logi_wersji.json:704:      "⚠️ gui_narzedzia.py – wersja NIEZGODNA (znaleziona 1.5.29, oczekiwana 1.5.9)",
+logi_wersji.json:720:      "gui_narzedzia.py": "1.5.29",
+logi_wersji.json:732:      "⚠️ gui_narzedzia.py – wersja NIEZGODNA (znaleziona 1.5.29, oczekiwana 1.5.9)",
+logi_wersji.json:748:      "gui_narzedzia.py": "1.5.29",
+logi_wersji.json:760:      "⚠️ gui_narzedzia.py – wersja NIEZGODNA (znaleziona 1.5.29, oczekiwana 1.5.9)",
+test_gui_narzedzia_config.py:4:import gui_narzedzia
+test_gui_narzedzia_config.py:10:    monkeypatch.setattr(gui_narzedzia.logger, "log_akcja", lambda m: logs.append(m))
+test_gui_narzedzia_config.py:12:        gui_narzedzia.error_dialogs,
+test_gui_narzedzia_config.py:17:    gui_narzedzia._CFG_CACHE = None
+test_gui_narzedzia_config.py:18:    gui_narzedzia.CONFIG_MTIME = None
+test_gui_narzedzia_config.py:24:    cfg = gui_narzedzia._load_config()
+test_gui_narzedzia_config.py:33:    monkeypatch.setattr(gui_narzedzia.logger, "log_akcja", lambda m: logs.append(m))
+test_gui_narzedzia_config.py:35:        gui_narzedzia.error_dialogs,
+test_gui_narzedzia_config.py:44:    gui_narzedzia._save_config({"a": 1})
+test_gui_narzedzia_config.py:51:    cfg = gui_narzedzia._load_config()
+test_gui_narzedzia_config.py:54:    monkeypatch.setattr(gui_narzedzia, "CONFIG_PATH", str(cfg_path))
+test_gui_narzedzia_config.py:114:    monkeypatch.setattr(gui_narzedzia, "tk", dummy_tk)
+test_gui_narzedzia_config.py:115:    monkeypatch.setattr(gui_narzedzia, "ttk", dummy_ttk)
+test_gui_narzedzia_config.py:116:    monkeypatch.setattr(gui_narzedzia, "apply_theme", lambda *a, **k: None)
+test_gui_narzedzia_config.py:117:    monkeypatch.setattr(gui_narzedzia, "clear_frame", lambda *a, **k: None)
+test_gui_narzedzia_config.py:118:    monkeypatch.setattr(gui_narzedzia, "_load_all_tools", lambda: [])
+test_gui_narzedzia_config.py:119:    monkeypatch.setattr(gui_narzedzia, "_type_names_for_collection", lambda *a, **k: [])
+test_gui_narzedzia_config.py:121:    gui_narzedzia.panel_narzedzia(DummyWidget(), DummyWidget())
+test_gui_narzedzia_config.py:122:    assert "Specjalny" in gui_narzedzia._types_from_config()
+test_gui_narzedzia_enter.py:3:import gui_narzedzia
+test_gui_narzedzia_enter.py:120:    monkeypatch.setattr(gui_narzedzia, "tk", DummyTk)
+test_gui_narzedzia_enter.py:121:    monkeypatch.setattr(gui_narzedzia, "ttk", DummyTtk)
+test_gui_narzedzia_enter.py:122:    monkeypatch.setattr(gui_narzedzia, "apply_theme", lambda *a, **k: None)
+test_gui_narzedzia_enter.py:123:    monkeypatch.setattr(gui_narzedzia, "clear_frame", lambda *a, **k: None)
+test_gui_narzedzia_enter.py:124:    monkeypatch.setattr(gui_narzedzia, "_load_all_tools", lambda: [])
+test_gui_narzedzia_enter.py:125:    monkeypatch.setattr(gui_narzedzia, "_statusy_for_mode", lambda mode: ["s"])
+test_gui_narzedzia_enter.py:126:    monkeypatch.setattr(gui_narzedzia, "_next_free_in_range", lambda lo, hi: "001")
+test_gui_narzedzia_enter.py:127:    monkeypatch.setattr(gui_narzedzia, "_resolve_tools_dir", lambda: ".")
+test_gui_narzedzia_enter.py:128:    monkeypatch.setattr(gui_narzedzia, "_types_from_config", lambda: [])
+test_gui_narzedzia_enter.py:130:        gui_narzedzia, "_type_names_for_collection", lambda *a, **k: ["Specjalny"]
+test_gui_narzedzia_enter.py:133:        gui_narzedzia, "_status_names_for_type", lambda *a, **k: ["s"]
+test_gui_narzedzia_enter.py:136:        gui_narzedzia, "_task_names_for_status", lambda *a, **k: []
+test_gui_narzedzia_enter.py:138:    monkeypatch.setattr(gui_narzedzia, "_append_type_to_config", lambda v: True)
+test_gui_narzedzia_enter.py:139:    monkeypatch.setattr(gui_narzedzia, "_tasks_for_type", lambda *a, **k: [])
+test_gui_narzedzia_enter.py:140:    monkeypatch.setattr(gui_narzedzia, "_task_templates_from_config", lambda: [])
+test_gui_narzedzia_enter.py:141:    monkeypatch.setattr(gui_narzedzia, "_phase_for_status", lambda *a, **k: None)
+test_gui_narzedzia_enter.py:142:    monkeypatch.setattr(gui_narzedzia, "_is_taken", lambda n: False)
+test_gui_narzedzia_enter.py:143:    monkeypatch.setattr(gui_narzedzia, "_read_tool", lambda n: {})
+test_gui_narzedzia_enter.py:144:    monkeypatch.setattr(gui_narzedzia, "_save_tool", lambda d: None)
+test_gui_narzedzia_enter.py:145:    monkeypatch.setattr(gui_narzedzia, "_generate_dxf_preview", lambda p: None)
+test_gui_narzedzia_enter.py:147:        gui_narzedzia,
+test_gui_narzedzia_enter.py:159:        gui_narzedzia,
+test_gui_narzedzia_enter.py:168:        gui_narzedzia,
+test_gui_narzedzia_enter.py:173:        gui_narzedzia,
+test_gui_narzedzia_enter.py:178:        gui_narzedzia,
+test_gui_narzedzia_enter.py:183:        gui_narzedzia,
+test_gui_narzedzia_enter.py:198:        gui_narzedzia,
+test_gui_narzedzia_enter.py:205:    gui_narzedzia.panel_narzedzia(root, frame)
+test_gui_narzedzia_files.py:6:import gui_narzedzia
+test_gui_narzedzia_files.py:12:    assert gui_narzedzia._is_allowed_file(str(good))
+test_gui_narzedzia_files.py:16:    assert not gui_narzedzia._is_allowed_file(str(bad_ext))
+test_gui_narzedzia_files.py:19:    big.write_bytes(b"x" * (gui_narzedzia.MAX_FILE_SIZE + 1))
+test_gui_narzedzia_files.py:20:    assert not gui_narzedzia._is_allowed_file(str(big))
+test_gui_narzedzia_files.py:29:    gui_narzedzia._remove_task(tasks, 0)
+test_gui_narzedzia_files.py:104:    monkeypatch.setattr(gui_narzedzia, "tk", dummy_tk)
+test_gui_narzedzia_files.py:105:    monkeypatch.setattr(gui_narzedzia, "ttk", dummy_ttk)
+test_gui_narzedzia_files.py:106:    monkeypatch.setattr(gui_narzedzia, "apply_theme", lambda *a, **k: None)
+test_gui_narzedzia_files.py:107:    monkeypatch.setattr(gui_narzedzia, "clear_frame", lambda *a, **k: None)
+test_gui_narzedzia_files.py:108:    monkeypatch.setattr(gui_narzedzia, "_load_all_tools", lambda: [])
+test_gui_narzedzia_files.py:110:        gui_narzedzia.ui_hover, "bind_treeview_row_hover", lambda *a, **k: None
+test_gui_narzedzia_files.py:113:    gui_narzedzia.panel_narzedzia(DummyWidget(), DummyWidget())
+test_gui_narzedzia_files.py:135:    doc = gui_narzedzia._safe_tool_doc(str(path))
+test_gui_narzedzia_qr.py:3:import gui_narzedzia_qr
+test_gui_narzedzia_qr.py:21:    monkeypatch.setattr(gui_narzedzia_qr, "_resolve_tools_dir", lambda: str(tools_dir))
+test_gui_narzedzia_qr.py:24:    monkeypatch.setattr(gui_narzedzia_qr, "_info", lambda *a, **k: None)
+test_gui_narzedzia_qr.py:25:    monkeypatch.setattr(gui_narzedzia_qr, "_error", lambda *a, **k: None)
+test_gui_narzedzia_qr.py:27:    assert gui_narzedzia_qr.handle_action("001", "issue", "adam", None)
+test_gui_narzedzia_tasks.py:4:import gui_narzedzia
+test_gui_narzedzia_tasks.py:9:        gui_narzedzia,
+test_gui_narzedzia_tasks.py:74:    monkeypatch.setattr(gui_narzedzia, "tk", dummy_tk)
+test_gui_narzedzia_tasks.py:75:    monkeypatch.setattr(gui_narzedzia, "ttk", dummy_ttk)
+test_gui_narzedzia_tasks.py:78:    widgets = gui_narzedzia.build_task_template(parent)
+test_gui_narzedzia_tasks.py:178:        gui_narzedzia,
+test_gui_narzedzia_tasks.py:182:    monkeypatch.setattr(gui_narzedzia, "_ensure_tasks_tooltip", lambda *_: None)
+test_gui_narzedzia_tasks.py:183:    monkeypatch.setattr(gui_narzedzia, "ensure_theme_applied", lambda *_: None)
+test_gui_narzedzia_tasks.py:184:    monkeypatch.setattr(gui_narzedzia.ttk, "Style", DummyStyle)
+test_gui_narzedzia_tasks.py:186:    gui_narzedzia._tasks_history_var = DummyVar(False)
+test_gui_narzedzia_tasks.py:187:    gui_narzedzia._tasks_archived_var = DummyVar(False)
+test_gui_narzedzia_tasks.py:188:    gui_narzedzia._tasks_selected_nr = None
+test_gui_narzedzia_tasks.py:189:    gui_narzedzia._tasks_selected_path = None
+test_gui_narzedzia_tasks.py:190:    gui_narzedzia._tasks_docs_cache.clear()
+test_gui_narzedzia_tasks.py:191:    gui_narzedzia._tasks_rows_meta.clear()
+test_gui_narzedzia_tasks.py:192:    gui_narzedzia._tasks_tooltips.clear()
+test_gui_narzedzia_tasks.py:195:    gui_narzedzia._refresh_tasks(tree)
+test_gui_narzedzia_tasks.py:199:    gui_narzedzia._tasks_archived_var.set(True)
+test_gui_narzedzia_tasks.py:200:    gui_narzedzia._refresh_tasks(tree)
+test_tool_media_io.py:3:import gui_narzedzia
+test_tool_media_io.py:7:    monkeypatch.setattr(gui_narzedzia, "_resolve_tools_dir", lambda: str(tmp_path))
+test_tool_media_io.py:19:    gui_narzedzia._save_tool(data)
+test_tool_media_io.py:20:    read = gui_narzedzia._read_tool("010")
+test_tool_media_io.py:25:    items = gui_narzedzia._iter_folder_items()
+test_tool_media_io.py:33:    monkeypatch.setattr(gui_narzedzia, "_resolve_tools_dir", lambda: str(tmp_path))
+test_tool_media_io.py:53:    monkeypatch.setattr(gui_narzedzia, "_load_all_tools", lambda: [tool])
+test_tool_media_io.py:110:    monkeypatch.setattr(gui_narzedzia, "tk", dummy_tk)
+test_tool_media_io.py:111:    monkeypatch.setattr(gui_narzedzia, "ttk", dummy_ttk)
+test_tool_media_io.py:112:    monkeypatch.setattr(gui_narzedzia, "apply_theme", lambda *a, **k: None)
+test_tool_media_io.py:113:    monkeypatch.setattr(gui_narzedzia, "clear_frame", lambda *a, **k: None)
+test_tool_media_io.py:121:        gui_narzedzia.ui_hover,
+test_tool_media_io.py:126:    gui_narzedzia.panel_narzedzia(DummyWidget(), DummyWidget())
+tests/test_dxf_preview.py:3:from gui_narzedzia import _generate_dxf_preview
+tests/test_gui_narzedzia_missing_data.py:4:import gui_narzedzia
+tests/test_gui_narzedzia_missing_data.py:20:        gui_narzedzia.LZ, "get_collections", lambda: [{"id": "c1", "name": "C1"}]
+tests/test_gui_narzedzia_missing_data.py:22:    monkeypatch.setattr(gui_narzedzia.LZ, "get_default_collection", lambda: "")
+tests/test_gui_narzedzia_missing_data.py:23:    monkeypatch.setattr(gui_narzedzia.LZ, "should_autocheck", lambda *a, **k: False)
+tests/test_gui_narzedzia_missing_data.py:28:    data = gui_narzedzia.build_task_template(root)
+tests/test_gui_narzedzia_missing_data.py:37:    monkeypatch.setattr(gui_narzedzia.LZ, "get_tool_types", boom)
+tests/test_gui_narzedzia_missing_data.py:49:        gui_narzedzia.LZ,
+tests/test_gui_narzedzia_missing_data.py:53:    data = gui_narzedzia.build_task_template(root)
+tests/test_gui_narzedzia_missing_data.py:64:    monkeypatch.setattr(gui_narzedzia.LZ, "get_statuses", boom)
+tests/test_gui_narzedzia_missing_data.py:76:        gui_narzedzia.LZ,
+tests/test_gui_narzedzia_missing_data.py:81:        gui_narzedzia.LZ,
+tests/test_gui_narzedzia_missing_data.py:85:    data = gui_narzedzia.build_task_template(root)
+tests/test_gui_narzedzia_missing_data.py:97:    monkeypatch.setattr(gui_narzedzia.LZ, "get_tasks", boom)
+tests/test_gui_narzedzia_numbering.py:1:import gui_narzedzia
+tests/test_gui_narzedzia_numbering.py:6:        gui_narzedzia,
+tests/test_gui_narzedzia_numbering.py:11:    assert gui_narzedzia._next_free_in_range("001", "003") == "003"
+tests/test_gui_narzedzia_numbering.py:15:    monkeypatch.setattr(gui_narzedzia, "_existing_numbers", lambda: set())
+tests/test_gui_narzedzia_numbering.py:17:    assert gui_narzedzia._next_free_in_range(10, 5) is None
+tests/test_gui_narzedzia_numbering.py:18:    assert gui_narzedzia._next_free_in_range("abc", "xyz") is None
+tests/test_gui_narzedzia_numbering.py:22:    monkeypatch.setattr(gui_narzedzia, "_existing_numbers", lambda: set())
+tests/test_gui_narzedzia_numbering.py:24:    assert gui_narzedzia._next_free_in_range(-5, 2) == "001"
+tests/test_gui_narzedzia_task_order.py:1:import gui_narzedzia as gn
+tests/test_gui_narzedzia_tasks_mixed.py:3:import gui_narzedzia
+tests/test_gui_narzedzia_tasks_mixed.py:24:    gui_narzedzia._update_global_tasks(obj, "komentarz", "2025-09-09T12:00:00Z")
+tests/test_gui_narzedzia_tasks_mixed.py:33:    assert gui_narzedzia._task_to_display(t1) == "[x] A"
+tests/test_gui_narzedzia_tasks_mixed.py:34:    assert gui_narzedzia._task_to_display(t2) == "[x] B"
+tests/test_gui_panel_disabled_modules.py:19:        gui_panel, "get_user", lambda login: {"login": login, "disabled_modules": ["narzedzia"]}
+wymagane_pliki.json:5:  "gui_narzedzia.py": "1.5.3",

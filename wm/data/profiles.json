@@ -1,0 +1,10 @@
+{
+  "users": [
+    {
+      "login": "admin",
+      "haslo": "nimda",
+      "rola": "administrator",
+      "active": true
+    }
+  ]
+}

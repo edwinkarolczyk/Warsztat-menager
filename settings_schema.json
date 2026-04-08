@@ -1,0 +1,1633 @@
+{
+  "magazyn": {
+    "type": "object",
+    "title": "Magazyn",
+    "properties": {
+      "require_reauth": {
+        "type": "boolean",
+        "title": "Wymagaj re-autoryzacji przy PZ/WZ",
+        "default": true
+      },
+      "rounding": {
+        "type": "object",
+        "title": "Zaokrąglanie",
+        "properties": {
+          "mb_precision": {
+            "type": "integer",
+            "title": "Precyzja dla 'mb'",
+            "minimum": 0,
+            "maximum": 6,
+            "default": 3
+          },
+          "enforce_integer_for_szt": {
+            "type": "boolean",
+            "title": "Wymuszaj liczby całkowite dla 'szt'",
+            "default": true
+          }
+        }
+      },
+      "round_quantities": {
+        "type": "boolean",
+        "default": true
+      },
+      "default_unit": {
+        "type": "string",
+        "default": "szt",
+        "enum": [
+          "szt",
+          "mb"
+        ]
+      },
+      "dim_in_mm": {
+        "type": "boolean",
+        "default": true
+      },
+      "len_in_mb": {
+        "type": "boolean",
+        "default": true
+      },
+      "pz": {
+        "type": "object",
+        "properties": {
+          "prefix": {
+            "type": "string",
+            "default": "PZ"
+          },
+          "width": {
+            "type": "integer",
+            "default": 5,
+            "minimum": 1,
+            "maximum": 10
+          },
+          "reset_daily": {
+            "type": "boolean",
+            "default": false
+          },
+          "seq_file": {
+            "type": "string",
+            "default": "data/magazyn/_seq_pz.json"
+          }
+        }
+      },
+      "auto_rezerwacje": {
+        "type": "boolean",
+        "default": true
+      },
+      "rezerwacje_only_started_orders": {
+        "type": "boolean",
+        "default": true
+      },
+      "rezerwacje_positive_only": {
+        "type": "boolean",
+        "default": true
+      },
+      "alert_procent": {
+        "type": "integer",
+        "default": 10,
+        "minimum": 1,
+        "maximum": 100
+      },
+      "low_stock_auto_order": {
+        "type": "boolean",
+        "default": true
+      },
+      "perms": {
+        "type": "object",
+        "properties": {
+          "brygadzista": {
+            "type": "object",
+            "properties": {
+              "edit": {
+                "type": "boolean",
+                "default": true
+              },
+              "pz": {
+                "type": "boolean",
+                "default": false
+              }
+            }
+          },
+          "magazynier": {
+            "type": "object",
+            "properties": {
+              "edit": {
+                "type": "boolean",
+                "default": true
+              },
+              "pz": {
+                "type": "boolean",
+                "default": true
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "orders": {
+    "type": "object",
+    "title": "Ustawienia zleceń",
+    "properties": {
+      "id_width": {
+        "type": "integer",
+        "default": 4,
+        "minimum": 3,
+        "maximum": 6
+      },
+      "types": {
+        "type": "object",
+        "properties": {
+          "ZW": {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "boolean",
+                "default": true
+              },
+              "label": {
+                "type": "string",
+                "default": "Zlecenie wewnętrzne"
+              },
+              "prefix": {
+                "type": "string",
+                "default": "ZW-"
+              },
+              "reserve_by_default": {
+                "type": "boolean",
+                "default": false
+              },
+              "allow_products": {
+                "type": "boolean",
+                "default": true
+              },
+              "bom_required": {
+                "type": "boolean",
+                "default": true
+              },
+              "statuses": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "default": [
+                  "nowe",
+                  "w trakcie",
+                  "zakończone",
+                  "anulowane"
+                ]
+              }
+            },
+            "required": [
+              "enabled",
+              "label",
+              "prefix",
+              "statuses"
+            ]
+          },
+          "ZN": {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "boolean",
+                "default": true
+              },
+              "label": {
+                "type": "string",
+                "default": "Zlecenie na narzędzie"
+              },
+              "prefix": {
+                "type": "string",
+                "default": "ZN-"
+              },
+              "reserve_by_default": {
+                "type": "boolean",
+                "default": true
+              },
+              "allow_old_tools": {
+                "type": "boolean",
+                "default": true
+              },
+              "tools_range": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                },
+                "default": [
+                  500,
+                  1000
+                ]
+              },
+              "statuses": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "default": [
+                  "projekt",
+                  "w budowie",
+                  "ostrzenie",
+                  "naprawa",
+                  "odbiór",
+                  "na produkcji",
+                  "anulowane"
+                ]
+              }
+            },
+            "required": [
+              "enabled",
+              "label",
+              "prefix",
+              "statuses"
+            ]
+          },
+          "ZM": {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "boolean",
+                "default": true
+              },
+              "label": {
+                "type": "string",
+                "default": "Naprawa/awaria maszyny"
+              },
+              "prefix": {
+                "type": "string",
+                "default": "ZM-"
+              },
+              "reserve_by_default": {
+                "type": "boolean",
+                "default": true
+              },
+              "require_description": {
+                "type": "boolean",
+                "default": true
+              },
+              "urgency_colors": {
+                "type": "object",
+                "default": {
+                  "wysoki": "blink_red",
+                  "normalny": "yellow",
+                  "niski": "green"
+                }
+              },
+              "statuses": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "default": [
+                  "awaria zgłoszona",
+                  "diagnoza",
+                  "w naprawie",
+                  "test",
+                  "sprawdzona",
+                  "zakończone",
+                  "anulowane"
+                ]
+              }
+            },
+            "required": [
+              "enabled",
+              "label",
+              "prefix",
+              "statuses"
+            ]
+          }
+        },
+        "required": [
+          "ZW",
+          "ZN",
+          "ZM"
+        ]
+      }
+    },
+    "required": [
+      "id_width",
+      "types"
+    ]
+  },
+  "tabs": [
+    {
+      "id": "system",
+      "title": "System",
+      "icon": "settings",
+      "description": "Ustawienia systemowe i centralne ścieżki danych.",
+      "subtabs": [
+        {
+          "id": "sciezki_danych",
+          "title": "Ścieżki danych",
+          "description": "Wszystkie pliki i katalogi w jednym miejscu. Wybierane z dysku.",
+          "groups": [
+            {
+              "title": "Katalog główny danych",
+              "fields": [
+                {
+                  "type": "info",
+                  "key": "paths.data_root_info",
+                  "label": "Folder WM",
+                  "text": "Folder WM (root) ustawisz w zakładce System. Wszystkie ścieżki danych są wyznaczane relatywnie względem tego katalogu."
+                },
+                {
+                  "type": "path",
+                  "key": "paths.data_root",
+                  "label": "Folder danych (root)",
+                  "default": "data",
+                  "tooltip": "Główny katalog danych aplikacji.",
+                  "deprecated": true
+                },
+                {
+                  "type": "path",
+                  "key": "sciezka_danych",
+                  "label": "Ścieżka danych",
+                  "default": "{ROOT}/data",
+                  "tooltip": "Docelowy katalog danych warsztatu."
+                }
+              ]
+            },
+            {
+              "title": "Katalogi systemowe",
+              "fields": [
+                {
+                  "type": "info",
+                  "key": "paths.system_dirs_info",
+                  "label": "Domyślne",
+                  "text": "Logi: <root>/logs. Kopie zapasowe: <root>/backup. Foldery są wyznaczane automatycznie względem Folderu WM."
+                },
+                {
+                  "type": "path",
+                  "key": "paths.logs_dir",
+                  "label": "Katalog logów",
+                  "default": "logs",
+                  "tooltip": "Ścieżka do katalogu z logami aplikacji."
+                },
+                {
+                  "type": "path",
+                  "key": "paths.backup_dir",
+                  "label": "Katalog kopii zapasowych",
+                  "default": "backup",
+                  "tooltip": "Gdzie zapisywać kopie konfiguracji."
+                }
+              ]
+            },
+            {
+              "title": "Layout / Maszyny (hala)",
+              "fields": [
+                {
+                  "type": "info",
+                  "key": "paths.layout_dir_info",
+                  "label": "Layout",
+                  "text": "Katalog layoutu = <root>/layout."
+                },
+                {
+                  "type": "path",
+                  "key": "paths.layout_dir",
+                  "label": "Katalog layoutu",
+                  "default": "data/layout",
+                  "tooltip": "Miejsce przechowywania layoutu hali."
+                },
+                {
+                  "type": "button",
+                  "key": "hall.background_image_pick",
+                  "label": "Wybierz tło hali…",
+                  "tooltip": "Wybierz obrazek tła (PNG/JPG) dla widoku maszyn.",
+                  "action": "dialog.open_file",
+                  "params": {
+                    "filters": [
+                      "*.png",
+                      "*.jpg",
+                      "*.jpeg"
+                    ],
+                    "write_to_key": "hall.background_image"
+                  }
+                },
+                {
+                  "type": "text",
+                  "key": "hall.background_image",
+                  "label": "Aktualne tło hali",
+                  "readonly": true,
+                  "tooltip": "Ścieżka do wybranego pliku tła hali.",
+                  "default": ""
+                },
+                {
+                  "type": "info",
+                  "key": "hall.machines_file_info",
+                  "label": "Plik maszyn",
+                  "text": "Layout hali = <root>/layout/maszyny.json (pochodna Folderu WM)."
+                }
+              ]
+            },
+            {
+              "title": "Magazyn (pliki i katalog)",
+              "fields": [
+                {
+                  "type": "info",
+                  "key": "warehouse.path_info",
+                  "label": "Ścieżki",
+                  "text": "Katalog magazynu = <root>/magazyn. Plik stanów: <root>/magazyn/magazyn.json. Plik rezerwacji: <root>/magazyn/rezerwacje.json."
+                }
+              ]
+            },
+            {
+              "title": "Produkty / BOM",
+              "fields": [
+                {
+                  "type": "info",
+                  "key": "bom.path_info",
+                  "label": "Ścieżki",
+                  "text": "Katalog produktów = <root>/produkty. Plik BOM: <root>/produkty/bom.json."
+                }
+              ]
+            },
+            {
+              "title": "Narzędzia (słowniki)",
+              "fields": [
+                {
+                  "type": "info",
+                  "key": "tools.path_info",
+                  "label": "Ścieżki",
+                  "text": "Katalog narzędzi = <root>/narzedzia. Typy: <root>/narzedzia/typy_narzedzi.json. Statusy: <root>/narzedzia/statusy_narzedzi.json. Szablony zadań: <root>/narzedzia/szablony_zadan.json."
+                }
+              ]
+            },
+            {
+              "title": "Zlecenia (katalog)",
+              "fields": [
+                {
+                  "type": "info",
+                  "key": "orders.path_info",
+                  "label": "Ścieżki",
+                  "text": "Katalog zleceń = <root>/zlecenia. Plik zleceń: <root>/zlecenia/zlecenia.json."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ustawienia_startowe",
+          "title": "Ustawienia startowe",
+          "groups": [
+            {
+              "title": "Start",
+              "fields": [
+                {
+                  "type": "boolean",
+                  "key": "ui.start_on_dashboard",
+                  "label": "Startuj na panel główny",
+                  "default": true,
+                  "tooltip": "Po uruchomieniu otwieraj od razu główny panel."
+                },
+                {
+                  "type": "boolean",
+                  "key": "ui.auto_check_updates",
+                  "label": "Sprawdzaj aktualizacje przy starcie",
+                  "default": true,
+                  "tooltip": "Automatycznie sprawdzaj dostępność aktualizacji."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "interfejs",
+          "title": "Interfejs",
+          "groups": [
+            {
+              "title": "Wygląd i logowanie",
+              "fields": [
+                {
+                  "type": "select",
+                  "key": "ui.theme",
+                  "label": "Motyw",
+                  "tooltip": "Wybierz motyw: auto/ciemny/jasny.",
+                  "options": [
+                    {
+                      "label": "Auto",
+                      "value": "auto"
+                    },
+                    {
+                      "label": "Ciemny",
+                      "value": "dark"
+                    },
+                    {
+                      "label": "Jasny",
+                      "value": "light"
+                    }
+                  ],
+                  "default": "dark"
+                },
+                {
+                  "type": "select",
+                  "key": "ui.language",
+                  "label": "Język",
+                  "tooltip": "Język interfejsu użytkownika.",
+                  "options": [
+                    {
+                      "label": "Polski",
+                      "value": "pl"
+                    },
+                    {
+                      "label": "English",
+                      "value": "en"
+                    }
+                  ],
+                  "default": "pl"
+                },
+                {
+                  "type": "boolean",
+                  "key": "ui.debug_enabled",
+                  "label": "Włącz logi debug (WM)",
+                  "default": true,
+                  "tooltip": "Gęstsze logi w konsoli: kliknięcia, parametry, wejścia/wyjścia."
+                },
+                {
+                  "type": "select",
+                  "key": "ui.log_level",
+                  "label": "Poziom logów (WM)",
+                  "default": "debug",
+                  "options": [
+                    {
+                      "label": "debug",
+                      "value": "debug"
+                    },
+                    {
+                      "label": "info",
+                      "value": "info"
+                    },
+                    {
+                      "label": "error",
+                      "value": "error"
+                    }
+                  ],
+                  "tooltip": "Minimalny poziom emitowanych logów."
+                },
+                {
+                  "type": "boolean",
+                  "key": "auth.require_login",
+                  "label": "Wymagaj logowania",
+                  "tooltip": "Włącz ekran logowania przy starcie.",
+                  "default": true
+                },
+                {
+                  "type": "boolean",
+                  "key": "auth.auto_login_enabled",
+                  "label": "Pomiń ekran logowania",
+                  "tooltip": "Automatycznie zaloguj wybrany profil przy uruchomieniu programu.",
+                  "default": false
+                },
+                {
+                  "type": "select",
+                  "key": "auth.auto_login_profile",
+                  "label": "Profil automatycznego logowania",
+                  "tooltip": "Profil używany przy automatycznym logowaniu (aktywny tylko gdy pomijanie logowania jest włączone).",
+                  "default": "",
+                  "options": []
+                },
+                {
+                  "type": "number",
+                  "key": "auth.session_timeout_min",
+                  "label": "Timeout sesji (min)",
+                  "tooltip": "Automatyczne wylogowanie po bezczynności.",
+                  "default": 30,
+                  "min": 5,
+                  "max": 240
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uzytkownicy",
+      "title": "Użytkownicy",
+      "icon": "users",
+      "description": "Role, konta i profil.",
+      "subtabs": [
+        {
+          "id": "moj_profil",
+          "title": "Mój profil",
+          "groups": [
+            {
+              "title": "Informacje",
+              "fields": [
+                {
+                  "type": "info",
+                  "key": "profile.info",
+                  "text": "Podgląd bieżącego użytkownika."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "profile_config",
+          "title": "Profile użytkowników",
+          "groups": [
+            {
+              "title": "Edycja profilu",
+              "fields": [
+                {
+                  "type": "array",
+                  "key": "profiles.editable_fields",
+                  "label": "Pola edytowane przez użytkownika",
+                  "default": [
+                    "imie",
+                    "nazwisko",
+                    "staz",
+                    "telefon",
+                    "email"
+                  ]
+                },
+                {
+                  "type": "boolean",
+                  "key": "profiles.pin.change_allowed",
+                  "label": "Użytkownik może zmienić PIN",
+                  "default": false
+                },
+                {
+                  "type": "boolean",
+                  "key": "profiles.avatar.enabled",
+                  "label": "Włącz awatary",
+                  "default": false
+                },
+                {
+                  "type": "path",
+                  "key": "profiles.avatar.directory",
+                  "label": "Katalog awatarów",
+                  "default": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "uprawnienia",
+          "title": "Uprawnienia",
+          "groups": [
+            {
+              "title": "Role i dostęp",
+              "fields": []
+            }
+          ]
+        },
+        {
+          "id": "zarzadzanie_lista",
+          "title": "Zarządzanie (lista)",
+          "groups": [
+            {
+              "title": "Lista użytkowników",
+              "fields": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maszyny",
+      "title": "Maszyny",
+      "icon": "layout",
+      "description": "Widok hali, siatka i zaznaczanie.",
+      "groups": [
+        {
+          "title": "Widok i siatka",
+          "fields": [
+            {
+              "type": "number",
+              "key": "hall.grid_size_px",
+              "label": "Rozmiar kratki (px)",
+              "default": 4,
+              "min": 1,
+              "max": 20
+            },
+            {
+              "type": "boolean",
+              "key": "hall.snap_to_grid",
+              "label": "Przyciągaj do siatki",
+              "default": true
+            },
+            {
+              "type": "select",
+              "key": "hall.background_fit",
+              "label": "Dopasowanie tła",
+              "options": [
+                {
+                  "label": "Dopasuj (contain)",
+                  "value": "contain"
+                },
+                {
+                  "label": "Wypełnij (cover)",
+                  "value": "cover"
+                },
+                {
+                  "label": "Rozciągnij",
+                  "value": "stretch"
+                },
+                {
+                  "label": "Oryginalny rozmiar",
+                  "value": "none"
+                }
+              ],
+              "default": "contain"
+            },
+            {
+              "type": "number",
+              "key": "hall.background_opacity",
+              "label": "Przezroczystość tła (%)",
+              "default": 100,
+              "min": 0,
+              "max": 100
+            },
+            {
+              "type": "boolean",
+              "key": "hall.show_numbers",
+              "label": "Pokaż numery hal na maszynach",
+              "default": true
+            }
+          ]
+        },
+        {
+          "title": "Zaznaczanie",
+          "fields": [
+            {
+              "type": "boolean",
+              "key": "hall.enable_selection",
+              "label": "Włącz zaznaczanie obiektów",
+              "default": true
+            },
+            {
+              "type": "boolean",
+              "key": "hall.multi_select",
+              "label": "Zaznaczanie wielokrotne (Shift)",
+              "default": true,
+              "help_pl": "Pozwala wskazać kilka elementów jednocześnie przytrzymując klawisz Shift."
+            },
+            {
+              "type": "boolean",
+              "key": "hall.lasso_select",
+              "label": "Zaznaczanie obszarem (lasso)",
+              "default": true,
+              "help_pl": "Aktywuje rysowanie obszaru myszą, aby zaznaczać wiele elementów na raz."
+            }
+          ]
+        },
+        {
+          "title": "Pomieszczenia i ściany (ustawienia)",
+          "fields": [
+            {
+              "type": "boolean",
+              "key": "hall.rooms_enabled",
+              "label": "Włącz warstwę pomieszczeń",
+              "default": true,
+              "help_pl": "Pokazuje na planie dodatkową warstwę z konturami pomieszczeń."
+            },
+            {
+              "type": "number",
+              "key": "hall.rooms_limit",
+              "label": "Maks. liczba pomieszczeń",
+              "default": 10,
+              "min": 1,
+              "max": 50,
+              "help_pl": "Określa ile pomieszczeń można dodać w jednej hali – przydatne do kontroli złożonych planów."
+            },
+            {
+              "type": "array",
+              "key": "hall.room_types",
+              "label": "Typy pomieszczeń",
+              "default": [
+                "Biuro",
+                "Magazyn",
+                "Produkcja",
+                "Kontrola",
+                "Komunikacja"
+              ],
+              "help_pl": "Lista dostępnych typów pomieszczeń – wpisz po jednym rodzaju w każdej linii.",
+              "ui": {
+                "width": 28,
+                "fixed_width": true,
+                "min_rows": 5,
+                "max_rows": 6
+              }
+            },
+            {
+              "type": "number",
+              "key": "hall.default_wall_thickness_mm",
+              "label": "Domyślna grubość ściany",
+              "default": 120,
+              "min": 50,
+              "max": 500,
+              "unit": "mm"
+            }
+          ]
+        },
+        {
+          "title": "Źródło danych (jedno źródło prawdy)",
+          "fields": [
+            {
+              "type": "info",
+              "key": "machines.path_info",
+              "label": "Ścieżka",
+              "text": "Plik maszyn = <root>/maszyny/maszyny.json. Folder WM (root) ustawisz w zakładce System."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "narzedzia",
+      "title": "Narzędzia",
+      "icon": "wrench",
+      "description": "Typy, statusy i reguły.",
+      "subtabs": [
+        {
+          "id": "typy_statusy",
+          "title": "Typy i statusy",
+          "groups": [
+            {
+              "title": "Typy narzędzi",
+              "fields": [
+                {
+                  "type": "array",
+                  "key": "tools.types",
+                  "label": "Typy narzędzi",
+                  "default": [
+                    "Tłoczące",
+                    "Wykrawające",
+                    "Postępowe",
+                    "Giętarka"
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Statusy narzędzi",
+              "fields": [
+                {
+                  "type": "array",
+                  "key": "tools.statuses",
+                  "label": "Lista statusów",
+                  "default": [
+                    "awaria zgłoszona",
+                    "diagnoza",
+                    "w naprawie",
+                    "test",
+                    "sprawdzona",
+                    "zakończone",
+                    "anulowane"
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Szablony zadań",
+              "fields": [
+                {
+                  "type": "array",
+                  "key": "tools.task_templates",
+                  "label": "Lista zadań",
+                  "default": [
+                    "zadanie testowe",
+                    "zadanie testowe1",
+                    "zadanie testowe2",
+                    "zadanie testowe3",
+                    "zadanie testowe4",
+                    "zadanie testowe5",
+                    "zadanie testowe6",
+                    "zadanie testowe7",
+                    "zadanie testowe8",
+                    "zadanie testowe9"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reguly",
+          "title": "Reguły",
+          "groups": [
+            {
+              "title": "Wersja panelu",
+              "fields": [
+                {
+                  "type": "select",
+                  "key": "tools.panel_variant",
+                  "label": "Wersja panelu narzędzi",
+                  "options": [
+                    {
+                      "label": "Stabilna (gui_narzedzia)",
+                      "value": "stable"
+                    },
+                    {
+                      "label": "Beta (gui_narzedzia_v2_beta)",
+                      "value": "beta"
+                    }
+                  ],
+                  "default": "stable"
+                }
+              ]
+            },
+            {
+              "title": "Automatyczne odhaczanie",
+              "fields": [
+                {
+                  "type": "array",
+                  "key": "tools.auto_check_on_status",
+                  "label": "Statusy oznaczające wykonane zadania",
+                  "default": [
+                    "sprawne",
+                    "zakończone"
+                  ]
+                },
+                {
+                  "type": "boolean",
+                  "key": "tools.auto_check_on_last_status",
+                  "label": "Odhaczaj zadania przy ostatnim statusie",
+                  "default": true
+                },
+                {
+                  "type": "info",
+                  "key": "tools.auto_check_hint",
+                  "text": "Jeśli włączone i ustawisz ostatni status z listy, wszystkie zadania zostaną odhaczone."
+                }
+              ]
+            },
+            {
+              "title": "Podgląd zdjęć",
+              "fields": [
+                {
+                  "type": "select",
+                  "key": "tools.preview_delay_sec",
+                  "label": "Podgląd – czas slajdu (s)",
+                  "options": [
+                    {
+                      "label": "1 sekunda",
+                      "value": 1
+                    },
+                    {
+                      "label": "2 sekundy",
+                      "value": 2
+                    },
+                    {
+                      "label": "3 sekundy",
+                      "value": 3
+                    }
+                  ],
+                  "default": 3
+                }
+              ]
+            },
+            {
+              "title": "Podgląd NN/SN",
+              "fields": [
+                {
+                  "type": "number",
+                  "key": "tools.nn_sn_preview_rows",
+                  "label": "Podgląd – liczba wierszy",
+                  "default": 2,
+                  "min": 1,
+                  "max": 6
+                }
+              ]
+            },
+            {
+              "title": "Dodatkowe ustawienia",
+              "fields": [
+                {
+                  "type": "array",
+                  "key": "narzedzia.typy",
+                  "label": "Dodatkowe typy narzędzi",
+                  "default": []
+                },
+                {
+                  "type": "boolean",
+                  "key": "narzedzia.komentarze.wg_statusu",
+                  "label": "Komentarze zależne od statusu",
+                  "default": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zlecenia",
+      "title": "Zlecenia",
+      "icon": "clipboard",
+      "description": "Statusy i kreator ZN/ZM/ZZ/ZW.",
+      "subtabs": [
+        {
+          "id": "statusy",
+          "title": "Statusy",
+          "groups": [
+            {
+              "title": "Statusy zleceń",
+              "fields": [
+                {
+                  "type": "array",
+                  "key": "orders.statuses",
+                  "label": "Lista statusów",
+                  "default": [
+                    "nowe",
+                    "w toku",
+                    "wstrzymane",
+                    "do odbioru",
+                    "zakończone",
+                    "anulowane"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kreator",
+          "title": "Kreator ZN/ZM/ZZ/ZW",
+          "groups": [
+            {
+              "title": "Opcje kreatora",
+              "fields": [
+                {
+                  "type": "text",
+                  "key": "orders.wizard_import",
+                  "label": "Moduł kreatora",
+                  "default": "gui_zlecenia"
+                },
+                {
+                  "type": "text",
+                  "key": "orders.wizard_func",
+                  "label": "Funkcja kreatora",
+                  "default": "open_order_creator"
+                },
+                {
+                  "type": "bool",
+                  "key": "orders.wizard_autobind",
+                  "label": "Auto-podpinanie w Magazynie",
+                  "default": false
+                },
+                {
+                  "type": "boolean",
+                  "key": "orders.wizard_dark",
+                  "label": "Ciemny motyw",
+                  "default": true
+                },
+                {
+                  "type": "boolean",
+                  "key": "orders.wizard_separate_window",
+                  "label": "Osobne okno",
+                  "default": true
+                },
+                {
+                  "type": "array",
+                  "key": "orders.required_fields",
+                  "label": "Pola wymagane",
+                  "default": [
+                    "klient",
+                    "opis",
+                    "termin"
+                  ]
+                },
+                {
+                  "type": "select",
+                  "key": "orders.default_type",
+                  "label": "Domyślny typ zlecenia",
+                  "options": [
+                    {
+                      "label": "ZN – nowe",
+                      "value": "ZN"
+                    },
+                    {
+                      "label": "ZM – modernizacja",
+                      "value": "ZM"
+                    },
+                    {
+                      "label": "ZZ – zaplanowane",
+                      "value": "ZZ"
+                    },
+                    {
+                      "label": "ZW – wewnętrzne",
+                      "value": "ZW"
+                    }
+                  ],
+                  "default": "ZN"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "magazyn",
+      "title": "Magazyn",
+      "icon": "boxes",
+      "description": "Parametry magazynu i BOM.",
+      "subtabs": [
+        {
+          "id": "ustawienia_magazynu",
+          "title": "Ustawienia magazynu",
+          "groups": [
+            {
+              "title": "Parametry magazynu",
+              "fields": [
+                {
+                  "type": "number",
+                  "key": "warehouse.low_stock_threshold",
+                  "label": "Próg alertu stanu (%)",
+                  "default": 10,
+                  "min": 0,
+                  "max": 100
+                },
+                {
+                  "type": "boolean",
+                  "key": "warehouse.reserve_on_order",
+                  "label": "Rezerwuj materiał przy zleceniu",
+                  "default": true
+                },
+                {
+                  "type": "number",
+                  "key": "warehouse.target_stock_percent",
+                  "label": "Stan docelowy (%)",
+                  "default": 100,
+                  "min": 10,
+                  "max": 300
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "produkty_bom",
+          "title": "Produkty (BOM)",
+          "groups": [
+            {
+              "title": "Źródło i format",
+              "fields": [
+                {
+                  "type": "select",
+                  "key": "bom.default_format",
+                  "label": "Format BOM",
+                  "options": [
+                    {
+                      "label": "JSON",
+                      "value": "json"
+                    },
+                    {
+                      "label": "CSV",
+                      "value": "csv"
+                    },
+                    {
+                      "label": "XLSX",
+                      "value": "xlsx"
+                    }
+                  ],
+                  "default": "json"
+                },
+                {
+                  "type": "boolean",
+                  "key": "bom.validation_enabled",
+                  "label": "Walidacja przy imporcie",
+                  "default": true
+                }
+              ]
+            },
+            {
+              "title": "Zamienniki i widoki",
+              "fields": [
+                {
+                  "type": "boolean",
+                  "key": "bom.allow_partial_subst",
+                  "label": "Zezwól na częściowe zamienniki",
+                  "default": false
+                },
+                {
+                  "type": "array",
+                  "key": "bom.columns_visible",
+                  "label": "Widoczne kolumny",
+                  "default": [
+                    "kod",
+                    "nazwa",
+                    "ilość",
+                    "jedn",
+                    "zamiennik"
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Import/Eksport",
+              "fields": [
+                {
+                  "type": "button",
+                  "key": "bom.btn_import",
+                  "label": "Importuj BOM…",
+                  "action": "bom.import_dialog",
+                  "params": {
+                    "write_to_key": "bom.file",
+                    "filters": [
+                      "*.json",
+                      "*.csv",
+                      "*.xlsx"
+                    ]
+                  }
+                },
+                {
+                  "type": "button",
+                  "key": "bom.btn_export",
+                  "label": "Eksportuj BOM",
+                  "action": "bom.export_current"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zamowienia",
+      "title": "Zamówienia",
+      "icon": "shopping-cart",
+      "description": "Parametry procesu zakupowego.",
+      "groups": [
+        {
+          "title": "Parametry zamówień",
+          "fields": [
+            {
+              "type": "boolean",
+              "key": "orders.ask_to_order_shortage",
+              "label": "Pytaj o zamówienie braków",
+              "default": true
+            },
+            {
+              "type": "text",
+              "key": "orders.default_supplier",
+              "label": "Domyślny dostawca",
+              "default": ""
+            },
+            {
+              "type": "text",
+              "key": "orders.min_order_threshold",
+              "label": "Próg minimalny (szt. lub %)",
+              "default": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aktualizacje",
+      "title": "Aktualizacje & Kopie",
+      "icon": "refresh",
+      "description": "Pobieranie zmian i kopie zapasowe.",
+      "groups": [
+        {
+          "title": "Automatyzacja",
+          "fields": [
+            {
+              "type": "boolean",
+              "key": "updates.auto_pull",
+              "label": "Pobieraj zmiany przy starcie",
+              "default": true,
+              "tooltip": "Wykonaj git pull (auto_pull) podczas uruchomienia aplikacji."
+            },
+            {
+              "type": "int",
+              "key": "backup.keep_last",
+              "label": "Ilość zachowanych kopii",
+              "default": 10,
+              "min": 1,
+              "max": 50,
+              "tooltip": "Ile ostatnich kopii konfiguracji trzymać w katalogu backup."
+            }
+          ]
+        },
+        {
+          "title": "Ścieżki danych",
+          "description": "Aktualne lokalizacje danych i kopii zapasowych.",
+          "fields": [
+            {
+              "type": "path",
+              "key": "paths.data_root",
+              "label": "Folder danych (root)",
+              "default": "data",
+              "deprecated": true
+            },
+            {
+              "type": "path",
+              "key": "paths.backup_dir",
+              "label": "Katalog kopii zapasowych",
+              "default": "backup"
+            },
+            {
+              "type": "path",
+              "key": "paths.logs_dir",
+              "label": "Katalog logów",
+              "default": "logs"
+            }
+          ]
+        },
+        {
+          "title": "Operacje",
+          "fields": [
+            {
+              "type": "text",
+              "key": "updates.branch_name",
+              "label": "Gałąź do pobrania",
+              "default": "Rozwiniecie"
+            },
+            {
+              "type": "button",
+              "key": "updates.btn_git_pull",
+              "label": "Git Pull (domyślny)",
+              "action": "updater.git_pull"
+            },
+            {
+              "type": "button",
+              "key": "updates.btn_pull_branch",
+              "label": "Pobierz z gałęzi",
+              "action": "updater.pull_branch",
+              "params": {
+                "branch_key": "updates.branch_name"
+              }
+            },
+            {
+              "type": "button",
+              "key": "updates.btn_backup_zip",
+              "label": "Wykonaj kopię ZIP",
+              "action": "updater.backup_zip"
+            },
+            {
+              "type": "button",
+              "key": "updates.btn_restore",
+              "label": "Przywróć z pliku…",
+              "action": "updater.restore_dialog"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "testy_audyt",
+      "title": "Testy/Audyt",
+      "icon": "beaker",
+      "description": "Narzędzia deweloperskie i audyt WM.",
+      "devOnly": true,
+      "subtabs": [
+        {
+          "id": "testy",
+          "title": "Testy WM",
+          "groups": [
+            {
+              "title": "Narzędzia testowe",
+              "fields": []
+            }
+          ]
+        },
+        {
+          "id": "audyt",
+          "title": "Audyt WM",
+          "groups": [
+            {
+              "title": "Raport audytu",
+              "fields": [
+                {
+                  "type": "button",
+                  "key": "audit.run",
+                  "label": "Uruchom audyt",
+                  "action": "wm_audit.run"
+                },
+                {
+                  "type": "info",
+                  "key": "audit.info",
+                  "text": "Wymaga modułu backend: wm_audit_runtime."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "produkty",
+      "title": "Produkty i surowce",
+      "icon": "package",
+      "description": "Konfiguracja danych produktowych.",
+      "subtabs": [
+        {
+          "id": "produkty_def",
+          "title": "Produkty",
+          "groups": [
+            {
+              "title": "Definicje produktów",
+              "fields": []
+            }
+          ]
+        },
+        {
+          "id": "surowce",
+          "title": "Surowce",
+          "groups": [
+            {
+              "title": "Parametry surowców",
+              "fields": [
+                {
+                  "type": "array",
+                  "key": "materials.units",
+                  "label": "Jednostki surowców",
+                  "default": [
+                    "szt",
+                    "kg",
+                    "m",
+                    "m2"
+                  ]
+                },
+                {
+                  "type": "boolean",
+                  "key": "materials.allow_subst",
+                  "label": "Zezwól na zamienniki surowców",
+                  "default": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dyspo",
+      "title": "Dyspozycje",
+      "icon": "timeline",
+      "description": "Konfiguracja modułu dyspozycji.",
+      "subtabs": [
+        {
+          "id": "dyspo_enabled",
+          "title": "Typy i numeracja",
+          "groups": [
+            {
+              "title": "Typy dyspozycji",
+              "fields": [
+                {
+                  "type": "array",
+                  "key": "dyspo.enabled_types",
+                  "label": "Aktywne typy",
+                  "default": [
+                    "DM",
+                    "DZ",
+                    "DW",
+                    "DN"
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Numeracja",
+              "fields": [
+                {
+                  "type": "object",
+                  "key": "dyspo.numbering"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "dyspo_rules",
+          "title": "Reguły",
+          "groups": [
+            {
+              "title": "Przepływ i wymagania",
+              "fields": [
+                {
+                  "type": "string",
+                  "key": "dyspo.flow"
+                },
+                {
+                  "type": "object",
+                  "key": "dyspo.required"
+                }
+              ]
+            },
+            {
+              "title": "Skróty",
+              "fields": [
+                {
+                  "type": "object",
+                  "key": "dyspo.shortcuts"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "$defs": {
+    "numRule": {
+      "type": "object",
+      "properties": {
+        "pattern": {
+          "type": "string"
+        },
+        "counter": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "pattern",
+        "counter"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "dyspo": {
+    "type": "object",
+    "title": "Dyspozycje",
+    "properties": {
+      "enabled_types": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "DM",
+            "DZ",
+            "DW",
+            "DN"
+          ]
+        },
+        "uniqueItems": true,
+        "default": [
+          "DM",
+          "DZ",
+          "DW",
+          "DN"
+        ]
+      },
+      "numbering": {
+        "type": "object",
+        "properties": {
+          "DM": {
+            "$ref": "#/$defs/numRule"
+          },
+          "DZ": {
+            "$ref": "#/$defs/numRule"
+          },
+          "DW": {
+            "$ref": "#/$defs/numRule"
+          },
+          "DN": {
+            "$ref": "#/$defs/numRule"
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/$defs/numRule"
+        }
+      },
+      "flow": {
+        "type": "string",
+        "enum": [
+          "simple",
+          "extended"
+        ],
+        "default": "simple"
+      },
+      "required": {
+        "type": "object",
+        "properties": {
+          "machine_id": {
+            "type": "boolean",
+            "default": true
+          },
+          "tool_id": {
+            "type": "boolean",
+            "default": false
+          },
+          "at_least_one_item": {
+            "type": "boolean",
+            "default": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "shortcuts": {
+        "type": "object",
+        "properties": {
+          "ctrlD": {
+            "type": "boolean",
+            "default": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "required": [
+      "enabled_types",
+      "numbering",
+      "flow",
+      "required",
+      "shortcuts"
+    ],
+    "additionalProperties": false
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "summary": {
+    "branch": "work",
+    "commit": "4c9292cfa196c8c64ba7cc23aa14a597a720852c",
+    "date": "2025-10-27",
+    "top_risks": [
+      "Jarvis notifications are not surfaced in the global UI (no toast integration)",
+      "Tool/Magazine modules lack live status propagation and auto-ordering hooks",
+      "ConfigManager backups/root migration have no smoke tests",
+      "Profile panel misses 'my tasks' filter affecting adoption",
+      "Offline fallback in Jarvis has no explicit visual banner"
+    ]
+  },
+  "modules": {
+    "ustawienia": {
+      "p0": "done",
+      "p1": "done",
+      "p2": "missing",
+      "notes": [
+        "Root selector writes paths and triggers update_root_paths",
+        "Backups created on save via ConfigManager",
+        "UI grouping/descriptions still pending from plan"
+      ],
+      "actions": [
+        "Add regression test covering ConfigManager.update_root_paths() and backup creation",
+        "Implement planned grouping/short descriptions in gui_settings per WDROZENIA.md"
+      ]
+    },
+    "narzedzia": {
+      "p0": "done",
+      "p1": "partial",
+      "p2": "missing",
+      "notes": [
+        "NN/SN conversion with manual toggle deployed",
+        "Definitions loader heals JSON and restores from backups",
+        "Auto migration NEW->SN and batch task tagging remain planned"
+      ],
+      "actions": [
+        "Implement automatic NEW->SN migration respecting narzedzia.uprawnienia",
+        "Expose tool history/cache status to dashboard and Jarvis alerts"
+      ]
+    },
+    "maszyny": {
+      "p0": "done",
+      "p1": "partial",
+      "p2": "missing",
+      "notes": [
+        "Hall view supports edit/grid/scale controls",
+        "Jarvis reads service metrics but GUI lacks TTFM display"
+      ],
+      "actions": [
+        "Surface module load timing (TTFM) in gui_panel diagnostics",
+        "Feed machine alerts into global notification center"
+      ]
+    },
+    "zlecenia": {
+      "p0": "done",
+      "p1": "missing",
+      "p2": "missing",
+      "notes": [
+        "Orders list refreshes and ties into order creator",
+        "Material demand/return columns and BOM explosion pending"
+      ],
+      "actions": [
+        "Implement demand/reserved/available columns tied to magazyn data",
+        "Add workflow for material return when tasks are reverted"
+      ]
+    },
+    "profile": {
+      "p0": "done",
+      "p1": "missing",
+      "p2": "missing",
+      "notes": [
+        "Role-based Jarvis access enforced",
+        "No 'my tasks' filter or unified edit dialog"
+      ],
+      "actions": [
+        "Add quick filter for assignments owned by current user",
+        "Design single-window profile edit experience"
+      ]
+    },
+    "magazyn": {
+      "p0": "done",
+      "p1": "missing",
+      "p2": "missing",
+      "notes": [
+        "Reservations and quick ordering available",
+        "Order shortcut button disabled, no stock alerts"
+      ],
+      "actions": [
+        "Enable Zamowienia button and wire to gui_zlecenia",
+        "Implement low-stock alerts feeding Jarvis/notifications"
+      ]
+    },
+    "rdzen": {
+      "p0": "done",
+      "p1": "done",
+      "p2": "missing",
+      "notes": [
+        "resolve_rel maps legacy keys to <root>",
+        "Config backups stored with timestamp",
+        "Placeholder <root> persists in config.json when migration skipped"
+      ],
+      "actions": [
+        "Persist resolved absolute paths back into config.json",
+        "Add CI smoke test for ConfigManager.save_all()"
+      ]
+    },
+    "jarvis": {
+      "p0": "done",
+      "p1": "done",
+      "p2": "missing",
+      "notes": [
+        "Stats aggregation + anonymization operational",
+        "Background scheduler and Q&A panel live",
+        "No UI toast integration or offline banner"
+      ],
+      "actions": [
+        "Connect notify() buffer with gui_notifications toasts",
+        "Add explicit offline/fallback banner in gui_jarvis_panel"
+      ]
+    }
+  },
+  "jarvis": {
+    "notifications": {
+      "buffer": true,
+      "gui_toast": false,
+      "system_toast": "plyer optional"
+    },
+    "scheduler": {
+      "enabled_by_config": true,
+      "auto_interval_key": "jarvis.auto_interval_sec"
+    },
+    "fallback": {
+      "offline_summary": true,
+      "fallback_model_alert": true,
+      "ui_banner": false
+    },
+    "privacy": {
+      "anonymization": true,
+      "allow_ai_toggle": true
+    }
+  }
+}

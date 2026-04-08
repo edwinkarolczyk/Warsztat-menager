@@ -1,0 +1,75 @@
+{
+  "collections": {
+    "NN": {
+      "types": [
+        {
+          "id": "TEST",
+          "name": "test",
+          "statuses": [
+            {
+              "id": "TEST",
+              "name": "test",
+              "tasks": []
+            },
+            {
+              "id": "TESS",
+              "name": "tess",
+              "tasks": []
+            },
+            {
+              "id": "SSSS",
+              "name": "ssss",
+              "tasks": []
+            },
+            {
+              "id": "GGGGG",
+              "name": "ggggg",
+              "tasks": [
+                "ggds",
+                "gdsgdsg",
+                "gdsgdsgds"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "GSDGDSG",
+          "name": "gsdgdsg",
+          "statuses": []
+        }
+      ]
+    },
+    "SN": {
+      "types": [
+        {
+          "id": "TEST",
+          "name": "test",
+          "statuses": []
+        },
+        {
+          "id": "GSDGDSG",
+          "name": "gsdgdsg",
+          "statuses": [
+            {
+              "id": "SFAF",
+              "name": "sfaf",
+              "tasks": []
+            },
+            {
+              "id": "ASFASFA",
+              "name": "asfasfa",
+              "tasks": []
+            },
+            {
+              "id": "GDSGDSDGS",
+              "name": "gdsgdsdgs",
+              "tasks": [
+                "sdgdsgds"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

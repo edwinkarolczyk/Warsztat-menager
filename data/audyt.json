@@ -1,0 +1,105 @@
+[
+  {
+    "section": "Core",
+    "key": "core_one_root",
+    "title": "ONE-ROOT konsolidacja ścieżek",
+    "status": "DONE",
+    "progress": 100,
+    "note": "Konsolidacja ścieżek do jednego Folder WM (root) + resolve_rel()."
+  },
+  {
+    "section": "Ustawienia",
+    "key": "settings_root_init",
+    "title": "Przycisk 'Utwórz brakujące pliki teraz'",
+    "status": "DONE",
+    "progress": 100,
+    "note": "Przycisk tworzący minimalne pliki/katalogi pod <root>."
+  },
+  {
+    "section": "Maszyny",
+    "key": "machines_sot",
+    "title": "Source of Truth <root>/maszyny.json (R-03)",
+    "status": "IN_PROGRESS",
+    "progress": 70,
+    "note": "<root>/maszyny.json ustawione; jeszcze bez finalnego scalenia danych z layout/."
+  },
+  {
+    "section": "Maszyny",
+    "key": "machines_merge",
+    "title": "SAFE merge duplikatów (R-03B)",
+    "status": "TODO",
+    "progress": 0,
+    "note": "R-03B: Scalenie duplikatów UNION bez utraty danych (narzędzie merge)."
+  },
+  {
+    "section": "Maszyny",
+    "key": "machines_renderer_guard",
+    "title": "Renderer guard (brak crasha)",
+    "status": "TODO",
+    "progress": 0,
+    "note": "Gdy brak renderera hali → czytelny komunikat + log (bez crasha)."
+  },
+  {
+    "section": "Ustawienia",
+    "key": "settings_root_status",
+    "title": "Status zasobów pod root (✅/❌)",
+    "status": "DONE",
+    "progress": 100,
+    "note": "Panel statusu (zielone/czerwone) wg PATH_MAP w zakładce System."
+  },
+  {
+    "section": "Narzędzia",
+    "key": "tools_save_root_dir",
+    "title": "Zapisy narzędzi pod <root>/narzedzia",
+    "status": "DONE",
+    "progress": 100,
+    "note": "Pliki 001.json, 002.json… w katalogu narzedzia/ pod root."
+  },
+  {
+    "section": "Zlecenia",
+    "key": "orders_validate",
+    "title": "Walidacje formularza (R-05)",
+    "status": "DONE",
+    "progress": 100,
+    "note": "Puste pola → showerror + log."
+  },
+  {
+    "section": "Zlecenia",
+    "key": "orders_safe_after",
+    "title": "Bezpieczne after() przy zamknięciu (R-05)",
+    "status": "DONE",
+    "progress": 100,
+    "note": "Brak callbacków po destroy."
+  },
+  {
+    "section": "Zlecenia",
+    "key": "orders_error_ui",
+    "title": "Wyjątki → okno + log (R-05)",
+    "status": "DONE",
+    "progress": 100,
+    "note": "messagebox + logger.exception."
+  },
+  {
+    "section": "Rdzeń / Ustawienia",
+    "module": "Rdzeń / Ustawienia",
+    "key": "R-07-root-relpaths",
+    "title": "R-07 – Globalny <root> + relatywne ścieżki (Maszyny/Narzędzia/Magazyn/Zlecenia/BOM)",
+    "status": "TODO",
+    "progress": 0,
+    "criteria": [
+      "config_manager.resolve_rel obecny",
+      "Ustawienia→System pokazują status plików względem <root>",
+      "GUI Maszyny i Narzędzia nie używają twardych ścieżek",
+      "Wszystkie zapisy trafiają pod <root>"
+    ],
+    "note": "Kryteria: resolve_rel, status w Ustawienia→System, brak twardych ścieżek, zapisy pod <root>."
+  },
+  {
+    "section": "_meta",
+    "key": "roadmap_last_update",
+    "title": "Ostatnia aktualizacja Roadmapy",
+    "status": "INFO",
+    "progress": 0,
+    "note": "2025-10-03 14:27:54"
+  }
+]

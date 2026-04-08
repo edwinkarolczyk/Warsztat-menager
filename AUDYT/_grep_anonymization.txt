@@ -1,0 +1,5 @@
+core/jarvis_engine.py:185:def anonymize_for_ai(data: Mapping[str, Any]) -> dict[str, Any]:
+core/jarvis_engine.py:1085:    safe_stats = anonymize_for_ai(stats)
+tests/test_jarvis_engine_runtime.py:3:from core.jarvis_engine import anonymize_for_ai, local_diagnostics, run_analysis_report
+tests/test_jarvis_engine_runtime.py:6:def test_anonymize_for_ai_masks_sensitive_fields() -> None:
+tests/test_jarvis_engine_runtime.py:15:    sanitized = anonymize_for_ai(payload)
