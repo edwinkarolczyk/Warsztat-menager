@@ -110,7 +110,15 @@ def get_commits(limit: int = 20, branch: str = "Rozwiniecie") -> List[Tuple[str,
         Branch name to inspect.
     """
     cmd = ["git", "log", f"-n{limit}", "--format=%H%x09%s", branch]
-    result = _run(cmd)
+    try:
+        result = _run(cmd)
+    except Exception as exc:
+        logger.warning(
+            "[PATCHER] get_commits failed for branch=%s: %s",
+            branch,
+            exc,
+        )
+        return []
     commits: List[Tuple[str, str]] = []
     for line in result.stdout.strip().splitlines():
         commit_hash, message = line.split("\t", 1)
