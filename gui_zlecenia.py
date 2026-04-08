@@ -247,7 +247,8 @@ class ZleceniaView(ttk.Frame):
             root = None
         if not root:
             return
-        root.bind("<<OrdersUpdated>>", lambda _event: self._reload_orders(), add=True)
+        # nowy event dla Dyspozycji
+        root.bind("<<DyspozycjeUpdated>>", lambda _event: self._reload_orders(), add=True)
 
     def _fill_orders_table(self, rows: list[dict]) -> None:
         for item in self.tree.get_children():
