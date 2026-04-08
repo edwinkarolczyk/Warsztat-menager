@@ -1,5 +1,5 @@
 # version: 1.0
-"""Panel Dyspozycji – lista oparta o wspólny store Dyspozycji."""
+"""Panel Dyspozycji (dawniej: Zlecenia) – lista oparta o wspólny store Dyspozycji."""
 
 from __future__ import annotations
 
