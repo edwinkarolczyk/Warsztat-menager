@@ -222,7 +222,8 @@ def open_dyspozycje_creator(
         )
         add_dyspozycja(item)
         try:
-            win.winfo_toplevel().event_generate("<<OrdersUpdated>>", when="tail")
+            # NOWY event dla Dyspozycji (zamiast OrdersUpdated)
+            win.winfo_toplevel().event_generate("<<DyspozycjeUpdated>>", when="tail")
         except Exception:
             pass
         messagebox.showinfo("Dyspozycje", "Dyspozycja została zapisana.", parent=win)
