@@ -5,10 +5,10 @@ from __future__ import annotations
 
 import logging
 import tkinter as tk
-from tkinter import messagebox, ttk
+from tkinter import messagebox, simpledialog, ttk
 from typing import Any, Callable
 
-from dyspozycje_store import load_dyspozycje
+from dyspozycje_store import close_dyspozycja, delete_dyspozycja, load_dyspozycje
 
 from ui_dialogs_safe import error_box
 
@@ -65,6 +65,7 @@ class ZleceniaView(ttk.Frame):
 
     def __init__(self, master: tk.Widget) -> None:
         super().__init__(master, padding=8)
+        self._login_user = self._resolve_login_user()
         self._after = _AfterGuard(self)
         self._refresh_error_shown = False
         self._order_rows: dict[str, dict] = {}
@@ -76,6 +77,26 @@ class ZleceniaView(ttk.Frame):
         self.bind("<Destroy>", self._on_destroy, add=True)
         self._refresh()
         self._schedule_refresh()
+
+    def _resolve_login_user(self) -> str:
+        candidates = [
+            getattr(self.master, "login_sesji", None),
+            getattr(self.master, "current_user", None),
+            getattr(self.master, "user_login", None),
+        ]
+        for value in candidates:
+            if isinstance(value, str) and value.strip():
+                return value.strip()
+        try:
+            root = self.winfo_toplevel()
+        except Exception:
+            root = None
+        if root is not None:
+            for attr in ("login_sesji", "current_user", "user_login"):
+                value = getattr(root, attr, None)
+                if isinstance(value, str) and value.strip():
+                    return value.strip()
+        return ""
 
     # region UI helpers -------------------------------------------------
     def _build_toolbar(self) -> None:
@@ -95,6 +116,13 @@ class ZleceniaView(ttk.Frame):
         else:
             btn_edit.state(["disabled"])
         btn_edit.pack(side="left", padx=(8, 0))
+
+        ttk.Button(toolbar, text="Zamknij Dyspozycję", command=self._on_close).pack(
+            side="left", padx=(8, 0)
+        )
+        ttk.Button(toolbar, text="Usuń Dyspozycję", command=self._on_delete).pack(
+            side="left", padx=(8, 0)
+        )
 
     def _build_tree(self) -> None:
         columns = ("typ", "status", "tytul", "przypisane", "termin")
@@ -216,6 +244,98 @@ class ZleceniaView(ttk.Frame):
                 "Dyspozycje",
                 f"Nie udało się otworzyć edycji Dyspozycji.\n{exc}",
             )
+
+    def _selected_row(self) -> dict[str, Any] | None:
+        selection = self.tree.selection()
+        if not selection:
+            return None
+        iid = selection[0]
+        mapped = dict(self._order_rows.get(iid, {}) or {})
+        return mapped or None
+
+    def _on_close(self) -> None:
+        mapped = self._selected_row()
+        if not mapped:
+            messagebox.showinfo(
+                "Dyspozycje",
+                "Najpierw wybierz Dyspozycję do zamknięcia.",
+                parent=self,
+            )
+            return
+        dysp_id = str(mapped.get("id") or "").strip()
+        if not dysp_id:
+            return
+        if str(mapped.get("status") or "").strip().lower() == "zamknieta":
+            messagebox.showinfo(
+                "Dyspozycje",
+                "Ta Dyspozycja jest już zamknięta.",
+                parent=self,
+            )
+            return
+        note = simpledialog.askstring(
+            "Zamknij Dyspozycję",
+            "Uwagi przy zamknięciu (opcjonalnie):",
+            parent=self,
+        )
+        who = self._login_user or str(mapped.get("autor") or "").strip()
+        changed = close_dyspozycja(
+            dysp_id,
+            uwagi=note or "",
+            closed_by=who,
+        )
+        if not changed:
+            messagebox.showerror(
+                "Dyspozycje",
+                "Nie udało się zamknąć Dyspozycji.",
+                parent=self,
+            )
+            return
+        try:
+            self.winfo_toplevel().event_generate("<<DyspozycjeUpdated>>", when="tail")
+        except Exception:
+            pass
+        messagebox.showinfo(
+            "Dyspozycje",
+            f"Dyspozycja została zamknięta przez: {who or '-'}",
+            parent=self,
+        )
+
+    def _on_delete(self) -> None:
+        mapped = self._selected_row()
+        if not mapped:
+            messagebox.showinfo(
+                "Dyspozycje",
+                "Najpierw wybierz Dyspozycję do usunięcia.",
+                parent=self,
+            )
+            return
+        dysp_id = str(mapped.get("id") or "").strip()
+        if not dysp_id:
+            return
+        ok = messagebox.askyesno(
+            "Usuń Dyspozycję",
+            f"Czy na pewno usunąć Dyspozycję:\n{dysp_id}?",
+            parent=self,
+        )
+        if not ok:
+            return
+        deleted = delete_dyspozycja(dysp_id)
+        if not deleted:
+            messagebox.showerror(
+                "Dyspozycje",
+                "Nie udało się usunąć Dyspozycji.",
+                parent=self,
+            )
+            return
+        try:
+            self.winfo_toplevel().event_generate("<<DyspozycjeUpdated>>", when="tail")
+        except Exception:
+            pass
+        messagebox.showinfo(
+            "Dyspozycje",
+            "Dyspozycja została usunięta.",
+            parent=self,
+        )
 
     def _on_double_click(self, event: Any) -> None:
         del event
