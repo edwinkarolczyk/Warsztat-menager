@@ -32,6 +32,8 @@ import tkinter as tk
 from pathlib import Path
 from tkinter import messagebox, ttk
 
+from dyspozycje_store import assigned_to_login, visible_for_login
+
 try:
     from ui_theme_guard import ensure_theme_applied
 except Exception:  # pragma: no cover - optional dependency
