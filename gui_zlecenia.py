@@ -89,6 +89,13 @@ class ZleceniaView(ttk.Frame):
             btn_add.state(["disabled"])
         btn_add.pack(side="left")
 
+        btn_edit = ttk.Button(toolbar, text="Edytuj Dyspozycję")
+        if self._open_order_creator:
+            btn_edit.configure(command=self._on_edit)
+        else:
+            btn_edit.state(["disabled"])
+        btn_edit.pack(side="left", padx=(8, 0))
+
     def _build_tree(self) -> None:
         columns = ("typ", "status", "tytul", "przypisane", "termin")
         self.tree = ttk.Treeview(self, columns=columns, show="headings")
@@ -180,6 +187,36 @@ class ZleceniaView(ttk.Frame):
                 f"Nie udało się otworzyć kreatora Dyspozycji.\n{exc}",
             )
 
+    def _on_edit(self) -> None:
+        if not self._open_order_creator:
+            return
+        selection = self.tree.selection()
+        if not selection:
+            messagebox.showinfo(
+                "Dyspozycje",
+                "Najpierw wybierz Dyspozycję do edycji.",
+                parent=self,
+            )
+            return
+        iid = selection[0]
+        mapped = dict(self._order_rows.get(iid, {}) or {})
+        if not mapped:
+            return
+        mapped["edit_mode"] = True
+        try:
+            self._open_order_creator(
+                self,
+                autor=str(mapped.get("autor") or ""),
+                context=mapped,
+            )
+        except Exception as exc:  # pragma: no cover - wymagane GUI
+            logger.exception("[DYSP] Błąd otwierania edycji Dyspozycji: %s", exc)
+            error_box(
+                self,
+                "Dyspozycje",
+                f"Nie udało się otworzyć edycji Dyspozycji.\n{exc}",
+            )
+
     def _on_double_click(self, event: Any) -> None:
         del event
         selection = self.tree.selection()
@@ -189,20 +226,7 @@ class ZleceniaView(ttk.Frame):
         mapped = self._order_rows.get(iid, {})
         if not mapped:
             return
-        body = (
-            f"ID: {mapped.get('id', '')}\n"
-            f"Typ: {mapped.get('typ_dyspozycji', '')}\n"
-            f"Status: {mapped.get('status', '')}\n"
-            f"Tytuł: {mapped.get('tytul', '')}\n"
-            f"Opis: {mapped.get('opis', '')}\n"
-            f"Priorytet: {mapped.get('priorytet', '')}\n"
-            f"Termin: {mapped.get('termin', '')}\n"
-            f"Przypisane do: {'wszyscy' if mapped.get('dla_wszystkich') else mapped.get('przypisane_do', '')}\n"
-            f"Moduł źródłowy: {mapped.get('modul_zrodlowy', '')}\n"
-            f"Obiekt ID: {mapped.get('obiekt_id', '')}\n"
-            f"Autor: {mapped.get('autor', '')}"
-        )
-        messagebox.showinfo("Szczegóły Dyspozycji", body, parent=self)
+        self._on_edit()
 
     # endregion ---------------------------------------------------------
 
