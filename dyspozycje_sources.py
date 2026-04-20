@@ -136,9 +136,24 @@ def load_tool_choices() -> List[Tuple[str, str]]:
             except Exception:
                 continue
 
+            if isinstance(doc, dict) and isinstance(doc.get("narzedzie"), dict):
+                doc = doc.get("narzedzie") or {}
+            elif isinstance(doc, dict) and isinstance(doc.get("tool"), dict):
+                doc = doc.get("tool") or {}
+
             file_stem = os.path.splitext(filename)[0].strip()
-            tool_id = str(doc.get("id") or file_stem).strip()
-            name = str(doc.get("nazwa") or "").strip()
+            tool_id = str(
+                doc.get("id")
+                or doc.get("nr")
+                or doc.get("numer")
+                or file_stem
+            ).strip()
+            name = str(
+                doc.get("nazwa")
+                or doc.get("name")
+                or doc.get("opis")
+                or ""
+            ).strip()
 
             if not tool_id:
                 continue
@@ -180,15 +195,42 @@ def load_machine_choices() -> List[Tuple[str, str]]:
     except Exception:
         return []
 
-    rows = data.get("maszyny", []) if isinstance(data, dict) else data
+    rows = []
+    if isinstance(data, dict):
+        if isinstance(data.get("maszyny"), list):
+            rows = data.get("maszyny") or []
+        elif isinstance(data.get("items"), list):
+            rows = data.get("items") or []
+        elif isinstance(data.get("machines"), list):
+            rows = data.get("machines") or []
+        elif isinstance(data.get("lista"), list):
+            rows = data.get("lista") or []
+    elif isinstance(data, list):
+        rows = data
 
     out = []
     for row in rows:
         if not isinstance(row, dict):
             continue
 
-        mid = str(row.get("id") or row.get("nr_ewid") or "").strip()
-        name = str(row.get("nazwa") or "").strip()
+        if isinstance(row.get("maszyna"), dict):
+            row = row.get("maszyna") or row
+
+        mid = str(
+            row.get("id")
+            or row.get("nr_ewid")
+            or row.get("nr")
+            or row.get("numer")
+            or row.get("kod")
+            or ""
+        ).strip()
+        name = str(
+            row.get("nazwa")
+            or row.get("name")
+            or row.get("opis")
+            or row.get("typ")
+            or ""
+        ).strip()
 
         if not mid:
             continue
@@ -258,12 +300,19 @@ def load_magazyn_choices() -> List[Tuple[str, str]]:
         for row in rows:
             if not isinstance(row, dict):
                 continue
+
+            if isinstance(row.get("pozycja"), dict):
+                row = row.get("pozycja") or row
+            elif isinstance(row.get("item"), dict):
+                row = row.get("item") or row
+
             code = str(
                 row.get("id")
                 or row.get("kod")
                 or row.get("nr")
                 or row.get("symbol")
                 or row.get("index")
+                or row.get("numer")
                 or ""
             ).strip()
             if not code or code.lower() in seen:
@@ -274,6 +323,7 @@ def load_magazyn_choices() -> List[Tuple[str, str]]:
                 or row.get("name")
                 or row.get("opis")
                 or row.get("typ")
+                or row.get("material")
                 or ""
             ).strip()
             label = f"{code} - {name}" if name else code
