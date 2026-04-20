@@ -12,6 +12,7 @@ Cel:
 from __future__ import annotations
 
 import json
+import sys
 import uuid
 from copy import deepcopy
 from datetime import datetime
@@ -45,17 +46,18 @@ def _now_iso() -> str:
 
 def _runtime_cfg_manager():
     try:
-        from start import CONFIG_MANAGER  # type: ignore
-
-        if CONFIG_MANAGER is not None:
-            try:
-                print(
-                    "[WM-DBG][DYSP][STORE] runtime manager=start.CONFIG_MANAGER "
-                    f"{type(CONFIG_MANAGER).__name__}"
-                )
-            except Exception:
-                pass
-            return CONFIG_MANAGER
+        start_mod = sys.modules.get("start")
+        if start_mod is not None:
+            mgr = getattr(start_mod, "CONFIG_MANAGER", None)
+            if mgr is not None:
+                try:
+                    print(
+                        "[WM-DBG][DYSP][STORE] runtime manager=start.CONFIG_MANAGER "
+                        f"{type(mgr).__name__}"
+                    )
+                except Exception:
+                    pass
+                return mgr
     except Exception:
         pass
     if ConfigManager is not None:
