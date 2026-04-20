@@ -167,6 +167,8 @@ def make_dyspozycja(
         "obiekt_id": str(obiekt_id or "").strip(),
         "utworzono": _now_iso(),
         "wykonano": "",
+        "zamknieto_at": "",
+        "zamkniete_przez": "",
         "uwagi": "",
         "meta": dict(meta or {}),
     }
@@ -190,6 +192,8 @@ def normalize_dyspozycja(item: dict[str, Any] | None) -> dict[str, Any]:
         "obiekt_id": str(src.get("obiekt_id") or "").strip(),
         "utworzono": str(src.get("utworzono") or _now_iso()).strip(),
         "wykonano": str(src.get("wykonano") or "").strip(),
+        "zamknieto_at": str(src.get("zamknieto_at") or "").strip(),
+        "zamkniete_przez": _normalize_login(src.get("zamkniete_przez")),
         "uwagi": str(src.get("uwagi") or "").strip(),
         "meta": dict(src.get("meta") or {}),
     }
@@ -279,10 +283,13 @@ def close_dyspozycja(
     dyspozycja_id: str,
     *,
     uwagi: str = "",
+    closed_by: str = "",
 ) -> dict[str, Any] | None:
     updates = {
         "status": "zamknieta",
         "wykonano": _now_iso(),
+        "zamknieto_at": _now_iso(),
+        "zamkniete_przez": _normalize_login(closed_by),
     }
     if str(uwagi or "").strip():
         updates["uwagi"] = str(uwagi).strip()
