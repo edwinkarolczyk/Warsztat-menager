@@ -48,12 +48,27 @@ def _runtime_cfg_manager():
         from start import CONFIG_MANAGER  # type: ignore
 
         if CONFIG_MANAGER is not None:
+            try:
+                print(
+                    "[WM-DBG][DYSP][STORE] runtime manager=start.CONFIG_MANAGER "
+                    f"{type(CONFIG_MANAGER).__name__}"
+                )
+            except Exception:
+                pass
             return CONFIG_MANAGER
     except Exception:
         pass
     if ConfigManager is not None:
         try:
-            return ConfigManager()
+            mgr = ConfigManager()
+            try:
+                print(
+                    "[WM-DBG][DYSP][STORE] runtime manager=ConfigManager() "
+                    f"{type(mgr).__name__}"
+                )
+            except Exception:
+                pass
+            return mgr
         except Exception:
             pass
     return None
@@ -63,7 +78,12 @@ def _data_root() -> Path:
     mgr = _runtime_cfg_manager()
     if mgr is not None:
         try:
-            return Path(mgr.path_data())
+            path = Path(mgr.path_data())
+            try:
+                print(f"[WM-DBG][DYSP][STORE] data_root={path}")
+            except Exception:
+                pass
+            return path
         except Exception:
             pass
     return Path("data")
@@ -72,6 +92,10 @@ def _data_root() -> Path:
 def get_dyspozycje_path() -> Path:
     path = _data_root() / DISP_FILE_NAME
     path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        print(f"[WM-DBG][DYSP][STORE] dyspozycje_path={path}")
+    except Exception:
+        pass
     return path
 
 

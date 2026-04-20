@@ -21,12 +21,27 @@ def _runtime_cfg_manager():
         from start import CONFIG_MANAGER  # type: ignore
 
         if CONFIG_MANAGER is not None:
+            try:
+                print(
+                    "[WM-DBG][DYSP][SRC] runtime manager=start.CONFIG_MANAGER "
+                    f"{type(CONFIG_MANAGER).__name__}"
+                )
+            except Exception:
+                pass
             return CONFIG_MANAGER
     except Exception:
         pass
     if ConfigManager is not None:
         try:
-            return ConfigManager()
+            mgr = ConfigManager()
+            try:
+                print(
+                    "[WM-DBG][DYSP][SRC] runtime manager=ConfigManager() "
+                    f"{type(mgr).__name__}"
+                )
+            except Exception:
+                pass
+            return mgr
         except Exception:
             pass
     return None
@@ -37,6 +52,16 @@ def _cfg() -> dict:
     if mgr is not None and hasattr(mgr, "load"):
         try:
             cfg = mgr.load() or {}
+            try:
+                paths = (cfg.get("paths") or {}) if isinstance(cfg, dict) else {}
+                print(
+                    "[WM-DBG][DYSP][SRC] cfg paths:"
+                    f" anchor_root={paths.get('anchor_root')}"
+                    f" data_root={paths.get('data_root')}"
+                    f" logs_dir={paths.get('logs_dir')}"
+                )
+            except Exception:
+                pass
             if isinstance(cfg, dict):
                 return cfg
         except Exception:
@@ -64,7 +89,12 @@ def _root_path(*parts: str) -> str:
         try:
             path_root = getattr(mgr, "path_root", None)
             if callable(path_root):
-                return path_root(*parts)
+                result = path_root(*parts)
+                try:
+                    print(f"[WM-DBG][DYSP][SRC] path_root{parts} -> {result}")
+                except Exception:
+                    pass
+                return result
         except Exception:
             pass
     return os.path.join(os.getcwd(), *parts)
@@ -76,7 +106,12 @@ def _data_path(*parts: str) -> str:
         try:
             path_data = getattr(mgr, "path_data", None)
             if callable(path_data):
-                return path_data(*parts)
+                result = path_data(*parts)
+                try:
+                    print(f"[WM-DBG][DYSP][SRC] path_data{parts} -> {result}")
+                except Exception:
+                    pass
+                return result
         except Exception:
             pass
     return os.path.join("data", *parts)
@@ -122,6 +157,10 @@ def load_tool_choices() -> List[Tuple[str, str]]:
         _resolve_rel_path("tools_dir"),
         _data_path("narzedzia"),
     ) or _root_path("narzedzia")
+    try:
+        print(f"[WM-DBG][DYSP][SRC] tools_dir_selected={tools_dir}")
+    except Exception:
+        pass
     out = []
 
     try:
@@ -186,6 +225,17 @@ def load_machine_choices() -> List[Tuple[str, str]]:
         _resolve_rel_path("machines"),
         _data_path("maszyny", "maszyny.json"),
     )
+    try:
+        print(
+            "[WM-DBG][DYSP][SRC] machine_candidates="
+            f"root:{_root_path('maszyny', 'maszyny.json')} | "
+            f"get_machines_path:{machine_path} | "
+            f"resolve_rel:{_resolve_rel_path('machines')} | "
+            f"data:{_data_path('maszyny', 'maszyny.json')}"
+        )
+        print(f"[WM-DBG][DYSP][SRC] machine_path_selected={path}")
+    except Exception:
+        pass
     if not path:
         return []
 
@@ -255,6 +305,10 @@ def load_magazyn_choices() -> List[Tuple[str, str]]:
         _resolve_rel_path("warehouse"),
         _data_path("magazyn", "katalog.json"),
     ]
+    try:
+        print(f"[WM-DBG][DYSP][SRC] magazyn_candidates={candidates}")
+    except Exception:
+        pass
 
     for path in [p for p in candidates if p]:
         try:
