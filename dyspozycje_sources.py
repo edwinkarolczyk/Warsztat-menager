@@ -16,16 +16,31 @@ except Exception:  # pragma: no cover
     resolve_rel = None  # type: ignore
 
 
-def _cfg() -> dict:
+def _runtime_cfg_manager():
     try:
         from start import CONFIG_MANAGER  # type: ignore
 
-        if CONFIG_MANAGER is not None and hasattr(CONFIG_MANAGER, "load"):
-            cfg = CONFIG_MANAGER.load() or {}
-            if isinstance(cfg, dict):
-                return cfg
+        if CONFIG_MANAGER is not None:
+            return CONFIG_MANAGER
     except Exception:
         pass
+    if ConfigManager is not None:
+        try:
+            return ConfigManager()
+        except Exception:
+            pass
+    return None
+
+
+def _cfg() -> dict:
+    mgr = _runtime_cfg_manager()
+    if mgr is not None and hasattr(mgr, "load"):
+        try:
+            cfg = mgr.load() or {}
+            if isinstance(cfg, dict):
+                return cfg
+        except Exception:
+            pass
     if callable(get_config):
         try:
             cfg = get_config() or {}
@@ -44,36 +59,24 @@ def _cfg() -> dict:
 
 
 def _root_path(*parts: str) -> str:
-    try:
-        from start import CONFIG_MANAGER  # type: ignore
-
-        if CONFIG_MANAGER is not None:
-            path_root = getattr(CONFIG_MANAGER, "path_root", None)
+    mgr = _runtime_cfg_manager()
+    if mgr is not None:
+        try:
+            path_root = getattr(mgr, "path_root", None)
             if callable(path_root):
                 return path_root(*parts)
-    except Exception:
-        pass
-    if ConfigManager is not None:
-        try:
-            return ConfigManager().path_root(*parts)
         except Exception:
             pass
     return os.path.join(os.getcwd(), *parts)
 
 
 def _data_path(*parts: str) -> str:
-    try:
-        from start import CONFIG_MANAGER  # type: ignore
-
-        if CONFIG_MANAGER is not None:
-            path_data = getattr(CONFIG_MANAGER, "path_data", None)
+    mgr = _runtime_cfg_manager()
+    if mgr is not None:
+        try:
+            path_data = getattr(mgr, "path_data", None)
             if callable(path_data):
                 return path_data(*parts)
-    except Exception:
-        pass
-    if ConfigManager is not None:
-        try:
-            return ConfigManager().path_data(*parts)
         except Exception:
             pass
     return os.path.join("data", *parts)
@@ -116,7 +119,6 @@ def load_tool_choices() -> List[Tuple[str, str]]:
     tools_dir = _first_existing_path(
         _root_path("narzedzia"),
         _resolve_rel_path("tools.dir"),
-        _resolve_rel_path("tools_item_dir"),
         _resolve_rel_path("tools_dir"),
         _data_path("narzedzia"),
     ) or _root_path("narzedzia")
@@ -205,10 +207,10 @@ def load_magazyn_choices() -> List[Tuple[str, str]]:
     seen: set[str] = set()
 
     candidates = [
-        _resolve_rel_path("warehouse_stock"),
-        _resolve_rel_path("warehouse"),
         _root_path("magazyn", "magazyn.json"),
         _root_path("magazyn", "katalog.json"),
+        _resolve_rel_path("warehouse_stock"),
+        _resolve_rel_path("warehouse"),
         _data_path("magazyn", "katalog.json"),
     ]
 
@@ -227,6 +229,10 @@ def load_magazyn_choices() -> List[Tuple[str, str]]:
                 rows = data.get("pozycje") or []
             elif isinstance(data.get("magazyn"), list):
                 rows = data.get("magazyn") or []
+            elif isinstance(data.get("produkty"), list):
+                rows = data.get("produkty") or []
+            elif isinstance(data.get("stany"), list):
+                rows = data.get("stany") or []
             else:
                 for key, row in data.items():
                     if isinstance(row, dict):
@@ -234,6 +240,7 @@ def load_magazyn_choices() -> List[Tuple[str, str]]:
                             row.get("id")
                             or row.get("kod")
                             or row.get("nr")
+                            or row.get("symbol")
                             or key
                         ).strip()
                         if not code or code.lower() in seen:
@@ -256,6 +263,7 @@ def load_magazyn_choices() -> List[Tuple[str, str]]:
                 or row.get("kod")
                 or row.get("nr")
                 or row.get("symbol")
+                or row.get("index")
                 or ""
             ).strip()
             if not code or code.lower() in seen:
@@ -265,6 +273,7 @@ def load_magazyn_choices() -> List[Tuple[str, str]]:
                 row.get("nazwa")
                 or row.get("name")
                 or row.get("opis")
+                or row.get("typ")
                 or ""
             ).strip()
             label = f"{code} - {name}" if name else code
