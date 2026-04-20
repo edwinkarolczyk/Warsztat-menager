@@ -43,10 +43,27 @@ def _now_iso() -> str:
     return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 
-def _data_root() -> Path:
+def _runtime_cfg_manager():
+    try:
+        from start import CONFIG_MANAGER  # type: ignore
+
+        if CONFIG_MANAGER is not None:
+            return CONFIG_MANAGER
+    except Exception:
+        pass
     if ConfigManager is not None:
         try:
-            return Path(ConfigManager().path_data())
+            return ConfigManager()
+        except Exception:
+            pass
+    return None
+
+
+def _data_root() -> Path:
+    mgr = _runtime_cfg_manager()
+    if mgr is not None:
+        try:
+            return Path(mgr.path_data())
         except Exception:
             pass
     return Path("data")
