@@ -13,7 +13,7 @@ from dyspozycje_sources import (
     load_tool_choices,
     load_zlecenie_wykonania_choices,
 )
-from dyspozycje_store import add_dyspozycja, make_dyspozycja
+from dyspozycje_store import add_dyspozycja, make_dyspozycja, update_dyspozycja
 
 try:
     from profiles_store import load_profiles_users, resolve_profiles_path
@@ -65,9 +65,11 @@ def open_dyspozycje_creator(
     context: dict[str, Any] | None = None,
 ) -> tk.Toplevel:
     ctx = dict(context or {})
+    edit_mode = bool(ctx.get("edit_mode"))
+    existing_id = str(ctx.get("id") or "").strip()
     root = master.winfo_toplevel() if master else None
     win = tk.Toplevel(root)
-    win.title("Kreator – Dodaj Dyspozycję")
+    win.title("Kreator – Edytuj Dyspozycję" if edit_mode else "Kreator – Dodaj Dyspozycję")
     win.geometry("700x500")
     win.resizable(False, False)
 
@@ -77,7 +79,7 @@ def open_dyspozycje_creator(
 
     ttk.Label(
         frame,
-        text="Nowa Dyspozycja",
+        text="Edycja Dyspozycji" if edit_mode else "Nowa Dyspozycja",
         style="WM.H1.TLabel",
     ).grid(row=0, column=0, columnspan=2, sticky="w", pady=(0, 12))
 
@@ -207,26 +209,43 @@ def open_dyspozycje_creator(
             )
             return
 
-        item = make_dyspozycja(
-            typ_dyspozycji=var_type.get().strip(),
-            tytul=title,
-            opis=txt_desc.get("1.0", "end").strip(),
-            autor=str(autor or "").strip(),
-            przypisane_do="" if var_all.get() else var_assigned.get().strip(),
-            dla_wszystkich=bool(var_all.get()),
-            termin=var_deadline.get().strip(),
-            priorytet=var_priority.get().strip(),
-            modul_zrodlowy=source_module["value"],
-            obiekt_id=object_id,
-            meta={"object_label": selected_label},
-        )
-        add_dyspozycja(item)
+        payload = {
+            "typ_dyspozycji": var_type.get().strip(),
+            "tytul": title,
+            "opis": txt_desc.get("1.0", "end").strip(),
+            "autor": str(autor or ctx.get("autor") or "").strip(),
+            "przypisane_do": "" if var_all.get() else var_assigned.get().strip(),
+            "dla_wszystkich": bool(var_all.get()),
+            "termin": var_deadline.get().strip(),
+            "priorytet": var_priority.get().strip(),
+            "modul_zrodlowy": source_module["value"],
+            "obiekt_id": object_id,
+            "meta": {"object_label": selected_label},
+        }
+
+        if edit_mode and existing_id:
+            changed = update_dyspozycja(existing_id, payload)
+            if not changed:
+                messagebox.showerror(
+                    "Dyspozycje",
+                    "Nie udało się zapisać zmian Dyspozycji.",
+                    parent=win,
+                )
+                return
+        else:
+            item = make_dyspozycja(**payload)
+            add_dyspozycja(item)
+
         try:
             # NOWY event dla Dyspozycji (zamiast OrdersUpdated)
             win.winfo_toplevel().event_generate("<<DyspozycjeUpdated>>", when="tail")
         except Exception:
             pass
-        messagebox.showinfo("Dyspozycje", "Dyspozycja została zapisana.", parent=win)
+        messagebox.showinfo(
+            "Dyspozycje",
+            "Dyspozycja została zaktualizowana." if edit_mode else "Dyspozycja została zapisana.",
+            parent=win,
+        )
         win.destroy()
 
     ttk.Button(btns, text="Anuluj", command=win.destroy).pack(side="right", padx=(8, 0))
