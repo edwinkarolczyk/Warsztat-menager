@@ -6192,9 +6192,6 @@ def panel_narzedzia(root, frame, login=None, rola=None):
             tv.bind("<Button-3>", _show_task_menu)
 
         def _update_global_tasks(comment, ts):
-            state = STATE
-            if getattr(state, "global_tasks", None) is None:
-                state.global_tasks = []
             path = _resolve_path_candidate(
                 getattr(LZ, "TOOL_TASKS_PATH", None),
                 _default_tools_tasks_file(),
@@ -6204,9 +6201,14 @@ def panel_narzedzia(root, frame, login=None, rola=None):
                     data = json.load(f)
             except (OSError, json.JSONDecodeError):
                 data = []
-            state.global_tasks = data
+
+            if not isinstance(data, list):
+                data = []
+
             changed = False
             for item in data:
+                if not isinstance(item, dict):
+                    continue
                 if item.get("status") != "Zrobione":
                     item["status"] = "Zrobione"
                     item["by"] = login or "nieznany"
