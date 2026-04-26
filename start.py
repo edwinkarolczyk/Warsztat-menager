@@ -792,7 +792,10 @@ def main():
     try:
         _info("ConfigManager: OK")
         try:
-            from backend.bootstrap_root import ensure_root_ready
+            from backend.bootstrap_root import (
+                describe_root_targets,
+                ensure_root_ready,
+            )
             from tkinter import messagebox
 
             manager = _ensure_config_manager()
@@ -805,6 +808,13 @@ def main():
             except Exception:
                 anchor = ""
                 data_root = ""
+
+            root_targets = []
+            try:
+                if manager is not None:
+                    root_targets = describe_root_targets(manager.load())
+            except Exception:
+                root_targets = []
 
             info_lines = [
                 "WM może zapytać teraz o folder roboczy programu.",
@@ -836,6 +846,20 @@ def main():
                         f"Obecny data_root: {data_root or '-'}",
                     ]
                 )
+
+            if root_targets:
+                info_lines.extend(
+                    [
+                        "",
+                        "WM będzie sprawdzał / tworzył:",
+                    ]
+                )
+                for label, target_path, kind in root_targets:
+                    typ = "plik" if kind == "file" else "folder"
+                    exists = os.path.exists(target_path)
+                    state = "OK" if exists else "BRAK"
+                    info_lines.append(f"- {label} ({typ}) [{state}]:")
+                    info_lines.append(f"  {target_path}")
 
             try:
                 messagebox.showinfo(

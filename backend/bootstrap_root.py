@@ -81,6 +81,31 @@ _DEFAULT_BOM = {
 log = logging.getLogger(__name__)
 
 
+def describe_root_targets(cfg: dict) -> list[tuple[str, str, str]]:
+    """Return human-readable root targets checked/created during bootstrap.
+
+    Tuple format:
+    - label
+    - path
+    - kind: "file" or "dir"
+    """
+
+    tools_defs_path = resolve_rel(cfg, "tools_defs")
+    targets = [
+        ("profile użytkowników", resolve_rel(cfg, "profiles"), "file"),
+        ("maszyny", get_machines_path(cfg), "file"),
+        ("magazyn", resolve_rel(cfg, "warehouse"), "file"),
+        ("produkty/BOM", resolve_rel(cfg, "bom"), "file"),
+        ("narzędzia", resolve_rel(cfg, "tools_dir"), "dir"),
+        ("zlecenia", resolve_rel(cfg, "orders_dir"), "dir"),
+    ]
+
+    if tools_defs_path:
+        targets.append(("definicje/zadania narzędzi", tools_defs_path, "file"))
+
+    return [(label, str(path or ""), kind) for label, path, kind in targets if path]
+
+
 def _ensure_all(cfg: dict) -> None:
     """Create minimal directory / file structure for root storage."""
 
@@ -137,4 +162,3 @@ def ensure_root_ready(config_path: str = "config.json") -> bool:
     _ensure_all(cfg)
     _migrate_legacy(cfg)
     return True
-
