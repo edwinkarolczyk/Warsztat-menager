@@ -9,6 +9,11 @@ import sys
 from typing import List, Tuple
 
 try:
+    print(f"[WM-DBG][DYSP][SRC] module_file={__file__}")
+except Exception:
+    pass
+
+try:
     from config_manager import ConfigManager, get_config, get_machines_path, resolve_rel
 except Exception:  # pragma: no cover
     ConfigManager = None  # type: ignore
