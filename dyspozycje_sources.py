@@ -330,6 +330,8 @@ def load_magazyn_choices() -> List[Tuple[str, str]]:
                 rows = data.get("produkty") or []
             elif isinstance(data.get("stany"), list):
                 rows = data.get("stany") or []
+            elif isinstance(data.get("lista"), list):
+                rows = data.get("lista") or []
             elif isinstance(data.get("rows"), list):
                 rows = data.get("rows") or []
             elif isinstance(data.get("data"), list):
