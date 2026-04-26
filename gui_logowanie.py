@@ -617,6 +617,12 @@ def ekran_logowania(root=None, on_login=None, update_available=False):
     entry_pin.pack(ipadx=10, ipady=6)
     _focus_pin()
     ttk.Button(box, text="Zaloguj", command=logowanie, style="WM.Side.TButton").pack(pady=16)
+    ttk.Button(
+        box,
+        text="Wejdź jako gość",
+        command=_login_guest,
+        style="WM.Side.TButton",
+    ).pack(pady=(0, 8))
     entry_pin.bind("<Return>", lambda e: logowanie())
     if cfg.get("auth.pinless_brygadzista", False):
         ttk.Button(
@@ -950,6 +956,37 @@ def _login_pinless():
         error_dialogs.show_error_dialog("Błąd", "Nie znaleziono brygadzisty")
     except Exception as e:
         error_dialogs.show_error_dialog("Błąd", f"Błąd podczas logowania: {e}")
+
+
+def _login_guest():
+    """Uruchom WM w trybie gościa (readonly, bez uwierzytelniania)."""
+
+    try:
+        logger.info("[WM-SEC] Uruchomiono tryb gościa readonly")
+        extra = {
+            "guest": True,
+            "readonly": True,
+            "login": "__guest__",
+            "rola": "gosc",
+        }
+        if _on_login_cb:
+            try:
+                _on_login_cb(root_global, "__guest__", "gosc", extra)
+                return
+            except TypeError:
+                try:
+                    _on_login_cb("__guest__", "gosc", extra)
+                    return
+                except TypeError:
+                    _on_login_cb("__guest__", "gosc")
+                    return
+        gui_panel.uruchom_panel(root_global, "__guest__", "gosc")
+    except Exception as exc:
+        logger.exception("[WM-ERR][LOGIN] Tryb gościa nie uruchomił się")
+        messagebox.showerror(
+            "Tryb gościa",
+            f"Nie udało się uruchomić trybu gościa.\n\n{exc}",
+        )
 
 
 def logowanie():
