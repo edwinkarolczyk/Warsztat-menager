@@ -99,6 +99,17 @@ def _root_path(*parts: str) -> str:
                 return result
         except Exception:
             pass
+        try:
+            path_anchor = getattr(mgr, "path_anchor", None)
+            if callable(path_anchor):
+                result = os.path.join(str(path_anchor()), *parts)
+                try:
+                    print(f"[WM-DBG][DYSP][SRC] path_anchor{parts} -> {result}")
+                except Exception:
+                    pass
+                return result
+        except Exception:
+            pass
     return os.path.join(os.getcwd(), *parts)
 
 
@@ -131,22 +142,8 @@ def _first_existing_path(*candidates: str | None) -> str | None:
     return None
 
 
-def _resolve_rel_path(key: str, *extra: str) -> str | None:
-    cfg = _cfg()
-    if callable(resolve_rel):
-        try:
-            path = resolve_rel(cfg, key, *extra)
-            if path:
-                return path
-        except Exception:
-            pass
-    if key in {"tools", "tools.dir", "tools_dir"}:
-        return _root_path("narzedzia", *extra)
-    if key in {"warehouse", "warehouse_stock"}:
-        return _root_path("magazyn", "magazyn.json")
-    if key in {"orders", "orders_dir"}:
-        return _root_path("zlecenia", *extra)
-    return None
+def _root_json_path(folder: str, filename: str) -> str:
+    return _root_path(folder, filename)
 
 
 # =========================================================
@@ -155,8 +152,6 @@ def _resolve_rel_path(key: str, *extra: str) -> str | None:
 def load_tool_choices() -> List[Tuple[str, str]]:
     tools_dir = _first_existing_path(
         _root_path("narzedzia"),
-        _resolve_rel_path("tools.dir"),
-        _resolve_rel_path("tools_dir"),
         _data_path("narzedzia"),
     ) or _root_path("narzedzia")
     try:
@@ -222,17 +217,15 @@ def load_machine_choices() -> List[Tuple[str, str]]:
             machine_path = None
 
     path = _first_existing_path(
-        _root_path("maszyny", "maszyny.json"),
+        _root_json_path("maszyny", "maszyny.json"),
         machine_path,
-        _resolve_rel_path("machines"),
         _data_path("maszyny", "maszyny.json"),
     )
     try:
         print(
             "[WM-DBG][DYSP][SRC] machine_candidates="
-            f"root:{_root_path('maszyny', 'maszyny.json')} | "
+            f"root:{_root_json_path('maszyny', 'maszyny.json')} | "
             f"get_machines_path:{machine_path} | "
-            f"resolve_rel:{_resolve_rel_path('machines')} | "
             f"data:{_data_path('maszyny', 'maszyny.json')}"
         )
         print(f"[WM-DBG][DYSP][SRC] machine_path_selected={path}")
@@ -303,8 +296,6 @@ def load_magazyn_choices() -> List[Tuple[str, str]]:
     candidates = [
         _root_path("magazyn", "magazyn.json"),
         _root_path("magazyn", "katalog.json"),
-        _resolve_rel_path("warehouse_stock"),
-        _resolve_rel_path("warehouse"),
         _data_path("magazyn", "katalog.json"),
     ]
     try:
