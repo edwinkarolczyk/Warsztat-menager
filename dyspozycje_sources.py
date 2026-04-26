@@ -89,22 +89,22 @@ def _root_path(*parts: str) -> str:
     mgr = _runtime_cfg_manager()
     if mgr is not None:
         try:
-            path_root = getattr(mgr, "path_root", None)
-            if callable(path_root):
-                result = path_root(*parts)
+            path_anchor = getattr(mgr, "path_anchor", None)
+            if callable(path_anchor):
+                result = os.path.join(str(path_anchor()), *parts)
                 try:
-                    print(f"[WM-DBG][DYSP][SRC] path_root{parts} -> {result}")
+                    print(f"[WM-DBG][DYSP][SRC] path_anchor{parts} -> {result}")
                 except Exception:
                     pass
                 return result
         except Exception:
             pass
         try:
-            path_anchor = getattr(mgr, "path_anchor", None)
-            if callable(path_anchor):
-                result = os.path.join(str(path_anchor()), *parts)
+            path_root = getattr(mgr, "path_root", None)
+            if callable(path_root):
+                result = path_root(*parts)
                 try:
-                    print(f"[WM-DBG][DYSP][SRC] path_anchor{parts} -> {result}")
+                    print(f"[WM-DBG][DYSP][SRC] path_root{parts} -> {result}")
                 except Exception:
                     pass
                 return result
