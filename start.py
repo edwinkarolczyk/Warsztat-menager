@@ -793,10 +793,73 @@ def main():
         _info("ConfigManager: OK")
         try:
             from backend.bootstrap_root import ensure_root_ready
+            from tkinter import messagebox
+
+            manager = _ensure_config_manager()
+            anchor = ""
+            data_root = ""
+            try:
+                if manager is not None:
+                    anchor = str(manager.path_anchor() or "")
+                    data_root = str(manager.path_data() or "")
+            except Exception:
+                anchor = ""
+                data_root = ""
+
+            info_lines = [
+                "WM może zapytać teraz o folder roboczy programu.",
+                "",
+                "Wskaż główny folder WM (<root>), a nie pojedynczy podfolder.",
+                "",
+                "W tym folderze zwykle znajdują się lub będą tworzone m.in.:",
+                "- narzedzia\\",
+                "- maszyny\\",
+                "- magazyn\\",
+                "- zlecenia\\",
+                "- produkty\\",
+                "- polprodukty\\",
+                "- data\\",
+                "- logs\\",
+                "- backup\\",
+                "- config.json",
+                "",
+                "Przykład poprawnego wyboru:",
+                "C:\\wm",
+                "",
+                "Nie wybieraj od razu np. samego folderu data\\ albo magazyn\\.",
+            ]
+            if anchor or data_root:
+                info_lines.extend(
+                    [
+                        "",
+                        f"Obecny root: {anchor or '-'}",
+                        f"Obecny data_root: {data_root or '-'}",
+                    ]
+                )
+
+            try:
+                messagebox.showinfo(
+                    "Wybór folderu WM",
+                    "\n".join(info_lines),
+                    parent=None,
+                )
+            except Exception:
+                pass
 
             ensure_root_ready(str(CONFIG_PATH))
             _info("Root bootstrap: OK")
         except Exception as e:  # pragma: no cover - startup warning only
+            try:
+                messagebox.showwarning(
+                    "Problem ze ścieżkami WM",
+                    "Nie udało się przygotować folderu roboczego WM.\n\n"
+                    "Wskaż główny folder programu (<root>), w którym są lub będą trzymane dane.\n"
+                    "Typowy przykład: C:\\wm\n\n"
+                    f"Szczegóły: {e}",
+                    parent=None,
+                )
+            except Exception:
+                pass
             _error("Root bootstrap failed", str(e))
     except Exception:
         _error("ConfigManager: problem (pomijam)")
