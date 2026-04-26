@@ -104,17 +104,19 @@ def _root_path(*parts: str) -> str:
                 return result
         except Exception:
             pass
-        try:
-            path_root = getattr(mgr, "path_root", None)
-            if callable(path_root):
-                result = path_root(*parts)
-                try:
-                    print(f"[WM-DBG][DYSP][SRC] path_root{parts} -> {result}")
-                except Exception:
-                    pass
-                return result
-        except Exception:
-            pass
+    try:
+        cfg = _cfg()
+        paths = cfg.get("paths") or {}
+        anchor = str(paths.get("anchor_root") or "").strip()
+        if anchor:
+            result = os.path.join(anchor, *parts)
+            try:
+                print(f"[WM-DBG][DYSP][SRC] cfg_anchor{parts} -> {result}")
+            except Exception:
+                pass
+            return result
+    except Exception:
+        pass
     return os.path.join(os.getcwd(), *parts)
 
 
@@ -155,10 +157,7 @@ def _root_json_path(folder: str, filename: str) -> str:
 # NARZĘDZIA
 # =========================================================
 def load_tool_choices() -> List[Tuple[str, str]]:
-    tools_dir = _first_existing_path(
-        _root_path("narzedzia"),
-        _data_path("narzedzia"),
-    ) or _root_path("narzedzia")
+    tools_dir = _root_path("narzedzia")
     try:
         print(f"[WM-DBG][DYSP][SRC] tools_dir_selected={tools_dir}")
     except Exception:
@@ -227,7 +226,6 @@ def load_machine_choices() -> List[Tuple[str, str]]:
     path = _first_existing_path(
         _root_json_path("maszyny", "maszyny.json"),
         machine_path,
-        _data_path("maszyny", "maszyny.json"),
     )
     try:
         print(
@@ -304,7 +302,6 @@ def load_magazyn_choices() -> List[Tuple[str, str]]:
     candidates = [
         _root_path("magazyn", "magazyn.json"),
         _root_path("magazyn", "katalog.json"),
-        _data_path("magazyn", "katalog.json"),
     ]
     try:
         print(f"[WM-DBG][DYSP][SRC] magazyn_candidates={candidates}")
@@ -415,8 +412,6 @@ def load_zlecenie_wykonania_choices() -> List[Tuple[str, str]]:
     candidates = [
         ("produkt", _root_path("produkty")),
         ("polprodukt", _root_path("polprodukty")),
-        ("produkt", _data_path("produkty")),
-        ("polprodukt", _data_path("polprodukty")),
     ]
 
     for prefix, folder in candidates:
@@ -440,7 +435,6 @@ def load_zlecenie_wykonania_choices() -> List[Tuple[str, str]]:
     # katalog magazynowy jako "elementy / pozycje magazynowe"
     katalog_candidates = [
         _root_path("magazyn", "katalog.json"),
-        _data_path("magazyn", "katalog.json"),
     ]
     katalog = {}
     try:
