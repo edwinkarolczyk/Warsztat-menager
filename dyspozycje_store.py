@@ -12,6 +12,7 @@ Cel:
 from __future__ import annotations
 
 import json
+import shutil
 import sys
 import uuid
 from copy import deepcopy
@@ -26,6 +27,7 @@ except Exception:  # pragma: no cover
 
 
 DISP_FILE_NAME = "dyspozycje.json"
+DISP_DIR_NAME = "dyspozycje"
 DISP_ALLOWED_TYPES = {
     "narzedzie",
     "maszyna",
@@ -91,9 +93,51 @@ def _data_root() -> Path:
     return Path("data")
 
 
+def _anchor_root() -> Path:
+    mgr = _runtime_cfg_manager()
+    if mgr is not None:
+        for method_name in ("path_anchor", "path_root"):
+            method = getattr(mgr, method_name, None)
+            if not callable(method):
+                continue
+            try:
+                path = Path(method())
+                try:
+                    print(f"[WM-DBG][DYSP][STORE] anchor_root={path}")
+                except Exception:
+                    pass
+                return path
+            except Exception:
+                continue
+    return Path.cwd()
+
+
+def _legacy_dyspozycje_path() -> Path:
+    return _data_root() / DISP_FILE_NAME
+
+
+def _migrate_legacy_if_needed(target: Path) -> None:
+    legacy = _legacy_dyspozycje_path()
+    if target.exists() or not legacy.exists():
+        return
+    try:
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(legacy, target)
+        print(
+            "[WM-DBG][DYSP][STORE] migrated legacy dyspozycje: "
+            f"{legacy} -> {target}"
+        )
+    except Exception as exc:
+        try:
+            print(f"[WM-DBG][DYSP][STORE] migration failed: {exc}")
+        except Exception:
+            pass
+
+
 def get_dyspozycje_path() -> Path:
-    path = _data_root() / DISP_FILE_NAME
+    path = _anchor_root() / DISP_DIR_NAME / DISP_FILE_NAME
     path.parent.mkdir(parents=True, exist_ok=True)
+    _migrate_legacy_if_needed(path)
     try:
         print(f"[WM-DBG][DYSP][STORE] dyspozycje_path={path}")
     except Exception:
