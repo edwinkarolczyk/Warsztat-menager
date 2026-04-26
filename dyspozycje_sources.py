@@ -325,6 +325,10 @@ def load_magazyn_choices() -> List[Tuple[str, str]]:
                 rows = data.get("produkty") or []
             elif isinstance(data.get("stany"), list):
                 rows = data.get("stany") or []
+            elif isinstance(data.get("rows"), list):
+                rows = data.get("rows") or []
+            elif isinstance(data.get("data"), list):
+                rows = data.get("data") or []
             else:
                 for key, row in data.items():
                     if isinstance(row, dict):
@@ -333,12 +337,21 @@ def load_magazyn_choices() -> List[Tuple[str, str]]:
                             or row.get("kod")
                             or row.get("nr")
                             or row.get("symbol")
+                            or row.get("index")
+                            or row.get("numer")
                             or key
                         ).strip()
                         if not code or code.lower() in seen:
                             continue
                         seen.add(code.lower())
-                        name = str(row.get("nazwa") or row.get("name") or "").strip()
+                        name = str(
+                            row.get("nazwa")
+                            or row.get("name")
+                            or row.get("opis")
+                            or row.get("typ")
+                            or row.get("material")
+                            or ""
+                        ).strip()
                         label = f"{code} - {name}" if name else code
                         out.append((code, label))
                 if out:
