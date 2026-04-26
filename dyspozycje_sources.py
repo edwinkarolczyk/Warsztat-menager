@@ -165,6 +165,10 @@ def load_tool_choices() -> List[Tuple[str, str]]:
             if not filename.endswith(".json"):
                 continue
 
+            file_stem = os.path.splitext(filename)[0].strip()
+            if not file_stem.isdigit():
+                continue
+
             path = os.path.join(tools_dir, filename)
             try:
                 with open(path, "r", encoding="utf-8") as f:
@@ -177,7 +181,6 @@ def load_tool_choices() -> List[Tuple[str, str]]:
             elif isinstance(doc, dict) and isinstance(doc.get("tool"), dict):
                 doc = doc.get("tool") or {}
 
-            file_stem = os.path.splitext(filename)[0].strip()
             tool_id = str(
                 doc.get("id")
                 or doc.get("nr")
