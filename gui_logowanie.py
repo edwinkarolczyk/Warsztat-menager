@@ -14,7 +14,7 @@ import subprocess
 import tkinter as tk
 from datetime import date, datetime
 from pathlib import Path
-from tkinter import ttk, messagebox
+from tkinter import ttk, messagebox, filedialog
 
 try:  # opcjonalny Pillow
     from PIL import Image, ImageTk
@@ -55,6 +55,65 @@ except AttributeError:  # pragma: no cover - fallback dla stubów
 
 # Alias zachowany dla kompatybilności testów
 apply_theme = apply_theme_tree
+
+
+def _save_root_choice_to_config(root_path: str) -> None:
+    """Zapisz główny ROOT WM z ekranu logowania.
+
+    Minimalnie ustawiamy oba klucze, bo w projekcie występują oba pojęcia:
+    - paths.anchor_root
+    - paths.data_root
+    """
+
+    cfg = ConfigManager()
+    normalized = str(Path(root_path).expanduser().resolve())
+    cfg.set("paths.anchor_root", normalized)
+    cfg.set("paths.data_root", normalized)
+    if hasattr(cfg, "save_all"):
+        cfg.save_all()
+    elif hasattr(cfg, "save"):
+        cfg.save()
+
+
+def _choose_root_from_login() -> None:
+    """Mały, ukryty wybór głównego katalogu WM z ekranu logowania."""
+
+    try:
+        messagebox.showinfo(
+            "Wybór ROOT WM",
+            "Wskaż główny folder WM, czyli folder bazowy danych programu.\n\n"
+            "Nie wybieraj pojedynczego podfolderu typu:\n"
+            "- data\n"
+            "- magazyn\n"
+            "- narzedzia\n"
+            "- zlecenia\n\n"
+            "Przykład poprawnego wyboru:\n"
+            "C:\\wm",
+        )
+        selected = filedialog.askdirectory(
+            title="Wskaż główny folder ROOT WM"
+        )
+        if not selected:
+            return
+
+        _save_root_choice_to_config(selected)
+        messagebox.showinfo(
+            "ROOT WM ustawiony",
+            "Ustawiono główny folder WM:\n\n"
+            f"{Path(selected).expanduser().resolve()}\n\n"
+            "Najlepiej uruchom logowanie/program ponownie, żeby wszystkie "
+            "moduły czytały dane z nowego ROOT.",
+        )
+    except Exception as exc:
+        logger.exception("[WM-ERR][LOGIN] Nie udało się ustawić ROOT WM")
+        try:
+            messagebox.showwarning(
+                "ROOT WM",
+                "Nie udało się zapisać głównego folderu WM.\n\n"
+                f"Szczegóły: {exc}",
+            )
+        except Exception:
+            pass
 
 def _profiles_path() -> Path:
     try:
@@ -746,6 +805,12 @@ def ekran_logowania(root=None, on_login=None, update_available=False):
     ttk.Button(bottom, text="Zamknij program", command=zamknij, style="WM.Side.TButton").pack()
     # stopka
     ttk.Label(root, text="Warsztat Menager – beta", style="WM.Muted.TLabel").pack(side="bottom", pady=(0, 6))
+    ttk.Button(
+        root,
+        text="⚙ root",
+        command=_choose_root_from_login,
+        style="WM.Side.TButton",
+    ).pack(side="bottom", pady=(0, 2))
     update_text, _ = load_last_update_info()
     lbl_update = ttk.Label(root, text=update_text, style="WM.Muted.TLabel")
     lbl_update.pack(side="bottom", pady=(0, 2))
