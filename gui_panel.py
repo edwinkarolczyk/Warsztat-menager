@@ -581,18 +581,11 @@ def panel_chat(root, frame, login=None, rola=None):
 # ---------- Główny panel ----------
 
 def uruchom_panel(root, login, rola):
-    is_guest = (
-        str(login or "").strip() == "__guest__"
-        or str(rola or "").strip().lower() in {"gosc", "gość", "guest"}
-    )
     if not ensure_theme_applied(root):
         apply_theme(root)
-    if is_guest:
-        root.title(f"Warsztat Menager v{APP_VERSION} - tryb gościa / podgląd")
-    else:
-        root.title(
-            f"Warsztat Menager v{APP_VERSION} - zalogowano jako {login} ({rola})"
-        )
+    root.title(
+        f"Warsztat Menager v{APP_VERSION} - zalogowano jako {login} ({rola})"
+    )
     clear_frame(root)
     if _register_notification_root is not None:
         try:
@@ -601,17 +594,11 @@ def uruchom_panel(root, login, rola):
             pass
     setattr(root, "current_shift", _current_shift_label(datetime.now()))
 
-    if is_guest:
-        last_visit = datetime.now(timezone.utc)
-        profile = {}
-    else:
-        last_visit = _load_last_visit(login)
-        profile = get_user(login) or {}
+    last_visit = _load_last_visit(login)
+    profile = get_user(login) or {}
     modules_disabled = set()
     if isinstance(profile, dict):
         modules_disabled = set(profile.get("modules_disabled", []))
-    if is_guest:
-        modules_disabled.update({"uzytkownicy", "ustawienia", "jarvis", "chat"})
     disabled_modules: set[str] = set()
     markers: list[tk.Widget] = []
     def _clear_markers() -> None:
@@ -623,8 +610,7 @@ def uruchom_panel(root, login, rola):
                 pass
         markers.clear()
         last_visit = datetime.now(timezone.utc)
-        if not is_guest:
-            _save_last_visit(login, last_visit)
+        _save_last_visit(login, last_visit)
 
     def _maybe_mark_button(widget: tk.Widget) -> None:
         lm = getattr(widget, "last_modified", None)
@@ -649,8 +635,7 @@ def uruchom_panel(root, login, rola):
     header  = ttk.Frame(main, style="WM.TFrame");      header.pack(fill="x", padx=12, pady=(10,6))
     ttk.Label(header, text="Panel główny", style="WM.H1.TLabel").pack(side="left")
     # NOWE: czytelny login/rola po prawej stronie nagłówka
-    header_user_text = "GOŚĆ (podgląd)" if is_guest else f"{login} ({rola})"
-    ttk.Label(header, text=header_user_text, style="WM.Muted.TLabel").pack(side="right")
+    ttk.Label(header, text=f"{login} ({rola})", style="WM.Muted.TLabel").pack(side="right")
 
     current_action_var = tk.StringVar(master=root, value="Aktualnie: —")
     current_action_label = ttk.Label(
@@ -664,8 +649,6 @@ def uruchom_panel(root, login, rola):
     setattr(root, "active_login", login)
     setattr(root, "current_user", login)
     setattr(root, "username", login)
-    setattr(root, "_wm_guest", is_guest)
-    setattr(root, "_wm_readonly", is_guest)
 
     footer  = ttk.Frame(main, style="WM.TFrame");      footer.pack(fill="x", padx=12, pady=(6,10))
     footer_btns = ttk.Frame(footer, style="WM.TFrame"); footer_btns.pack(side="right")
@@ -849,21 +832,6 @@ def uruchom_panel(root, login, rola):
         clear_frame(content)
 
     def otworz_panel(funkcja, nazwa):
-        if is_guest:
-            blocked_guest_modules = {
-                "Użytkownicy",
-                "Ustawienia",
-                "Jarvis",
-                "Chat",
-                "Profil",
-            }
-            if str(nazwa) in blocked_guest_modules:
-                messagebox.showinfo(
-                    "Tryb gościa",
-                    "Tryb gościa jest tylko do podglądu.\n"
-                    "Ten moduł wymaga zalogowania.",
-                )
-                return
         flow = None
         if funkcja is panel_narzedzia:
             flow = PerfFlow("TOOLS_OPEN")
@@ -1041,7 +1009,7 @@ def uruchom_panel(root, login, rola):
     start_panel = None
     start_name = ""
     admin_roles = ADMIN_ROLE_NAMES | {"kierownik", "brygadzista", "lider"}
-    is_admin = (not is_guest) and str(rola).strip().lower() in admin_roles
+    is_admin = str(rola).strip().lower() in admin_roles
 
     def _format_modules(modules) -> str:
         items = list(modules)
@@ -1067,12 +1035,10 @@ def uruchom_panel(root, login, rola):
     def _build_sidebar(initial: bool = False) -> None:
         nonlocal profile, disabled_modules, start_panel, start_name, modules_disabled
         clear_frame(side)
-        profile = {} if is_guest else (get_user(login) or {})
+        profile = get_user(login) or {}
         modules_disabled = set()
         if isinstance(profile, dict):
             modules_disabled = set(profile.get("modules_disabled", []))
-        if is_guest:
-            modules_disabled.update({"uzytkownicy", "ustawienia", "jarvis", "chat"})
 
         try:
             manifest = zaladuj_manifest(CONFIG_MANAGER)
