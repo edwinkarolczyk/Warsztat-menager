@@ -611,8 +611,12 @@ def _build_root_section(
     if not isinstance(cfg, dict):
         cfg = {}
 
+    # Nowa sekcja ROOT zastępuje stare informacje o ścieżkach w zakładce "Ścieżki".
+    # Nie pokazujemy już legacy statusów, przykładów ani starego wyboru paths.data_root.
+    # Zmiana ROOT zapisuje tylko wm_root.json i wymaga restartu programu.
+    # Mechanizmu Git nie dotykamy.
     # NOWY ROOT MANAGER:
-    # Ta sekcja zastępuje stare informacje o ścieżkach w zakładce "Ścieżki".
+    # Ta sekcja jest tylko UI/diagnostyką i zmianą wskaźnika wm_root.json.
     # Nie przenosi danych, nie kasuje plików i nie dotyka mechanizmu Git.
     if wm_root_paths is not None:
         box = ttk.Labelframe(parent, text="📁 ROOT / Folder danych WM")
@@ -785,6 +789,8 @@ def _build_root_section(
 
         return
 
+    # Fallback tylko gdy core.root_paths nie istnieje.
+    # Nie pokazujemy starej konfiguracji paths.data_root, aby nie mieszać APP_ROOT z WM_ROOT.
     ttk.Label(
         parent,
         text=(
