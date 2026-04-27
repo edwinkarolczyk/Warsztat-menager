@@ -56,6 +56,11 @@ from core.crash_handler import (
     mark_crash_log_read,
 )
 from tools_config_loader import load_config as load_tools_config
+wm_root_paths = (
+    importlib.import_module("core.root_paths")
+    if importlib.util.find_spec("core.root_paths")
+    else None
+)
 from utils_json import ensure_json
 from config.paths import (
     bind_settings,
@@ -605,6 +610,181 @@ def _build_root_section(
 
     if not isinstance(cfg, dict):
         cfg = {}
+
+    # NOWY ROOT MANAGER:
+    # Ta sekcja jest tylko UI/diagnostyką i zmianą wskaźnika wm_root.json.
+    # Nie przenosi danych, nie kasuje plików i nie dotyka mechanizmu Git.
+    if wm_root_paths is not None:
+        box = ttk.Labelframe(parent, text="📁 ROOT / Folder danych WM")
+        box.pack(fill="x", padx=8, pady=8)
+
+        try:
+            snap = wm_root_paths.install_environment(prompt=False)
+        except Exception:
+            snap = {}
+
+        rows_frame = ttk.Frame(box)
+        rows_frame.pack(fill="x", padx=8, pady=(8, 4))
+
+        labels: dict[str, ttk.Label] = {}
+
+        def _row(label: str, key: str) -> None:
+            row = ttk.Frame(rows_frame)
+            row.pack(fill="x", pady=1)
+            ttk.Label(row, text=label, width=16).pack(side="left")
+            lbl = ttk.Label(row, text=str(snap.get(key, "—")))
+            lbl.pack(side="left", fill="x", expand=True)
+            labels[key] = lbl
+
+        _row("APP_ROOT", "app_root")
+        _row("ROOT_FILE", "root_file")
+        _row("WM_ROOT", "wm_root")
+        _row("CONFIG", "config")
+        _row("DATA_ROOT", "data_root")
+        _row("PROFILES", "profiles")
+        _row("TOOLS_DIR", "tools_dir")
+        _row("MACHINES", "machines")
+        _row("WAREHOUSE", "warehouse")
+        _row("BOM", "bom")
+        _row("ORDERS_DIR", "orders_dir")
+        _row("DYSP_FILE", "dyspozycje")
+        _row("LOGS_DIR", "logs_dir")
+        _row("BACKUP_DIR", "backup_dir")
+
+        info = ttk.Label(
+            box,
+            text=(
+                "APP_ROOT to folder programu/repo/Git. WM_ROOT to folder danych.\n"
+                "Zmiana folderu ROOT zapisuje tylko wm_root.json i wymaga restartu programu."
+            ),
+            justify="left",
+            wraplength=760,
+        )
+        info.pack(fill="x", padx=8, pady=(4, 8))
+
+        actions = ttk.Frame(box)
+        actions.pack(fill="x", padx=8, pady=(0, 8))
+
+        def _refresh_root_preview() -> None:
+            try:
+                new_snap = wm_root_paths.install_environment(prompt=False)
+            except Exception as exc:
+                messagebox.showerror(
+                    "ROOT / Folder danych WM",
+                    f"Nie udało się odświeżyć ścieżek ROOT:\n{exc}",
+                    parent=parent,
+                )
+                return
+            for key, lbl in labels.items():
+                try:
+                    lbl.configure(text=str(new_snap.get(key, "—")))
+                except Exception:
+                    pass
+            try:
+                wm_root_paths.print_root_diagnostics(new_snap)
+            except Exception:
+                pass
+
+        def _change_root_folder() -> None:
+            current = snap.get("wm_root") or str(Path.cwd())
+            selected = filedialog.askdirectory(
+                parent=parent,
+                title="Wybierz główny folder danych WM",
+                initialdir=current,
+            )
+            if not selected:
+                return
+
+            selected_path = Path(selected).expanduser()
+            try:
+                selected_path.mkdir(parents=True, exist_ok=True)
+                root_file = wm_root_paths.root_file_path()
+                with root_file.open("w", encoding="utf-8") as handle:
+                    json.dump(
+                        {"root": str(selected_path)},
+                        handle,
+                        ensure_ascii=False,
+                        indent=2,
+                    )
+                os.environ["WM_ROOT"] = str(selected_path)
+                os.environ["WM_APP_ROOT"] = str(selected_path)
+                os.environ["WM_DATA_ROOT"] = str(selected_path / "data")
+                os.environ["WM_CONFIG_FILE"] = str(selected_path / "config.json")
+                wm_root_paths.ensure_root_tree()
+                _refresh_root_preview()
+                messagebox.showinfo(
+                    "ROOT / Folder danych WM",
+                    "Zapisano nowy folder danych WM.\n\n"
+                    "Uruchom program ponownie, aby wszystkie moduły użyły nowego ROOT.",
+                    parent=parent,
+                )
+            except Exception as exc:
+                messagebox.showerror(
+                    "ROOT / Folder danych WM",
+                    f"Nie udało się zapisać ROOT:\n{exc}",
+                    parent=parent,
+                )
+
+        def _open_path(path_key: str) -> None:
+            target = labels.get(path_key)
+            value = target.cget("text") if target is not None else ""
+            if not value or value == "—":
+                return
+            try:
+                path = Path(value)
+                if path.is_file():
+                    path = path.parent
+                os.startfile(str(path))  # type: ignore[attr-defined]
+            except Exception as exc:
+                messagebox.showerror("Otwórz folder", f"Nie udało się otworzyć:\n{exc}")
+
+        def _copy_root_diag() -> None:
+            text = "\n".join(
+                f"{key}: {label.cget('text')}" for key, label in labels.items()
+            )
+            try:
+                parent.clipboard_clear()
+                parent.clipboard_append(text)
+                messagebox.showinfo(
+                    "ROOT / Folder danych WM",
+                    "Diagnostyka ROOT skopiowana do schowka.",
+                    parent=parent,
+                )
+            except Exception as exc:
+                messagebox.showerror(
+                    "ROOT / Folder danych WM",
+                    f"Nie udało się skopiować diagnostyki:\n{exc}",
+                    parent=parent,
+                )
+
+        ttk.Button(
+            actions,
+            text="Zmień główny folder WM",
+            command=_change_root_folder,
+        ).pack(side="left", padx=(0, 6))
+        ttk.Button(
+            actions,
+            text="Otwórz ROOT",
+            command=lambda: _open_path("wm_root"),
+        ).pack(side="left", padx=6)
+        ttk.Button(
+            actions,
+            text="Otwórz DATA",
+            command=lambda: _open_path("data_root"),
+        ).pack(side="left", padx=6)
+        ttk.Button(
+            actions,
+            text="Odśwież",
+            command=_refresh_root_preview,
+        ).pack(side="left", padx=6)
+        ttk.Button(
+            actions,
+            text="Kopiuj diagnostykę",
+            command=_copy_root_diag,
+        ).pack(side="left", padx=6)
+
+        # Nie kończymy funkcji: poniżej zostaje dotychczasowa sekcja legacy,
+        # aby nie usuwać istniejących ustawień i statusów ścieżek.
 
     root = get_root(cfg)
     box = ttk.Labelframe(parent, text="Folder WM (<root>) i status plików")
