@@ -31,6 +31,10 @@ from utils_json import ensure_json
 from utils import error_dialogs
 from config.paths import get_app_root, p_config, p_settings_schema
 from config_manager import ConfigManager
+try:
+    from core import root_paths as wm_root_paths
+except Exception:  # pragma: no cover - awaryjnie nie blokuj startu
+    wm_root_paths = None
 
 os.environ.setdefault("QT_LOGGING_RULES", "qt.qpa.*=false")
 
@@ -59,6 +63,15 @@ def _feature_flag_enabled(value, *, default: bool = True) -> bool:
             return False
         return default
     return bool(value)
+
+
+ROOT_SNAPSHOT = None
+if wm_root_paths is not None:
+    try:
+        # Bez okna dialogowego na etapie importu; właściwe pytanie nastąpi w main().
+        ROOT_SNAPSHOT = wm_root_paths.install_environment(prompt=False)
+    except Exception as exc:
+        print(f"[WM-ROOT][WARN] Wstępny bootstrap ROOT pominięty: {exc}")
 
 
 APP_ROOT = get_app_root()
@@ -203,6 +216,12 @@ from utils.moduly import zaladuj_manifest
 
 def _print_root_diagnostics(manager) -> None:
     """Emit podstawowe informacje diagnostyczne o ścieżkach <root>."""
+
+    if wm_root_paths is not None:
+        try:
+            wm_root_paths.print_root_diagnostics(ROOT_SNAPSHOT)
+        except Exception as exc:
+            print(f"[WM-ROOT][WARN] Diagnostyka centralnego ROOT nieudana: {exc}")
 
     print("[WM ROOT DIAGNOSTICS]")
     if manager is None:
@@ -419,7 +438,10 @@ def _ensure_user_file(login, rola):
     try:
         if not login:
             return
-        base = os.path.join("data", "user")
+        if wm_root_paths is not None:
+            base = str(wm_root_paths.get_data_root() / "user")
+        else:
+            base = os.path.join("data", "user")
         os.makedirs(base, exist_ok=True)
         path = os.path.join(base, f"{login}.json")
         if not os.path.exists(path):
@@ -436,6 +458,7 @@ def _ensure_user_file(login, rola):
             }
             with open(path, "w", encoding="utf-8") as f:
                 json.dump(data, f, indent=2, ensure_ascii=False)
+            print(f"[WM-ROOT][USER] file={path}")
             _info(f"[{SESSION_ID}] Utworzono plik użytkownika: {path}")
     except Exception as e:
         _error(f"[{SESSION_ID}] Błąd tworzenia pliku użytkownika: {e}")
@@ -741,6 +764,19 @@ def main():
     # Opcjonalnie wycisz WARNING Qt
     # "Untested Windows version 10.0 detected!" – porządkuje logi.
     SESSION_ID = f"{datetime.now().strftime('%H%M%S')}"
+    global ROOT_SNAPSHOT, CONFIG_MANAGER, CONFIG_PATH
+    if wm_root_paths is not None:
+        try:
+            # Tu wolno pokazać wybór folderu ROOT, bo startuje właściwa aplikacja.
+            ROOT_SNAPSHOT = wm_root_paths.install_environment(prompt=True)
+            CONFIG_MANAGER = None
+            env_cfg = os.environ.get("WM_CONFIG_FILE")
+            if env_cfg:
+                CONFIG_PATH = Path(env_cfg).expanduser().resolve()
+            wm_root_paths.print_root_diagnostics(ROOT_SNAPSHOT)
+        except Exception as exc:
+            print(f"[WM-ROOT][WARN] Bootstrap ROOT w main() nieudany: {exc}")
+
     manager = _ensure_config_manager()
     _print_root_diagnostics(manager)
     _post_config_bootstrap()
