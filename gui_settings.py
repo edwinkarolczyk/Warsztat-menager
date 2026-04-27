@@ -612,7 +612,7 @@ def _build_root_section(
         cfg = {}
 
     # NOWY ROOT MANAGER:
-    # Ta sekcja jest tylko UI/diagnostyką i zmianą wskaźnika wm_root.json.
+    # Ta sekcja zastępuje stare informacje o ścieżkach w zakładce "Ścieżki".
     # Nie przenosi danych, nie kasuje plików i nie dotyka mechanizmu Git.
     if wm_root_paths is not None:
         box = ttk.Labelframe(parent, text="📁 ROOT / Folder danych WM")
@@ -783,205 +783,18 @@ def _build_root_section(
             command=_copy_root_diag,
         ).pack(side="left", padx=6)
 
-        # Nie kończymy funkcji: poniżej zostaje dotychczasowa sekcja legacy,
-        # aby nie usuwać istniejących ustawień i statusów ścieżek.
-
-    root = get_root(cfg)
-    box = ttk.Labelframe(parent, text="Folder WM (<root>) i status plików")
-
-    row_top = ttk.Frame(box)
-    var_path = tk.StringVar(value=root or "")
-    entry = ttk.Entry(row_top, textvariable=var_path, width=60)
-    entry.pack(side="left", padx=6, pady=6)
-
-    def _pick_dir(key: str = "<root>") -> None:
-        title = (
-            "Wybierz katalog <root>"
-            if key in {"<root>", "root"}
-            else "Wybierz katalog"
-        )
-        selected = filedialog.askdirectory(title=title)
-        if not selected:
-            return
-
-        cfg_key = "paths.data_root" if key in {"<root>", "root", "paths.<root>"} else key
-
-        try:
-            normalized = os.path.normpath(selected)
-        except Exception:
-            normalized = selected
-
-        try:
-            os.makedirs(normalized, exist_ok=True)
-        except Exception:
-            logger.exception(
-                "[SETTINGS] Nie udało się utworzyć katalogu '%s' dla klucza %s.",
-                normalized,
-                key,
-            )
-            return
-
-        manager = cm
-        if manager is None:
-            try:
-                manager = ConfigManager()
-            except Exception:
-                manager = None
-
-        if manager is None:
-            logger.error("[SETTINGS] Brak menedżera konfiguracji – nie zapisano %s.", key)
-            return
-
-        try:
-            manager.set(cfg_key, normalized)
-            if cfg_key == "paths.data_root":
-                try:
-                    manager.update_root_paths(normalized)
-                except Exception:
-                    logger.exception("[SETTINGS] Aktualizacja katalogu root nieudana")
-                backup_dir = manager.get("paths.backup_dir") or os.path.join(
-                    manager.path_root(), "backup"
-                )
-                logs_dir = manager.get("paths.logs_dir") or os.path.join(
-                    manager.path_root(), "logs"
-                )
-                assets_dir = manager.get("paths.assets_dir") or manager.path_assets()
-                for directory in (backup_dir, logs_dir, assets_dir):
-                    try:
-                        os.makedirs(directory, exist_ok=True)
-                    except Exception:
-                        logger.exception(
-                            "[SETTINGS] Nie udało się utworzyć katalogu %s", directory
-                        )
-            manager.save_all()
-            var_path.set(normalized)
-            logger.info("[SETTINGS] Ustawiono %s = %s", key, normalized)
-            if callable(on_root_change):
-                try:
-                    on_root_change(normalized)
-                except Exception:
-                    logger.exception("[SETTINGS] on_root_change callback failed")
-        except Exception:
-            logger.exception(
-                "[SETTINGS] Nie udało się zapisać ścieżki %s.",
-                key,
-            )
-
-    ttk.Button(row_top, text="Wybierz…", command=_pick_dir).pack(side="left", padx=6)
-    row_top.pack(fill="x")
-
-    actions_row = ttk.Frame(box)
-    actions_row.pack(fill="x", padx=6, pady=(0, 4))
-    ttk.Button(
-        actions_row,
-        text="Wyczyść stare ścieżki plików (legacy)",
-        command=_reset_legacy_file_overrides,
-    ).pack(side="left")
-
-    _add_readonly_info(box, PATH_SAVE_INFO, label="Informacja o zapisie")
+        return
 
     ttk.Label(
-        box,
-        text=PATH_EXAMPLES_TEXT,
+        parent,
+        text=(
+            "Centralny ROOT jest niedostępny, bo nie udało się zaimportować "
+            "core.root_paths. Najpierw zastosuj diff z root_paths.py."
+        ),
+        foreground=get_theme_color("error", fallback="#ef4444"),
         justify="left",
-    ).pack(fill="x", padx=8, pady=(0, 6))
-
-    paths = {
-        "Maszyny": resolve_rel(cfg, "machines"),
-        "Tło hali": resolve_rel(cfg, "machines_bg"),
-        "Narzędzia.idx": resolve_rel(cfg, "tools_index"),
-        "Magazyn": resolve_rel(cfg, "warehouse_stock"),
-        "Zlecenia": resolve_rel(cfg, "orders"),
-        "BOM": resolve_rel(cfg, "bom"),
-    }
-
-    for name, path in paths.items():
-        _mk_status(box, name, _exists(path), path or "—")
-
-    root_dir = get_root(cfg) if cfg else ""
-    required_dirs = {
-        "Katalog data/": os.path.join(root_dir, "data") if root_dir else "",
-        "Katalog assets/": os.path.join(root_dir, "assets") if root_dir else "",
-        "Katalog logs/": os.path.join(root_dir, "logs") if root_dir else "",
-    }
-    for name, path in required_dirs.items():
-        exists = bool(path and os.path.isdir(path))
-        _mk_status(box, name, exists, path or "<brak root>")
-
-    diag_labels: dict[str, ttk.Label] = {}
-    diag_frame = ttk.LabelFrame(box, text="Diagnostyka ścieżek")
-    diag_frame.pack(fill="x", padx=8, pady=(4, 8))
-
-    def _current_cfg_manager() -> ConfigManager | None:
-        if owner is not None and hasattr(owner, "cfg"):
-            return getattr(owner, "cfg", None)
-        return cm
-
-    manager_obj = _current_cfg_manager()
-    paths_preview = {
-        "root": "",
-        "config": "",
-        "data": "",
-        "backup": "",
-        "logs": "",
-        "assets": "",
-    }
-    if manager_obj is not None:
-        try:
-            paths_preview["root"] = manager_obj.path_root()
-        except Exception:
-            pass
-        try:
-            paths_preview["config"] = manager_obj.get_config_path()
-        except Exception:
-            pass
-        try:
-            paths_preview["data"] = manager_obj.path_data()
-        except Exception:
-            pass
-        try:
-            paths_preview["backup"] = manager_obj.path_backup()
-        except Exception:
-            pass
-        try:
-            paths_preview["logs"] = manager_obj.path_logs()
-        except Exception:
-            pass
-        try:
-            paths_preview["assets"] = manager_obj.path_assets()
-        except Exception:
-            pass
-
-    labels_map = {
-        "root": "Folder WM",
-        "config": "config.json",
-        "data": "katalog danych",
-        "backup": "backup/",
-        "logs": "logs/",
-        "assets": "assets/",
-    }
-
-    warning_keys = {"data", "backup", "logs", "assets"}
-
-    root_value = paths_preview.get("root", "")
-
-    for key, label_text in labels_map.items():
-        row = ttk.Frame(diag_frame)
-        row.pack(fill="x", padx=6, pady=1)
-        ttk.Label(row, text=f"{label_text}:", width=16).pack(side="left")
-        text, color = _format_diag_path(
-            paths_preview.get(key, ""),
-            root_value,
-            warn=bool(root_value) and key in warning_keys,
-        )
-        value_label = ttk.Label(row, text=text, foreground=color)
-        value_label.pack(side="left", fill="x", expand=True)
-        diag_labels[key] = value_label
-
-    if owner is not None:
-        setattr(owner, "_root_paths_labels", diag_labels)
-
-    box.pack(fill="x", padx=8, pady=8)
+        wraplength=760,
+    ).pack(fill="x", padx=8, pady=8)
 
 
 def _add_readonly_info(parent: tk.Widget, text: str, *, label: str | None = None) -> ttk.Frame:
