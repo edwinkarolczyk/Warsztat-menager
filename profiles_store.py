@@ -12,6 +12,11 @@ from config_manager import ConfigManager, get_profiles_path as cfg_get_profiles_
 
 logger = logging.getLogger(__name__)
 
+try:
+    from core import root_paths
+except Exception:  # pragma: no cover
+    root_paths = None
+
 
 def _as_path(value: Path | str) -> Path:
     if isinstance(value, Path):
@@ -40,12 +45,20 @@ def resolve_profiles_path(
             raw = cfg_get_profiles_path(snapshot)
         except Exception:
             raw = ""
-        target = Path(raw) if raw else Path("data") / "profiles.json"
+        if raw:
+            target = Path(raw)
+        else:
+            target = (
+                root_paths.path_profiles()
+                if root_paths is not None
+                else Path("data") / "profiles.json"
+            )
     try:
         resolved = target.expanduser().resolve()
     except Exception:
         resolved = target.expanduser()
     resolved.parent.mkdir(parents=True, exist_ok=True)
+    logger.info("[WM-ROOT][PROFILES] profiles_path=%s", resolved)
     return resolved
 
 
