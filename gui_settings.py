@@ -657,9 +657,24 @@ def _build_root_section(
 
         def _change_root_folder() -> None:
             current = root_var.get() or str(Path.cwd())
+            messagebox.showinfo(
+                "Wybór głównego folderu WM",
+                "Wskaż JEDEN główny folder ROOT, np.:\n"
+                "C:\\wm\n\n"
+                "Program będzie tam zapisywał dane modułów:\n"
+                "<root>\\data\\narzedzia\n"
+                "<root>\\data\\magazyn\n"
+                "<root>\\data\\maszyny\n"
+                "<root>\\data\\zlecenia\n"
+                "<root>\\logs\n"
+                "<root>\\backup\n\n"
+                "Nie wybieraj folderu programu ani samego folderu data.\n"
+                "Po zmianie ROOT uruchom program ponownie.",
+                parent=parent,
+            )
             selected = filedialog.askdirectory(
                 parent=parent,
-                title="Wybierz główny folder danych WM",
+                title="Wybierz główny folder ROOT WM, np. C:\\wm",
                 initialdir=current,
             )
             if not selected:
