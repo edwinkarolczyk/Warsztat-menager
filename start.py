@@ -776,9 +776,24 @@ def main():
             # Tu wolno pokazać wybór folderu ROOT, bo startuje właściwa aplikacja.
             ROOT_SNAPSHOT = wm_root_paths.install_environment(prompt=True)
             CONFIG_MANAGER = None
+            try:
+                os.environ["WM_ROOT"] = str(wm_root_paths.get_root_anchor())
+                os.environ["WM_DATA_ROOT"] = str(wm_root_paths.get_data_root())
+                os.environ["WM_CONFIG_FILE"] = str(wm_root_paths.path_config())
+            except Exception:
+                pass
             env_cfg = os.environ.get("WM_CONFIG_FILE")
             if env_cfg:
                 CONFIG_PATH = Path(env_cfg).expanduser().resolve()
+            try:
+                print(f"[WM-ROOT][START] CONFIG_PATH={CONFIG_PATH}")
+                print(f"[WM-ROOT][START] WM_ROOT={os.environ.get('WM_ROOT')}")
+                print(f"[WM-ROOT][START] WM_DATA_ROOT={os.environ.get('WM_DATA_ROOT')}")
+                print(
+                    f"[WM-ROOT][START] WM_CONFIG_FILE={os.environ.get('WM_CONFIG_FILE')}"
+                )
+            except Exception:
+                pass
             wm_root_paths.print_root_diagnostics(ROOT_SNAPSHOT)
         except Exception as exc:
             print(f"[WM-ROOT][WARN] Bootstrap ROOT w main() nieudany: {exc}")
