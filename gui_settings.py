@@ -611,63 +611,33 @@ def _build_root_section(
     if not isinstance(cfg, dict):
         cfg = {}
 
-    # Nowa sekcja ROOT zastępuje stare informacje o ścieżkach w zakładce "Ścieżki".
-    # Nie pokazujemy już legacy statusów, przykładów ani starego wyboru paths.data_root.
-    # Zmiana ROOT zapisuje tylko wm_root.json i wymaga restartu programu.
-    # Mechanizmu Git nie dotykamy.
-    # NOWY ROOT MANAGER:
-    # Ta sekcja jest tylko UI/diagnostyką i zmianą wskaźnika wm_root.json.
-    # Nie przenosi danych, nie kasuje plików i nie dotyka mechanizmu Git.
     if wm_root_paths is not None:
-        box = ttk.Labelframe(parent, text="📁 ROOT / Folder danych WM")
-        box.pack(fill="x", padx=8, pady=8)
-
         try:
             snap = wm_root_paths.install_environment(prompt=False)
         except Exception:
             snap = {}
 
-        rows_frame = ttk.Frame(box)
-        rows_frame.pack(fill="x", padx=8, pady=(8, 4))
+        box = ttk.Labelframe(parent, text="📁 Główny folder WM / ROOT")
+        box.pack(fill="x", padx=8, pady=8)
+
+        root_var = tk.StringVar(value=str(snap.get("wm_root", "—")))
+
+        root_row = ttk.Frame(box)
+        root_row.pack(fill="x", padx=8, pady=(8, 4))
+        ttk.Label(root_row, text="Aktualny ROOT:", width=18).pack(side="left")
+        root_entry = ttk.Entry(root_row, textvariable=root_var)
+        root_entry.configure(state="readonly")
+        root_entry.pack(side="left", fill="x", expand=True, padx=(0, 6))
 
         labels: dict[str, ttk.Label] = {}
 
-        def _row(label: str, key: str) -> None:
-            row = ttk.Frame(rows_frame)
-            row.pack(fill="x", pady=1)
-            ttk.Label(row, text=label, width=16).pack(side="left")
-            lbl = ttk.Label(row, text=str(snap.get(key, "—")))
-            lbl.pack(side="left", fill="x", expand=True)
-            labels[key] = lbl
-
-        _row("APP_ROOT", "app_root")
-        _row("ROOT_FILE", "root_file")
-        _row("WM_ROOT", "wm_root")
-        _row("CONFIG", "config")
-        _row("DATA_ROOT", "data_root")
-        _row("PROFILES", "profiles")
-        _row("TOOLS_DIR", "tools_dir")
-        _row("MACHINES", "machines")
-        _row("WAREHOUSE", "warehouse")
-        _row("BOM", "bom")
-        _row("ORDERS_DIR", "orders_dir")
-        _row("DYSP_FILE", "dyspozycje")
-        _row("LOGS_DIR", "logs_dir")
-        _row("BACKUP_DIR", "backup_dir")
-
-        info = ttk.Label(
-            box,
-            text=(
-                "APP_ROOT to folder programu/repo/Git. WM_ROOT to folder danych.\n"
-                "Zmiana folderu ROOT zapisuje tylko wm_root.json i wymaga restartu programu."
-            ),
-            justify="left",
-            wraplength=760,
-        )
-        info.pack(fill="x", padx=8, pady=(4, 8))
-
-        actions = ttk.Frame(box)
-        actions.pack(fill="x", padx=8, pady=(0, 8))
+        def _refresh_labels(new_snap: dict[str, Any]) -> None:
+            root_var.set(str(new_snap.get("wm_root", "—")))
+            for key, lbl in labels.items():
+                try:
+                    lbl.configure(text=str(new_snap.get(key, "—")))
+                except Exception:
+                    pass
 
         def _refresh_root_preview() -> None:
             try:
@@ -679,18 +649,14 @@ def _build_root_section(
                     parent=parent,
                 )
                 return
-            for key, lbl in labels.items():
-                try:
-                    lbl.configure(text=str(new_snap.get(key, "—")))
-                except Exception:
-                    pass
+            _refresh_labels(new_snap)
             try:
                 wm_root_paths.print_root_diagnostics(new_snap)
             except Exception:
                 pass
 
         def _change_root_folder() -> None:
-            current = snap.get("wm_root") or str(Path.cwd())
+            current = root_var.get() or str(Path.cwd())
             selected = filedialog.askdirectory(
                 parent=parent,
                 title="Wybierz główny folder danych WM",
@@ -730,8 +696,11 @@ def _build_root_section(
                 )
 
         def _open_path(path_key: str) -> None:
-            target = labels.get(path_key)
-            value = target.cget("text") if target is not None else ""
+            if path_key == "wm_root":
+                value = root_var.get()
+            else:
+                target = labels.get(path_key)
+                value = target.cget("text") if target is not None else ""
             if not value or value == "—":
                 return
             try:
@@ -741,6 +710,111 @@ def _build_root_section(
                 os.startfile(str(path))  # type: ignore[attr-defined]
             except Exception as exc:
                 messagebox.showerror("Otwórz folder", f"Nie udało się otworzyć:\n{exc}")
+
+        ttk.Button(
+            root_row,
+            text="Wybierz folder ROOT",
+            command=_change_root_folder,
+        ).pack(side="left")
+
+        actions = ttk.Frame(box)
+        actions.pack(fill="x", padx=8, pady=(0, 8))
+        ttk.Button(actions, text="Otwórz ROOT", command=lambda: _open_path("wm_root")).pack(side="left", padx=(0, 6))
+        ttk.Button(actions, text="Otwórz DATA", command=lambda: _open_path("data_root")).pack(side="left", padx=6)
+        ttk.Button(actions, text="Odśwież", command=_refresh_root_preview).pack(side="left", padx=6)
+
+        info = ttk.Label(
+            box,
+            text=(
+                "APP_ROOT to folder programu/repo/Git. WM_ROOT to folder danych.\n"
+                "Zmiana ROOT zapisuje tylko wm_root.json i wymaga restartu programu."
+            ),
+            justify="left",
+            wraplength=760,
+        )
+        info.pack(fill="x", padx=8, pady=(0, 8))
+
+        map_box = ttk.Labelframe(parent, text="🗂 Gdzie moduły zapisują dane")
+        map_box.pack(fill="x", padx=8, pady=8)
+
+        module_paths = {
+            "Config": "config",
+            "Profile / użytkownicy": "profiles",
+            "Narzędzia": "tools_dir",
+            "Maszyny": "machines",
+            "Magazyn": "warehouse",
+            "Produkty / BOM": "bom",
+            "Zlecenia": "orders_dir",
+            "Dyspozycje": "dyspozycje",
+            "Logi": "logs_dir",
+            "Backup": "backup_dir",
+        }
+
+        rows_frame = ttk.Frame(map_box)
+        rows_frame.pack(fill="x", padx=8, pady=8)
+
+        def _row(label: str, key: str) -> None:
+            row = ttk.Frame(rows_frame)
+            row.pack(fill="x", pady=1)
+            ttk.Label(row, text=label, width=22).pack(side="left")
+            lbl = ttk.Label(row, text=str(snap.get(key, "—")))
+            lbl.pack(side="left", fill="x", expand=True)
+            labels[key] = lbl
+
+        for title, key in module_paths.items():
+            _row(title, key)
+
+        hall_box = ttk.Labelframe(parent, text="🖼 Tło hali")
+        hall_box.pack(fill="x", padx=8, pady=8)
+
+        machines_cfg = {}
+        try:
+            machines_cfg = cm.get("machines", {}) if cm is not None else {}
+        except Exception:
+            machines_cfg = {}
+
+        bg_var = tk.StringVar(value=str(machines_cfg.get("background_image") or ""))
+
+        bg_row = ttk.Frame(hall_box)
+        bg_row.pack(fill="x", padx=8, pady=8)
+        ttk.Label(bg_row, text="Plik tła hali:", width=18).pack(side="left")
+        bg_entry = ttk.Entry(bg_row, textvariable=bg_var)
+        bg_entry.pack(side="left", fill="x", expand=True, padx=(0, 6))
+
+        def _choose_hall_bg() -> None:
+            picked = filedialog.askopenfilename(
+                parent=parent,
+                title="Wybierz tło hali",
+                filetypes=[
+                    ("Obrazy", "*.jpg;*.jpeg;*.png;*.bmp;*.gif"),
+                    ("Wszystkie pliki", "*.*"),
+                ],
+            )
+            if not picked:
+                return
+            bg_var.set(picked)
+
+        def _save_hall_bg() -> None:
+            if cm is None:
+                messagebox.showerror("Tło hali", "Brak menedżera konfiguracji.", parent=parent)
+                return
+            try:
+                machines = cm.get("machines", {}) or {}
+                if not isinstance(machines, dict):
+                    machines = {}
+                machines["background_image"] = bg_var.get().strip()
+                cm.set("machines", machines)
+                cm.save_all()
+                messagebox.showinfo("Tło hali", "Zapisano ścieżkę tła hali.", parent=parent)
+            except Exception as exc:
+                messagebox.showerror(
+                    "Tło hali",
+                    f"Nie udało się zapisać tła hali:\n{exc}",
+                    parent=parent,
+                )
+
+        ttk.Button(bg_row, text="Wybierz tło hali", command=_choose_hall_bg).pack(side="left", padx=6)
+        ttk.Button(bg_row, text="Zapisz", command=_save_hall_bg).pack(side="left", padx=6)
 
         def _copy_root_diag() -> None:
             text = "\n".join(
@@ -761,28 +835,10 @@ def _build_root_section(
                     parent=parent,
                 )
 
+        diag_actions = ttk.Frame(map_box)
+        diag_actions.pack(fill="x", padx=8, pady=(0, 8))
         ttk.Button(
-            actions,
-            text="Zmień główny folder WM",
-            command=_change_root_folder,
-        ).pack(side="left", padx=(0, 6))
-        ttk.Button(
-            actions,
-            text="Otwórz ROOT",
-            command=lambda: _open_path("wm_root"),
-        ).pack(side="left", padx=6)
-        ttk.Button(
-            actions,
-            text="Otwórz DATA",
-            command=lambda: _open_path("data_root"),
-        ).pack(side="left", padx=6)
-        ttk.Button(
-            actions,
-            text="Odśwież",
-            command=_refresh_root_preview,
-        ).pack(side="left", padx=6)
-        ttk.Button(
-            actions,
+            diag_actions,
             text="Kopiuj diagnostykę",
             command=_copy_root_diag,
         ).pack(side="left", padx=6)
