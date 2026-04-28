@@ -300,8 +300,8 @@ def get_root(cfg: dict | None = None) -> str:
     cfg = cfg or {}
     forced_root = _wm_root_anchor()
     # WM_ROOT / core.root_paths jest nadrzędną prawdą runtime.
-    # Stare wpisy paths.anchor_root / paths.data_root w configu nie mogą nadpisywać
-    # folderu wybranego przez użytkownika przy starcie programu.
+    # Stare wpisy paths.anchor_root / paths.data_root z configu nie mogą
+    # nadpisywać folderu wybranego przez użytkownika.
     if forced_root:
         return _norm(forced_root)
     paths = cfg.get("paths") or {}
