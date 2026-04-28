@@ -18,7 +18,6 @@ from typing import Any
 
 
 ROOT_FILE_NAME = "wm_root.json"
-DEFAULT_ROOT_NAME = "wm"
 
 
 def _norm(path: Path | str) -> Path:
@@ -66,11 +65,11 @@ def _write_root_file(path: Path, wm_root: Path) -> None:
 
 
 def _default_wm_root() -> Path:
-    drive = Path.cwd().anchor or "C:\\"
+    """Tylko katalog startowy dla okna wyboru; nie jest automatycznie zapisywany."""
     try:
-        return _norm(Path(drive) / DEFAULT_ROOT_NAME)
+        return _norm(Path.home())
     except Exception:
-        return _norm(get_app_root() / DEFAULT_ROOT_NAME)
+        return _norm(get_app_root())
 
 
 def _ask_root_folder(initial: Path) -> Path | None:
@@ -85,20 +84,15 @@ def _ask_root_folder(initial: Path) -> Path | None:
         root.withdraw()
         try:
             messagebox.showinfo(
-                "Wybór głównego folderu WM",
-                "Program musi wiedzieć, gdzie ma trzymać dane warsztatu.\n\n"
-                "Wskaż JEDEN główny folder ROOT, np.:\n"
-                "C:\\wm\n\n"
-                "W tym folderze program będzie tworzył m.in.:\n"
-                "C:\\wm\\data\\narzedzia\n"
-                "C:\\wm\\data\\magazyn\n"
-                "C:\\wm\\data\\maszyny\n"
-                "C:\\wm\\data\\zlecenia\n"
-                "C:\\wm\\logs\n"
-                "C:\\wm\\backup\n\n"
-                "Nie wybieraj folderu programu, np. C:\\Warsztat-menager.\n"
-                "Nie wybieraj też samego folderu data.\n\n"
-                "Najprościej: utwórz albo wybierz C:\\wm.",
+                "Wybór głównego folderu danych WM",
+                "Wskaż folder, w którym Warsztat Menager ma trzymać dane.\n\n"
+                "Może to być dowolny folder na dysku lub pendrive, np.:\n"
+                "D:\\Dane_WM\n"
+                "E:\\Warsztat_Root\n"
+                "C:\\Moje_Dane_Warsztatu\n\n"
+                "Program utworzy w nim katalogi: data, logs, backup, assets.\n\n"
+                "Nie wybieraj folderu programu.\n"
+                "Nie wybieraj samego folderu data.",
                 parent=root,
             )
         except Exception:
@@ -106,7 +100,7 @@ def _ask_root_folder(initial: Path) -> Path | None:
         selected = filedialog.askdirectory(
             parent=root,
             initialdir=str(initial),
-            title="Wybierz główny folder ROOT WM, np. C:\\wm",
+            title="Wybierz główny folder danych WM",
         )
         root.destroy()
     except Exception as exc:
@@ -135,6 +129,11 @@ def resolve_wm_root(*, prompt: bool = False) -> Path:
 
     initial = _default_wm_root()
     selected = _ask_root_folder(initial) if prompt else None
+    if selected is None and prompt:
+        raise RuntimeError(
+            "Nie wybrano głównego folderu danych WM. "
+            "Wybierz folder ROOT, aby program wiedział gdzie zapisywać dane."
+        )
     wm_root = selected or initial
     try:
         _write_root_file(pointer, wm_root)

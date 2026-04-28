@@ -617,12 +617,12 @@ def _build_root_section(
         except Exception:
             snap = {}
 
-        box = ttk.Labelframe(parent, text="📁 Główny folder WM / ROOT")
-        box.pack(fill="x", padx=8, pady=8)
+        root_box = ttk.Labelframe(parent, text="📁 Główny folder danych WM")
+        root_box.pack(fill="x", padx=8, pady=8)
 
         root_var = tk.StringVar(value=str(snap.get("wm_root", "—")))
 
-        root_row = ttk.Frame(box)
+        root_row = ttk.Frame(root_box)
         root_row.pack(fill="x", padx=8, pady=(8, 4))
         ttk.Label(root_row, text="Aktualny ROOT:", width=18).pack(side="left")
         root_entry = ttk.Entry(root_row, textvariable=root_var)
@@ -656,25 +656,22 @@ def _build_root_section(
                 pass
 
         def _change_root_folder() -> None:
-            current = root_var.get() or str(Path.cwd())
+            current = root_var.get()
+            if not current or current == "—":
+                current = str(Path.home())
             messagebox.showinfo(
-                "Wybór głównego folderu WM",
-                "Wskaż JEDEN główny folder ROOT, np.:\n"
-                "C:\\wm\n\n"
-                "Program będzie tam zapisywał dane modułów:\n"
-                "<root>\\data\\narzedzia\n"
-                "<root>\\data\\magazyn\n"
-                "<root>\\data\\maszyny\n"
-                "<root>\\data\\zlecenia\n"
-                "<root>\\logs\n"
-                "<root>\\backup\n\n"
-                "Nie wybieraj folderu programu ani samego folderu data.\n"
+                "Wybór głównego folderu danych WM",
+                "Wskaż folder, w którym Warsztat Menager ma trzymać dane.\n\n"
+                "Może to być dowolny folder na dysku lub pendrive.\n"
+                "Program utworzy w nim katalogi: data, logs, backup, assets.\n\n"
+                "Nie wybieraj folderu programu.\n"
+                "Nie wybieraj samego folderu data.\n\n"
                 "Po zmianie ROOT uruchom program ponownie.",
                 parent=parent,
             )
             selected = filedialog.askdirectory(
                 parent=parent,
-                title="Wybierz główny folder ROOT WM, np. C:\\wm",
+                title="Wybierz główny folder danych WM",
                 initialdir=current,
             )
             if not selected:
@@ -732,52 +729,49 @@ def _build_root_section(
             command=_change_root_folder,
         ).pack(side="left")
 
-        actions = ttk.Frame(box)
-        actions.pack(fill="x", padx=8, pady=(0, 8))
-        ttk.Button(actions, text="Otwórz ROOT", command=lambda: _open_path("wm_root")).pack(side="left", padx=(0, 6))
-        ttk.Button(actions, text="Otwórz DATA", command=lambda: _open_path("data_root")).pack(side="left", padx=6)
-        ttk.Button(actions, text="Odśwież", command=_refresh_root_preview).pack(side="left", padx=6)
+        root_actions = ttk.Frame(root_box)
+        root_actions.pack(fill="x", padx=8, pady=(0, 8))
+        ttk.Button(root_actions, text="Otwórz ROOT", command=lambda: _open_path("wm_root")).pack(side="left", padx=(0, 6))
+        ttk.Button(root_actions, text="Otwórz DATA", command=lambda: _open_path("data_root")).pack(side="left", padx=6)
+        ttk.Button(root_actions, text="Odśwież", command=_refresh_root_preview).pack(side="left", padx=6)
 
-        info = ttk.Label(
-            box,
+        ttk.Label(
+            root_box,
             text=(
-                "APP_ROOT to folder programu/repo/Git. WM_ROOT to folder danych.\n"
-                "Zmiana ROOT zapisuje tylko wm_root.json i wymaga restartu programu."
+                "ROOT to główny folder danych. Program tworzy w nim data, logs, backup i assets.\n"
+                "Folder programu/repozytorium pozostaje osobno i służy do uruchamiania oraz aktualizacji Git."
             ),
             justify="left",
             wraplength=760,
-        )
-        info.pack(fill="x", padx=8, pady=(0, 8))
+        ).pack(fill="x", padx=8, pady=(0, 8))
 
-        map_box = ttk.Labelframe(parent, text="🗂 Gdzie moduły zapisują dane")
-        map_box.pack(fill="x", padx=8, pady=8)
+        paths_box = ttk.Labelframe(parent, text="🗂 Aktualne ścieżki używane przez program")
+        paths_box.pack(fill="x", padx=8, pady=8)
 
-        module_paths = {
-            "Config": "config",
-            "Profile / użytkownicy": "profiles",
-            "Narzędzia": "tools_dir",
-            "Maszyny": "machines",
-            "Magazyn": "warehouse",
-            "Produkty / BOM": "bom",
-            "Zlecenia": "orders_dir",
-            "Dyspozycje": "dyspozycje",
-            "Logi": "logs_dir",
-            "Backup": "backup_dir",
-        }
-
-        rows_frame = ttk.Frame(map_box)
+        rows_frame = ttk.Frame(paths_box)
         rows_frame.pack(fill="x", padx=8, pady=8)
 
         def _row(label: str, key: str) -> None:
             row = ttk.Frame(rows_frame)
             row.pack(fill="x", pady=1)
-            ttk.Label(row, text=label, width=22).pack(side="left")
+            ttk.Label(row, text=label, width=24).pack(side="left")
             lbl = ttk.Label(row, text=str(snap.get(key, "—")))
             lbl.pack(side="left", fill="x", expand=True)
             labels[key] = lbl
 
-        for title, key in module_paths.items():
-            _row(title, key)
+        _row("APP_ROOT / program", "app_root")
+        _row("Plik wyboru ROOT", "root_file")
+        _row("Config", "config")
+        _row("DATA", "data_root")
+        _row("Profile / użytkownicy", "profiles")
+        _row("Narzędzia", "tools_dir")
+        _row("Maszyny", "machines")
+        _row("Magazyn", "warehouse")
+        _row("Produkty / BOM", "bom")
+        _row("Zlecenia", "orders_dir")
+        _row("Dyspozycje", "dyspozycje")
+        _row("Logi", "logs_dir")
+        _row("Backup", "backup_dir")
 
         hall_box = ttk.Labelframe(parent, text="🖼 Tło hali")
         hall_box.pack(fill="x", padx=8, pady=8)
@@ -850,7 +844,7 @@ def _build_root_section(
                     parent=parent,
                 )
 
-        diag_actions = ttk.Frame(map_box)
+        diag_actions = ttk.Frame(paths_box)
         diag_actions.pack(fill="x", padx=8, pady=(0, 8))
         ttk.Button(
             diag_actions,
