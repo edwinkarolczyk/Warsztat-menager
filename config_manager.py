@@ -298,10 +298,13 @@ def _absolute_with_root(path: str | None, root: str) -> str:
 
 def get_root(cfg: dict | None = None) -> str:
     cfg = cfg or {}
-    paths = cfg.get("paths") or {}
     forced_root = _wm_root_anchor()
-    if forced_root and not (paths.get("anchor_root") or paths.get("data_root")):
+    # WM_ROOT / core.root_paths jest nadrzędną prawdą runtime.
+    # Stare wpisy paths.anchor_root / paths.data_root w configu nie mogą nadpisywać
+    # folderu wybranego przez użytkownika przy starcie programu.
+    if forced_root:
         return _norm(forced_root)
+    paths = cfg.get("paths") or {}
 
     try:
         raw_anchor = paths.get("anchor_root")
@@ -351,7 +354,7 @@ def _resolve_rel_legacy(cfg: dict, what: str) -> str | None:
     cfg = cfg or {}
     paths_cfg = (cfg.get("paths") or {})
     root = (
-        paths_cfg.get("data_root") or _wm_data_root() or DEFAULTS["paths"]["data_root"]
+        _wm_data_root() or paths_cfg.get("data_root") or DEFAULTS["paths"]["data_root"]
     ).strip()
     relative_cfg = (cfg.get("relative") or {})
 
@@ -486,7 +489,7 @@ def _resolve_rroot_map(cfg: dict | None, key: str, *, dir_only: bool = False) ->
         last = parts[-1]
         if os.path.splitext(last)[1]:
             parts = parts[:-1]
-    root = get_root(cfg)
+    root = _wm_root_anchor() or get_root(cfg)
     if not parts:
         return root
     return _norm(os.path.join(root, *parts))
