@@ -8,6 +8,7 @@
 # - Spójny wygląd z motywem (apply_theme), brak pływania elementów
 
 import json
+import importlib
 import logging
 import os
 import subprocess
@@ -27,6 +28,12 @@ from grafiki.shifts_schedule import who_is_on_now
 from profiles_store import load_profiles_users, resolve_profiles_path
 from updates_utils import load_last_update_info, remote_branch_exists
 from utils import error_dialogs
+
+wm_root_paths = (
+    importlib.import_module("core.root_paths")
+    if importlib.util.find_spec("core.root_paths")
+    else None
+)
 
 from services.profile_service import (
     ProfileService,
@@ -60,19 +67,31 @@ apply_theme = apply_theme_tree
 def _save_root_choice_to_config(root_path: str) -> None:
     """Zapisz główny ROOT WM z ekranu logowania.
 
-    Minimalnie ustawiamy oba klucze, bo w projekcie występują oba pojęcia:
-    - paths.anchor_root
-    - paths.data_root
+    Nowy mechanizm ROOT zapisuje wybór do wm_root.json.
+    Nie zapisujemy już paths.anchor_root / paths.data_root z poziomu logowania,
+    bo to miesza ConfigManager z core.root_paths.
     """
 
-    cfg = ConfigManager()
     normalized = str(Path(root_path).expanduser().resolve())
+    if wm_root_paths is not None:
+        root_file = wm_root_paths.root_file_path()
+        root_file.parent.mkdir(parents=True, exist_ok=True)
+        with root_file.open("w", encoding="utf-8") as handle:
+            json.dump({"root": normalized}, handle, ensure_ascii=False, indent=2)
+        os.environ["WM_ROOT"] = normalized
+        os.environ["WM_DATA_ROOT"] = str(Path(normalized) / "data")
+        os.environ["WM_CONFIG_FILE"] = str(Path(normalized) / "config.json")
+        try:
+            wm_root_paths.ensure_root_tree()
+        except Exception:
+            logger.exception("[WM-ERR][LOGIN] ensure_root_tree failed after ROOT change")
+        print(f"[WM-ROOT][LOGIN] zapisano ROOT_FILE={root_file} root={normalized}")
+        return
+
+    cfg = ConfigManager()
     cfg.set("paths.anchor_root", normalized)
-    cfg.set("paths.data_root", normalized)
-    if hasattr(cfg, "save_all"):
-        cfg.save_all()
-    elif hasattr(cfg, "save"):
-        cfg.save()
+    cfg.set("paths.data_root", str(Path(normalized) / "data"))
+    cfg.save_all() if hasattr(cfg, "save_all") else cfg.save()
 
 
 def _choose_root_from_login() -> None:
@@ -81,18 +100,15 @@ def _choose_root_from_login() -> None:
     try:
         messagebox.showinfo(
             "Wybór ROOT WM",
-            "Wskaż główny folder WM, czyli folder bazowy danych programu.\n\n"
+            "Wskaż główny folder danych WM.\n\n"
             "Nie wybieraj pojedynczego podfolderu typu:\n"
             "- data\n"
             "- magazyn\n"
             "- narzedzia\n"
             "- zlecenia\n\n"
-            "Przykład poprawnego wyboru:\n"
-            "C:\\wm",
+            "Może to być dowolny folder na dysku albo pendrive.",
         )
-        selected = filedialog.askdirectory(
-            title="Wskaż główny folder ROOT WM"
-        )
+        selected = filedialog.askdirectory(title="Wybierz główny folder danych WM")
         if not selected:
             return
 
@@ -115,26 +131,114 @@ def _choose_root_from_login() -> None:
         except Exception:
             pass
 
+
+def _looks_like_default_admin_only(entries: list[dict]) -> bool:
+    if len(entries) != 1:
+        return False
+    entry = entries[0] if isinstance(entries[0], dict) else {}
+    login = str(entry.get("login", "") or "").strip().lower()
+    return login == "admin"
+
+
+def _legacy_profile_candidates() -> list[Path]:
+    candidates = [
+        BASE_DIR / "data" / "profiles.json",
+        BASE_DIR / "profiles.json",
+        BASE_DIR / "uzytkownicy.json",
+        Path.cwd() / "data" / "profiles.json",
+        Path.cwd() / "profiles.json",
+        Path.cwd() / "uzytkownicy.json",
+    ]
+    out: list[Path] = []
+    seen: set[str] = set()
+    for candidate in candidates:
+        try:
+            resolved = candidate.resolve()
+            key = os.path.normcase(str(resolved))
+            if key not in seen:
+                seen.add(key)
+                out.append(resolved)
+        except Exception:
+            pass
+    return out
+
+
+def _best_legacy_profiles_source(
+    *,
+    exclude_path: Path | None = None,
+) -> tuple[Path | None, list[dict]]:
+    excluded = None
+    if exclude_path is not None:
+        try:
+            excluded = os.path.normcase(str(exclude_path.resolve()))
+        except Exception:
+            excluded = None
+
+    best_entries: list[dict] = []
+    best_source: Path | None = None
+    for candidate in _legacy_profile_candidates():
+        try:
+            if not candidate.exists():
+                continue
+            candidate_norm = os.path.normcase(str(candidate.resolve()))
+            if excluded and candidate_norm == excluded:
+                continue
+            entries = load_profiles_users(path=candidate)
+            if len(entries) > len(best_entries):
+                best_entries = entries
+                best_source = candidate
+        except Exception:
+            continue
+    return best_source, best_entries
+
+
+def _maybe_migrate_profiles_to_root(root_path: Path) -> None:
+    """Przenieś legacy profile do ROOT, jeśli ROOT ma tylko domyślnego admina."""
+
+    try:
+        root_entries = load_profiles_users(path=root_path) if root_path.exists() else []
+    except Exception:
+        root_entries = []
+
+    if root_entries and not _looks_like_default_admin_only(root_entries):
+        return
+
+    best_source, best_entries = _best_legacy_profiles_source(exclude_path=root_path)
+
+    if not best_entries or _looks_like_default_admin_only(best_entries):
+        return
+
+    root_path.parent.mkdir(parents=True, exist_ok=True)
+    with root_path.open("w", encoding="utf-8") as handle:
+        json.dump({"users": best_entries}, handle, ensure_ascii=False, indent=2)
+    print(
+        f"[WM-ROOT][LOGIN] zmigrowano profile: {best_source} -> {root_path} "
+        f"users={len(best_entries)}"
+    )
+
+
 def _profiles_path() -> Path:
+    best_legacy_source, best_legacy_entries = _best_legacy_profiles_source()
+    if best_legacy_source and not _looks_like_default_admin_only(best_legacy_entries):
+        print(f"[WM-ROOT][LOGIN] profiles_path_legacy={best_legacy_source}")
+        return best_legacy_source
+
+    if wm_root_paths is not None:
+        try:
+            resolved = wm_root_paths.path_profiles()
+            resolved.parent.mkdir(parents=True, exist_ok=True)
+            _maybe_migrate_profiles_to_root(resolved)
+            print(f"[WM-ROOT][LOGIN] profiles_path={resolved}")
+            return resolved
+        except Exception:
+            logger.exception("[WM-ERR][LOGIN] root_paths.path_profiles failed")
+
     try:
         cfg = ConfigManager()
     except Exception:
         cfg = None
     resolved = resolve_profiles_path(cfg)
-    if resolved.exists():
-        return resolved
-    fallback_candidates = [
-        (BASE_DIR / "profiles.json").resolve(),
-        (BASE_DIR / "uzytkownicy.json").resolve(),
-        (Path.cwd() / "profiles.json").resolve(),
-        (Path.cwd() / "uzytkownicy.json").resolve(),
-    ]
-    for candidate in fallback_candidates:
-        try:
-            if candidate.exists():
-                return candidate
-        except OSError:
-            continue
+    print(f"[WM-ROOT][LOGIN] profiles_path_fallback={resolved}")
     return resolved
 
 
