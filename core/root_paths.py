@@ -85,11 +85,20 @@ def _ask_root_folder(initial: Path) -> Path | None:
         root.withdraw()
         try:
             messagebox.showinfo(
-                "Folder danych WM",
-                "Wskaż jeden główny folder danych Warsztat Menager.\n\n"
-                "Przykład:\n"
+                "Wybór głównego folderu WM",
+                "Program musi wiedzieć, gdzie ma trzymać dane warsztatu.\n\n"
+                "Wskaż JEDEN główny folder ROOT, np.:\n"
                 "C:\\wm\n\n"
-                "Nie wybieraj folderu programu ani samego folderu data.",
+                "W tym folderze program będzie tworzył m.in.:\n"
+                "C:\\wm\\data\\narzedzia\n"
+                "C:\\wm\\data\\magazyn\n"
+                "C:\\wm\\data\\maszyny\n"
+                "C:\\wm\\data\\zlecenia\n"
+                "C:\\wm\\logs\n"
+                "C:\\wm\\backup\n\n"
+                "Nie wybieraj folderu programu, np. C:\\Warsztat-menager.\n"
+                "Nie wybieraj też samego folderu data.\n\n"
+                "Najprościej: utwórz albo wybierz C:\\wm.",
                 parent=root,
             )
         except Exception:
@@ -97,7 +106,7 @@ def _ask_root_folder(initial: Path) -> Path | None:
         selected = filedialog.askdirectory(
             parent=root,
             initialdir=str(initial),
-            title="Wskaż główny folder danych WM",
+            title="Wybierz główny folder ROOT WM, np. C:\\wm",
         )
         root.destroy()
     except Exception as exc:
