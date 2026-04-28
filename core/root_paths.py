@@ -261,17 +261,20 @@ def ensure_root_tree() -> list[str]:
                     "logs_dir": str(path_logs()),
                     "backup_dir": str(path_backup()),
                     "assets_dir": str(path_assets()),
+                    "layout_dir": str(get_data_root() / "layout"),
                 }
             },
         ),
         (path_profiles(), _default_profiles_payload()),
         (path_machines(), {"maszyny": []}),
-        (path_warehouse(), {"items": []}),
+        (path_warehouse(), {"items": {}, "meta": {}}),
         (path_bom(), {"items": []}),
         (path_dyspozycje(), {"version": 1, "items": []}),
         (get_data_root() / "magazyn" / "katalog.json", {}),
         (get_data_root() / "magazyn" / "stany.json", {}),
         (get_data_root() / "magazyn" / "przyjecia.json", []),
+        (get_data_root() / "magazyn" / "_seq_pz.json", {}),
+        (get_data_root() / "magazyn" / "magazyn_history.json", []),
     ]
 
     for file_path, payload in starter_files:
