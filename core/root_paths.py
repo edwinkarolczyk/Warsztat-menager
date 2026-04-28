@@ -19,6 +19,34 @@ from typing import Any
 
 ROOT_FILE_NAME = "wm_root.json"
 
+_LAST_CREATED_ITEMS: list[str] = []
+
+
+def _write_json_if_missing(path: Path, payload: Any) -> bool:
+    """Tworzy plik JSON tylko wtedy, gdy go nie ma."""
+
+    if path.exists():
+        return False
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8") as handle:
+        json.dump(payload, handle, ensure_ascii=False, indent=2)
+    return True
+
+
+def _default_profiles_payload() -> dict[str, Any]:
+    return {
+        "users": [
+            {
+                "login": "admin",
+                "haslo": "nimda",
+                "pin": "nimda",
+                "rola": "administrator",
+                "active": True,
+                "disabled_modules": [],
+            }
+        ]
+    }
+
 
 def _norm(path: Path | str) -> Path:
     p = path if isinstance(path, Path) else Path(str(path))
@@ -195,9 +223,10 @@ def path_dyspozycje() -> Path:
     return get_data_root() / "dyspozycje" / "dyspozycje.json"
 
 
-def ensure_root_tree() -> None:
-    """Tworzy strukturę katalogów wyłącznie pod WM_ROOT."""
+def ensure_root_tree() -> list[str]:
+    """Tworzy strukturę katalogów i pliki startowe wyłącznie pod WM_ROOT."""
 
+    global _LAST_CREATED_ITEMS
     dirs = [
         get_root_anchor(),
         get_data_root(),
@@ -214,8 +243,81 @@ def ensure_root_tree() -> None:
         get_data_root() / "dyspozycje",
         get_data_root() / "layout",
     ]
+    created: list[str] = []
     for directory in dirs:
+        existed = directory.exists()
         directory.mkdir(parents=True, exist_ok=True)
+        if not existed:
+            created.append(f"DIR  {directory}")
+            print(f"[WM-ROOT][CREATE] dir={directory}")
+
+    starter_files: list[tuple[Path, Any]] = [
+        (
+            path_config(),
+            {
+                "paths": {
+                    "anchor_root": str(get_root_anchor()),
+                    "data_root": str(get_data_root()),
+                    "logs_dir": str(path_logs()),
+                    "backup_dir": str(path_backup()),
+                    "assets_dir": str(path_assets()),
+                }
+            },
+        ),
+        (path_profiles(), _default_profiles_payload()),
+        (path_machines(), {"maszyny": []}),
+        (path_warehouse(), {"items": []}),
+        (path_bom(), {"items": []}),
+        (path_dyspozycje(), {"version": 1, "items": []}),
+        (get_data_root() / "magazyn" / "katalog.json", {}),
+        (get_data_root() / "magazyn" / "stany.json", {}),
+        (get_data_root() / "magazyn" / "przyjecia.json", []),
+    ]
+
+    for file_path, payload in starter_files:
+        try:
+            if _write_json_if_missing(file_path, payload):
+                created.append(f"FILE {file_path}")
+                print(f"[WM-ROOT][CREATE] file={file_path}")
+        except Exception as exc:
+            print(
+                f"[WM-ROOT][WARN] Nie można utworzyć pliku startowego "
+                f"{file_path}: {exc}"
+            )
+
+    _LAST_CREATED_ITEMS = created
+    return created
+
+
+def get_last_created_items() -> list[str]:
+    return list(_LAST_CREATED_ITEMS)
+
+
+def show_created_root_info(created: list[str] | None = None) -> None:
+    """Pokazuje użytkownikowi, co zostało utworzone w ROOT."""
+
+    items = created if created is not None else get_last_created_items()
+    if not items:
+        return
+    try:
+        import tkinter as tk
+        from tkinter import messagebox
+
+        root = tk.Tk()
+        root.withdraw()
+        preview = "\n".join(items[:18])
+        suffix = "" if len(items) <= 18 else f"\n... oraz {len(items) - 18} więcej"
+        messagebox.showinfo(
+            "Utworzono strukturę danych WM",
+            "Program utworzył brakujące foldery/pliki w wybranym ROOT.\n\n"
+            f"ROOT:\n{get_root_anchor()}\n\n"
+            f"DATA:\n{get_data_root()}\n\n"
+            f"Utworzono:\n{preview}{suffix}",
+            parent=root,
+        )
+        root.destroy()
+    except Exception:
+        pass
 
 
 def install_environment(*, prompt: bool = False) -> dict[str, str]:
@@ -229,7 +331,8 @@ def install_environment(*, prompt: bool = False) -> dict[str, str]:
     os.environ["WM_DATA_ROOT"] = str(data_root)
     os.environ["WM_CONFIG_FILE"] = str(wm_root / "config.json")
 
-    ensure_root_tree()
+    created = ensure_root_tree()
+    show_created_root_info(created)
 
     return {
         "app_root": str(get_app_root()),
