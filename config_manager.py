@@ -38,25 +38,69 @@ from typing import Any, Dict, Iterable, List, Mapping
 
 from core.bootstrap import bootstrap_paths
 from core.path_utils import resolve_root_path
+from core import root_paths as wm_root_paths
 from utils.path_utils import cfg_path
 
 log = logging.getLogger(__name__)
 
+
+def _wm_root_anchor() -> str | None:
+    """Zwraca aktywny WM_ROOT, jeśli centralny resolver jest dostępny."""
+
+    env_root = os.environ.get("WM_ROOT")
+    if env_root:
+        return _norm(env_root)
+    if not (os.environ.get("WM_ROOT") or os.environ.get("WM_DATA_ROOT")):
+        return None
+    try:
+        return _norm(str(wm_root_paths.get_root_anchor()))
+    except Exception:
+        return None
+
+
+def _wm_data_root() -> str | None:
+    env_data = os.environ.get("WM_DATA_ROOT")
+    if env_data:
+        return _norm(env_data)
+    if not (os.environ.get("WM_ROOT") or os.environ.get("WM_DATA_ROOT")):
+        return None
+    try:
+        return _norm(str(wm_root_paths.get_data_root()))
+    except Exception:
+        pass
+    root = _wm_root_anchor()
+    return _norm(os.path.join(root, "data")) if root else None
+
+
+def _wm_config_file() -> str | None:
+    env_cfg = os.environ.get("WM_CONFIG_FILE")
+    if env_cfg:
+        return _norm(env_cfg)
+    if not (os.environ.get("WM_ROOT") or os.environ.get("WM_CONFIG_FILE")):
+        return None
+    try:
+        return _norm(str(wm_root_paths.path_config()))
+    except Exception:
+        pass
+    root = _wm_root_anchor()
+    return _norm(os.path.join(root, "config.json")) if root else None
+
+
 # --- R-ROOT-ALL: centralny dostęp do katalogu danych ---
-_DEFAULT_ROOT = os.path.normcase(
+_DEFAULT_ROOT = _wm_root_anchor() or os.path.normcase(
     os.path.abspath(os.path.normpath(os.path.join(os.getcwd(), "data", "..")))
 )
 _MAP: dict[str, tuple[str, ...]] = {
     # MODUŁY DANYCH
-    "machines": ("maszyny", "maszyny.json"),
-    "tools_index": ("narzedzia", "narzedzia.json"),
-    "tools_item_dir": ("narzedzia",),
-    "warehouse_stock": ("magazyn", "magazyn.json"),
-    "bom": ("produkty", "bom.json"),
-    "orders": ("zlecenia", "zlecenia.json"),
-    "tools_defs": ("data", "zadania_narzedzia.json"),
+    "machines": ("data", "maszyny", "maszyny.json"),
+    "tools_index": ("data", "narzedzia", "narzedzia.json"),
+    "tools_item_dir": ("data", "narzedzia"),
+    "warehouse_stock": ("data", "magazyn", "magazyn.json"),
+    "bom": ("data", "produkty", "bom.json"),
+    "orders": ("data", "zlecenia", "zlecenia.json"),
+    "tools_defs": ("data", "narzedzia", "szablony_zadan.json"),
     # UI / MEDIA
-    "machines_bg": ("maszyny", "hala_bg.png"),
+    "machines_bg": ("assets", "hala_bg.png"),
     # INNE
     "profiles": ("data", "profiles.json"),
     "audit_log_dir": ("logs",),
@@ -74,11 +118,11 @@ PATH_MAP = {
     "tools.types": "narzedzia/typy_narzedzi.json",
     "tools.statuses": "narzedzia/statusy_narzedzi.json",
     "tools.tasks": "narzedzia/szablony_zadan.json",
-    "tools.zadania": "data/zadania_narzedzia.json",
+    "tools.zadania": "narzedzia/szablony_zadan.json",
     "orders": "zlecenia/zlecenia.json",
     "root.logs": "logs",
     "root.backup": "backup",
-    "data.profiles": "data/profiles.json",
+    "data.profiles": "profiles.json",
 }
 
 RESOLVE_MAP = {
@@ -89,7 +133,7 @@ RESOLVE_MAP = {
     "tools": ("narzedzia", "narzedzia.json"),
     "tools.dir": ("narzedzia", ""),
     "tools_dir": ("narzedzia", ""),
-    "tools_defs": ("data", "zadania_narzedzia.json"),
+    "tools_defs": ("narzedzia", "szablony_zadan.json"),
     "tools.types": ("narzedzia", "typy_narzedzi.json"),
     "tools.statuses": ("narzedzia", "statusy_narzedzi.json"),
     "tools.tasks": ("narzedzia", "szablony_zadan.json"),
@@ -98,8 +142,8 @@ RESOLVE_MAP = {
     "tools_statuses": ("narzedzia", "statusy_narzedzi.json"),
     "orders": ("zlecenia", "zlecenia.json"),
     "orders_dir": ("zlecenia", ""),
-    "tools.zadania": ("data", "zadania_narzedzia.json"),
-    "profiles": ("data", "profiles.json"),
+    "tools.zadania": ("narzedzia", "szablony_zadan.json"),
+    "profiles": ("", "profiles.json"),
 }
 
 RELATIVE_ALIAS_KEYS = {
@@ -120,7 +164,7 @@ RELATIVE_ALIAS_KEYS = {
 DEFAULTS = {
     "paths": {
         "anchor_root": _DEFAULT_ROOT,
-        "data_root": _DEFAULT_ROOT,
+        "data_root": _wm_data_root() or os.path.join(_DEFAULT_ROOT, "data"),
         "logs_dir": os.path.join(_DEFAULT_ROOT, "logs"),
         "backup_dir": os.path.join(_DEFAULT_ROOT, "backup"),
         "assets_dir": os.path.join(_DEFAULT_ROOT, "assets"),
@@ -131,9 +175,9 @@ DEFAULTS = {
         "tools_dir": "narzedzia",
         "orders_dir": "zlecenia",
         "warehouse": "magazyn/magazyn.json",
-        "profiles": "data/profiles.json",
+        "profiles": "profiles.json",
         "bom": "produkty/bom.json",
-        "tools_defs": "data",
+        "tools_defs": "narzedzia",
     },
 }
 
@@ -157,8 +201,8 @@ def get_machines_path(cfg: dict | None = None) -> str:
     path = resolve_rel(cfg, "machines")
     if path:
         return _norm(path)
-    root = get_root(cfg)
-    return _norm(os.path.join(root, "maszyny", "maszyny.json"))
+    data = _wm_data_root() or os.path.join(get_root(cfg), "data")
+    return _norm(os.path.join(data, "maszyny", "maszyny.json"))
 
 
 def get_profiles_path(cfg: dict | None = None) -> str:
@@ -168,8 +212,8 @@ def get_profiles_path(cfg: dict | None = None) -> str:
     path = resolve_rel(cfg, "profiles")
     if path:
         return _norm(path)
-    root = get_root(cfg)
-    return _norm(os.path.join(root, "data", "profiles.json"))
+    data = _wm_data_root() or os.path.join(get_root(cfg), "data")
+    return _norm(os.path.join(data, "profiles.json"))
 
 
 def _norm(path: str) -> str:
@@ -254,8 +298,12 @@ def _absolute_with_root(path: str | None, root: str) -> str:
 
 def get_root(cfg: dict | None = None) -> str:
     cfg = cfg or {}
+    paths = cfg.get("paths") or {}
+    forced_root = _wm_root_anchor()
+    if forced_root and not (paths.get("anchor_root") or paths.get("data_root")):
+        return _norm(forced_root)
+
     try:
-        paths = cfg.get("paths") or {}
         raw_anchor = paths.get("anchor_root")
         anchor_candidate: str | None = None
         if isinstance(raw_anchor, str) and raw_anchor.strip():
@@ -302,7 +350,9 @@ def _resolve_rel_legacy(cfg: dict, what: str) -> str | None:
 
     cfg = cfg or {}
     paths_cfg = (cfg.get("paths") or {})
-    root = (paths_cfg.get("data_root") or DEFAULTS["paths"]["data_root"]).strip()
+    root = (
+        paths_cfg.get("data_root") or _wm_data_root() or DEFAULTS["paths"]["data_root"]
+    ).strip()
     relative_cfg = (cfg.get("relative") or {})
 
     try:
@@ -467,7 +517,14 @@ def _apply_root_defaults(cfg: dict) -> dict:
 
     try:
         paths = cfg.setdefault("paths", {})
-        paths["data_root"] = get_root(cfg)
+        anchor = _wm_root_anchor() or get_root(cfg)
+        data_root = _wm_data_root() or os.path.join(anchor, "data")
+        paths["anchor_root"] = anchor
+        paths["data_root"] = data_root
+        paths["logs_dir"] = os.path.join(anchor, "logs")
+        paths["backup_dir"] = os.path.join(anchor, "backup")
+        paths["assets_dir"] = os.path.join(anchor, "assets")
+        paths["layout_dir"] = os.path.join(data_root, "layout")
 
         hall = cfg.get("hall") or {}
         machines = cfg.setdefault("machines", {})
@@ -521,10 +578,10 @@ def migrate_user_files(cfg: dict | None = None) -> list[str]:
     cfg = cfg or {}
     moved: list[str] = []
     try:
-        root = get_root(cfg)
+        root = _wm_root_anchor() or get_root(cfg)
         if not root:
             return moved
-        data_dir = os.path.join(root, "data")
+        data_dir = _wm_data_root() or os.path.join(root, "data")
         os.makedirs(data_dir, exist_ok=True)
 
         repo_data_dir = cfg_path("data")
