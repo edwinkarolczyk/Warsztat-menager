@@ -66,30 +66,35 @@ def _feature_flag_enabled(value, *, default: bool = True) -> bool:
 
 
 ROOT_SNAPSHOT = None
-if wm_root_paths is not None:
-    try:
-        # Bez okna dialogowego na etapie importu; właściwe pytanie nastąpi w main().
-        ROOT_SNAPSHOT = wm_root_paths.install_environment(prompt=False)
-    except Exception as exc:
-        print(f"[WM-ROOT][WARN] Wstępny bootstrap ROOT pominięty: {exc}")
 
 
 APP_ROOT = get_app_root()
 
-DEFAULT_CONFIG = {
-    "paths": {
-        "data_root": "data",
-        "logs_dir": "logs",
-        "backup_dir": "backup",
-        "layout_dir": "data/layout",
-    },
-    "machines": {
-        "rel_path": "maszyny/maszyny.json",
-    },
-    "settings": {
-        "require_reauth": True,
-    },
-}
+def _default_config() -> dict:
+    root = str(wm_root_paths.get_root_anchor()) if wm_root_paths is not None else str(APP_ROOT)
+    data = str(wm_root_paths.get_data_root()) if wm_root_paths is not None else str(APP_ROOT / "data")
+    logs = str(wm_root_paths.path_logs()) if wm_root_paths is not None else str(APP_ROOT / "logs")
+    backup = str(wm_root_paths.path_backup()) if wm_root_paths is not None else str(APP_ROOT / "backup")
+    assets = str(wm_root_paths.path_assets()) if wm_root_paths is not None else str(APP_ROOT / "assets")
+    return {
+        "paths": {
+            "anchor_root": root,
+            "data_root": data,
+            "logs_dir": logs,
+            "backup_dir": backup,
+            "assets_dir": assets,
+            "layout_dir": str(Path(data) / "layout"),
+        },
+        "machines": {
+            "rel_path": "maszyny/maszyny.json",
+        },
+        "settings": {
+            "require_reauth": True,
+        },
+    }
+
+
+DEFAULT_CONFIG = _default_config()
 
 CONFIG_MANAGER: ConfigManager | None = None
 env_cfg = os.environ.get("WM_CONFIG_FILE")
@@ -136,7 +141,7 @@ def _ensure_config_manager() -> ConfigManager | None:
 
     CONFIG_PATH.parent.mkdir(parents=True, exist_ok=True)
     try:
-        ensure_json(CONFIG_PATH, DEFAULT_CONFIG)
+        ensure_json(CONFIG_PATH, _default_config())
     except Exception:
         pass
 
@@ -765,6 +770,7 @@ def main():
     # "Untested Windows version 10.0 detected!" – porządkuje logi.
     SESSION_ID = f"{datetime.now().strftime('%H%M%S')}"
     global ROOT_SNAPSHOT, CONFIG_MANAGER, CONFIG_PATH
+
     if wm_root_paths is not None:
         try:
             # Tu wolno pokazać wybór folderu ROOT, bo startuje właściwa aplikacja.
@@ -828,93 +834,21 @@ def main():
     try:
         _info("ConfigManager: OK")
         try:
-            from backend.bootstrap_root import (
-                describe_root_targets,
-                ensure_root_ready,
-            )
-            from tkinter import messagebox
-
-            manager = _ensure_config_manager()
-            anchor = ""
-            data_root = ""
-            try:
-                if manager is not None:
-                    anchor = str(manager.path_anchor() or "")
-                    data_root = str(manager.path_data() or "")
-            except Exception:
-                anchor = ""
-                data_root = ""
-
-            root_targets = []
-            try:
-                if manager is not None:
-                    root_targets = describe_root_targets(manager.load())
-            except Exception:
-                root_targets = []
-
-            info_lines = [
-                "WM może zapytać teraz o folder roboczy programu.",
-                "",
-                "Wskaż główny folder WM (<root>), a nie pojedynczy podfolder.",
-                "",
-                "W tym folderze zwykle znajdują się lub będą tworzone m.in.:",
-                "- narzedzia\\",
-                "- maszyny\\",
-                "- magazyn\\",
-                "- zlecenia\\",
-                "- produkty\\",
-                "- polprodukty\\",
-                "- data\\",
-                "- logs\\",
-                "- backup\\",
-                "- config.json",
-                "",
-                "Przykład poprawnego wyboru:",
-                "C:\\wm",
-                "",
-                "Nie wybieraj od razu np. samego folderu data\\ albo magazyn\\.",
-            ]
-            if anchor or data_root:
-                info_lines.extend(
-                    [
-                        "",
-                        f"Obecny root: {anchor or '-'}",
-                        f"Obecny data_root: {data_root or '-'}",
-                    ]
-                )
-
-            if root_targets:
-                info_lines.extend(
-                    [
-                        "",
-                        "WM będzie sprawdzał / tworzył:",
-                    ]
-                )
-                for label, target_path, kind in root_targets:
-                    typ = "plik" if kind == "file" else "folder"
-                    exists = os.path.exists(target_path)
-                    state = "OK" if exists else "BRAK"
-                    info_lines.append(f"- {label} ({typ}) [{state}]:")
-                    info_lines.append(f"  {target_path}")
-
-            try:
-                messagebox.showinfo(
-                    "Wybór folderu WM",
-                    "\n".join(info_lines),
-                    parent=None,
-                )
-            except Exception:
-                pass
-
-            ensure_root_ready(str(CONFIG_PATH))
+            # Stary backend.bootstrap_root mieszał APP_ROOT z WM_ROOT i potrafił
+            # ponownie pytać o folder albo tworzyć strukturę poza wybranym ROOT.
+            # Centralnym mechanizmem ROOT jest teraz core.root_paths.install_environment().
+            if wm_root_paths is not None:
+                try:
+                    wm_root_paths.ensure_root_tree()
+                except Exception as exc:
+                    _error(f"Root bootstrap ensure_root_tree failed: {exc}")
             _info("Root bootstrap: OK")
         except Exception as e:  # pragma: no cover - startup warning only
             try:
                 messagebox.showwarning(
                     "Problem ze ścieżkami WM",
-                    "Nie udało się przygotować folderu roboczego WM.\n\n"
-                    "Wskaż główny folder programu (<root>), w którym są lub będą trzymane dane.\n"
-                    "Typowy przykład: C:\\wm\n\n"
+                    "Nie udało się przygotować głównego folderu danych WM.\n\n"
+                    "Wskaż ROOT danych w ustawieniach lub usuń wm_root.json i uruchom program ponownie.\n\n"
                     f"Szczegóły: {e}",
                     parent=None,
                 )
